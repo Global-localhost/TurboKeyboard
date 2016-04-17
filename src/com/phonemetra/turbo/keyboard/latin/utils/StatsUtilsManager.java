@@ -22,7 +22,6 @@ import android.content.Context;
 import com.phonemetra.turbo.keyboard.latin.DictionaryFacilitator;
 import com.phonemetra.turbo.keyboard.latin.settings.SettingsValues;
 
-@SuppressWarnings("unused")
 public class StatsUtilsManager {
 
     private static final StatsUtilsManager sInstance = new StatsUtilsManager();

@@ -28,7 +28,6 @@ import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Typeface;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -56,11 +55,9 @@ import com.phonemetra.turbo.keyboard.latin.RichInputMethodSubtype;
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords;
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
 import com.phonemetra.turbo.keyboard.latin.common.CoordinateUtils;
-import com.phonemetra.turbo.keyboard.latin.settings.DebugSettings;
 import com.phonemetra.turbo.keyboard.latin.utils.LanguageOnSpacebarUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.TypefaceUtils;
 
-import java.util.Locale;
 import java.util.WeakHashMap;
 
 import javax.annotation.Nonnull;
@@ -68,52 +65,11 @@ import javax.annotation.Nullable;
 
 /**
  * A view that is responsible for detecting key presses and touch movements.
- *
- * @attr ref R.styleable#MainKeyboardView_languageOnSpacebarTextRatio
- * @attr ref R.styleable#MainKeyboardView_languageOnSpacebarTextColor
- * @attr ref R.styleable#MainKeyboardView_languageOnSpacebarTextShadowRadius
- * @attr ref R.styleable#MainKeyboardView_languageOnSpacebarTextShadowColor
- * @attr ref R.styleable#MainKeyboardView_languageOnSpacebarFinalAlpha
- * @attr ref R.styleable#MainKeyboardView_languageOnSpacebarFadeoutAnimator
- * @attr ref R.styleable#MainKeyboardView_altCodeKeyWhileTypingFadeoutAnimator
- * @attr ref R.styleable#MainKeyboardView_altCodeKeyWhileTypingFadeinAnimator
- * @attr ref R.styleable#MainKeyboardView_keyHysteresisDistance
- * @attr ref R.styleable#MainKeyboardView_touchNoiseThresholdTime
- * @attr ref R.styleable#MainKeyboardView_touchNoiseThresholdDistance
- * @attr ref R.styleable#MainKeyboardView_keySelectionByDraggingFinger
- * @attr ref R.styleable#MainKeyboardView_keyRepeatStartTimeout
- * @attr ref R.styleable#MainKeyboardView_keyRepeatInterval
- * @attr ref R.styleable#MainKeyboardView_longPressKeyTimeout
- * @attr ref R.styleable#MainKeyboardView_longPressShiftKeyTimeout
- * @attr ref R.styleable#MainKeyboardView_ignoreAltCodeKeyTimeout
- * @attr ref R.styleable#MainKeyboardView_keyPreviewLayout
- * @attr ref R.styleable#MainKeyboardView_keyPreviewOffset
- * @attr ref R.styleable#MainKeyboardView_keyPreviewHeight
- * @attr ref R.styleable#MainKeyboardView_keyPreviewLingerTimeout
- * @attr ref R.styleable#MainKeyboardView_keyPreviewShowUpAnimator
- * @attr ref R.styleable#MainKeyboardView_keyPreviewDismissAnimator
- * @attr ref R.styleable#MainKeyboardView_moreKeysKeyboardLayout
- * @attr ref R.styleable#MainKeyboardView_moreKeysKeyboardForActionLayout
- * @attr ref R.styleable#MainKeyboardView_backgroundDimAlpha
- * @attr ref R.styleable#MainKeyboardView_showMoreKeysKeyboardAtTouchPoint
- * @attr ref R.styleable#MainKeyboardView_gestureFloatingPreviewTextLingerTimeout
- * @attr ref R.styleable#MainKeyboardView_gestureStaticTimeThresholdAfterFastTyping
- * @attr ref R.styleable#MainKeyboardView_gestureDetectFastMoveSpeedThreshold
- * @attr ref R.styleable#MainKeyboardView_gestureDynamicThresholdDecayDuration
- * @attr ref R.styleable#MainKeyboardView_gestureDynamicTimeThresholdFrom
- * @attr ref R.styleable#MainKeyboardView_gestureDynamicTimeThresholdTo
- * @attr ref R.styleable#MainKeyboardView_gestureDynamicDistanceThresholdFrom
- * @attr ref R.styleable#MainKeyboardView_gestureDynamicDistanceThresholdTo
- * @attr ref R.styleable#MainKeyboardView_gestureSamplingMinimumDistance
- * @attr ref R.styleable#MainKeyboardView_gestureRecognitionMinimumTime
- * @attr ref R.styleable#MainKeyboardView_gestureRecognitionSpeedThreshold
- * @attr ref R.styleable#MainKeyboardView_suppressKeyPreviewAfterBatchInputDuration
  */
 public final class MainKeyboardView extends KeyboardView implements DrawingProxy,
         MoreKeysPanel.Controller {
-    private static final String TAG = MainKeyboardView.class.getSimpleName();
+    private static final String TAG = "MainKeyboardView";
 
-    /** Listener for {@link KeyboardActionListener}. */
     private KeyboardActionListener mKeyboardActionListener;
 
     /* Space key and its icon and background. */
@@ -201,7 +157,7 @@ public final class MainKeyboardView extends KeyboardView implements DrawingProxy
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         final boolean forceNonDistinctMultitouch = prefs.getBoolean(
-                DebugSettings.PREF_FORCE_NON_DISTINCT_MULTITOUCH, false);
+        		"force_non_distinct_multitouch", false);
         final boolean hasDistinctMultitouch = context.getPackageManager()
                 .hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT)
                 && !forceNonDistinctMultitouch;

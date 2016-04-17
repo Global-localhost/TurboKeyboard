@@ -17,13 +17,12 @@
 package com.phonemetra.turbo.keyboard.latin.utils;
 
 import com.phonemetra.turbo.keyboard.dictionarypack.DictionarySettingsFragment;
-import com.phonemetra.turbo.keyboard.latin.about.AboutPreferences;
+import com.phonemetra.turbo.keyboard.latin.settings.BuildSettingsFragment;
 import com.phonemetra.turbo.keyboard.latin.settings.AccountsSettingsFragment;
 import com.phonemetra.turbo.keyboard.latin.settings.AdvancedSettingsFragment;
 import com.phonemetra.turbo.keyboard.latin.settings.AppearanceSettingsFragment;
 import com.phonemetra.turbo.keyboard.latin.settings.CorrectionSettingsFragment;
 import com.phonemetra.turbo.keyboard.latin.settings.CustomInputStyleSettingsFragment;
-import com.phonemetra.turbo.keyboard.latin.settings.DebugSettingsFragment;
 import com.phonemetra.turbo.keyboard.latin.settings.GestureSettingsFragment;
 import com.phonemetra.turbo.keyboard.latin.settings.PreferencesSettingsFragment;
 import com.phonemetra.turbo.keyboard.latin.settings.SettingsFragment;
@@ -40,7 +39,7 @@ public class FragmentUtils {
     private static final HashSet<String> sLatinImeFragments = new HashSet<>();
     static {
         sLatinImeFragments.add(DictionarySettingsFragment.class.getName());
-        sLatinImeFragments.add(AboutPreferences.class.getName());
+        sLatinImeFragments.add(BuildSettingsFragment.class.getName());
         sLatinImeFragments.add(PreferencesSettingsFragment.class.getName());
         sLatinImeFragments.add(AccountsSettingsFragment.class.getName());
         sLatinImeFragments.add(AppearanceSettingsFragment.class.getName());
@@ -49,7 +48,6 @@ public class FragmentUtils {
         sLatinImeFragments.add(GestureSettingsFragment.class.getName());
         sLatinImeFragments.add(CorrectionSettingsFragment.class.getName());
         sLatinImeFragments.add(AdvancedSettingsFragment.class.getName());
-        sLatinImeFragments.add(DebugSettingsFragment.class.getName());
         sLatinImeFragments.add(SettingsFragment.class.getName());
         sLatinImeFragments.add(SpellCheckerSettingsFragment.class.getName());
         sLatinImeFragments.add(UserDictionaryAddWordFragment.class.getName());

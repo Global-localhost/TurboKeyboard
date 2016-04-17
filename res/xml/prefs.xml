@@ -28,7 +28,7 @@
         android:key="screen_accounts" />
     <PreferenceScreen
         android:fragment="com.phonemetra.turbo.keyboard.latin.settings.AppearanceSettingsFragment"
-        android:title="@string/settings_screen_appearance"
+        android:title="@string/settings_screen_themes"
         android:key="screen_appearance" />
     <PreferenceScreen
         android:fragment="com.phonemetra.turbo.keyboard.latin.settings.GestureSettingsFragment"
@@ -42,4 +42,8 @@
         android:fragment="com.phonemetra.turbo.keyboard.latin.settings.AdvancedSettingsFragment"
         android:title="@string/settings_screen_advanced"
         android:key="screen_advanced" />
+    <PreferenceScreen
+        android:fragment="com.phonemetra.turbo.keyboard.latin.settings.BuildSettingsFragment"
+        android:title="@string/settings_screen_build"
+        android:key="screen_build" />
 </PreferenceScreen>

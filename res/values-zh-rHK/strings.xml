@@ -20,7 +20,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="english_ime_input_options" msgid="3909945612939668554">"輸入選項"</string>
+    <string name="input_options" msgid="3909945612939668554">"輸入選項"</string>
     <string name="use_contacts_for_spellchecking_option_title" msgid="5374120998125353898">"查找聯絡人姓名"</string>
     <string name="use_contacts_for_spellchecking_option_summary" msgid="8754413382543307713">"拼字檢查程式使用您的聯絡人名單中的各項記錄"</string>
     <string name="vibrate_on_keypress" msgid="5258079494276955460">"按鍵時震動"</string>
@@ -28,11 +28,10 @@
     <string name="popup_on_keypress" msgid="123894815723512944">"按鍵時顯示彈出式視窗"</string>
     <string name="settings_screen_preferences" msgid="2696713156722014624">"偏好設定"</string>
     <string name="settings_screen_accounts" msgid="2786418968536696670">"帳戶與私隱權"</string>
-    <string name="settings_screen_appearance" msgid="7358046399111611615">"外觀和版面配置"</string>
     <string name="settings_screen_gesture" msgid="8826372746901183556">"手勢輸入"</string>
     <string name="settings_screen_correction" msgid="1616818407747682955">"文字更正"</string>
     <string name="settings_screen_advanced" msgid="7472408607625972994">"進階"</string>
-    <string name="settings_screen_theme" msgid="2137262503543943871">"主題背景"</string>
+    <string name="settings_screen_themes" msgid="2137262503543943871">"主題背景"</string>
     <string name="enable_split_keyboard" msgid="4177264923999493614">"啟用分離式鍵盤"</string>
     <string name="cloud_sync_title" msgid="8579271074443847055">"Google 鍵盤同步"</string>
     <string name="cloud_sync_summary" msgid="7684887161145650857">"同步功能已啟用"</string>

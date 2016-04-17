@@ -20,7 +20,10 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="english_ime_input_options" msgid="3909945612939668554">"Možnosti zadávání textu a dat"</string>
+    <string name="spell_checker_service_name" msgid="1254221805440242662">"Kontrola pravopisu"</string>
+    <string name="app_settings" msgid="5760361067176802794">"Nastavení klávesnice"</string>
+    <string name="spell_checker_settings" msgid="6123949487832861885">"Nastavení kontroly pravopisu"</string>
+    <string name="input_options" msgid="3909945612939668554">"Možnosti zadávání textu a dat"</string>
     <string name="use_contacts_for_spellchecking_option_title" msgid="5374120998125353898">"Vyhledat kontakty"</string>
     <string name="use_contacts_for_spellchecking_option_summary" msgid="8754413382543307713">"Kontrola pravopisu používá záznamy z vašeho seznamu kontaktů."</string>
     <string name="vibrate_on_keypress" msgid="5258079494276955460">"Při stisku klávesy vibrovat"</string>
@@ -28,11 +31,10 @@
     <string name="popup_on_keypress" msgid="123894815723512944">"Detail znaku při stisku klávesy"</string>
     <string name="settings_screen_preferences" msgid="2696713156722014624">"Předvolby"</string>
     <string name="settings_screen_accounts" msgid="2786418968536696670">"Účty a ochrana soukromí"</string>
-    <string name="settings_screen_appearance" msgid="7358046399111611615">"Vzhled a rozvržení"</string>
     <string name="settings_screen_gesture" msgid="8826372746901183556">"Psaní gesty"</string>
     <string name="settings_screen_correction" msgid="1616818407747682955">"Oprava textu"</string>
     <string name="settings_screen_advanced" msgid="7472408607625972994">"Rozšířená nastavení"</string>
-    <string name="settings_screen_theme" msgid="2137262503543943871">"Motiv"</string>
+    <string name="settings_screen_themes" msgid="2137262503543943871">"Motiv"</string>
     <string name="enable_split_keyboard" msgid="4177264923999493614">"Aktivovat rozdělenou klávesnici"</string>
     <string name="cloud_sync_title" msgid="8579271074443847055">"Synchronizace Klávesnice Google"</string>
     <string name="cloud_sync_summary" msgid="7684887161145650857">"Synchronizace je zapnutá"</string>

@@ -20,8 +20,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="english_ime_name" msgid="5940510615957428904">"Androidova tipkovnica  "</string>
-    <string name="spell_checker_service_name" msgid="1254221805440242662">"Androidova provjera pravopisa  "</string>
-    <string name="app_settings" msgid="5760361067176802794">"Postavke Androidove tipkovnice  "</string>
-    <string name="spell_checker_settings" msgid="6123949487832861885">"Postavke Androidove provjere pravopisa  "</string>
+    <string name="spell_checker_service_name" msgid="1254221805440242662">"Provjera pravopisa"</string>
+    <string name="app_settings" msgid="5760361067176802794">"Postavke Turbo Keyboard™"</string>
+    <string name="spell_checker_settings" msgid="6123949487832861885">"Postavke provjere pravopisa"</string>
 </resources>

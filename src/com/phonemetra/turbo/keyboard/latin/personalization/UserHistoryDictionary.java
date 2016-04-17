@@ -24,7 +24,6 @@ import com.phonemetra.turbo.keyboard.latin.BinaryDictionary;
 import com.phonemetra.turbo.keyboard.latin.Dictionary;
 import com.phonemetra.turbo.keyboard.latin.ExpandableBinaryDictionary;
 import com.phonemetra.turbo.keyboard.latin.NgramContext;
-import com.phonemetra.turbo.keyboard.latin.define.DecoderSpecificConstants;
 import com.phonemetra.turbo.keyboard.latin.define.ProductionFlags;
 import com.phonemetra.turbo.keyboard.latin.makedict.DictionaryHeader;
 

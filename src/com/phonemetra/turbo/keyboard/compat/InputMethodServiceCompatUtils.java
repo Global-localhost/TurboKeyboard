@@ -27,7 +27,7 @@ public final class InputMethodServiceCompatUtils {
             CompatUtils.getMethod(InputMethodService.class, "enableHardwareAcceleration");
 
     private InputMethodServiceCompatUtils() {
-        // This utility class is not publicly instantiable.
+       
     }
 
     public static boolean enableHardwareAcceleration(final InputMethodService ims) {

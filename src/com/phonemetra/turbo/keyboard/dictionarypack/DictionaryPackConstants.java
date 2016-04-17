@@ -28,7 +28,7 @@ public class DictionaryPackConstants {
      * The root domain for the dictionary pack, upon which authorities and actions will append
      * their own distinctive strings.
      */
-    private static final String DICTIONARY_DOMAIN = "com.phonemetra.turbo.keyboard.dictionarypack.aosp";
+    private static final String DICTIONARY_DOMAIN = "com.phonemetra.turbo.keyboard.dictionarypack";
 
     /**
      * Authority for the ContentProvider protocol.

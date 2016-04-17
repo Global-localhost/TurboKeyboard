@@ -20,7 +20,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="english_ime_input_options" msgid="3909945612939668554">"Okukhethwa kukho kokungenayo"</string>
+    <string name="input_options" msgid="3909945612939668554">"Okukhethwa kukho kokungenayo"</string>
     <string name="use_contacts_for_spellchecking_option_title" msgid="5374120998125353898">"Bheka amagama woxhumana nabo"</string>
     <string name="use_contacts_for_spellchecking_option_summary" msgid="8754413382543307713">"Isihloli sokupela sisebenzisa okungenayo kusuka kuhlu lalabo oxhumana nabo"</string>
     <string name="vibrate_on_keypress" msgid="5258079494276955460">"Dlidlizelisa ngokucindezela inkinobho"</string>
@@ -28,11 +28,10 @@
     <string name="popup_on_keypress" msgid="123894815723512944">"Ugaxekile ngokucindezela ukhiye"</string>
     <string name="settings_screen_preferences" msgid="2696713156722014624">"Izintandokazi"</string>
     <string name="settings_screen_accounts" msgid="2786418968536696670">"Ama-akhawunti nobumfihlo"</string>
-    <string name="settings_screen_appearance" msgid="7358046399111611615">"Ukubonakala nezakhiwo"</string>
     <string name="settings_screen_gesture" msgid="8826372746901183556">"Ukuthayipha ngokuthinta"</string>
     <string name="settings_screen_correction" msgid="1616818407747682955">"Ukulungisa umbhalo"</string>
     <string name="settings_screen_advanced" msgid="7472408607625972994">"Okuthuthukisiwe"</string>
-    <string name="settings_screen_theme" msgid="2137262503543943871">"Itimu"</string>
+    <string name="settings_screen_themes" msgid="2137262503543943871">"Itimu"</string>
     <string name="enable_split_keyboard" msgid="4177264923999493614">"Nika amandla ikhibhodi yokuhlukanisa"</string>
     <string name="cloud_sync_title" msgid="8579271074443847055">"Ukuvumlanisa kwekhibhodi ye-Google"</string>
     <string name="cloud_sync_summary" msgid="7684887161145650857">"Ukuvumelanisa kuvuliwe"</string>

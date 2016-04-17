@@ -32,7 +32,6 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.inputmethodservice.InputMethodService;
 import android.media.AudioManager;
-import android.os.Debug;
 import android.os.IBinder;
 import android.os.Message;
 import android.preference.PreferenceManager;
@@ -104,16 +103,12 @@ import javax.annotation.Nonnull;
 
 import com.phonemetra.turbo.keyboard.R;
 
-/**
- * Input method implementation for Qwerty'ish keyboard.
- */
 public class LatinIME extends InputMethodService implements KeyboardActionListener,
         SuggestionStripView.Listener, SuggestionStripViewAccessor,
         DictionaryFacilitator.DictionaryInitializationListener,
         PermissionsManager.PermissionsResultCallback {
-    static final String TAG = LatinIME.class.getSimpleName();
-    private static final boolean TRACE = false;
-
+    static final String TAG = "LatinIME";
+ 
     private static final int EXTENDED_TOUCHABLE_REGION_HEIGHT = 100;
     private static final int PERIOD_FOR_AUDIO_AND_HAPTIC_FEEDBACK_IN_KEY_REPEAT = 2;
     private static final int PENDING_IMS_CALLBACK_DURATION_MILLIS = 800;
@@ -543,7 +538,6 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         mStatsUtilsManager = StatsUtilsManager.getInstance();
         mIsHardwareAcceleratedDrawingEnabled =
                 InputMethodServiceCompatUtils.enableHardwareAcceleration(this);
-        Log.i(TAG, "Hardware accelerated drawing: " + mIsHardwareAcceleratedDrawingEnabled);
     }
 
     @Override
@@ -961,7 +955,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
                 currentSettingsValues.mGestureTrailEnabled,
                 currentSettingsValues.mGestureFloatingPreviewTextEnabled);
 
-        if (TRACE) Debug.startMethodTracing("/data/trace/latinime");
+        
     }
 
     @Override
@@ -1063,7 +1057,6 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
     public void hideWindow() {
         mKeyboardSwitcher.onHideWindow();
 
-        if (TRACE) Debug.stopMethodTracing();
         if (isShowingOptionDialog()) {
             mOptionsDialog.dismiss();
             mOptionsDialog = null;
@@ -1716,7 +1709,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
     }
 
     private void showSubtypeSelectorAndSettings() {
-        final CharSequence title = getString(R.string.english_ime_input_options);
+        final CharSequence title = getString(R.string.input_options);
         // TODO: Should use new string "Select active input modes".
         final CharSequence languageSelectionTitle = getString(R.string.language_selection_title);
         final CharSequence[] items = new CharSequence[] {

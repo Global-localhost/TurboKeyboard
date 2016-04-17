@@ -20,7 +20,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="english_ime_input_options" msgid="3909945612939668554">"ਇਨਪੁਟ ਚੋਣਾਂ"</string>
+    <string name="input_options" msgid="3909945612939668554">"ਇਨਪੁਟ ਚੋਣਾਂ"</string>
     <string name="use_contacts_for_spellchecking_option_title" msgid="5374120998125353898">"ਸੰਪਰਕ ਨਾਮ ਦੇਖੋ"</string>
     <string name="use_contacts_for_spellchecking_option_summary" msgid="8754413382543307713">"ਸਪੈਲ ਚੈਕਰ ਤੁਹਾਡੀ ਸੰਪਰਕ ਸੂਚੀ ਵਿੱਚੋਂ ਐਂਟਰੀਜ ਵਰਤਦਾ ਹੈ"</string>
     <string name="vibrate_on_keypress" msgid="5258079494276955460">"ਕੀਪ੍ਰੈਸ ਤੇ ਵਾਈਬ੍ਰੇਟ"</string>
@@ -28,11 +28,10 @@
     <string name="popup_on_keypress" msgid="123894815723512944">"ਕੀਪ੍ਰੈਸ ਤੇ ਪੌਪਅਪ"</string>
     <string name="settings_screen_preferences" msgid="2696713156722014624">"ਤਰਜੀਹਾਂ"</string>
     <string name="settings_screen_accounts" msgid="2786418968536696670">"ਖਾਤੇ &amp; ਪ੍ਰਾਈਵੇਸੀ"</string>
-    <string name="settings_screen_appearance" msgid="7358046399111611615">"ਪ੍ਰਗਟਾਅ &amp; ਲੇਆਉਟਸ"</string>
     <string name="settings_screen_gesture" msgid="8826372746901183556">"ਸੰਕੇਤ ਟਾਈਪਿੰਗ"</string>
     <string name="settings_screen_correction" msgid="1616818407747682955">"ਟੈਕਸਟ ਸੁਧਾਈ"</string>
     <string name="settings_screen_advanced" msgid="7472408607625972994">"ਉੱਨਤ"</string>
-    <string name="settings_screen_theme" msgid="2137262503543943871">"ਵਿਸ਼ਾ"</string>
+    <string name="settings_screen_themes" msgid="2137262503543943871">"ਵਿਸ਼ਾ"</string>
     <string name="enable_split_keyboard" msgid="4177264923999493614">"ਸਪਲਿਟ ਕੀਬੋਰਡ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ"</string>
     <string name="cloud_sync_title" msgid="8579271074443847055">"Google ਕੀਬੋਰਡ ਸਿੰਕ"</string>
     <string name="cloud_sync_summary" msgid="7684887161145650857">"ਸਿੰਕ ਚਾਲੂ ਕੀਤਾ ਗਿਆ ਹੈ"</string>

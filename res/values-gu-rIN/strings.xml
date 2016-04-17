@@ -20,7 +20,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="english_ime_input_options" msgid="3909945612939668554">"ઇનપુટ વિકલ્પો"</string>
+    <string name="input_options" msgid="3909945612939668554">"ઇનપુટ વિકલ્પો"</string>
     <string name="use_contacts_for_spellchecking_option_title" msgid="5374120998125353898">"સંપર્ક નામ શોધો"</string>
     <string name="use_contacts_for_spellchecking_option_summary" msgid="8754413382543307713">"જોડણી-પરીક્ષક તમારી સંપર્ક સૂચિમાંથી એન્ટ્રીઝનો ઉપયોગ કરે છે"</string>
     <string name="vibrate_on_keypress" msgid="5258079494276955460">"કીપ્રેસ પર વાઇબ્રેટ કરો"</string>
@@ -28,11 +28,10 @@
     <string name="popup_on_keypress" msgid="123894815723512944">"કીપ્રેસ પર પોપઅપ"</string>
     <string name="settings_screen_preferences" msgid="2696713156722014624">"પસંદગી"</string>
     <string name="settings_screen_accounts" msgid="2786418968536696670">"એકાઉન્ટ્સ અને ગોપનીયતા"</string>
-    <string name="settings_screen_appearance" msgid="7358046399111611615">"દેખાવ અને લેઆઉટ્સ"</string>
     <string name="settings_screen_gesture" msgid="8826372746901183556">"હાવભાવથી ટાઇપિંગ"</string>
     <string name="settings_screen_correction" msgid="1616818407747682955">"ટેક્સ્ટ સુધારણા"</string>
     <string name="settings_screen_advanced" msgid="7472408607625972994">"વિગતવાર"</string>
-    <string name="settings_screen_theme" msgid="2137262503543943871">"થીમ"</string>
+    <string name="settings_screen_themes" msgid="2137262503543943871">"થીમ"</string>
     <string name="enable_split_keyboard" msgid="4177264923999493614">"વિભાજિત કીબોર્ડ સક્ષમ કરો"</string>
     <string name="cloud_sync_title" msgid="8579271074443847055">"Google કીબોર્ડ સમન્વયન"</string>
     <string name="cloud_sync_summary" msgid="7684887161145650857">"સમન્વયન ચાલુ કરેલ છે"</string>

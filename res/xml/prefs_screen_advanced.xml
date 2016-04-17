@@ -48,10 +48,4 @@
         android:title="@string/show_setup_wizard_icon"
         android:summary="@string/show_setup_wizard_icon_summary"
         android:persistent="true" />
-    <PreferenceScreen
-        android:fragment="com.phonemetra.turbo.keyboard.latin.settings.DebugSettingsFragment"
-        android:key="screen_debug"
-        android:title="Debug settings"
-        android:defaultValue="false"
-        android:persistent="true" />
 </PreferenceScreen>

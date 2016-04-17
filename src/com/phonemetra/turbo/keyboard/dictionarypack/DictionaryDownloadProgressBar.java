@@ -29,7 +29,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 public class DictionaryDownloadProgressBar extends ProgressBar {
-    private static final String TAG = DictionaryDownloadProgressBar.class.getSimpleName();
+    private static final String TAG = "DictionaryDownloadProgressBar";
     private static final int NOT_A_DOWNLOADMANAGER_PENDING_ID = 0;
 
     private String mClientId;

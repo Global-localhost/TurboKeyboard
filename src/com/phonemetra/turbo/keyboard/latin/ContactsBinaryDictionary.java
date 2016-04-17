@@ -44,9 +44,6 @@ public class ContactsBinaryDictionary extends ExpandableBinaryDictionary
     private static final boolean DEBUG = false;
     private static final boolean DEBUG_DUMP = false;
 
-    /**
-     * Whether to use "firstname lastname" in bigram predictions.
-     */
     private final boolean mUseFirstLastBigrams;
     private final ContactsManager mContactsManager;
 

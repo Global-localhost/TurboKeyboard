@@ -38,7 +38,6 @@ import com.phonemetra.turbo.keyboard.internal.UniqueKeysCache;
 import com.phonemetra.turbo.keyboard.latin.InputAttributes;
 import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.RichInputMethodSubtype;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 import com.phonemetra.turbo.keyboard.latin.utils.InputTypeUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.ScriptUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.SubtypeLocaleUtils;
@@ -62,7 +61,7 @@ import javax.annotation.Nullable;
  * {@link android.view.inputmethod.EditorInfo}.
  */
 public final class KeyboardLayoutSet {
-    private static final String TAG = KeyboardLayoutSet.class.getSimpleName();
+    private static final String TAG = "KeyboardLayoutSet";
     private static final boolean DEBUG_CACHE = false;
 
     private static final String TAG_KEYBOARD_SET = "KeyboardLayoutSet";
@@ -257,7 +256,6 @@ public final class KeyboardLayoutSet {
         private final Context mContext;
         private final String mPackageName;
         private final Resources mResources;
-
         private final Params mParams = new Params();
 
         private static final EditorInfo EMPTY_EDITOR_INFO = new EditorInfo();

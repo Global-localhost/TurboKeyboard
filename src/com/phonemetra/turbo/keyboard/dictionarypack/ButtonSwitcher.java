@@ -149,7 +149,6 @@ public class ButtonSwitcher extends FrameLayout {
     public void setInternalOnClickListener(final OnClickListener listener) {
         mOnClickListener = listener;
         if (null != mInstallButton) {
-            // Already laid out : do it now
             mInstallButton.setOnClickListener(mOnClickListener);
             mCancelButton.setOnClickListener(mOnClickListener);
             mDeleteButton.setOnClickListener(mOnClickListener);

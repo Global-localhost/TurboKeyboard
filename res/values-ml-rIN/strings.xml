@@ -20,7 +20,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="english_ime_input_options" msgid="3909945612939668554">"ടൈപ്പിംഗ് ഓപ്‌ഷനുകൾ"</string>
+    <string name="input_options" msgid="3909945612939668554">"ടൈപ്പിംഗ് ഓപ്‌ഷനുകൾ"</string>
     <string name="use_contacts_for_spellchecking_option_title" msgid="5374120998125353898">"കോണ്ടാക്റ്റ് പേരുകൾ തിരയൂ"</string>
     <string name="use_contacts_for_spellchecking_option_summary" msgid="8754413382543307713">"നിങ്ങളുടെ കോൺടാക്‌റ്റ് ലിസ്‌റ്റിൽ നിന്നുള്ള എൻട്രികൾ സ്പെൽചെക്കർ ഉപയോഗിക്കുന്നു"</string>
     <string name="vibrate_on_keypress" msgid="5258079494276955460">"കീ അമർത്തുമ്പോൾ വൈബ്രേറ്റുചെയ്യുക"</string>
@@ -28,11 +28,10 @@
     <string name="popup_on_keypress" msgid="123894815723512944">"കീയമർത്തുമ്പോൾ പോപ്പപ്പ്"</string>
     <string name="settings_screen_preferences" msgid="2696713156722014624">"മുൻഗണനകൾ"</string>
     <string name="settings_screen_accounts" msgid="2786418968536696670">"അക്കൗണ്ടുകളും സമന്വയവും"</string>
-    <string name="settings_screen_appearance" msgid="7358046399111611615">"രൂപഭാവവും ലേഔട്ടുകളും"</string>
     <string name="settings_screen_gesture" msgid="8826372746901183556">"ഗെസ്ചർ ടൈപ്പിംഗ്"</string>
     <string name="settings_screen_correction" msgid="1616818407747682955">"വാചകം തിരുത്തൽ"</string>
     <string name="settings_screen_advanced" msgid="7472408607625972994">"വിപുലം"</string>
-    <string name="settings_screen_theme" msgid="2137262503543943871">"തീം"</string>
+    <string name="settings_screen_themes" msgid="2137262503543943871">"തീം"</string>
     <string name="enable_split_keyboard" msgid="4177264923999493614">"സ്‌പ്‌ലിറ്റ് കീബോർഡ് പ്രവർത്തനക്ഷമമാക്കുക"</string>
     <string name="cloud_sync_title" msgid="8579271074443847055">"Google കീബോർഡ് സമന്വയം"</string>
     <string name="cloud_sync_summary" msgid="7684887161145650857">"സമന്വയം ഓണാണ്"</string>

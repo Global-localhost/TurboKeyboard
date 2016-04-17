@@ -18,8 +18,16 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    
+    <string name="application_name" translatable="false">Turbo Keyboard™</string>
+	<string name="application_copyright" translatable="false">Copyright \u00A9 2016 Phonemetra</string>
+	<string name="application_version" translatable="false">0.0.7</string>
+	<string name="spell_checker_service_name">Spell Checker</string>
+    <string name="app_settings">Turbo Keyboard™ Settings</string>
+    <string name="spell_checker_settings">Spell Checker Settings</string>
+    
     <!-- Title for Latin keyboard input options dialog [CHAR LIMIT=25] -->
-    <string name="english_ime_input_options">Input options</string>
+    <string name="input_options">Input options</string>
 
     <!-- Title for the spell checker option to turn on/off contact names lookup [CHAR LIMIT=25] -->
     <string name="use_contacts_for_spellchecking_option_title">Look up contact names</string>
@@ -38,18 +46,12 @@
 
     <!-- Settings screen title for preferences [CHAR LIMIT=33]-->
     <string name="settings_screen_preferences">Preferences</string>
-    <!-- Settings screen title for accounts and privacy preferences [CHAR LIMIT=33]-->
     <string name="settings_screen_accounts">Accounts &amp; Privacy</string>
-    <!-- Settings screen title for appearance & layouts preferences [CHAR LIMIT=33] -->
-    <string name="settings_screen_appearance">Appearance &amp; Layouts</string>
-    <!-- Settings screen title for gesture typing preferences [CHAR_LIMIT=33] -->
-    <string name="settings_screen_gesture">Gesture Typing</string>
-    <!-- Settings screen title for text correction options [CHAR_LIMIT=33] -->
-    <string name="settings_screen_correction">Text correction</string>
-    <!-- Settings screen title for advanced settings [CHAR LIMIT=33] -->
+    <string name="settings_screen_themes">Themes</string>
+    <string name="settings_screen_gesture">Gestures</string>
+    <string name="settings_screen_correction">Dictionaries</string>
     <string name="settings_screen_advanced">Advanced</string>
-    <!-- Settings screen title for keyboard theme settings [CHAR LIMIT=33] -->
-    <string name="settings_screen_theme">Theme</string>
+    <string name="settings_screen_build">Build</string>
 
     <!--  Option for enabling or disabling the split keyboard layout. [CHAR LIMIT=65]-->
     <string name="enable_split_keyboard">Enable split keyboard</string>

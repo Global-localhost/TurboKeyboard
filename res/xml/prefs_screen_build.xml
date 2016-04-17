@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen 
+xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:latin="http://schemas.android.com/apk/res/com.phonemetra.turbo.keyboard"
+    android:title="@string/settings_screen_build"
+    android:key="screen_build"> 
+    
+    <Preference
+      android:key="build"
+      android:summary="@string/application_copyright"
+      android:title="@string/application_version" />
+
+</PreferenceScreen>

@@ -92,7 +92,7 @@ public final class ActionBatch {
      * An action that starts downloading an available word list.
      */
     public static final class StartDownloadAction implements Action {
-        static final String TAG = "DictionaryProvider:" + StartDownloadAction.class.getSimpleName();
+        static final String TAG = "DictionaryProvider: StartDownloadAction";
 
         private final String mClientId;
         // The data to download. May not be null.

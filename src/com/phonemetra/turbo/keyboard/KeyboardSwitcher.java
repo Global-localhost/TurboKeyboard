@@ -71,7 +71,7 @@ public final class KeyboardSwitcher implements KeyboardState.SwitchActions {
     }
 
     private KeyboardSwitcher() {
-        // Intentional empty constructor for singleton.
+      
     }
 
     public static void init(final LatinIME latinIme) {

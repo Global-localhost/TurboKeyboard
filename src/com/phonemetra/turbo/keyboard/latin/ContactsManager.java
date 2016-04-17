@@ -25,8 +25,6 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
-import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

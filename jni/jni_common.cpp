@@ -19,9 +19,9 @@
 #include "jni_common.h"
 
 #include "com_phonemetra_turbo_keyboard_ProximityInfo.h"
-#include "com_phonemetra_turbo_latin_BinaryDictionary.h"
-#include "com_phonemetra_turbo_latin_BinaryDictionaryUtils.h"
-#include "com_phonemetra_turbo_latin_DicTraverseSession.h"
+#include "com_phonemetra_turbo_keyboard_latin_BinaryDictionary.h"
+#include "com_phonemetra_turbo_keyboard_latin_BinaryDictionaryUtils.h"
+#include "com_phonemetra_turbo_keyboard_latin_DicTraverseSession.h"
 #include "defines.h"
 
 /*

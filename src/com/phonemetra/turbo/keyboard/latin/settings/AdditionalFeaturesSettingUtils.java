@@ -29,7 +29,6 @@ import javax.annotation.Nonnull;
 /**
  * Utility class for managing additional features settings.
  */
-@SuppressWarnings("unused")
 public class AdditionalFeaturesSettingUtils {
     public static final int ADDITIONAL_FEATURES_SETTINGS_SIZE = 0;
 
@@ -39,12 +38,10 @@ public class AdditionalFeaturesSettingUtils {
 
     public static void addAdditionalFeaturesPreferences(
             final Context context, final PreferenceFragment settingsFragment) {
-        // do nothing.
     }
 
     public static void readAdditionalFeaturesPreferencesIntoArray(final Context context,
             final SharedPreferences prefs, final int[] additionalFeaturesPreferences) {
-        // do nothing.
     }
 
     @Nonnull

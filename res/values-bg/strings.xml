@@ -20,7 +20,10 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="english_ime_input_options" msgid="3909945612939668554">"Опции за въвеждане"</string>
+    <string name="spell_checker_service_name" msgid="1254221805440242662">"Програма за правописна проверка"</string>
+    <string name="app_settings" msgid="5760361067176802794">"Настройки на клавиатурата"</string>
+    <string name="spell_checker_settings" msgid="6123949487832861885">"Настройки на програмата за правописна проверка"</string>
+    <string name="input_options" msgid="3909945612939668554">"Опции за въвеждане"</string>
     <string name="use_contacts_for_spellchecking_option_title" msgid="5374120998125353898">"Търсене на имена"</string>
     <string name="use_contacts_for_spellchecking_option_summary" msgid="8754413382543307713">"За проверка на правописа се ползват записи от списъка с контакти"</string>
     <string name="vibrate_on_keypress" msgid="5258079494276955460">"Да вибрира при натискане на клавиш"</string>
@@ -28,11 +31,10 @@
     <string name="popup_on_keypress" msgid="123894815723512944">"Изск. прозорец при натискане на клавиш"</string>
     <string name="settings_screen_preferences" msgid="2696713156722014624">"Предпочитания"</string>
     <string name="settings_screen_accounts" msgid="2786418968536696670">"Профили и поверителност"</string>
-    <string name="settings_screen_appearance" msgid="7358046399111611615">"Облик и оформления"</string>
     <string name="settings_screen_gesture" msgid="8826372746901183556">"Въвеждане чрез жест"</string>
     <string name="settings_screen_correction" msgid="1616818407747682955">"Коригиране на текст"</string>
     <string name="settings_screen_advanced" msgid="7472408607625972994">"Разширени"</string>
-    <string name="settings_screen_theme" msgid="2137262503543943871">"Тема"</string>
+    <string name="settings_screen_themes" msgid="2137262503543943871">"Тема"</string>
     <string name="enable_split_keyboard" msgid="4177264923999493614">"Активиране на разделената клавиатура"</string>
     <string name="cloud_sync_title" msgid="8579271074443847055">"Клавиатура на Google: Синхрон."</string>
     <string name="cloud_sync_summary" msgid="7684887161145650857">"Синхронизирането е включено"</string>

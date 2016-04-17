@@ -20,7 +20,10 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="english_ime_input_options" msgid="3909945612939668554">"ইনপুট বিকল্পগুলি"</string>
+    <string name="spell_checker_service_name" msgid="1254221805440242662">"বানান পরীক্ষক "</string>
+    <string name="app_settings" msgid="5760361067176802794">"কীবোর্ড সেটিংস "</string>
+    <string name="spell_checker_settings" msgid="6123949487832861885">"বানান পরীক্ষক সেটিংস "</string>
+    <string name="input_options" msgid="3909945612939668554">"ইনপুট বিকল্পগুলি"</string>
     <string name="use_contacts_for_spellchecking_option_title" msgid="5374120998125353898">"পরিচিতি নাম খুঁজুন"</string>
     <string name="use_contacts_for_spellchecking_option_summary" msgid="8754413382543307713">"বানান পরীক্ষক আপনার পরিচিতি তালিকা থেকে এন্ট্রি ব্যবহার করে"</string>
     <string name="vibrate_on_keypress" msgid="5258079494276955460">"কীপ্রেস এর সময় কম্পন"</string>
@@ -28,11 +31,10 @@
     <string name="popup_on_keypress" msgid="123894815723512944">"কীপ্রেস এর ফলে পপআপ"</string>
     <string name="settings_screen_preferences" msgid="2696713156722014624">"পছন্দসমূহ"</string>
     <string name="settings_screen_accounts" msgid="2786418968536696670">"অ্যাকাউন্টগুলি ও গোপনীয়তা"</string>
-    <string name="settings_screen_appearance" msgid="7358046399111611615">"প্রদর্শন ও লেআউটগুলি"</string>
     <string name="settings_screen_gesture" msgid="8826372746901183556">"অঙ্গভঙ্গির মাধ্যমে টাইপিং"</string>
     <string name="settings_screen_correction" msgid="1616818407747682955">"পাঠ্য সংশোধন"</string>
     <string name="settings_screen_advanced" msgid="7472408607625972994">"উন্নত"</string>
-    <string name="settings_screen_theme" msgid="2137262503543943871">"থিম"</string>
+    <string name="settings_screen_themes" msgid="2137262503543943871">"থিম"</string>
     <string name="enable_split_keyboard" msgid="4177264923999493614">"বিভক্ত কীবোর্ড সক্ষম করুন"</string>
     <string name="cloud_sync_title" msgid="8579271074443847055">"Google কীবোর্ড সিঙ্ক"</string>
     <string name="cloud_sync_summary" msgid="7684887161145650857">"সিঙ্ক চালু করা হয়েছে"</string>

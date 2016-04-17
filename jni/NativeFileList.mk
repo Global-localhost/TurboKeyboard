@@ -14,9 +14,9 @@
 
 LATIN_IME_JNI_SRC_FILES := \
     com_phonemetra_turbo_keyboard_ProximityInfo.cpp \
-    com_phonemetra_turbo_latin_BinaryDictionary.cpp \
-    com_phonemetra_turbo_latin_BinaryDictionaryUtils.cpp \
-    com_phonemetra_turbo_latin_DicTraverseSession.cpp \
+    com_phonemetra_turbo_keyboard_latin_BinaryDictionary.cpp \
+    com_phonemetra_turbo_keyboard_latin_BinaryDictionaryUtils.cpp \
+    com_phonemetra_turbo_keyboard_latin_DicTraverseSession.cpp \
     jni_common.cpp
 
 LATIN_IME_CORE_SRC_FILES := \

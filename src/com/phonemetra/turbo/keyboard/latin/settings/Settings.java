@@ -23,8 +23,6 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.util.Log;
-
 import com.phonemetra.turbo.keyboard.compat.BuildCompatUtils;
 import com.phonemetra.turbo.keyboard.latin.AudioAndHapticFeedbackManager;
 import com.phonemetra.turbo.keyboard.latin.InputAttributes;
@@ -44,7 +42,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import javax.annotation.Nonnull;
 
 public final class Settings implements SharedPreferences.OnSharedPreferenceChangeListener {
-    private static final String TAG = Settings.class.getSimpleName();
+    
     // Settings screens
     public static final String SCREEN_ACCOUNTS = "screen_accounts";
     public static final String SCREEN_THEME = "screen_theme";
@@ -138,7 +136,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
     }
 
     private Settings() {
-        // Intentional empty constructor for singleton.
+         
     }
 
     private void onCreate(final Context context) {
@@ -157,14 +155,13 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
     public void onSharedPreferenceChanged(final SharedPreferences prefs, final String key) {
         mSettingsValuesLock.lock();
         try {
-            if (mSettingsValues == null) {
-                // TODO: Introduce a static function to register this class and ensure that
-                // loadSettings must be called before "onSharedPreferenceChanged" is called.
-                Log.w(TAG, "onSharedPreferenceChanged called before loadSettings.");
-                return;
-            }
-            loadSettings(mContext, mSettingsValues.mLocale, mSettingsValues.mInputAttributes);
-            StatsUtils.onLoadSettings(mSettingsValues);
+            if (mSettingsValues != null) {
+            	loadSettings(mContext, mSettingsValues.mLocale, mSettingsValues.mInputAttributes);
+                StatsUtils.onLoadSettings(mSettingsValues);     
+            } else {
+            	return;
+            }	
+            
         } finally {
             mSettingsValuesLock.unlock();
         }
@@ -188,7 +185,6 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
         }
     }
 
-    // TODO: Remove this method and add proxy method to SettingsValues.
     public SettingsValues getCurrent() {
         return mSettingsValues;
     }
@@ -348,8 +344,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
 
     public static float readKeyboardHeight(final SharedPreferences prefs,
             final float defaultValue) {
-        final float percentage = prefs.getFloat(
-                DebugSettings.PREF_KEYBOARD_HEIGHT_SCALE, UNDEFINED_PREFERENCE_VALUE_FLOAT);
+        final float percentage = prefs.getFloat("pref_keyboard_height_scale", UNDEFINED_PREFERENCE_VALUE_FLOAT);
         return (percentage != UNDEFINED_PREFERENCE_VALUE_FLOAT) ? percentage : defaultValue;
     }
 

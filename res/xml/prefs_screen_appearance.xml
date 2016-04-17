@@ -17,11 +17,11 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:key="screen_appearance"
-    android:title="@string/settings_screen_appearance">
+    android:title="@string/settings_screen_themes">
     <PreferenceScreen
         android:fragment="com.phonemetra.turbo.keyboard.latin.settings.ThemeSettingsFragment"
         android:key="screen_theme"
-        android:title="@string/settings_screen_theme" />
+        android:title="@string/settings_screen_themes" />
     <PreferenceScreen
         android:fragment="com.phonemetra.turbo.keyboard.latin.settings.CustomInputStyleSettingsFragment"
         android:key="custom_input_styles"

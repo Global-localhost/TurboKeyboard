@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
 
 public final class PointerTracker implements PointerTrackerQueue.Element,
         BatchInputArbiterListener {
-    private static final String TAG = PointerTracker.class.getSimpleName();
+    private static final String TAG = "PointerTracker";
     private static final boolean DEBUG_EVENT = false;
     private static final boolean DEBUG_MOVE_EVENT = false;
     private static final boolean DEBUG_LISTENER = false;

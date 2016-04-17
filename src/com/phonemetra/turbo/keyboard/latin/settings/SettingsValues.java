@@ -136,7 +136,7 @@ public class SettingsValues {
         mSoundOn = Settings.readKeypressSoundEnabled(prefs, res);
         mKeyPreviewPopupOn = Settings.readKeyPreviewPopupEnabled(prefs, res);
         mSlidingKeyInputPreviewEnabled = prefs.getBoolean(
-                DebugSettings.PREF_SLIDING_KEY_INPUT_PREVIEW, true);
+        		"pref_sliding_key_input_preview", true);
         mShowsVoiceInputKey = needsToShowVoiceInputKey(prefs, res)
                 && mInputAttributes.mShouldShowVoiceInputKey
                 && Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN;
@@ -162,7 +162,7 @@ public class SettingsValues {
         mScreenMetrics = Settings.readScreenMetrics(res);
 
         mShouldShowLxxSuggestionUi = Settings.SHOULD_SHOW_LXX_SUGGESTION_UI
-                && prefs.getBoolean(DebugSettings.PREF_SHOULD_SHOW_LXX_SUGGESTION_UI, true);
+                && prefs.getBoolean("pref_should_show_lxx_suggestion_ui", true);
         // Compute other readable settings
         mKeyLongpressTimeout = Settings.readKeyLongpressTimeout(prefs, res);
         mKeypressVibrationDuration = Settings.readKeypressVibrationDuration(prefs, res);
@@ -187,30 +187,30 @@ public class SettingsValues {
         mSuggestionsEnabledPerUserSettings = readSuggestionsEnabled(prefs);
         mIsInternal = Settings.isInternal(prefs);
         mHasCustomKeyPreviewAnimationParams = prefs.getBoolean(
-                DebugSettings.PREF_HAS_CUSTOM_KEY_PREVIEW_ANIMATION_PARAMS, false);
-        mHasKeyboardResize = prefs.getBoolean(DebugSettings.PREF_RESIZE_KEYBOARD, false);
+        		 "pref_has_custom_key_preview_animation_params", false);
+        mHasKeyboardResize = prefs.getBoolean("pref_resize_keyboard", false);
         mKeyboardHeightScale = Settings.readKeyboardHeight(prefs, DEFAULT_SIZE_SCALE);
         mKeyPreviewShowUpDuration = Settings.readKeyPreviewAnimationDuration(
-                prefs, DebugSettings.PREF_KEY_PREVIEW_SHOW_UP_DURATION,
+                prefs,  "pref_key_preview_show_up_duration",
                 res.getInteger(R.integer.config_key_preview_show_up_duration));
         mKeyPreviewDismissDuration = Settings.readKeyPreviewAnimationDuration(
-                prefs, DebugSettings.PREF_KEY_PREVIEW_DISMISS_DURATION,
+                prefs,  "pref_key_preview_dismiss_duration",
                 res.getInteger(R.integer.config_key_preview_dismiss_duration));
         final float defaultKeyPreviewShowUpStartScale = ResourceUtils.getFloatFromFraction(
                 res, R.fraction.config_key_preview_show_up_start_scale);
         final float defaultKeyPreviewDismissEndScale = ResourceUtils.getFloatFromFraction(
                 res, R.fraction.config_key_preview_dismiss_end_scale);
         mKeyPreviewShowUpStartXScale = Settings.readKeyPreviewAnimationScale(
-                prefs, DebugSettings.PREF_KEY_PREVIEW_SHOW_UP_START_X_SCALE,
+                prefs, "pref_key_preview_show_up_start_x_scale",
                 defaultKeyPreviewShowUpStartScale);
         mKeyPreviewShowUpStartYScale = Settings.readKeyPreviewAnimationScale(
-                prefs, DebugSettings.PREF_KEY_PREVIEW_SHOW_UP_START_Y_SCALE,
+                prefs, "pref_key_preview_show_up_start_y_scale",
                 defaultKeyPreviewShowUpStartScale);
         mKeyPreviewDismissEndXScale = Settings.readKeyPreviewAnimationScale(
-                prefs, DebugSettings.PREF_KEY_PREVIEW_DISMISS_END_X_SCALE,
+                prefs,  "pref_key_preview_dismiss_end_x_scale",
                 defaultKeyPreviewDismissEndScale);
         mKeyPreviewDismissEndYScale = Settings.readKeyPreviewAnimationScale(
-                prefs, DebugSettings.PREF_KEY_PREVIEW_DISMISS_END_Y_SCALE,
+                prefs,  "pref_key_preview_dismiss_end_y_scale",
                 defaultKeyPreviewDismissEndScale);
         mDisplayOrientation = res.getConfiguration().orientation;
         mAppWorkarounds = new AsyncResultHolder<>("AppWorkarounds");
