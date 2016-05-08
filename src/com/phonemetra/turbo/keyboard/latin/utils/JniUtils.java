@@ -21,27 +21,26 @@ import android.util.Log;
 import com.phonemetra.turbo.keyboard.latin.define.JniLibName;
 
 public final class JniUtils {
-    private static final String TAG = JniUtils.class.getSimpleName();
+	
+	private static final String TAG = "JniUtils";
+	public static boolean mHaveGestureLib = false;
 
-    public static boolean mHaveGestureLib = false;
-    static {
-        try {
-            System.loadLibrary(JniLibName.JNI_LIB_NAME2);
-            mHaveGestureLib = true;
-        } catch (UnsatisfiedLinkError ue) {
-            try {
-                System.loadLibrary(JniLibName.JNI_LIB_NAME);
-            } catch (UnsatisfiedLinkError ule) {
-                Log.e(TAG, "Could not load native library " + JniLibName.JNI_LIB_NAME, ule);
-            }
-        }
-    }
+	private JniUtils() {
 
-    private JniUtils() {
-        // This utility class is not publicly instantiable.
-    }
+	}
 
-    public static void loadNativeLibrary() {
-        // Ensures the static initializer is called
-    }
+	public static void loadNativeLibrary() {
+
+		try {
+			System.loadLibrary(JniLibName.JNI_LIB_NAME2);
+			mHaveGestureLib = true;
+		} catch (UnsatisfiedLinkError ue) {
+			try {
+				System.loadLibrary(JniLibName.JNI_LIB_NAME);
+			 } catch (UnsatisfiedLinkError e) {
+				Log.e(TAG, "Could not load native library "
+						+ JniLibName.JNI_LIB_NAME, e);
+			}
+		}
+	}
 }

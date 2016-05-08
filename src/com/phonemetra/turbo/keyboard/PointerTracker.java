@@ -37,7 +37,6 @@ import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
 import com.phonemetra.turbo.keyboard.latin.common.CoordinateUtils;
 import com.phonemetra.turbo.keyboard.latin.common.InputPointers;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 import com.phonemetra.turbo.keyboard.latin.settings.Settings;
 import com.phonemetra.turbo.keyboard.latin.utils.ResourceUtils;
 
@@ -52,7 +51,7 @@ public final class PointerTracker implements PointerTrackerQueue.Element,
     private static final boolean DEBUG_EVENT = false;
     private static final boolean DEBUG_MOVE_EVENT = false;
     private static final boolean DEBUG_LISTENER = false;
-    private static boolean DEBUG_MODE = DebugFlags.DEBUG_ENABLED || DEBUG_EVENT;
+    private static boolean DEBUG_MODE = false;
 
     static final class PointerTrackerParams {
         public final boolean mKeySelectionByDraggingFinger;

@@ -22,12 +22,11 @@ import android.util.Log;
 
 import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 
 // This hack is applied to certain classes of tablets.
 public final class BogusMoveEventDetector {
     private static final String TAG = BogusMoveEventDetector.class.getSimpleName();
-    private static final boolean DEBUG_MODE = DebugFlags.DEBUG_ENABLED;
+    private static final boolean DEBUG_MODE = false;
 
     // Move these thresholds to resource.
     // These thresholds' unit is a diagonal length of a key.

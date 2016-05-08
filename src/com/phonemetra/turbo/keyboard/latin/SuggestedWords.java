@@ -21,7 +21,6 @@ import android.view.inputmethod.CompletionInfo;
 
 import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -158,9 +157,7 @@ public class SuggestedWords {
     }
 
     public String getDebugString(final int pos) {
-        if (!DebugFlags.DEBUG_ENABLED) {
-            return null;
-        }
+        
         final SuggestedWordInfo wordInfo = getInfo(pos);
         if (wordInfo == null) {
             return null;

@@ -51,14 +51,7 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-/**
- * Enrichment class for InputConnection to simplify interaction and add functionality.
- *
- * This class serves as a wrapper to be able to simply add hooks to any calls to the underlying
- * InputConnection. It also keeps track of a number of things to avoid having to call upon IPC
- * all the time to find out what text is in the buffer, when we need it to determine caps mode
- * for example.
- */
+
 public final class RichInputConnection implements PrivateCommandPerformer {
     private static final String TAG = "RichInputConnection";
     private static final boolean DBG = false;
@@ -72,12 +65,14 @@ public final class RichInputConnection implements PrivateCommandPerformer {
      * The amount of time a {@link #reloadTextCache} call needs to take for the keyboard to enter
      * the {@link #hasSlowInputConnection} state.
      */
-    private static final long SLOW_INPUT_CONNECTION_ON_FULL_RELOAD_MS = 1000;
+    //private static final long SLOW_INPUT_CONNECTION_ON_FULL_RELOAD_MS = 1000;
+    private static final long SLOW_INPUT_CONNECTION_ON_FULL_RELOAD_MS = 500;
     /**
      * The amount of time a {@link #getTextBeforeCursor} or {@link #getTextAfterCursor} call needs
      * to take for the keyboard to enter the {@link #hasSlowInputConnection} state.
      */
-    private static final long SLOW_INPUT_CONNECTION_ON_PARTIAL_RELOAD_MS = 200;
+    //private static final long SLOW_INPUT_CONNECTION_ON_PARTIAL_RELOAD_MS = 200;
+    private static final long SLOW_INPUT_CONNECTION_ON_PARTIAL_RELOAD_MS = 100;
 
     private static final int OPERATION_GET_TEXT_BEFORE_CURSOR = 0;
     private static final int OPERATION_GET_TEXT_AFTER_CURSOR = 1;

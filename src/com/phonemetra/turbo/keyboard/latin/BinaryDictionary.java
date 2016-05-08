@@ -49,9 +49,8 @@ import javax.annotation.Nonnull;
 /**
  * Implements a static, compacted, binary dictionary of standard words.
  */
-// TODO: All methods which should be locked need to have a suffix "Locked".
 public final class BinaryDictionary extends Dictionary {
-    private static final String TAG = BinaryDictionary.class.getSimpleName();
+    private static final String TAG = "BinaryDictionary";
 
     // The cutoff returned by native for auto-commit confidence.
     // Must be equal to CONFIDENCE_TO_AUTO_COMMIT in native/jni/src/defines.h
@@ -98,8 +97,6 @@ public final class BinaryDictionary extends Dictionary {
 
     private final SparseArray<DicTraverseSession> mDicTraverseSessions = new SparseArray<>();
 
-    // TODO: There should be a way to remove used DicTraverseSession objects from
-    // {@code mDicTraverseSessions}.
     private DicTraverseSession getTraverseSession(final int traverseSessionId) {
         synchronized(mDicTraverseSessions) {
             DicTraverseSession traverseSession = mDicTraverseSessions.get(traverseSessionId);
@@ -657,7 +654,6 @@ public final class BinaryDictionary extends Dictionary {
         }
     }
 
-    // TODO: Manage BinaryDictionary instances without using WeakReference or something.
     @Override
     protected void finalize() throws Throwable {
         try {

@@ -27,7 +27,6 @@ import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords;
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords.SuggestedWordInfo;
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -44,16 +43,8 @@ public final class SuggestionSpanUtils {
     private static final Integer OBJ_FLAG_AUTO_CORRECTION = (Integer) CompatUtils.getFieldValue(
             null /* receiver */, null /* defaultValue */, FIELD_FLAG_AUTO_CORRECTION);
 
-    static {
-        if (DebugFlags.DEBUG_ENABLED) {
-            if (OBJ_FLAG_AUTO_CORRECTION == null) {
-                throw new RuntimeException("Field is accidentially null.");
-            }
-        }
-    }
-
     private SuggestionSpanUtils() {
-        // This utility class is not publicly instantiable.
+       
     }
 
     @UsedForTesting

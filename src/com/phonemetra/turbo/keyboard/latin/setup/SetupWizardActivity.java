@@ -44,9 +44,8 @@ import java.util.ArrayList;
 
 import javax.annotation.Nonnull;
 
-// TODO: Use Fragment to implement welcome screen and setup steps.
 public final class SetupWizardActivity extends Activity implements View.OnClickListener {
-    static final String TAG = SetupWizardActivity.class.getSimpleName();
+    static final String TAG = "SetupWizardActivity";
 
     // For debugging purpose.
     private static final boolean FORCE_TO_SHOW_WELCOME_SCREEN = false;

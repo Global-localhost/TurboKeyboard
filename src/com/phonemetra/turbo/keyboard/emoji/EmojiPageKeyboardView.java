@@ -16,13 +16,13 @@
 
 package com.phonemetra.turbo.keyboard.emoji;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.accessibility.AccessibilityEvent;
-
 import com.phonemetra.turbo.keyboard.Key;
 import com.phonemetra.turbo.keyboard.KeyDetector;
 import com.phonemetra.turbo.keyboard.Keyboard;
@@ -62,7 +62,8 @@ final class EmojiPageKeyboardView extends KeyboardView implements
         this(context, attrs, R.attr.keyboardViewStyle);
     }
 
-    public EmojiPageKeyboardView(final Context context, final AttributeSet attrs,
+    @SuppressLint("Instantiatable")
+	public EmojiPageKeyboardView(final Context context, final AttributeSet attrs,
             final int defStyle) {
         super(context, attrs, defStyle);
         mGestureDetector = new GestureDetector(context, this);

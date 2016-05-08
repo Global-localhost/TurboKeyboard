@@ -25,8 +25,8 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
-import android.preference.SwitchPreference;
 import android.text.TextUtils;
 
 import com.phonemetra.turbo.keyboard.dictionarypack.DictionarySettingsActivity;
@@ -60,7 +60,7 @@ public final class CorrectionSettingsFragment extends SubScreenFragment
             DBG_USE_INTERNAL_PERSONAL_DICTIONARY_SETTINGS
             || Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN_MR2;
 
-    private SwitchPreference mUseContactsPreference;
+    private CheckBoxPreference mUseContactsPreference;
 
     @Override
     public void onCreate(final Bundle icicle) {
@@ -88,7 +88,7 @@ public final class CorrectionSettingsFragment extends SubScreenFragment
             overwriteUserDictionaryPreference(editPersonalDictionary);
         }
 
-        mUseContactsPreference = (SwitchPreference) findPreference(Settings.PREF_KEY_USE_CONTACTS_DICT);
+        mUseContactsPreference = (CheckBoxPreference) findPreference(Settings.PREF_KEY_USE_CONTACTS_DICT);
         turnOffUseContactsIfNoPermission();
     }
 

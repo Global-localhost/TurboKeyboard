@@ -25,7 +25,6 @@ import com.phonemetra.turbo.keyboard.Keyboard;
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords.SuggestedWordInfo;
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 import com.phonemetra.turbo.keyboard.latin.settings.SettingsValuesForSuggestion;
 import com.phonemetra.turbo.keyboard.latin.utils.AutoCorrectionUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.BinaryDictionaryUtils;
@@ -42,18 +41,15 @@ import javax.annotation.Nonnull;
  * characters. This includes corrections and completions.
  */
 public final class Suggest {
-    public static final String TAG = Suggest.class.getSimpleName();
+    public static final String TAG = "Suggest";
 
-    // Session id for
-    // {@link #getSuggestedWords(WordComposer,String,ProximityInfo,boolean,int)}.
-    // We are sharing the same ID between typing and gesture to save RAM footprint.
     public static final int SESSION_ID_TYPING = 0;
     public static final int SESSION_ID_GESTURE = 0;
 
     // Close to -2**31
     private static final int SUPPRESS_SUGGEST_THRESHOLD = -2000000000;
 
-    private static final boolean DBG = DebugFlags.DEBUG_ENABLED;
+    private static final boolean DBG = false;
     private final DictionaryFacilitator mDictionaryFacilitator;
 
     private static final int MAXIMUM_AUTO_CORRECT_LENGTH_FOR_GERMAN = 12;

@@ -64,7 +64,6 @@ public abstract class Dictionary {
     // User history dictionary internal to LatinIME.
     public static final String TYPE_USER_HISTORY = "history";
     public final String mDictType;
-    // The locale for this dictionary. May be null if unknown (phony dictionary for example).
     public final Locale mLocale;
 
     /**
@@ -157,7 +156,7 @@ public abstract class Dictionary {
      * Override to clean up any resources.
      */
     public void close() {
-        // empty base implementation
+   
     }
 
     /**

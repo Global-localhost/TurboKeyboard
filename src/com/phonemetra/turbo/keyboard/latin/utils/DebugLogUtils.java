@@ -18,14 +18,12 @@ package com.phonemetra.turbo.keyboard.latin.utils;
 
 import android.util.Log;
 
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
-
 /**
  * A class for logging and debugging utility methods.
  */
 public final class DebugLogUtils {
     private final static String TAG = DebugLogUtils.class.getSimpleName();
-    private final static boolean sDBG = DebugFlags.DEBUG_ENABLED;
+    private final static boolean sDBG = false;
 
     /**
      * Calls .toString() on its non-null argument or returns "null"

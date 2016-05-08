@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>TurboKeyboard</name>
+	<name>Turbo Keyboard 0.0.12</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -46,4 +46,10 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<variableList>
+		<variable>
+			<name>NDK_HOME</name>
+			<value>file:/home/roberto/android-ndk-r10e</value>
+		</variable>
+	</variableList>
 </projectDescription>

@@ -24,6 +24,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Process;
 import android.preference.PreferenceManager;
@@ -76,8 +77,10 @@ public final class SystemBroadcastReceiver extends BroadcastReceiver {
             final RichInputMethodManager richImm = RichInputMethodManager.getInstance();
             final InputMethodSubtype[] additionalSubtypes = richImm.getAdditionalSubtypes();
             richImm.setAdditionalInputMethodSubtypes(additionalSubtypes);
-            toggleAppIcon(context);
-
+            
+            context.getPackageManager().setComponentEnabledSetting(
+                    new ComponentName(context, SetupActivity.class), PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+           
             // Remove all the previously scheduled downloads. This will also makes sure
             // that any erroneously stuck downloads will get cleared. (b/21797386)
             removeOldDownloads(context);
@@ -85,7 +88,10 @@ public final class SystemBroadcastReceiver extends BroadcastReceiver {
             // downloadLatestDictionaries(context);
         } else if (Intent.ACTION_BOOT_COMPLETED.equals(intentAction)) {
             Log.i(TAG, "Boot has been completed");
-            toggleAppIcon(context);
+            
+            context.getPackageManager().setComponentEnabledSetting(
+                    new ComponentName(context, SetupActivity.class), PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+
         } else if (Intent.ACTION_LOCALE_CHANGED.equals(intentAction)) {
             Log.i(TAG, "System locale changed");
             KeyboardLayoutSet.onSystemLocaleChanged();
@@ -142,18 +148,4 @@ public final class SystemBroadcastReceiver extends BroadcastReceiver {
         context.sendBroadcast(updateIntent);
     }
 
-    public static void toggleAppIcon(final Context context) {
-        final int appInfoFlags = context.getApplicationInfo().flags;
-        final boolean isSystemApp = (appInfoFlags & ApplicationInfo.FLAG_SYSTEM) > 0;
-        if (Log.isLoggable(TAG, Log.INFO)) {
-            Log.i(TAG, "toggleAppIcon() : FLAG_SYSTEM = " + isSystemApp);
-        }
-        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        context.getPackageManager().setComponentEnabledSetting(
-                new ComponentName(context, SetupActivity.class),
-                Settings.readShowSetupWizardIcon(prefs, context)
-                        ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED
-                        : PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                PackageManager.DONT_KILL_APP);
-    }
 }

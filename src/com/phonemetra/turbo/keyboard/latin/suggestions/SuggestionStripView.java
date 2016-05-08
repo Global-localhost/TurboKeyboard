@@ -47,7 +47,6 @@ import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords;
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords.SuggestedWordInfo;
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 import com.phonemetra.turbo.keyboard.latin.settings.Settings;
 import com.phonemetra.turbo.keyboard.latin.settings.SettingsValues;
 import com.phonemetra.turbo.keyboard.latin.suggestions.MoreSuggestionsView.MoreSuggestionsListener;
@@ -63,7 +62,7 @@ public final class SuggestionStripView extends RelativeLayout implements OnClick
         public void onCodeInput(int primaryCode, int x, int y, boolean isKeyRepeat);
     }
 
-    static final boolean DBG = DebugFlags.DEBUG_ENABLED;
+    static final boolean DBG = false;
     private static final float DEBUG_INFO_TEXT_SIZE_IN_DIP = 6.0f;
 
     private final ViewGroup mSuggestionsStrip;

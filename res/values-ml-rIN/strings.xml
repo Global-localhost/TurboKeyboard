@@ -20,6 +20,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="spell_checker_service_name" msgid="1254221805440242662">"അക്ഷരത്തെറ്റ് പരിശോധന"</string>
+    <string name="app_settings" msgid="5760361067176802794">"കീബോർഡ് ക്രമീകരണങ്ങൾ"</string>
+    <string name="spell_checker_settings" msgid="6123949487832861885">"സ്പെൽചെക്കർ ക്രമീകരണങ്ങൾ"</string>
     <string name="input_options" msgid="3909945612939668554">"ടൈപ്പിംഗ് ഓപ്‌ഷനുകൾ"</string>
     <string name="use_contacts_for_spellchecking_option_title" msgid="5374120998125353898">"കോണ്ടാക്റ്റ് പേരുകൾ തിരയൂ"</string>
     <string name="use_contacts_for_spellchecking_option_summary" msgid="8754413382543307713">"നിങ്ങളുടെ കോൺടാക്‌റ്റ് ലിസ്‌റ്റിൽ നിന്നുള്ള എൻട്രികൾ സ്പെൽചെക്കർ ഉപയോഗിക്കുന്നു"</string>

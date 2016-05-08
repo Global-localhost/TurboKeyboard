@@ -16,7 +16,7 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.phonemetra.turbo.keyboard"
-        android:versionCode="7"
+        android:versionCode="12"
     	android:versionName="@string/application_version" >
 
     <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23" />
@@ -128,7 +128,7 @@
         </activity>
 
         <!-- Broadcast receivers -->
-        <receiver android:name="SystemBroadcastReceiver">
+        <receiver android:name="com.phonemetra.turbo.keyboard.latin.SystemBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -137,9 +137,9 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="DictionaryPackInstallBroadcastReceiver" android:exported="false">
+        <receiver android:name="com.phonemetra.turbo.keyboard.latin.DictionaryPackInstallBroadcastReceiver" android:exported="false">
             <intent-filter>
-                <action android:name="com.phonemetra.turbo.dictionarypack.aosp.UNKNOWN_CLIENT" />
+                <action android:name="com.phonemetra.turbo.dictionarypack.UNKNOWN_CLIENT" />
             </intent-filter>
         </receiver>
 
@@ -147,13 +147,13 @@
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
                 <action android:name="android.intent.action.DATE_CHANGED" />
-                <action android:name="com.phonemetra.turbo.dictionarypack.aosp.UPDATE_NOW" />
-                <action android:name="com.phonemetra.turbo.dictionarypack.aosp.INIT_AND_UPDATE_NOW" />
+                <action android:name="com.phonemetra.turbo.dictionarypack.UPDATE_NOW" />
+                <action android:name="com.phonemetra.turbo.dictionarypack.INIT_AND_UPDATE_NOW" />
             </intent-filter>
         </receiver>
 
         <!-- Broadcast receiver for AccountManager#LOGIN_ACCOUNTS_CHANGED_ACTION. -->
-        <receiver android:name=".accounts.AccountsChangedReceiver">
+        <receiver android:name="com.phonemetra.turbo.keyboard.latin.accounts.AccountsChangedReceiver">
             <intent-filter>
                 <action android:name="android.accounts.LOGIN_ACCOUNTS_CHANGED" />
             </intent-filter>

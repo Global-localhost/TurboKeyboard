@@ -25,7 +25,6 @@ import android.provider.ContactsContract.Contacts;
 import android.util.Log;
 
 import com.phonemetra.turbo.keyboard.latin.ContactsManager.ContactsChangedListener;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 import com.phonemetra.turbo.keyboard.latin.permissions.PermissionsUtil;
 import com.phonemetra.turbo.keyboard.latin.utils.ExecutorUtils;
 
@@ -58,9 +57,7 @@ public class ContactsContentObserver implements Runnable {
             return;
         }
 
-        if (DebugFlags.DEBUG_ENABLED) {
-            Log.d(TAG, "registerObserver()");
-        }
+        
         mContactsChangedListener = listener;
         mContentObserver = new ContentObserver(null /* handler */) {
             @Override
@@ -83,15 +80,11 @@ public class ContactsContentObserver implements Runnable {
         }
 
         if (!mRunning.compareAndSet(false /* expect */, true /* update */)) {
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.d(TAG, "run() : Already running. Don't waste time checking again.");
-            }
+            
             return;
         }
         if (haveContentsChanged()) {
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.d(TAG, "run() : Contacts have changed. Notifying listeners.");
-            }
+            
             mContactsChangedListener.onContactsChange();
         }
         mRunning.set(false);
@@ -113,20 +106,14 @@ public class ContactsContentObserver implements Runnable {
             return false;
         }
         if (contactCount != mManager.getContactCountAtLastRebuild()) {
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.d(TAG, "haveContentsChanged() : Count changed from "
-                        + mManager.getContactCountAtLastRebuild() + " to " + contactCount);
-            }
+            
             return true;
         }
         final ArrayList<String> names = mManager.getValidNames(Contacts.CONTENT_URI);
         if (names.hashCode() != mManager.getHashCodeAtLastRebuild()) {
             return true;
         }
-        if (DebugFlags.DEBUG_ENABLED) {
-            Log.d(TAG, "haveContentsChanged() : No change detected in "
-                    + (SystemClock.uptimeMillis() - startTime) + " ms)");
-        }
+        
         return false;
     }
 

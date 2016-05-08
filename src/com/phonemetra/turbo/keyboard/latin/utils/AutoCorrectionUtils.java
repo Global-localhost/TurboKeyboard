@@ -19,14 +19,13 @@ package com.phonemetra.turbo.keyboard.latin.utils;
 import android.util.Log;
 
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords.SuggestedWordInfo;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 
 public final class AutoCorrectionUtils {
-    private static final boolean DBG = DebugFlags.DEBUG_ENABLED;
+    private static final boolean DBG = false;
     private static final String TAG = AutoCorrectionUtils.class.getSimpleName();
 
     private AutoCorrectionUtils() {
-        // Purely static class: can't instantiate.
+       
     }
 
     public static boolean suggestionExceedsThreshold(final SuggestedWordInfo suggestion,

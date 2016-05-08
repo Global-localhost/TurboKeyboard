@@ -460,7 +460,7 @@ public final class AccountsSettingsFragment extends SubScreenFragment {
      * Listens to events when user clicks on "Enable sync" feature.
      */
     class EnableSyncClickListener implements OnShowListener, Preference.OnPreferenceClickListener {
-        // TODO(cvnguyen): Write tests.
+        
         @Override
         public boolean onPreferenceClick(final Preference preference) {
             final TwoStatePreference syncPreference = (TwoStatePreference) preference;

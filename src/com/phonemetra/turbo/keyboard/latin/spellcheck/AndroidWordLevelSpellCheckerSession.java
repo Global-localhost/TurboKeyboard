@@ -35,7 +35,6 @@ import com.phonemetra.turbo.keyboard.latin.WordComposer;
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 import com.phonemetra.turbo.keyboard.latin.utils.BinaryDictionaryUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.ScriptUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.StatsUtils;
@@ -263,14 +262,10 @@ public abstract class AndroidWordLevelSpellCheckerSession extends Session {
             final int capitalizeType = StringUtils.getCapitalizationType(text);
 
             if (isInDictForAnyCapitalization(text, capitalizeType)) {
-                if (DebugFlags.DEBUG_ENABLED) {
-                    Log.i(TAG, "onGetSuggestionsInternal() : [" + text + "] is a valid word");
-                }
+                
                 return AndroidSpellCheckerService.getInDictEmptySuggestions();
             }
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.i(TAG, "onGetSuggestionsInternal() : [" + text + "] is NOT a valid word");
-            }
+            
 
             final Keyboard keyboard = mService.getKeyboardForLocale(mLocale);
             if (null == keyboard) {
@@ -290,17 +285,7 @@ public abstract class AndroidWordLevelSpellCheckerSession extends Session {
                     mLocale, composer.getComposedDataSnapshot(), ngramContext, keyboard);
             final Result result = getResult(capitalizeType, mLocale, suggestionsLimit,
                     mService.getRecommendedThreshold(), text, suggestionResults);
-            if (DebugFlags.DEBUG_ENABLED) {
-                if (result.mSuggestions != null && result.mSuggestions.length > 0) {
-                    final StringBuilder builder = new StringBuilder();
-                    for (String suggestion : result.mSuggestions) {
-                        builder.append(" [");
-                        builder.append(suggestion);
-                        builder.append("]");
-                    }
-                    Log.i(TAG, "onGetSuggestionsInternal() : Suggestions =" + builder);
-                }
-            }
+            
             // Handle word not in dictionary.
             // This is called only once per unique word, so entering multiple
             // instances of the same word does not result in more than one call

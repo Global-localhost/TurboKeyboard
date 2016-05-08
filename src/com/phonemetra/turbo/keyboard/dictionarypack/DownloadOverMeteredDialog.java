@@ -68,7 +68,6 @@ public final class DownloadOverMeteredDialog extends Activity {
     // This method is externally referenced from layout/download_over_metered.xml using onClick
     // attribute of Button.
     @ExternallyReferenced
-    @SuppressWarnings("unused")
     public void onClickDeny(final View v) {
         UpdateHandler.setDownloadOverMeteredSetting(this, false);
         finish();
@@ -77,7 +76,6 @@ public final class DownloadOverMeteredDialog extends Activity {
     // This method is externally referenced from layout/download_over_metered.xml using onClick
     // attribute of Button.
     @ExternallyReferenced
-    @SuppressWarnings("unused")
     public void onClickAllow(final View v) {
         UpdateHandler.setDownloadOverMeteredSetting(this, true);
         UpdateHandler.installIfNeverRequested(this, mClientId, mWordListToDownload);

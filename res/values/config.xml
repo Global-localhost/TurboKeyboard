@@ -21,7 +21,6 @@
 <!-- Configuration values for Small Phone Portrait. -->
 <resources>
     <bool name="config_use_fullscreen_mode">false</bool>
-
     <dimen name="config_key_hysteresis_distance">8.0dp</dimen>
 
     <!-- Preferable keyboard height in absolute scale: 1.285in -->

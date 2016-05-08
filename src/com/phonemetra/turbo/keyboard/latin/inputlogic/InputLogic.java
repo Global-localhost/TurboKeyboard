@@ -48,7 +48,6 @@ import com.phonemetra.turbo.keyboard.latin.WordComposer;
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
 import com.phonemetra.turbo.keyboard.latin.common.InputPointers;
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 import com.phonemetra.turbo.keyboard.latin.settings.SettingsValues;
 import com.phonemetra.turbo.keyboard.latin.settings.SettingsValuesForSuggestion;
 import com.phonemetra.turbo.keyboard.latin.settings.SpacingAndPunctuations;
@@ -1446,10 +1445,7 @@ public final class InputLogic {
     public void performUpdateSuggestionStripSync(final SettingsValues settingsValues,
             final int inputStyle) {
         long startTimeMillis = 0;
-        if (DebugFlags.DEBUG_ENABLED) {
-            startTimeMillis = System.currentTimeMillis();
-            Log.d(TAG, "performUpdateSuggestionStripSync()");
-        }
+        
         // Check if we have a suggestion engine attached.
         if (!settingsValues.needsToLookupSuggestions()) {
             if (mWordComposer.isComposingWord()) {
@@ -1496,10 +1492,7 @@ public final class InputLogic {
         if (suggestedWords != null) {
             mSuggestionStripViewAccessor.showSuggestionStrip(suggestedWords);
         }
-        if (DebugFlags.DEBUG_ENABLED) {
-            long runTimeMillis = System.currentTimeMillis() - startTimeMillis;
-            Log.d(TAG, "performUpdateSuggestionStripSync() : " + runTimeMillis + " ms to finish");
-        }
+        
     }
 
     /**
@@ -1648,18 +1641,7 @@ public final class InputLogic {
         final int separatorLength = separatorString.length();
         // TODO: should we check our saved separator against the actual contents of the text view?
         final int deleteLength = cancelLength + separatorLength;
-        if (DebugFlags.DEBUG_ENABLED) {
-            if (mWordComposer.isComposingWord()) {
-                throw new RuntimeException("revertCommit, but we are composing a word");
-            }
-            final CharSequence wordBeforeCursor =
-                    mConnection.getTextBeforeCursor(deleteLength, 0).subSequence(0, cancelLength);
-            if (!TextUtils.equals(committedWord, wordBeforeCursor)) {
-                throw new RuntimeException("revertCommit check failed: we thought we were "
-                        + "reverting \"" + committedWord
-                        + "\", but before the cursor we found \"" + wordBeforeCursor + "\"");
-            }
-        }
+        
         mConnection.deleteTextBeforeCursor(deleteLength);
         if (!TextUtils.isEmpty(committedWord)) {
             unlearnWord(committedWordString, inputTransaction.mSettingsValues,
@@ -2151,10 +2133,7 @@ public final class InputLogic {
     private void commitChosenWord(final SettingsValues settingsValues, final String chosenWord,
             final int commitType, final String separatorString) {
         long startTimeMillis = 0;
-        if (DebugFlags.DEBUG_ENABLED) {
-            startTimeMillis = System.currentTimeMillis();
-            Log.d(TAG, "commitChosenWord() : [" + chosenWord + "]");
-        }
+        
         final SuggestedWords suggestedWords = mSuggestedWords;
         // TODO: Locale should be determined based on context and the text given.
         final Locale locale = getDictionaryFacilitatorLocale();
@@ -2162,51 +2141,25 @@ public final class InputLogic {
         // b/21926256
         //      SuggestionSpanUtils.getTextWithSuggestionSpan(mLatinIME, chosenWord,
         //                suggestedWords, locale);
-        if (DebugFlags.DEBUG_ENABLED) {
-            long runTimeMillis = System.currentTimeMillis() - startTimeMillis;
-            Log.d(TAG, "commitChosenWord() : " + runTimeMillis + " ms to run "
-                    + "SuggestionSpanUtils.getTextWithSuggestionSpan()");
-            startTimeMillis = System.currentTimeMillis();
-        }
+        
         // When we are composing word, get n-gram context from the 2nd previous word because the
         // 1st previous word is the word to be committed. Otherwise get n-gram context from the 1st
         // previous word.
         final NgramContext ngramContext = mConnection.getNgramContextFromNthPreviousWord(
                 settingsValues.mSpacingAndPunctuations, mWordComposer.isComposingWord() ? 2 : 1);
-        if (DebugFlags.DEBUG_ENABLED) {
-            long runTimeMillis = System.currentTimeMillis() - startTimeMillis;
-            Log.d(TAG, "commitChosenWord() : " + runTimeMillis + " ms to run "
-                    + "Connection.getNgramContextFromNthPreviousWord()");
-            Log.d(TAG, "commitChosenWord() : NgramContext = " + ngramContext);
-            startTimeMillis = System.currentTimeMillis();
-        }
+        
         mConnection.commitText(chosenWordWithSuggestions, 1);
-        if (DebugFlags.DEBUG_ENABLED) {
-            long runTimeMillis = System.currentTimeMillis() - startTimeMillis;
-            Log.d(TAG, "commitChosenWord() : " + runTimeMillis + " ms to run "
-                    + "Connection.commitText");
-            startTimeMillis = System.currentTimeMillis();
-        }
+        
         // Add the word to the user history dictionary
         performAdditionToUserHistoryDictionary(settingsValues, chosenWord, ngramContext);
-        if (DebugFlags.DEBUG_ENABLED) {
-            long runTimeMillis = System.currentTimeMillis() - startTimeMillis;
-            Log.d(TAG, "commitChosenWord() : " + runTimeMillis + " ms to run "
-                    + "performAdditionToUserHistoryDictionary()");
-            startTimeMillis = System.currentTimeMillis();
-        }
+        
         // TODO: figure out here if this is an auto-correct or if the best word is actually
         // what user typed. Note: currently this is done much later in
         // LastComposedWord#didCommitTypedWord by string equality of the remembered
         // strings.
         mLastComposedWord = mWordComposer.commitWord(commitType,
                 chosenWordWithSuggestions, separatorString, ngramContext);
-        if (DebugFlags.DEBUG_ENABLED) {
-            long runTimeMillis = System.currentTimeMillis() - startTimeMillis;
-            Log.d(TAG, "commitChosenWord() : " + runTimeMillis + " ms to run "
-                    + "WordComposer.commitWord()");
-            startTimeMillis = System.currentTimeMillis();
-        }
+        
     }
 
     /**

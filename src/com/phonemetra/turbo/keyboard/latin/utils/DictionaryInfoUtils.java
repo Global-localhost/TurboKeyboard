@@ -23,12 +23,12 @@ import android.content.res.Resources;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.inputmethod.InputMethodSubtype;
+import android.widget.Toast;
 
 import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
 import com.phonemetra.turbo.keyboard.dictionarypack.UpdateHandler;
 import com.phonemetra.turbo.keyboard.latin.AssetFileAddress;
 import com.phonemetra.turbo.keyboard.latin.BinaryDictionaryGetter;
-import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.RichInputMethodManager;
 import com.phonemetra.turbo.keyboard.latin.common.FileUtils;
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
@@ -53,8 +53,9 @@ import javax.annotation.Nullable;
  * This class encapsulates the logic for the Latin-IME side of dictionary information management.
  */
 public class DictionaryInfoUtils {
-    private static final String TAG = DictionaryInfoUtils.class.getSimpleName();
-    public static final String RESOURCE_PACKAGE_NAME = R.class.getPackage().getName();
+    private static final String TAG = "DictionaryInfoUtils";
+    public static final String RESOURCE_PACKAGE_NAME = "com.phonemetra.turbo.keyboard";
+    
     private static final String DEFAULT_MAIN_DICT = "main";
     private static final String MAIN_DICT_PREFIX = "main_";
     private static final String DECODER_DICT_SUFFIX = DecoderSpecificConstants.DECODER_DICT_SUFFIX;
@@ -113,7 +114,7 @@ public class DictionaryInfoUtils {
     }
 
     private DictionaryInfoUtils() {
-        // Private constructor to forbid instantation of this helper class.
+    	
     }
 
     /**
@@ -544,15 +545,26 @@ public class DictionaryInfoUtils {
         final Resources resources = context.getResources();
         final AssetManager assets = resources.getAssets();
         for (final String localeString : assets.getLocales()) {
+        	
+        	//Toast.makeText(context, "localeString:" + localeString, Toast.LENGTH_LONG).show();
+        	
             final Locale locale = LocaleUtils.constructLocaleFromString(localeString);
+            
+            //Toast.makeText(context, "locale:" + locale, Toast.LENGTH_LONG).show();
+            
             final int resourceId =
                     DictionaryInfoUtils.getMainDictionaryResourceIdIfAvailableForLocale(
                             context.getResources(), locale);
             if (0 == resourceId) {
                 continue;
             }
+            
+            
+            
             final AssetFileAddress fileAddress =
                     BinaryDictionaryGetter.loadFallbackResource(context, resourceId);
+            
+            
             final DictionaryInfo dictionaryInfo = createDictionaryInfoFromFileAddress(fileAddress,
                     locale);
             // Protect against cases of a less-specific dictionary being found, like an

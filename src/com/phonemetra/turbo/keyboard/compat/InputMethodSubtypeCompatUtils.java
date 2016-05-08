@@ -29,7 +29,7 @@ import java.lang.reflect.Method;
 import javax.annotation.Nonnull;
 
 public final class InputMethodSubtypeCompatUtils {
-    private static final String TAG = InputMethodSubtypeCompatUtils.class.getSimpleName();
+    private static final String TAG = "InputMethodSubtypeCompatUtils";
     // Note that InputMethodSubtype(int nameId, int iconId, String locale, String mode,
     // String extraValue, boolean isAuxiliary, boolean overridesImplicitlyEnabledSubtype, int id)
     // has been introduced in API level 17 (Build.VERSION_CODE.JELLY_BEAN_MR1).
@@ -51,7 +51,7 @@ public final class InputMethodSubtypeCompatUtils {
             InputMethodSubtype.class, "isAsciiCapable");
 
     private InputMethodSubtypeCompatUtils() {
-        // This utility class is not publicly instantiable.
+        
     }
 
     @SuppressWarnings("deprecation")

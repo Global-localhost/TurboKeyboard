@@ -21,30 +21,17 @@
     
     <string name="application_name" translatable="false">Turbo Keyboard™</string>
 	<string name="application_copyright" translatable="false">Copyright \u00A9 2016 Phonemetra</string>
-	<string name="application_version" translatable="false">0.0.7</string>
+	<string name="application_version" translatable="false">0.0.12</string>
 	<string name="spell_checker_service_name">Spell Checker</string>
     <string name="app_settings">Turbo Keyboard™ Settings</string>
     <string name="spell_checker_settings">Spell Checker Settings</string>
-    
-    <!-- Title for Latin keyboard input options dialog [CHAR LIMIT=25] -->
     <string name="input_options">Input options</string>
-
-    <!-- Title for the spell checker option to turn on/off contact names lookup [CHAR LIMIT=25] -->
     <string name="use_contacts_for_spellchecking_option_title">Look up contact names</string>
-
-    <!-- Description for the spell checker option to turn on/off contact names lookup. [CHAR LIMIT=65] -->
     <string name="use_contacts_for_spellchecking_option_summary">Spell checker uses entries from your contact list</string>
-
-    <!-- Option to provide vibrate/haptic feedback on keypress -->
     <string name="vibrate_on_keypress">Vibrate on keypress</string>
-
-    <!-- Option to play back sound on keypress in soft keyboard -->
     <string name="sound_on_keypress">Sound on keypress</string>
-
-    <!-- Option to control whether or not to show a popup with a larger font on each key press. -->
     <string name="popup_on_keypress">Popup on keypress</string>
-
-    <!-- Settings screen title for preferences [CHAR LIMIT=33]-->
+    
     <string name="settings_screen_preferences">Preferences</string>
     <string name="settings_screen_accounts">Accounts &amp; Privacy</string>
     <string name="settings_screen_themes">Themes</string>

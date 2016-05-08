@@ -47,7 +47,7 @@ import java.util.HashMap;
  * the dictionary pack.
  */
 public final class DictionaryProvider extends ContentProvider {
-    private static final String TAG = DictionaryProvider.class.getSimpleName();
+    private static final String TAG = "DictionaryProvider";
     public static final boolean DEBUG = false;
 
     public static final Uri CONTENT_URI =

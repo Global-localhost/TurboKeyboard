@@ -19,8 +19,6 @@ package com.phonemetra.turbo.keyboard.latin.settings;
 import com.phonemetra.turbo.keyboard.latin.permissions.PermissionsManager;
 import com.phonemetra.turbo.keyboard.latin.utils.FragmentUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.StatsUtils;
-import com.phonemetra.turbo.keyboard.latin.utils.StatsUtilsManager;
-
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;

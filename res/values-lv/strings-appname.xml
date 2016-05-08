@@ -20,8 +20,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="english_ime_name" msgid="5940510615957428904">"Android tastatūra  "</string>
-    <string name="spell_checker_service_name" msgid="1254221805440242662">"Android pareizrakstības pārbaudītājs  "</string>
-    <string name="app_settings" msgid="5760361067176802794">"Android tastatūras iestatījumi  "</string>
-    <string name="spell_checker_settings" msgid="6123949487832861885">"Android pareizrakstības pārbaudītāja iestatījumi  "</string>
+    <string name="spell_checker_service_name" msgid="1254221805440242662">"Pareizrakstības pārbaudītājs"</string>
+    <string name="app_settings" msgid="5760361067176802794">"Tastatūras iestatījumi"</string>
+    <string name="spell_checker_settings" msgid="6123949487832861885">"Pareizrakstības pārbaudītāja iestatījumi"</string>
 </resources>

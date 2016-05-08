@@ -43,7 +43,7 @@ final public class BinaryDictionaryGetter {
     /**
      * Used for Log actions from this class
      */
-    private static final String TAG = BinaryDictionaryGetter.class.getSimpleName();
+    private static final String TAG = "BinaryDictionaryGetter";
 
     /**
      * Used to return empty lists

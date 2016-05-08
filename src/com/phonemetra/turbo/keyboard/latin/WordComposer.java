@@ -25,7 +25,6 @@ import com.phonemetra.turbo.keyboard.latin.common.Constants;
 import com.phonemetra.turbo.keyboard.latin.common.CoordinateUtils;
 import com.phonemetra.turbo.keyboard.latin.common.InputPointers;
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 import com.phonemetra.turbo.keyboard.latin.define.DecoderSpecificConstants;
 
 import java.util.ArrayList;
@@ -38,7 +37,7 @@ import javax.annotation.Nonnull;
  */
 public final class WordComposer {
     private static final int MAX_WORD_LENGTH = DecoderSpecificConstants.DICTIONARY_MAX_WORD_LENGTH;
-    private static final boolean DBG = DebugFlags.DEBUG_ENABLED;
+    private static final boolean DBG = false;
 
     public static final int CAPS_MODE_OFF = 0;
     // 1 is shift bit, 2 is caps bit, 4 is auto bit but this is just a convention as these bits

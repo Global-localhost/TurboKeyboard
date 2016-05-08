@@ -61,8 +61,8 @@ import javax.annotation.Nullable;
  * a client for interacting with dictionaries.
  */
 public class DictionaryFacilitatorImpl implements DictionaryFacilitator {
-    // TODO: Consolidate dictionaries in native code.
-    public static final String TAG = DictionaryFacilitatorImpl.class.getSimpleName();
+    
+    public static final String TAG = "DictionaryFacilitatorImpl";
 
     // HACK: This threshold is being used when adding a capitalized entry in the User History
     // dictionary.

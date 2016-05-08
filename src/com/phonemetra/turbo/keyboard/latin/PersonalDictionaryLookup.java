@@ -28,7 +28,6 @@ import android.util.Log;
 import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
 import com.phonemetra.turbo.keyboard.latin.common.CollectionUtils;
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
-import com.phonemetra.turbo.keyboard.latin.define.DebugFlags;
 import com.phonemetra.turbo.keyboard.latin.utils.ExecutorUtils;
 
 import java.io.Closeable;
@@ -150,26 +149,16 @@ public class PersonalDictionaryLookup implements Closeable {
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.d(mTag, "onChange() : URI = " + uri);
-            }
+            
             // Cancel (but don't interrupt) any pending reloads (except the initial load).
             if (mReloadFuture != null && !mReloadFuture.isCancelled() &&
                     !mReloadFuture.isDone()) {
                 // Note, that if already cancelled or done, this will do nothing.
                 boolean isCancelled = mReloadFuture.cancel(false);
-                if (DebugFlags.DEBUG_ENABLED) {
-                    if (isCancelled) {
-                        Log.d(mTag, "onChange() : Canceled previous reload request");
-                    } else {
-                        Log.d(mTag, "onChange() : Failed to cancel previous reload request");
-                    }
-                }
+                
             }
 
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.d(mTag, "onChange() : Scheduling reload in " + RELOAD_DELAY_MS + " ms");
-            }
+            
 
             // Schedule a new reload after RELOAD_DELAY_MS.
             mReloadFuture = ExecutorUtils.getBackgroundExecutor(mServiceName)
@@ -269,9 +258,7 @@ public class PersonalDictionaryLookup implements Closeable {
     @Override
     public void finalize() throws Throwable {
         try {
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.d(mTag, "finalize()");
-            }
+            
             close();
         } finally {
             super.finalize();
@@ -286,9 +273,7 @@ public class PersonalDictionaryLookup implements Closeable {
      */
     @Override
     public void close() {
-        if (DebugFlags.DEBUG_ENABLED) {
-            Log.d(mTag, "close() : Unregistering content observer");
-        }
+        
         if (mIsClosed.compareAndSet(false, true)) {
             // Unregister the content observer.
             mResolver.unregisterContentObserver(mPersonalDictionaryContentObserver);
@@ -395,15 +380,11 @@ public class PersonalDictionaryLookup implements Closeable {
         if (!isLoaded()) {
             // This is a corner case in the event the initial load of the dictionary has not
             // completed. In that case, we assume the word is not a valid word in the dictionary.
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.d(mTag, "isValidWord() : Initial load not complete");
-            }
+            
             return false;
         }
 
-        if (DebugFlags.DEBUG_ENABLED) {
-            Log.d(mTag, "isValidWord() : Word [" + word + "] in Locale [" + inputLocale + "]");
-        }
+        
         // Atomically obtain the current copy of mDictWords;
         final HashMap<String, HashMap<Locale, String>> dictWords = mDictWords;
         // Lowercase the word using the given locale. Note, that dictionary
@@ -414,35 +395,22 @@ public class PersonalDictionaryLookup implements Closeable {
         final HashMap<Locale, String> dictLocales = dictWords.get(lowercased);
 
         if (CollectionUtils.isNullOrEmpty(dictLocales)) {
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.d(mTag, "isValidWord() : No entry for word [" + word + "]");
-            }
+            
             return false;
         } else {
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.d(mTag, "isValidWord() : Found entry for word [" + word + "]");
-            }
+            
             // Iterate over the locales this word is in.
             for (final Locale dictLocale : dictLocales.keySet()) {
                 final int matchLevel = LocaleUtils.getMatchLevel(dictLocale.toString(),
                         inputLocale.toString());
-                if (DebugFlags.DEBUG_ENABLED) {
-                    Log.d(mTag, "isValidWord() : MatchLevel for DictLocale [" + dictLocale
-                            + "] and InputLocale [" + inputLocale + "] is " + matchLevel);
-                }
+                
                 if (LocaleUtils.isMatch(matchLevel)) {
-                    if (DebugFlags.DEBUG_ENABLED) {
-                        Log.d(mTag, "isValidWord() : MatchLevel " + matchLevel + " IS a match");
-                    }
+                    
                     return true;
                 }
-                if (DebugFlags.DEBUG_ENABLED) {
-                    Log.d(mTag, "isValidWord() : MatchLevel " + matchLevel + " is NOT a match");
-                }
+                
             }
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.d(mTag, "isValidWord() : False, since none of the locales matched");
-            }
+            
             return false;
         }
     }
@@ -456,18 +424,14 @@ public class PersonalDictionaryLookup implements Closeable {
      */
     @Nullable public String expandShortcut(
             @Nonnull final String shortcut, @Nonnull final Locale inputLocale) {
-        if (DebugFlags.DEBUG_ENABLED) {
-            Log.d(mTag, "expandShortcut() : Shortcut [" + shortcut + "] for [" + inputLocale + "]");
-        }
+        
 
         // Atomically obtain the current copy of mShortcuts;
         final HashMap<Locale, HashMap<String, String>> shortcutsPerLocale = mShortcutsPerLocale;
 
         // Exit as early as possible. Most users don't use shortcuts.
         if (CollectionUtils.isNullOrEmpty(shortcutsPerLocale)) {
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.d(mTag, "expandShortcut() : User has no shortcuts");
-            }
+            
             return null;
         }
 
@@ -476,10 +440,7 @@ public class PersonalDictionaryLookup implements Closeable {
             final String expansionForCountry = expandShortcut(
                     shortcutsPerLocale, shortcut, inputLocale);
             if (!TextUtils.isEmpty(expansionForCountry)) {
-                if (DebugFlags.DEBUG_ENABLED) {
-                    Log.d(mTag, "expandShortcut() : Country expansion is ["
-                            + expansionForCountry + "]");
-                }
+                
                 return expansionForCountry;
             }
         }
@@ -490,18 +451,13 @@ public class PersonalDictionaryLookup implements Closeable {
         final String expansionForLanguage = expandShortcut(
                 shortcutsPerLocale, shortcut, languageOnlyLocale);
         if (!TextUtils.isEmpty(expansionForLanguage)) {
-            if (DebugFlags.DEBUG_ENABLED) {
-                Log.d(mTag, "expandShortcut() : Language expansion is ["
-                        + expansionForLanguage + "]");
-            }
+            
             return expansionForLanguage;
         }
 
         // If all else fails, look for a global shortcut.
         final String expansionForGlobal = expandShortcut(shortcutsPerLocale, shortcut, ANY_LOCALE);
-        if (!TextUtils.isEmpty(expansionForGlobal) && DebugFlags.DEBUG_ENABLED) {
-            Log.d(mTag, "expandShortcut() : Global expansion is [" + expansionForGlobal + "]");
-        }
+        
         return expansionForGlobal;
     }
 
@@ -546,53 +502,38 @@ public class PersonalDictionaryLookup implements Closeable {
                 // locale on the other hand will not be skipped.
                 final int dictLocaleIndex = cursor.getColumnIndex(UserDictionary.Words.LOCALE);
                 if (dictLocaleIndex < 0) {
-                    if (DebugFlags.DEBUG_ENABLED) {
-                        Log.d(mTag, "loadPersonalDictionary() : Entry without LOCALE, skipping");
-                    }
+                    
                     continue;
                 }
                 // If there is no column for word, skip this entry.
                 final int dictWordIndex = cursor.getColumnIndex(UserDictionary.Words.WORD);
                 if (dictWordIndex < 0) {
-                    if (DebugFlags.DEBUG_ENABLED) {
-                        Log.d(mTag, "loadPersonalDictionary() : Entry without WORD, skipping");
-                    }
+                    
                     continue;
                 }
                 // If the word is null, skip this entry.
                 final String rawDictWord = cursor.getString(dictWordIndex);
                 if (null == rawDictWord) {
-                    if (DebugFlags.DEBUG_ENABLED) {
-                        Log.d(mTag, "loadPersonalDictionary() : Null word");
-                    }
+                    
                     continue;
                 }
                 // If the locale is null, that's interpreted to mean all locales. Note, the special
                 // zz locale for an Alphabet (QWERTY) layout will not match any actual language.
                 String localeString = cursor.getString(dictLocaleIndex);
                 if (null == localeString) {
-                    if (DebugFlags.DEBUG_ENABLED) {
-                        Log.d(mTag, "loadPersonalDictionary() : Null locale for word [" +
-                                rawDictWord + "], assuming all locales");
-                    }
+                    
                     // For purposes of LocaleUtils, an empty locale matches everything.
                     localeString = "";
                 }
                 final Locale dictLocale = LocaleUtils.constructLocaleFromString(localeString);
                 // Lowercase the word before storing it.
                 final String dictWord = rawDictWord.toLowerCase(dictLocale);
-                if (DebugFlags.DEBUG_ENABLED) {
-                    Log.d(mTag, "loadPersonalDictionary() : Adding word [" + dictWord
-                            + "] for locale " + dictLocale + "with value" + rawDictWord);
-                }
+                
                 // Check if there is an existing entry for this word.
                 HashMap<Locale, String> dictLocales = dictWords.get(dictWord);
                 if (CollectionUtils.isNullOrEmpty(dictLocales)) {
                     // If there is no entry for this word, create one.
-                    if (DebugFlags.DEBUG_ENABLED) {
-                        Log.d(mTag, "loadPersonalDictionary() : Word [" + dictWord +
-                                "] not seen for other locales, creating new entry");
-                    }
+                    
                     dictLocales = new HashMap<>();
                     dictWords.put(dictWord, dictLocales);
                 }
@@ -602,17 +543,13 @@ public class PersonalDictionaryLookup implements Closeable {
                 // If there is no column for a shortcut, we're done.
                 final int shortcutIndex = cursor.getColumnIndex(UserDictionary.Words.SHORTCUT);
                 if (shortcutIndex < 0) {
-                    if (DebugFlags.DEBUG_ENABLED) {
-                        Log.d(mTag, "loadPersonalDictionary() : Entry without SHORTCUT, done");
-                    }
+                    
                     continue;
                 }
                 // If the shortcut is null, we're done.
                 final String shortcut = cursor.getString(shortcutIndex);
                 if (shortcut == null) {
-                    if (DebugFlags.DEBUG_ENABLED) {
-                        Log.d(mTag, "loadPersonalDictionary() : Null shortcut");
-                    }
+                    
                     continue;
                 }
                 // Else, save the shortcut.
