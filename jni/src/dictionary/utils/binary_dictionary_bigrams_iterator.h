@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_BINARY_DICTIONARY_BIGRAMS_ITERATOR_H
-#define LATINIME_BINARY_DICTIONARY_BIGRAMS_ITERATOR_H
+#ifndef TURBOKEYBOARD_BINARY_DICTIONARY_BIGRAMS_ITERATOR_H
+#define TURBOKEYBOARD_BINARY_DICTIONARY_BIGRAMS_ITERATOR_H
 
 #include "defines.h"
 #include "dictionary/interface/dictionary_bigrams_structure_policy.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class BinaryDictionaryBigramsIterator {
  public:
@@ -65,5 +65,5 @@ class BinaryDictionaryBigramsIterator {
     int mProbability;
     bool mHasNext;
 };
-} // namespace latinime
-#endif // LATINIME_BINARY_DICTIONARY_BIGRAMS_ITERATOR_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_BINARY_DICTIONARY_BIGRAMS_ITERATOR_H

@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SUGGESTED_WORD_H
-#define LATINIME_SUGGESTED_WORD_H
+#ifndef TURBOKEYBOARD_SUGGESTED_WORD_H
+#define TURBOKEYBOARD_SUGGESTED_WORD_H
 
 #include <vector>
 
 #include "defines.h"
 #include "suggest/core/dictionary/dictionary.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class SuggestedWord {
  public:
@@ -79,5 +79,5 @@ class SuggestedWord {
     int mIndexToPartialCommit;
     int mAutoCommitFirstWordConfidence;
 };
-} // namespace latinime
-#endif /* LATINIME_SUGGESTED_WORD_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_SUGGESTED_WORD_H */

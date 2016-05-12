@@ -25,7 +25,7 @@
 #include <unordered_set>
 #include <vector>
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(BloomFilterTest, TestFilter) {
@@ -77,4 +77,4 @@ TEST(BloomFilterTest, TestFilter) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

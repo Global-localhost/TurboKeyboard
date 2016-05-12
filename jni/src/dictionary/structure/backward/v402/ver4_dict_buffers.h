@@ -21,8 +21,8 @@
  *   dictionary/structure/v4/ver4_dict_buffers.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_VER4_DICT_BUFFER_H
-#define LATINIME_BACKWARD_V402_VER4_DICT_BUFFER_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_VER4_DICT_BUFFER_H
+#define TURBOKEYBOARD_BACKWARD_V402_VER4_DICT_BUFFER_H
 
 #include <memory>
 
@@ -36,7 +36,7 @@
 #include "dictionary/utils/buffer_with_extendable_buffer.h"
 #include "dictionary/utils/mmapped_buffer.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -148,5 +148,5 @@ class Ver4DictBuffers {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif /* LATINIME_BACKWARD_V402_VER4_DICT_BUFFER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BACKWARD_V402_VER4_DICT_BUFFER_H */

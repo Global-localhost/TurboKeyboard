@@ -18,7 +18,6 @@ package com.phonemetra.turbo.keyboard.latin.settings;
 
 import com.phonemetra.turbo.keyboard.latin.permissions.PermissionsManager;
 import com.phonemetra.turbo.keyboard.latin.utils.FragmentUtils;
-import com.phonemetra.turbo.keyboard.latin.utils.StatsUtils;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
@@ -49,9 +48,7 @@ public final class SettingsActivity extends PreferenceActivity
             actionBar.setDisplayHomeAsUpEnabled(mShowHomeAsUp);
             actionBar.setHomeButtonEnabled(mShowHomeAsUp);
         }
-        StatsUtils.onSettingsActivity(
-                intent.hasExtra(EXTRA_ENTRY_KEY) ? intent.getStringExtra(EXTRA_ENTRY_KEY)
-                        : EXTRA_ENTRY_VALUE_SYSTEM_SETTINGS);
+       
     }
 
     @Override

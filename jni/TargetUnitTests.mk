@@ -24,7 +24,7 @@ LATIN_IME_SRC_DIR := src
 LOCAL_CFLAGS += -std=c++11 -Wno-unused-parameter -Wno-unused-function
 LOCAL_CLANG := true
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/$(LATIN_IME_SRC_DIR)
-LOCAL_MODULE := liblatinime_target_static_for_unittests
+LOCAL_MODULE := libturbokeyboard_target_static_for_unittests
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := $(addprefix $(LATIN_IME_SRC_DIR)/, $(LATIN_IME_CORE_SRC_FILES))
 # Here intentionally use libc++_shared rather than libc++_static because
@@ -39,11 +39,11 @@ LATIN_IME_TEST_SRC_DIR := tests
 LOCAL_CFLAGS += -std=c++11 -Wno-unused-parameter -Wno-unused-function
 LOCAL_CLANG := true
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/$(LATIN_IME_SRC_DIR)
-LOCAL_MODULE := liblatinime_target_unittests
+LOCAL_MODULE := libturbokeyboard_target_unittests
 LOCAL_MODULE_TAGS := tests
 LOCAL_SRC_FILES :=  \
     $(addprefix $(LATIN_IME_TEST_SRC_DIR)/, $(LATIN_IME_CORE_TEST_FILES))
-LOCAL_STATIC_LIBRARIES += liblatinime_target_static_for_unittests
+LOCAL_STATIC_LIBRARIES += libturbokeyboard_target_static_for_unittests
 include $(BUILD_NATIVE_TEST)
 
 #################### Clean up the tmp vars

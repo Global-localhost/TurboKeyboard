@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_HEADER_POLICY_H
-#define LATINIME_HEADER_POLICY_H
+#ifndef TURBOKEYBOARD_HEADER_POLICY_H
+#define TURBOKEYBOARD_HEADER_POLICY_H
 
 #include <cstdint>
 
@@ -27,7 +27,7 @@
 #include "utils/char_utils.h"
 #include "utils/time_keeper.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class HeaderPolicy : public DictionaryHeaderStructurePolicy {
  public:
@@ -264,5 +264,5 @@ class HeaderPolicy : public DictionaryHeaderStructurePolicy {
     static DictionaryHeaderStructurePolicy::AttributeMap createAttributeMapAndReadAllAttributes(
             const uint8_t *const dictBuf);
 };
-} // namespace latinime
-#endif /* LATINIME_HEADER_POLICY_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_HEADER_POLICY_H */

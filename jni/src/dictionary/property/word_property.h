@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_WORD_PROPERTY_H
-#define LATINIME_WORD_PROPERTY_H
+#ifndef TURBOKEYBOARD_WORD_PROPERTY_H
+#define TURBOKEYBOARD_WORD_PROPERTY_H
 
 #include <vector>
 
@@ -24,7 +24,7 @@
 #include "dictionary/property/unigram_property.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // This class is used for returning information belonging to a word to java side.
 class WordProperty {
@@ -58,5 +58,5 @@ class WordProperty {
     const UnigramProperty mUnigramProperty;
     const std::vector<NgramProperty> mNgrams;
 };
-} // namespace latinime
-#endif // LATINIME_WORD_PROPERTY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_WORD_PROPERTY_H

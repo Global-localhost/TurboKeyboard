@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_BUFFER_WITH_EXTENDABLE_BUFFER_H
-#define LATINIME_BUFFER_WITH_EXTENDABLE_BUFFER_H
+#ifndef TURBOKEYBOARD_BUFFER_WITH_EXTENDABLE_BUFFER_H
+#define TURBOKEYBOARD_BUFFER_WITH_EXTENDABLE_BUFFER_H
 
 #include <cstddef>
 #include <cstdint>
@@ -25,7 +25,7 @@
 #include "dictionary/utils/byte_array_utils.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // This is used as a buffer that can be extended for updatable dictionaries.
 // To optimize performance, raw pointer is directly used for reading buffer. The position has to be
@@ -122,4 +122,4 @@ class BufferWithExtendableBuffer {
     bool checkAndPrepareWriting(const int pos, const int size);
 };
 }
-#endif /* LATINIME_BUFFER_WITH_EXTENDABLE_BUFFER_H */
+#endif /* TURBOKEYBOARD_BUFFER_WITH_EXTENDABLE_BUFFER_H */

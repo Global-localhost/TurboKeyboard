@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_VER4_PATRICIA_TRIE_POLICY_H
-#define LATINIME_VER4_PATRICIA_TRIE_POLICY_H
+#ifndef TURBOKEYBOARD_VER4_PATRICIA_TRIE_POLICY_H
+#define TURBOKEYBOARD_VER4_PATRICIA_TRIE_POLICY_H
 
 #include <vector>
 
@@ -33,7 +33,7 @@
 #include "dictionary/utils/entry_counters.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNode;
 class DicNodeVector;
@@ -145,5 +145,5 @@ class Ver4PatriciaTriePolicy : public DictionaryStructureWithBufferPolicy {
 
     int getShortcutPositionOfWord(const int wordId) const;
 };
-} // namespace latinime
-#endif // LATINIME_VER4_PATRICIA_TRIE_POLICY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_VER4_PATRICIA_TRIE_POLICY_H

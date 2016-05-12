@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SUGGESTION_RESULTS_H
-#define LATINIME_SUGGESTION_RESULTS_H
+#ifndef TURBOKEYBOARD_SUGGESTION_RESULTS_H
+#define TURBOKEYBOARD_SUGGESTION_RESULTS_H
 
 #include <queue>
 #include <vector>
@@ -24,7 +24,7 @@
 #include "jni.h"
 #include "suggest/core/result/suggested_word.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class SuggestionResults {
  public:
@@ -61,5 +61,5 @@ class SuggestionResults {
     std::priority_queue<
             SuggestedWord, std::vector<SuggestedWord>, SuggestedWord::Comparator> mSuggestedWords;
 };
-} // namespace latinime
-#endif // LATINIME_SUGGESTION_RESULTS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_SUGGESTION_RESULTS_H

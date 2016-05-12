@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SINGLE_DICT_CONTENT_H
-#define LATINIME_SINGLE_DICT_CONTENT_H
+#ifndef TURBOKEYBOARD_SINGLE_DICT_CONTENT_H
+#define TURBOKEYBOARD_SINGLE_DICT_CONTENT_H
 
 #include <cstdio>
 
@@ -25,7 +25,7 @@
 #include "dictionary/utils/dict_file_writing_utils.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class SingleDictContent {
  public:
@@ -60,5 +60,5 @@ class SingleDictContent {
 
     BufferWithExtendableBuffer mExpandableContentBuffer;
 };
-} // namespace latinime
-#endif /* LATINIME_SINGLE_DICT_CONTENT_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_SINGLE_DICT_CONTENT_H */

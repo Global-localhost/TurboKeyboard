@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_BLOOM_FILTER_H
-#define LATINIME_BLOOM_FILTER_H
+#ifndef TURBOKEYBOARD_BLOOM_FILTER_H
+#define TURBOKEYBOARD_BLOOM_FILTER_H
 
 #include <bitset>
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // This bloom filter is used for optimizing bigram retrieval.
 // Execution times with previous word "this" are as follows:
@@ -65,5 +65,5 @@ class BloomFilter {
     static const size_t BIGRAM_FILTER_MODULO = 1021;
     std::bitset<BIGRAM_FILTER_MODULO> mFilter;
 };
-} // namespace latinime
-#endif // LATINIME_BLOOM_FILTER_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_BLOOM_FILTER_H

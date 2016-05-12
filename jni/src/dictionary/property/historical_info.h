@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_HISTORICAL_INFO_H
-#define LATINIME_HISTORICAL_INFO_H
+#ifndef TURBOKEYBOARD_HISTORICAL_INFO_H
+#define TURBOKEYBOARD_HISTORICAL_INFO_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class HistoricalInfo {
  public:
@@ -55,5 +55,5 @@ class HistoricalInfo {
     const int mLevel;
     const int mCount;
 };
-} // namespace latinime
-#endif /* LATINIME_HISTORICAL_INFO_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_HISTORICAL_INFO_H */

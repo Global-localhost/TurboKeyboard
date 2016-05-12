@@ -16,7 +16,7 @@
 
 #include "suggest/core/dicnode/dic_node.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 DicNode::DicNode(const DicNode &dicNode)
         :
@@ -38,4 +38,4 @@ DicNode &DicNode::operator=(const DicNode &dicNode) {
     return *this;
 }
 
-} // namespace latinime
+} // namespace turbokeyboard

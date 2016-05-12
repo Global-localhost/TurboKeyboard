@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PROXIMITY_INFO_PARAMS_H
-#define LATINIME_PROXIMITY_INFO_PARAMS_H
+#ifndef TURBOKEYBOARD_PROXIMITY_INFO_PARAMS_H
+#define TURBOKEYBOARD_PROXIMITY_INFO_PARAMS_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class ProximityInfoParams {
  public:
@@ -107,5 +107,5 @@ class ProximityInfoParams {
  private:
     DISALLOW_IMPLICIT_CONSTRUCTORS(ProximityInfoParams);
 };
-} // namespace latinime
-#endif // LATINIME_PROXIMITY_INFO_PARAMS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_PROXIMITY_INFO_PARAMS_H

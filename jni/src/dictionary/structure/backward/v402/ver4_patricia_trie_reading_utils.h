@@ -21,14 +21,14 @@
  *   dictionary/structure/v4/ver4_patricia_trie_reading_utils.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_VER4_PATRICIA_TRIE_READING_UTILS_H
-#define LATINIME_BACKWARD_V402_VER4_PATRICIA_TRIE_READING_UTILS_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_VER4_PATRICIA_TRIE_READING_UTILS_H
+#define TURBOKEYBOARD_BACKWARD_V402_VER4_PATRICIA_TRIE_READING_UTILS_H
 
 #include <cstdint>
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -48,5 +48,5 @@ class Ver4PatriciaTrieReadingUtils {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif /* LATINIME_BACKWARD_V402_VER4_PATRICIA_TRIE_READING_UTILS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BACKWARD_V402_VER4_PATRICIA_TRIE_READING_UTILS_H */

@@ -20,7 +20,7 @@
 
 #include <vector>
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 int CalcEditDistance(const std::vector<int> &before,
@@ -36,4 +36,4 @@ TEST(AutocorrectionThresholdUtilsTest, SameData) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

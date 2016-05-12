@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_NODE_H
-#define LATINIME_DIC_NODE_H
+#ifndef TURBOKEYBOARD_DIC_NODE_H
+#define TURBOKEYBOARD_DIC_NODE_H
 
 #include "defines.h"
 #include "suggest/core/dicnode/dic_node_profiler.h"
@@ -55,7 +55,7 @@
 #define DUMP_WORD_AND_SCORE(header)
 #endif
 
-namespace latinime {
+namespace turbokeyboard {
 
 // This struct is purely a bucket to return values. No instances of this struct should be kept.
 struct DicNode_InputStateG {
@@ -501,5 +501,5 @@ class DicNode {
         mDicNodeState.mDicNodeStateScoring.setDoubleLetterLevel(inputStateG->mDoubleLetterLevel);
     }
 };
-} // namespace latinime
-#endif // LATINIME_DIC_NODE_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DIC_NODE_H

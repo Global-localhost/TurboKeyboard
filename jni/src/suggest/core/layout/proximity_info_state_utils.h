@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PROXIMITY_INFO_STATE_UTILS_H
-#define LATINIME_PROXIMITY_INFO_STATE_UTILS_H
+#ifndef TURBOKEYBOARD_PROXIMITY_INFO_STATE_UTILS_H
+#define TURBOKEYBOARD_PROXIMITY_INFO_STATE_UTILS_H
 
 #include <bitset>
 #include <unordered_map>
@@ -23,7 +23,7 @@
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 class ProximityInfo;
 class ProximityInfoParams;
 
@@ -156,5 +156,5 @@ class ProximityInfoStateUtils {
             const std::vector<int> *const sampledInputXs,
             const std::vector<int> *const sampledInputYs, const int keyIndex, const int inputIndex);
 };
-} // namespace latinime
-#endif // LATINIME_PROXIMITY_INFO_STATE_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_PROXIMITY_INFO_STATE_UTILS_H

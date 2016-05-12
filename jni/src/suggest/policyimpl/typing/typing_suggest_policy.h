@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_TYPING_SUGGEST_POLICY_H
-#define LATINIME_TYPING_SUGGEST_POLICY_H
+#ifndef TURBOKEYBOARD_TYPING_SUGGEST_POLICY_H
+#define TURBOKEYBOARD_TYPING_SUGGEST_POLICY_H
 
 #include "defines.h"
 #include "suggest/core/policy/suggest_policy.h"
@@ -23,7 +23,7 @@
 #include "suggest/policyimpl/typing/typing_traversal.h"
 #include "suggest/policyimpl/typing/typing_weighting.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class Scoring;
 class Traversal;
@@ -51,5 +51,5 @@ class TypingSuggestPolicy : public SuggestPolicy {
     DISALLOW_COPY_AND_ASSIGN(TypingSuggestPolicy);
     static const TypingSuggestPolicy sInstance;
 };
-} // namespace latinime
-#endif // LATINIME_TYPING_SUGGEST_POLICY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_TYPING_SUGGEST_POLICY_H

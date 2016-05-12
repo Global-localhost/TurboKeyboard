@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_NGRAM_PROPERTY_H
-#define LATINIME_NGRAM_PROPERTY_H
+#ifndef TURBOKEYBOARD_NGRAM_PROPERTY_H
+#define TURBOKEYBOARD_NGRAM_PROPERTY_H
 
 #include <vector>
 
@@ -23,7 +23,7 @@
 #include "dictionary/property/historical_info.h"
 #include "dictionary/property/ngram_context.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class NgramProperty {
  public:
@@ -58,5 +58,5 @@ class NgramProperty {
     const int mProbability;
     const HistoricalInfo mHistoricalInfo;
 };
-} // namespace latinime
-#endif // LATINIME_NGRAM_PROPERTY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_NGRAM_PROPERTY_H

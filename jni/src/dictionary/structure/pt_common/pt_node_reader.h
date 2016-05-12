@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PT_NODE_READER_H
-#define LATINIME_PT_NODE_READER_H
+#ifndef TURBOKEYBOARD_PT_NODE_READER_H
+#define TURBOKEYBOARD_PT_NODE_READER_H
 
 #include "defines.h"
 
 #include "dictionary/structure/pt_common/pt_node_params.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // Interface class used to read PtNode information.
 class PtNodeReader {
@@ -36,5 +36,5 @@ class PtNodeReader {
  private:
     DISALLOW_COPY_AND_ASSIGN(PtNodeReader);
 };
-} // namespace latinime
-#endif /* LATINIME_PT_NODE_READER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_PT_NODE_READER_H */

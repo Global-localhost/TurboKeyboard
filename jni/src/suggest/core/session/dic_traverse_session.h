@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_TRAVERSE_SESSION_H
-#define LATINIME_DIC_TRAVERSE_SESSION_H
+#ifndef TURBOKEYBOARD_DIC_TRAVERSE_SESSION_H
+#define TURBOKEYBOARD_DIC_TRAVERSE_SESSION_H
 
 #include <vector>
 
@@ -26,7 +26,7 @@
 #include "suggest/core/layout/proximity_info_state.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class Dictionary;
 class DictionaryStructureWithBufferPolicy;
@@ -185,5 +185,5 @@ class DicTraverseSession {
     float mMultiWordCostMultiplier;
 
 };
-} // namespace latinime
-#endif // LATINIME_DIC_TRAVERSE_SESSION_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DIC_TRAVERSE_SESSION_H

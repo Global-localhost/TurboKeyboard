@@ -31,7 +31,7 @@
 #include "suggest/core/suggest_options.h"
 #include "utils/profiler.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // Initialization of class constants.
 const int Suggest::MIN_CONTINUOUS_SUGGESTION_INPUT_SIZE = 2;
@@ -441,4 +441,4 @@ void Suggest::createNextWordDicNode(DicTraverseSession *traverseSession, DicNode
         traverseSession->getDicTraverseCache()->copyPushNextActive(&newDicNode);
     }
 }
-} // namespace latinime
+} // namespace turbokeyboard

@@ -18,7 +18,7 @@
 
 #include <gtest/gtest.h>
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(DicNodePoolTest, TestGet) {
@@ -66,4 +66,4 @@ TEST(DicNodePoolTest, TestReset) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_TYPING_SCORING_H
-#define LATINIME_TYPING_SCORING_H
+#ifndef TURBOKEYBOARD_TYPING_SCORING_H
+#define TURBOKEYBOARD_TYPING_SCORING_H
 
 #include "defines.h"
 #include "suggest/core/dictionary/error_type_utils.h"
@@ -23,7 +23,7 @@
 #include "suggest/core/session/dic_traverse_session.h"
 #include "suggest/policyimpl/typing/scoring_params.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNode;
 class DicTraverseSession;
@@ -115,5 +115,5 @@ class TypingScoring : public Scoring {
     TypingScoring() {}
     ~TypingScoring() {}
 };
-} // namespace latinime
-#endif // LATINIME_TYPING_SCORING_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_TYPING_SCORING_H

@@ -45,7 +45,7 @@ public class UserBinaryDictionary extends ExpandableBinaryDictionary {
     // The user dictionary provider uses an empty string to mean "all languages".
     private static final String USER_DICTIONARY_ALL_LANGUAGES = "";
     private static final int HISTORICAL_DEFAULT_USER_DICTIONARY_FREQUENCY = 250;
-    private static final int LATINIME_DEFAULT_USER_DICTIONARY_FREQUENCY = 160;
+    private static final int TURBOKEYBOARD_DEFAULT_USER_DICTIONARY_FREQUENCY = 160;
 
     private static final String[] PROJECTION_QUERY = new String[] {Words.WORD, Words.FREQUENCY};
 
@@ -185,11 +185,11 @@ public class UserBinaryDictionary extends ExpandableBinaryDictionary {
         // The default frequency for the user dictionary is 250 for historical reasons.
         // Latin IME considers a good value for the default user dictionary frequency
         // is about 160 considering the scale we use. So we are scaling down the values.
-        if (defaultFrequency > Integer.MAX_VALUE / LATINIME_DEFAULT_USER_DICTIONARY_FREQUENCY) {
+        if (defaultFrequency > Integer.MAX_VALUE / TURBOKEYBOARD_DEFAULT_USER_DICTIONARY_FREQUENCY) {
             return (defaultFrequency / HISTORICAL_DEFAULT_USER_DICTIONARY_FREQUENCY)
-                    * LATINIME_DEFAULT_USER_DICTIONARY_FREQUENCY;
+                    * TURBOKEYBOARD_DEFAULT_USER_DICTIONARY_FREQUENCY;
         }
-        return (defaultFrequency * LATINIME_DEFAULT_USER_DICTIONARY_FREQUENCY)
+        return (defaultFrequency * TURBOKEYBOARD_DEFAULT_USER_DICTIONARY_FREQUENCY)
                 / HISTORICAL_DEFAULT_USER_DICTIONARY_FREQUENCY;
     }
 

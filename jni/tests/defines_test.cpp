@@ -18,7 +18,7 @@
 
 #include <gtest/gtest.h>
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(DefinesTest, NELEMSForFixedLengthArray) {
@@ -31,4 +31,4 @@ TEST(DefinesTest, NELEMSForFixedLengthArray) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

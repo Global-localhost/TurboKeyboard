@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "LatinIME: dictionary.cpp"
+#define LOG_TAG "TurboKeyboard: dictionary.cpp"
 
 #include "suggest/core/dictionary/dictionary.h"
 
@@ -32,7 +32,7 @@
 #include "utils/log_utils.h"
 #include "utils/time_keeper.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 const int Dictionary::HEADER_ATTRIBUTE_BUFFER_SIZE = 32;
 
@@ -224,4 +224,4 @@ void Dictionary::logDictionaryInfo(JNIEnv *const env) const {
             dictionaryIdCharBuffer, versionStringCharBuffer, dateStringCharBuffer);
 }
 
-} // namespace latinime
+} // namespace turbokeyboard

@@ -32,8 +32,6 @@ import com.phonemetra.turbo.keyboard.latin.utils.AdditionalSubtypeUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.JniUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.ResourceUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.RunInLocale;
-import com.phonemetra.turbo.keyboard.latin.utils.StatsUtils;
-
 import java.util.Collections;
 import java.util.Locale;
 import java.util.Set;
@@ -157,7 +155,6 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
         try {
             if (mSettingsValues != null) {
             	loadSettings(mContext, mSettingsValues.mLocale, mSettingsValues.mInputAttributes);
-                StatsUtils.onLoadSettings(mSettingsValues);     
             } else {
             	return;
             }	

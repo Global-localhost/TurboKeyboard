@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_MULTI_BIGRAM_MAP_H
-#define LATINIME_MULTI_BIGRAM_MAP_H
+#ifndef TURBOKEYBOARD_MULTI_BIGRAM_MAP_H
+#define TURBOKEYBOARD_MULTI_BIGRAM_MAP_H
 
 #include <cstddef>
 #include <unordered_map>
@@ -27,7 +27,7 @@
 #include "dictionary/utils/bloom_filter.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // Class for caching bigram maps for multiple previous word contexts. This is useful since the
 // algorithm needs to look up the set of bigrams for every word pair that occurs in every
@@ -80,5 +80,5 @@ class MultiBigramMap {
     static const size_t MAX_CACHED_PREV_WORDS_IN_BIGRAM_MAP;
     std::unordered_map<int, BigramMap> mBigramMaps;
 };
-} // namespace latinime
-#endif // LATINIME_MULTI_BIGRAM_MAP_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_MULTI_BIGRAM_MAP_H

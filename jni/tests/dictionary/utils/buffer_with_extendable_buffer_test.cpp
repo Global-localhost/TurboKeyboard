@@ -18,7 +18,7 @@
 
 #include <gtest/gtest.h>
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 const int DEFAULT_MAX_BUFFER_SIZE = 1024;
@@ -91,4 +91,4 @@ TEST(BufferWithExtendablebufferTest, TestSizeLimit) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

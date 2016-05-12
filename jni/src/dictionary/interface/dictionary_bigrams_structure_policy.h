@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DICTIONARY_BIGRAMS_STRUCTURE_POLICY_H
-#define LATINIME_DICTIONARY_BIGRAMS_STRUCTURE_POLICY_H
+#ifndef TURBOKEYBOARD_DICTIONARY_BIGRAMS_STRUCTURE_POLICY_H
+#define TURBOKEYBOARD_DICTIONARY_BIGRAMS_STRUCTURE_POLICY_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 /*
  * This class abstracts structure of bigrams.
@@ -38,5 +38,5 @@ class DictionaryBigramsStructurePolicy {
  private:
     DISALLOW_COPY_AND_ASSIGN(DictionaryBigramsStructurePolicy);
 };
-} // namespace latinime
-#endif /* LATINIME_DICTIONARY_BIGRAMS_STRUCTURE_POLICY_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_DICTIONARY_BIGRAMS_STRUCTURE_POLICY_H */

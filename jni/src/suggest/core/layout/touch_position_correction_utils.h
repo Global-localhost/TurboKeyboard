@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_TOUCH_POSITION_CORRECTION_UTILS_H
-#define LATINIME_TOUCH_POSITION_CORRECTION_UTILS_H
+#ifndef TURBOKEYBOARD_TOUCH_POSITION_CORRECTION_UTILS_H
+#define TURBOKEYBOARD_TOUCH_POSITION_CORRECTION_UTILS_H
 
 #include <algorithm>
 
 #include "defines.h"
 #include "suggest/core/layout/proximity_info_params.h"
 
-namespace latinime {
+namespace turbokeyboard {
 class TouchPositionCorrectionUtils {
  public:
     static float getSweetSpotFactor(const bool isTouchPositionCorrectionEnabled,
@@ -61,5 +61,5 @@ class TouchPositionCorrectionUtils {
  private:
     DISALLOW_IMPLICIT_CONSTRUCTORS(TouchPositionCorrectionUtils);
 };
-} // namespace latinime
-#endif // LATINIME_TOUCH_POSITION_CORRECTION_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_TOUCH_POSITION_CORRECTION_UTILS_H

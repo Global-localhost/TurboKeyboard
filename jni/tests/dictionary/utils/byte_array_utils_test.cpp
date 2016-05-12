@@ -20,7 +20,7 @@
 
 #include <cstdint>
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(ByteArrayUtilsTest, TestReadCodePointTable) {
@@ -102,4 +102,4 @@ TEST(ByteArrayUtilsTest, TestWriteAndReadCodePoint) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

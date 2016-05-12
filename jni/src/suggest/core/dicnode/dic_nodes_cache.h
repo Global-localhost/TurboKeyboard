@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_NODES_CACHE_H
-#define LATINIME_DIC_NODES_CACHE_H
+#ifndef TURBOKEYBOARD_DIC_NODES_CACHE_H
+#define TURBOKEYBOARD_DIC_NODES_CACHE_H
 
 #include <algorithm>
 
 #include "defines.h"
 #include "suggest/core/dicnode/dic_node_priority_queue.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNode;
 
@@ -186,5 +186,5 @@ class DicNodesCache {
     int mInputIndex;
     int mLastCachedInputIndex;
 };
-} // namespace latinime
-#endif // LATINIME_DIC_NODES_CACHE_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DIC_NODES_CACHE_H

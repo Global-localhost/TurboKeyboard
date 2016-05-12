@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_VER2_PT_NODE_ARRAY_READER_H
-#define LATINIME_VER2_PT_NODE_ARRAY_READER_H
+#ifndef TURBOKEYBOARD_VER2_PT_NODE_ARRAY_READER_H
+#define TURBOKEYBOARD_VER2_PT_NODE_ARRAY_READER_H
 
 #include <cstdint>
 
@@ -23,7 +23,7 @@
 #include "dictionary/structure/pt_common/pt_node_array_reader.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class Ver2PtNodeArrayReader : public PtNodeArrayReader {
  public:
@@ -39,5 +39,5 @@ class Ver2PtNodeArrayReader : public PtNodeArrayReader {
 
     const ReadOnlyByteArrayView mBuffer;
 };
-} // namespace latinime
-#endif /* LATINIME_VER2_PT_NODE_ARRAY_READER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_VER2_PT_NODE_ARRAY_READER_H */

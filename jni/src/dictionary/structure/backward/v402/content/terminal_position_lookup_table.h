@@ -21,8 +21,8 @@
  *   dictionary/structure/v4/content/terminal_position_lookup_table.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_TERMINAL_POSITION_LOOKUP_TABLE_H
-#define LATINIME_BACKWARD_V402_TERMINAL_POSITION_LOOKUP_TABLE_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_TERMINAL_POSITION_LOOKUP_TABLE_H
+#define TURBOKEYBOARD_BACKWARD_V402_TERMINAL_POSITION_LOOKUP_TABLE_H
 
 #include <unordered_map>
 
@@ -30,7 +30,7 @@
 #include "dictionary/structure/backward/v402/content/single_dict_content.h"
 #include "dictionary/structure/backward/v402/ver4_dict_constants.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -69,5 +69,5 @@ class TerminalPositionLookupTable : public SingleDictContent {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif // LATINIME_BACKWARD_V402_TERMINAL_POSITION_LOOKUP_TABLE_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_BACKWARD_V402_TERMINAL_POSITION_LOOKUP_TABLE_H

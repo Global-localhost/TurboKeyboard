@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_VER4_DICT_BUFFER_H
-#define LATINIME_VER4_DICT_BUFFER_H
+#ifndef TURBOKEYBOARD_VER4_DICT_BUFFER_H
+#define TURBOKEYBOARD_VER4_DICT_BUFFER_H
 
 #include <cstdio>
 #include <memory>
@@ -29,7 +29,7 @@
 #include "dictionary/utils/buffer_with_extendable_buffer.h"
 #include "dictionary/utils/mmapped_buffer.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class Ver4DictBuffers {
  public:
@@ -128,5 +128,5 @@ class Ver4DictBuffers {
     ShortcutDictContent mShortcutDictContent;
     const int mIsUpdatable;
 };
-} // namespace latinime
-#endif /* LATINIME_VER4_DICT_BUFFER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_VER4_DICT_BUFFER_H */

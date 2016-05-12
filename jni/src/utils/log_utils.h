@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_LOG_UTILS_H
-#define LATINIME_LOG_UTILS_H
+#ifndef TURBOKEYBOARD_LOG_UTILS_H
+#define TURBOKEYBOARD_LOG_UTILS_H
 
 #include "defines.h"
 #include "jni.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class LogUtils {
  public:
@@ -33,5 +33,5 @@ class LogUtils {
  private:
     DISALLOW_COPY_AND_ASSIGN(LogUtils);
 };
-} // namespace latinime
-#endif // LATINIME_LOG_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_LOG_UTILS_H

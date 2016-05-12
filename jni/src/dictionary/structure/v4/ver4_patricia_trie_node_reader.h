@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_VER4_PATRICIA_TRIE_NODE_READER_H
-#define LATINIME_VER4_PATRICIA_TRIE_NODE_READER_H
+#ifndef TURBOKEYBOARD_VER4_PATRICIA_TRIE_NODE_READER_H
+#define TURBOKEYBOARD_VER4_PATRICIA_TRIE_NODE_READER_H
 
 #include "defines.h"
 #include "dictionary/structure/pt_common/pt_node_params.h"
 #include "dictionary/structure/pt_common/pt_node_reader.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class BufferWithExtendableBuffer;
 class HeaderPolicy;
@@ -51,5 +51,5 @@ class Ver4PatriciaTrieNodeReader : public PtNodeReader {
     const PtNodeParams fetchPtNodeInfoFromBufferAndProcessMovedPtNode(const int ptNodePos,
             const int siblingNodePos) const;
 };
-} // namespace latinime
-#endif /* LATINIME_VER4_PATRICIA_TRIE_NODE_READER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_VER4_PATRICIA_TRIE_NODE_READER_H */

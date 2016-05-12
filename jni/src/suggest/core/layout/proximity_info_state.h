@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PROXIMITY_INFO_STATE_H
-#define LATINIME_PROXIMITY_INFO_STATE_H
+#ifndef TURBOKEYBOARD_PROXIMITY_INFO_STATE_H
+#define TURBOKEYBOARD_PROXIMITY_INFO_STATE_H
 
 #include <cstring> // for memset()
 #include <unordered_map>
@@ -25,7 +25,7 @@
 #include "suggest/core/layout/proximity_info_params.h"
 #include "suggest/core/layout/proximity_info_state_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class ProximityInfo;
 
@@ -230,5 +230,5 @@ class ProximityInfoState {
     float mMostProbableStringProbability;
     int mMostProbableString[MAX_WORD_LENGTH];
 };
-} // namespace latinime
-#endif // LATINIME_PROXIMITY_INFO_STATE_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_PROXIMITY_INFO_STATE_H

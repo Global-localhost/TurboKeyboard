@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PROBABILITY_ENTRY_H
-#define LATINIME_PROBABILITY_ENTRY_H
+#ifndef TURBOKEYBOARD_PROBABILITY_ENTRY_H
+#define TURBOKEYBOARD_PROBABILITY_ENTRY_H
 
 #include <climits>
 #include <cstdint>
@@ -26,7 +26,7 @@
 #include "dictionary/property/unigram_property.h"
 #include "dictionary/structure/v4/ver4_dict_constants.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class ProbabilityEntry {
  public:
@@ -172,5 +172,5 @@ class ProbabilityEntry {
         return flags;
     }
 };
-} // namespace latinime
-#endif /* LATINIME_PROBABILITY_ENTRY_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_PROBABILITY_ENTRY_H */

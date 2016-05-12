@@ -19,7 +19,7 @@
 
 #include "jni.h"
 
-namespace latinime {
+namespace turbokeyboard {
 int register_BinaryDictionaryUtils(JNIEnv *env);
-} // namespace latinime
+} // namespace turbokeyboard
 #endif // _COM_PHONEMETRA_TURBO_KEYBOARD_LATIN_BINARYDICTIONARYUTILS_H

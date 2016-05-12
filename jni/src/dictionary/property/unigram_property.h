@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_UNIGRAM_PROPERTY_H
-#define LATINIME_UNIGRAM_PROPERTY_H
+#ifndef TURBOKEYBOARD_UNIGRAM_PROPERTY_H
+#define TURBOKEYBOARD_UNIGRAM_PROPERTY_H
 
 #include <vector>
 
 #include "defines.h"
 #include "dictionary/property/historical_info.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class UnigramProperty {
  public:
@@ -133,5 +133,5 @@ class UnigramProperty {
     const HistoricalInfo mHistoricalInfo;
     const std::vector<ShortcutProperty> mShortcuts;
 };
-} // namespace latinime
-#endif // LATINIME_UNIGRAM_PROPERTY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_UNIGRAM_PROPERTY_H

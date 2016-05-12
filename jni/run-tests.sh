@@ -55,8 +55,8 @@ if [[ $enable_host_test == yes && -n $TARGET_BUILD_APPS ]]; then
   if [[ ${BASH_SOURCE[0]} != $0 ]]; then return; else exit 1; fi
 fi
 
-target_test_name=liblatinime_target_unittests
-host_test_name=liblatinime_host_unittests
+target_test_name=libturbokeyboard_target_unittests
+host_test_name=libturbokeyboard_host_unittests
 
 pushd $PWD > /dev/null
 cd $(gettop)

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_VER4_PATRICIA_TRIE_NODE_WRITER_H
-#define LATINIME_VER4_PATRICIA_TRIE_NODE_WRITER_H
+#ifndef TURBOKEYBOARD_VER4_PATRICIA_TRIE_NODE_WRITER_H
+#define TURBOKEYBOARD_VER4_PATRICIA_TRIE_NODE_WRITER_H
 
 #include "defines.h"
 #include "dictionary/structure/pt_common/dynamic_pt_reading_helper.h"
@@ -23,7 +23,7 @@
 #include "dictionary/structure/pt_common/pt_node_writer.h"
 #include "dictionary/structure/v4/content/probability_entry.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class BufferWithExtendableBuffer;
 class HeaderPolicy;
@@ -104,5 +104,5 @@ class Ver4PatriciaTrieNodeWriter : public PtNodeWriter {
     DynamicPtReadingHelper mReadingHelper;
     Ver4ShortcutListPolicy *const mShortcutPolicy;
 };
-} // namespace latinime
-#endif /* LATINIME_VER4_PATRICIA_TRIE_NODE_WRITER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_VER4_PATRICIA_TRIE_NODE_WRITER_H */

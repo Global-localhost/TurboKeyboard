@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_NORMAL_DISTRIBUTION_2D_H
-#define LATINIME_NORMAL_DISTRIBUTION_2D_H
+#ifndef TURBOKEYBOARD_NORMAL_DISTRIBUTION_2D_H
+#define TURBOKEYBOARD_NORMAL_DISTRIBUTION_2D_H
 
 #include <cmath>
 
@@ -23,7 +23,7 @@
 #include "suggest/core/layout/geometry_utils.h"
 #include "suggest/core/layout/normal_distribution.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // Normal distribution on a 2D plane. The covariance is always zero, but the distribution can be
 // rotated.
@@ -55,5 +55,5 @@ class NormalDistribution2D {
     const float mSinTheta;
     const float mCosTheta;
 };
-} // namespace latinime
-#endif // LATINIME_NORMAL_DISTRIBUTION_2D_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_NORMAL_DISTRIBUTION_2D_H

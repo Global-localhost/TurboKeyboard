@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_TYPING_WEIGHTING_H
-#define LATINIME_TYPING_WEIGHTING_H
+#ifndef TURBOKEYBOARD_TYPING_WEIGHTING_H
+#define TURBOKEYBOARD_TYPING_WEIGHTING_H
 
 #include "defines.h"
 #include "suggest/core/dicnode/dic_node_utils.h"
@@ -26,7 +26,7 @@
 #include "suggest/policyimpl/typing/scoring_params.h"
 #include "utils/char_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNode;
 struct DicNode_InputStateG;
@@ -221,5 +221,5 @@ class TypingWeighting : public Weighting {
     TypingWeighting() {}
     ~TypingWeighting() {}
 };
-} // namespace latinime
-#endif // LATINIME_TYPING_WEIGHTING_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_TYPING_WEIGHTING_H

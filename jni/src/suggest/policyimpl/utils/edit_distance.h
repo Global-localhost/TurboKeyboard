@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_EDIT_DISTANCE_H
-#define LATINIME_EDIT_DISTANCE_H
+#ifndef TURBOKEYBOARD_EDIT_DISTANCE_H
+#define TURBOKEYBOARD_EDIT_DISTANCE_H
 
 #include <algorithm>
 
 #include "defines.h"
 #include "suggest/policyimpl/utils/edit_distance_policy.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class EditDistance {
  public:
@@ -87,6 +87,6 @@ class EditDistance {
  private:
     DISALLOW_IMPLICIT_CONSTRUCTORS(EditDistance);
 };
-} // namespace latinime
+} // namespace turbokeyboard
 
-#endif  // LATINIME_EDIT_DISTANCE_H
+#endif  // TURBOKEYBOARD_EDIT_DISTANCE_H

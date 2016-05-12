@@ -21,8 +21,8 @@
  *   dictionary/structure/v4/content/bigram_dict_content.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_BIGRAM_DICT_CONTENT_H
-#define LATINIME_BACKWARD_V402_BIGRAM_DICT_CONTENT_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_BIGRAM_DICT_CONTENT_H
+#define TURBOKEYBOARD_BACKWARD_V402_BIGRAM_DICT_CONTENT_H
 
 #include "defines.h"
 #include "dictionary/structure/backward/v402/content/bigram_entry.h"
@@ -30,7 +30,7 @@
 #include "dictionary/structure/backward/v402/content/terminal_position_lookup_table.h"
 #include "dictionary/structure/backward/v402/ver4_dict_constants.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -131,5 +131,5 @@ class BigramDictContent : public SparseTableDictContent {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif /* LATINIME_BACKWARD_V402_BIGRAM_DICT_CONTENT_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BACKWARD_V402_BIGRAM_DICT_CONTENT_H */

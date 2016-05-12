@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DYNAMIC_PT_WRITING_UTILS_H
-#define LATINIME_DYNAMIC_PT_WRITING_UTILS_H
+#ifndef TURBOKEYBOARD_DYNAMIC_PT_WRITING_UTILS_H
+#define TURBOKEYBOARD_DYNAMIC_PT_WRITING_UTILS_H
 
 #include <cstddef>
 
 #include "defines.h"
 #include "dictionary/structure/pt_common/dynamic_pt_reading_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class BufferWithExtendableBuffer;
 
@@ -75,5 +75,5 @@ class DynamicPtWritingUtils {
     static bool writeDictOffset(BufferWithExtendableBuffer *const buffer, const int targetPos,
             const int basePos, int *const offsetFieldPos);
 };
-} // namespace latinime
-#endif /* LATINIME_DYNAMIC_PT_WRITING_UTILS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_DYNAMIC_PT_WRITING_UTILS_H */

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_FILE_UTILS_H
-#define LATINIME_FILE_UTILS_H
+#ifndef TURBOKEYBOARD_FILE_UTILS_H
+#define TURBOKEYBOARD_FILE_UTILS_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class FileUtils {
  public:
@@ -56,5 +56,5 @@ class FileUtils {
 
     static bool removeDirAndFiles(const char *const dirPath, const int maxTries);
 };
-} // namespace latinime
-#endif /* LATINIME_FILE_UTILS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_FILE_UTILS_H */

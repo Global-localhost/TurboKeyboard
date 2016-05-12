@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SUGGEST_IMPL_H
-#define LATINIME_SUGGEST_IMPL_H
+#ifndef TURBOKEYBOARD_SUGGEST_IMPL_H
+#define TURBOKEYBOARD_SUGGEST_IMPL_H
 
 #include "defines.h"
 #include "suggest/core/suggest_interface.h"
 #include "suggest/core/policy/suggest_policy.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // Naming convention
 // - Distance: "Weighted" edit distance -- used both for spatial and language.
@@ -79,5 +79,5 @@ class Suggest : public SuggestInterface {
     const Scoring *const SCORING;
     const Weighting *const WEIGHTING;
 };
-} // namespace latinime
-#endif // LATINIME_SUGGEST_IMPL_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_SUGGEST_IMPL_H

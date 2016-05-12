@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_VER4_PATRICIA_TRIE_READING_UTILS_H
-#define LATINIME_VER4_PATRICIA_TRIE_READING_UTILS_H
+#ifndef TURBOKEYBOARD_VER4_PATRICIA_TRIE_READING_UTILS_H
+#define TURBOKEYBOARD_VER4_PATRICIA_TRIE_READING_UTILS_H
 
 #include <cstdint>
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class BufferWithExtendableBuffer;
 
@@ -33,5 +33,5 @@ class Ver4PatriciaTrieReadingUtils {
  private:
     DISALLOW_IMPLICIT_CONSTRUCTORS(Ver4PatriciaTrieReadingUtils);
 };
-} // namespace latinime
-#endif /* LATINIME_VER4_PATRICIA_TRIE_READING_UTILS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_VER4_PATRICIA_TRIE_READING_UTILS_H */

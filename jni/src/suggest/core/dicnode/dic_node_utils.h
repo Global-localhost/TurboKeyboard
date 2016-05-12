@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_NODE_UTILS_H
-#define LATINIME_DIC_NODE_UTILS_H
+#ifndef TURBOKEYBOARD_DIC_NODE_UTILS_H
+#define TURBOKEYBOARD_DIC_NODE_UTILS_H
 
 #include "defines.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNode;
 class DicNodeVector;
@@ -48,5 +48,5 @@ class DicNodeUtils {
     // Max number of bigrams to look up
     static const int MAX_BIGRAMS_CONSIDERED_PER_CONTEXT = 500;
 };
-} // namespace latinime
-#endif // LATINIME_DIC_NODE_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DIC_NODE_UTILS_H

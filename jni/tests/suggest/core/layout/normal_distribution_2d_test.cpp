@@ -20,7 +20,7 @@
 
 #include <vector>
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 static const float ORIGIN_X = 0.0f;
@@ -65,4 +65,4 @@ TEST(NormalDistribution2DTest, Rotate) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

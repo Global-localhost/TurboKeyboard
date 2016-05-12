@@ -18,7 +18,7 @@
 
 #include "dictionary/utils/byte_array_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 const uint32_t FormatUtils::MAGIC_NUMBER = 0x9BC13AFE;
 
@@ -68,4 +68,4 @@ const size_t FormatUtils::DICTIONARY_MINIMUM_SIZE = 12;
     }
 }
 
-} // namespace latinime
+} // namespace turbokeyboard

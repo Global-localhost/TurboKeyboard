@@ -18,7 +18,7 @@
 
 #include <gtest/gtest.h>
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 ::testing::AssertionResult ExpectAngleDiffEq(const char* expectedExpression,
@@ -80,4 +80,4 @@ TEST(GeometryUtilsTest, testGetDistanceInt) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

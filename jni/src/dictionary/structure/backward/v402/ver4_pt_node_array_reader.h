@@ -21,13 +21,13 @@
  *   dictionary/structure/v4/ver4_pt_node_array_reader.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_VER4_PT_NODE_ARRAY_READER_H
-#define LATINIME_BACKWARD_V402_VER4_PT_NODE_ARRAY_READER_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_VER4_PT_NODE_ARRAY_READER_H
+#define TURBOKEYBOARD_BACKWARD_V402_VER4_PT_NODE_ARRAY_READER_H
 
 #include "defines.h"
 #include "dictionary/structure/pt_common/pt_node_array_reader.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -53,5 +53,5 @@ class Ver4PtNodeArrayReader : public PtNodeArrayReader {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif /* LATINIME_BACKWARD_V402_VER4_PT_NODE_ARRAY_READER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BACKWARD_V402_VER4_PT_NODE_ARRAY_READER_H */

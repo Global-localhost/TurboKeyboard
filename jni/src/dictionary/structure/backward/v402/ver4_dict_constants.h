@@ -21,12 +21,12 @@
  *   dictionary/structure/v4/ver4_dict_constants.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_VER4_DICT_CONSTANTS_H
-#define LATINIME_BACKWARD_V402_VER4_DICT_CONSTANTS_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_VER4_DICT_CONSTANTS_H
+#define TURBOKEYBOARD_BACKWARD_V402_VER4_DICT_CONSTANTS_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -80,5 +80,5 @@ class Ver4DictConstants {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif /* LATINIME_BACKWARD_V402_VER4_DICT_CONSTANTS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BACKWARD_V402_VER4_DICT_CONSTANTS_H */

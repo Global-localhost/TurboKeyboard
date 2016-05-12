@@ -20,7 +20,7 @@
 
 #include "dictionary/utils/buffer_with_extendable_buffer.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(SparseTableTest, TestSetAndGet) {
@@ -44,4 +44,4 @@ TEST(SparseTableTest, TestSetAndGet) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

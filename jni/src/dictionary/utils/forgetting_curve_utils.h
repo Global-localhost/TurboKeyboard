@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_FORGETTING_CURVE_UTILS_H
-#define LATINIME_FORGETTING_CURVE_UTILS_H
+#ifndef TURBOKEYBOARD_FORGETTING_CURVE_UTILS_H
+#define TURBOKEYBOARD_FORGETTING_CURVE_UTILS_H
 
 #include <vector>
 
@@ -23,7 +23,7 @@
 #include "dictionary/property/historical_info.h"
 #include "dictionary/utils/entry_counters.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class HeaderPolicy;
 
@@ -108,5 +108,5 @@ class ForgettingCurveUtils {
     static int clampToValidCountRange(const int count, const HeaderPolicy *const headerPolicy);
     static int clampToValidTimeStepCountRange(const int timeStepCount);
 };
-} // namespace latinime
-#endif /* LATINIME_FORGETTING_CURVE_UTILS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_FORGETTING_CURVE_UTILS_H */

@@ -20,8 +20,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="english_ime_name" msgid="5940510615957428904">"Android-toetsenbord  "</string>
-    <string name="spell_checker_service_name" msgid="1254221805440242662">"Spellingcontrole van Android  "</string>
-    <string name="app_settings" msgid="5760361067176802794">"Instellingen voor Android-toetsenbord  "</string>
-    <string name="spell_checker_settings" msgid="6123949487832861885">"Instellingen voor spellingcontrole van Android  "</string>
+    <string name="spell_checker_service_name" msgid="1254221805440242662">"Spellingcontrole"</string>
+    <string name="app_settings" msgid="5760361067176802794">"Instellingen voor toetsenbord"</string>
+    <string name="spell_checker_settings" msgid="6123949487832861885">"Instellingen voor spellingcontrole"</string>
 </resources>

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_TERMINAL_POSITION_LOOKUP_TABLE_H
-#define LATINIME_TERMINAL_POSITION_LOOKUP_TABLE_H
+#ifndef TURBOKEYBOARD_TERMINAL_POSITION_LOOKUP_TABLE_H
+#define TURBOKEYBOARD_TERMINAL_POSITION_LOOKUP_TABLE_H
 
 #include <cstdio>
 #include <unordered_map>
@@ -25,7 +25,7 @@
 #include "dictionary/structure/v4/ver4_dict_constants.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class TerminalPositionLookupTable : public SingleDictContent {
  public:
@@ -59,5 +59,5 @@ class TerminalPositionLookupTable : public SingleDictContent {
 
     int mSize;
 };
-} // namespace latinime
-#endif // LATINIME_TERMINAL_POSITION_LOOKUP_TABLE_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_TERMINAL_POSITION_LOOKUP_TABLE_H

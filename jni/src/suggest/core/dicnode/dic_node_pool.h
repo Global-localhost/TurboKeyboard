@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_NODE_POOL_H
-#define LATINIME_DIC_NODE_POOL_H
+#ifndef TURBOKEYBOARD_DIC_NODE_POOL_H
+#define TURBOKEYBOARD_DIC_NODE_POOL_H
 
 #include <deque>
 #include <unordered_set>
@@ -24,7 +24,7 @@
 #include "defines.h"
 #include "suggest/core/dicnode/dic_node.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNodePool {
  public:
@@ -83,5 +83,5 @@ class DicNodePool {
     std::vector<DicNode> mDicNodes;
     std::deque<DicNode*> mPooledDicNodes;
 };
-} // namespace latinime
-#endif // LATINIME_DIC_NODE_POOL_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DIC_NODE_POOL_H

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SCORING_H
-#define LATINIME_SCORING_H
+#ifndef TURBOKEYBOARD_SCORING_H
+#define TURBOKEYBOARD_SCORING_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNode;
 class DicTraverseSession;
@@ -50,5 +50,5 @@ class Scoring {
  private:
     DISALLOW_COPY_AND_ASSIGN(Scoring);
 };
-} // namespace latinime
-#endif // LATINIME_SCORING_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_SCORING_H

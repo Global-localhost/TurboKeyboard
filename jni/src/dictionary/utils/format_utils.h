@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_FORMAT_UTILS_H
-#define LATINIME_FORMAT_UTILS_H
+#ifndef TURBOKEYBOARD_FORMAT_UTILS_H
+#define TURBOKEYBOARD_FORMAT_UTILS_H
 
 #include <cstdint>
 
 #include "defines.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 /**
  * Methods to handle binary dictionary format version.
@@ -55,5 +55,5 @@ class FormatUtils {
 
     static const size_t DICTIONARY_MINIMUM_SIZE;
 };
-} // namespace latinime
-#endif /* LATINIME_FORMAT_UTILS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_FORMAT_UTILS_H */

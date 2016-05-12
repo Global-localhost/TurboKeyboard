@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_TRIE_MAP_H
-#define LATINIME_TRIE_MAP_H
+#ifndef TURBOKEYBOARD_TRIE_MAP_H
+#define TURBOKEYBOARD_TRIE_MAP_H
 
 #include <climits>
 #include <cstdint>
@@ -26,7 +26,7 @@
 #include "dictionary/utils/buffer_with_extendable_buffer.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 /**
  * Trie map derived from Phil Bagwell's Hash Array Mapped Trie.
@@ -395,5 +395,5 @@ class TrieMap {
     bool removeInner(const Entry &bitmapEntry);
 };
 
-} // namespace latinime
-#endif /* LATINIME_TRIE_MAP_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_TRIE_MAP_H */

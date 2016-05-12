@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_MMAPPED_BUFFER_H
-#define LATINIME_MMAPPED_BUFFER_H
+#ifndef TURBOKEYBOARD_MMAPPED_BUFFER_H
+#define TURBOKEYBOARD_MMAPPED_BUFFER_H
 
 #include <cstdint>
 #include <memory>
@@ -23,7 +23,7 @@
 #include "defines.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class MmappedBuffer {
  public:
@@ -73,4 +73,4 @@ class MmappedBuffer {
     const bool mIsUpdatable;
 };
 }
-#endif /* LATINIME_MMAPPED_BUFFER_H */
+#endif /* TURBOKEYBOARD_MMAPPED_BUFFER_H */

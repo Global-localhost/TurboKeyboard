@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SPARSE_TABLE_DICT_CONTENT_H
-#define LATINIME_SPARSE_TABLE_DICT_CONTENT_H
+#ifndef TURBOKEYBOARD_SPARSE_TABLE_DICT_CONTENT_H
+#define TURBOKEYBOARD_SPARSE_TABLE_DICT_CONTENT_H
 
 #include <cstdio>
 
@@ -25,7 +25,7 @@
 #include "dictionary/utils/sparse_table.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // TODO: Support multiple contents.
 class SparseTableDictContent {
@@ -87,5 +87,5 @@ class SparseTableDictContent {
     BufferWithExtendableBuffer mExpandableContentBuffer;
     SparseTable mAddressLookupTable;
 };
-} // namespace latinime
-#endif /* LATINIME_SPARSE_TABLE_DICT_CONTENT_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_SPARSE_TABLE_DICT_CONTENT_H */

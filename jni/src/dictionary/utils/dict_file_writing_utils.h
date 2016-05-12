@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DICT_FILE_WRITING_UTILS_H
-#define LATINIME_DICT_FILE_WRITING_UTILS_H
+#ifndef TURBOKEYBOARD_DICT_FILE_WRITING_UTILS_H
+#define TURBOKEYBOARD_DICT_FILE_WRITING_UTILS_H
 
 #include <cstdio>
 
@@ -23,7 +23,7 @@
 #include "dictionary/header/header_read_write_utils.h"
 #include "dictionary/utils/format_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class BufferWithExtendableBuffer;
 
@@ -63,5 +63,5 @@ class DictFileWritingUtils {
     static bool writeBufferToFile(FILE *const file,
             const BufferWithExtendableBuffer *const buffer);
 };
-} // namespace latinime
-#endif /* LATINIME_DICT_FILE_WRITING_UTILS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_DICT_FILE_WRITING_UTILS_H */

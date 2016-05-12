@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SUGGEST_OPTIONS_H
-#define LATINIME_SUGGEST_OPTIONS_H
+#ifndef TURBOKEYBOARD_SUGGEST_OPTIONS_H
+#define TURBOKEYBOARD_SUGGEST_OPTIONS_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class SuggestOptions{
  public:
@@ -87,5 +87,5 @@ class SuggestOptions{
         return 0;
     }
 };
-} // namespace latinime
-#endif // LATINIME_SUGGEST_OPTIONS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_SUGGEST_OPTIONS_H

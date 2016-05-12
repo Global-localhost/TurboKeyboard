@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_VER2_PATRICIA_TRIE_NODE_READER_H
-#define LATINIME_VER2_PATRICIA_TRIE_NODE_READER_H
+#ifndef TURBOKEYBOARD_VER2_PATRICIA_TRIE_NODE_READER_H
+#define TURBOKEYBOARD_VER2_PATRICIA_TRIE_NODE_READER_H
 
 #include <cstdint>
 
@@ -24,7 +24,7 @@
 #include "dictionary/structure/pt_common/pt_node_reader.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DictionaryBigramsStructurePolicy;
 class DictionaryShortcutsStructurePolicy;
@@ -48,5 +48,5 @@ class Ver2ParticiaTrieNodeReader : public PtNodeReader {
     const DictionaryShortcutsStructurePolicy *const mShortcutPolicy;
     const int *const mCodePointTable;
 };
-} // namespace latinime
-#endif /* LATINIME_VER2_PATRICIA_TRIE_NODE_READER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_VER2_PATRICIA_TRIE_NODE_READER_H */

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PT_NODE_PARAMS_H
-#define LATINIME_PT_NODE_PARAMS_H
+#ifndef TURBOKEYBOARD_PT_NODE_PARAMS_H
+#define TURBOKEYBOARD_PT_NODE_PARAMS_H
 
 #include <cstring>
 
@@ -26,7 +26,7 @@
 #include "utils/char_utils.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // This class has information of a PtNode. This class is immutable.
 class PtNodeParams {
@@ -258,5 +258,5 @@ class PtNodeParams {
     const int mBigramPos;
     const int mSiblingPos;
 };
-} // namespace latinime
-#endif /* LATINIME_PT_NODE_PARAMS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_PT_NODE_PARAMS_H */

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_GEOMETRY_UTILS_H
-#define LATINIME_GEOMETRY_UTILS_H
+#ifndef TURBOKEYBOARD_GEOMETRY_UTILS_H
+#define TURBOKEYBOARD_GEOMETRY_UTILS_H
 
 #include <cmath>
 
@@ -24,7 +24,7 @@
 #define ROUND_FLOAT_10000(f) ((f) < 1000.0f && (f) > 0.001f) \
         ? (floorf((f) * 10000.0f) / 10000.0f) : (f)
 
-namespace latinime {
+namespace turbokeyboard {
 
 class GeometryUtils {
  public:
@@ -57,5 +57,5 @@ class GeometryUtils {
  private:
     DISALLOW_IMPLICIT_CONSTRUCTORS(GeometryUtils);
 };
-} // namespace latinime
-#endif // LATINIME_GEOMETRY_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_GEOMETRY_UTILS_H

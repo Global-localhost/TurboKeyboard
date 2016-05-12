@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_ADDITIONAL_PROXIMITY_CHARS_H
-#define LATINIME_ADDITIONAL_PROXIMITY_CHARS_H
+#ifndef TURBOKEYBOARD_ADDITIONAL_PROXIMITY_CHARS_H
+#define TURBOKEYBOARD_ADDITIONAL_PROXIMITY_CHARS_H
 
 #include <cstring>
 #include <vector>
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class AdditionalProximityChars {
  private:
@@ -94,5 +94,5 @@ class AdditionalProximityChars {
         }
     }
 };
-} // namespace latinime
-#endif // LATINIME_ADDITIONAL_PROXIMITY_CHARS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_ADDITIONAL_PROXIMITY_CHARS_H

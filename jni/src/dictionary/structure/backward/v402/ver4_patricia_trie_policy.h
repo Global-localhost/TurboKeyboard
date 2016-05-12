@@ -22,8 +22,8 @@
  *   dictionary/structure/v4/ver4_patricia_trie_policy.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_VER4_PATRICIA_TRIE_POLICY_H
-#define LATINIME_BACKWARD_V402_VER4_PATRICIA_TRIE_POLICY_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_VER4_PATRICIA_TRIE_POLICY_H
+#define TURBOKEYBOARD_BACKWARD_V402_VER4_PATRICIA_TRIE_POLICY_H
 
 #include <vector>
 
@@ -44,7 +44,7 @@
 #include "dictionary/utils/entry_counters.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -177,5 +177,5 @@ class Ver4PatriciaTriePolicy : public DictionaryStructureWithBufferPolicy {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif // LATINIME_BACKWARD_V402_VER4_PATRICIA_TRIE_POLICY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_BACKWARD_V402_VER4_PATRICIA_TRIE_POLICY_H

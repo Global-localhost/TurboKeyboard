@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DICTIONARY_UTILS_H
-#define LATINIME_DICTIONARY_UTILS_H
+#ifndef TURBOKEYBOARD_DICTIONARY_UTILS_H
+#define TURBOKEYBOARD_DICTIONARY_UTILS_H
 
 #include <vector>
 
 #include "defines.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DictionaryStructureWithBufferPolicy;
 class DicNode;
@@ -41,5 +41,5 @@ class DictionaryUtils {
             const int inputCodePoint, const DicNode *const parentDicNode,
             std::vector<DicNode> *const outDicNodes);
 };
-} // namespace latinime
-#endif // LATINIME_DICTIONARY_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DICTIONARY_UTILS_H

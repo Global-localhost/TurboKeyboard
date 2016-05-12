@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_NODE_VECTOR_H
-#define LATINIME_DIC_NODE_VECTOR_H
+#ifndef TURBOKEYBOARD_DIC_NODE_VECTOR_H
+#define TURBOKEYBOARD_DIC_NODE_VECTOR_H
 
 #include <vector>
 
@@ -23,7 +23,7 @@
 #include "suggest/core/dicnode/dic_node.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNodeVector {
  public:
@@ -81,5 +81,5 @@ class DicNodeVector {
     std::vector<DicNode> mDicNodes;
     bool mLock;
 };
-} // namespace latinime
-#endif // LATINIME_DIC_NODE_VECTOR_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DIC_NODE_VECTOR_H

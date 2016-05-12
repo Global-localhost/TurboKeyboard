@@ -23,7 +23,7 @@
 #include "defines.h"
 #include "dictionary/structure/v4/ver4_dict_constants.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(TerminalPositionLookupTableTest, TestGetFromEmptyTable) {
@@ -73,4 +73,4 @@ TEST(TerminalPositionLookupTableTest, TestGC) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

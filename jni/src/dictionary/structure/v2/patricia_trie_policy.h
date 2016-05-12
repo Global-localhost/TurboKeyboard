@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PATRICIA_TRIE_POLICY_H
-#define LATINIME_PATRICIA_TRIE_POLICY_H
+#ifndef TURBOKEYBOARD_PATRICIA_TRIE_POLICY_H
+#define TURBOKEYBOARD_PATRICIA_TRIE_POLICY_H
 
 #include <cstdint>
 #include <vector>
@@ -32,7 +32,7 @@
 #include "utils/byte_array_view.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNode;
 class DicNodeVector;
@@ -176,5 +176,5 @@ class PatriciaTriePolicy : public DictionaryStructureWithBufferPolicy {
             const PtNodeParams &ptNodeParams) const;
     bool isValidPos(const int pos) const;
 };
-} // namespace latinime
-#endif // LATINIME_PATRICIA_TRIE_POLICY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_PATRICIA_TRIE_POLICY_H

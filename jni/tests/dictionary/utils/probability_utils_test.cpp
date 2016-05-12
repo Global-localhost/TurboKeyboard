@@ -20,7 +20,7 @@
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(ProbabilityUtilsTest, TestEncodeRawProbability) {
@@ -30,4 +30,4 @@ TEST(ProbabilityUtilsTest, TestEncodeRawProbability) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

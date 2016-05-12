@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_NGRAM_CONTEXT_H
-#define LATINIME_NGRAM_CONTEXT_H
+#ifndef TURBOKEYBOARD_NGRAM_CONTEXT_H
+#define TURBOKEYBOARD_NGRAM_CONTEXT_H
 
 #include <array>
 
 #include "defines.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DictionaryStructureWithBufferPolicy;
 
@@ -74,5 +74,5 @@ class NgramContext {
     int mPrevWordCodePointCount[MAX_PREV_WORD_COUNT_FOR_N_GRAM];
     bool mIsBeginningOfSentence[MAX_PREV_WORD_COUNT_FOR_N_GRAM];
 };
-} // namespace latinime
-#endif // LATINIME_NGRAM_CONTEXT_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_NGRAM_CONTEXT_H

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SUGGESTIONS_OUTPUT_UTILS
-#define LATINIME_SUGGESTIONS_OUTPUT_UTILS
+#ifndef TURBOKEYBOARD_SUGGESTIONS_OUTPUT_UTILS
+#define TURBOKEYBOARD_SUGGESTIONS_OUTPUT_UTILS
 
 #include "defines.h"
 #include "dictionary/property/word_attributes.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class BinaryDictionaryShortcutIterator;
 class DicNode;
@@ -61,5 +61,5 @@ class SuggestionsOutputUtils {
             SuggestionResults *const outSuggestionResults);
     static int computeFirstWordConfidence(const DicNode *const terminalDicNode);
 };
-} // namespace latinime
-#endif // LATINIME_SUGGESTIONS_OUTPUT_UTILS
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_SUGGESTIONS_OUTPUT_UTILS

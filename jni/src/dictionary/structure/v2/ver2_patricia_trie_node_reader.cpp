@@ -18,7 +18,7 @@
 
 #include "dictionary/structure/pt_common/patricia_trie_reading_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 const PtNodeParams Ver2ParticiaTrieNodeReader::fetchPtNodeParamsInBufferFromPtNodePos(
         const int ptNodePos) const {

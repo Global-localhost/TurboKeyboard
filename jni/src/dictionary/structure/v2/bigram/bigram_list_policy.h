@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_BIGRAM_LIST_POLICY_H
-#define LATINIME_BIGRAM_LIST_POLICY_H
+#ifndef TURBOKEYBOARD_BIGRAM_LIST_POLICY_H
+#define TURBOKEYBOARD_BIGRAM_LIST_POLICY_H
 
 #include <cstdint>
 
@@ -24,7 +24,7 @@
 #include "dictionary/structure/pt_common/bigram/bigram_list_read_write_utils.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class BigramListPolicy : public DictionaryBigramsStructurePolicy {
  public:
@@ -55,5 +55,5 @@ class BigramListPolicy : public DictionaryBigramsStructurePolicy {
 
     const ReadOnlyByteArrayView mBuffer;
 };
-} // namespace latinime
-#endif // LATINIME_BIGRAM_LIST_POLICY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_BIGRAM_LIST_POLICY_H

@@ -21,7 +21,7 @@ LATIN_IME_SRC_DIR := src
 LOCAL_CFLAGS += -std=c++11 -Wno-unused-parameter -Wno-unused-function
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/$(LATIN_IME_SRC_DIR)
 
-LOCAL_MODULE := libjni_latinime_common_static
+LOCAL_MODULE := libjni_turbokeyboard_common_static
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_CLANG := true
@@ -33,9 +33,9 @@ include $(BUILD_STATIC_LIBRARY)
 include $(CLEAR_VARS)
 
 # All code in LOCAL_WHOLE_STATIC_LIBRARIES will be built into this shared library.
-LOCAL_WHOLE_STATIC_LIBRARIES := libjni_latinime_common_static
+LOCAL_WHOLE_STATIC_LIBRARIES := libjni_turbokeyboard_common_static
 
-LOCAL_MODULE := libjni_latinime
+LOCAL_MODULE := libjni_turbokeyboard
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_CLANG := true

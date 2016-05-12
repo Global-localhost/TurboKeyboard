@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SHORTCUT_DICT_CONTENT_H
-#define LATINIME_SHORTCUT_DICT_CONTENT_H
+#ifndef TURBOKEYBOARD_SHORTCUT_DICT_CONTENT_H
+#define TURBOKEYBOARD_SHORTCUT_DICT_CONTENT_H
 
 #include <cstdio>
 
@@ -24,7 +24,7 @@
 #include "dictionary/structure/v4/content/terminal_position_lookup_table.h"
 #include "dictionary/structure/v4/ver4_dict_constants.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class ReadWriteByteArrayView;
 
@@ -88,5 +88,5 @@ class ShortcutDictContent : public SparseTableDictContent {
 
     int createAndGetShortcutFlags(const int probability, const bool hasNext) const;
 };
-} // namespace latinime
-#endif /* LATINIME_SHORTCUT_DICT_CONTENT_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_SHORTCUT_DICT_CONTENT_H */

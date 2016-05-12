@@ -21,8 +21,8 @@
  *   dictionary/structure/v4/content/sparse_table_dict_content.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_SPARSE_TABLE_DICT_CONTENT_H
-#define LATINIME_BACKWARD_V402_SPARSE_TABLE_DICT_CONTENT_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_SPARSE_TABLE_DICT_CONTENT_H
+#define TURBOKEYBOARD_BACKWARD_V402_SPARSE_TABLE_DICT_CONTENT_H
 
 #include "defines.h"
 #include "dictionary/structure/backward/v402/content/dict_content.h"
@@ -33,7 +33,7 @@
 #include "dictionary/utils/sparse_table.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -120,5 +120,5 @@ class SparseTableDictContent : public DictContent {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif /* LATINIME_BACKWARD_V402_SPARSE_TABLE_DICT_CONTENT_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BACKWARD_V402_SPARSE_TABLE_DICT_CONTENT_H */

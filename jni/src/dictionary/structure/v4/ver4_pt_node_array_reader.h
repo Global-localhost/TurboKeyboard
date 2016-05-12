@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_VER4_PT_NODE_ARRAY_READER_H
-#define LATINIME_VER4_PT_NODE_ARRAY_READER_H
+#ifndef TURBOKEYBOARD_VER4_PT_NODE_ARRAY_READER_H
+#define TURBOKEYBOARD_VER4_PT_NODE_ARRAY_READER_H
 
 #include "defines.h"
 #include "dictionary/structure/pt_common/pt_node_array_reader.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class BufferWithExtendableBuffer;
 
@@ -38,5 +38,5 @@ class Ver4PtNodeArrayReader : public PtNodeArrayReader {
 
     const BufferWithExtendableBuffer *const mBuffer;
 };
-} // namespace latinime
-#endif /* LATINIME_VER4_PT_NODE_ARRAY_READER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_VER4_PT_NODE_ARRAY_READER_H */

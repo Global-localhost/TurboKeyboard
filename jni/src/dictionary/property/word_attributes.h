@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_WORD_ATTRIBUTES_H
-#define LATINIME_WORD_ATTRIBUTES_H
+#ifndef TURBOKEYBOARD_WORD_ATTRIBUTES_H
+#define TURBOKEYBOARD_WORD_ATTRIBUTES_H
 
 #include "defines.h"
 
@@ -65,4 +65,4 @@ class WordAttributes {
 };
 
  // namespace
-#endif /* LATINIME_WORD_ATTRIBUTES_H */
+#endif /* TURBOKEYBOARD_WORD_ATTRIBUTES_H */

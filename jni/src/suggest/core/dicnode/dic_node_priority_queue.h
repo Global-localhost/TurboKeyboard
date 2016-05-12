@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_NODE_PRIORITY_QUEUE_H
-#define LATINIME_DIC_NODE_PRIORITY_QUEUE_H
+#ifndef TURBOKEYBOARD_DIC_NODE_PRIORITY_QUEUE_H
+#define TURBOKEYBOARD_DIC_NODE_PRIORITY_QUEUE_H
 
 #include <algorithm>
 #include <queue>
@@ -25,7 +25,7 @@
 #include "suggest/core/dicnode/dic_node.h"
 #include "suggest/core/dicnode/dic_node_pool.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNodePriorityQueue {
  public:
@@ -131,5 +131,5 @@ class DicNodePriorityQueue {
         return newNode;
     }
 };
-} // namespace latinime
-#endif // LATINIME_DIC_NODE_PRIORITY_QUEUE_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DIC_NODE_PRIORITY_QUEUE_H

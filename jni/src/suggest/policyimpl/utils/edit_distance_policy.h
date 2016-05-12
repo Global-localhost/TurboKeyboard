@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_EDIT_DISTANCE_POLICY_H
-#define LATINIME_EDIT_DISTANCE_POLICY_H
+#ifndef TURBOKEYBOARD_EDIT_DISTANCE_POLICY_H
+#define TURBOKEYBOARD_EDIT_DISTANCE_POLICY_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class EditDistancePolicy {
  public:
@@ -38,6 +38,6 @@ class EditDistancePolicy {
  private:
     DISALLOW_COPY_AND_ASSIGN(EditDistancePolicy);
 };
-} // namespace latinime
+} // namespace turbokeyboard
 
-#endif  // LATINIME_EDIT_DISTANCE_POLICY_H
+#endif  // TURBOKEYBOARD_EDIT_DISTANCE_POLICY_H

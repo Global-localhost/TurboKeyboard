@@ -31,7 +31,6 @@ import com.phonemetra.turbo.keyboard.latin.common.InputPointers;
  */
 class InputLogicHandler implements Handler.Callback {
     final Handler mNonUIThreadHandler;
-    // TODO: remove this reference.
     final LatinIME mLatinIME;
     final InputLogic mInputLogic;
     private final Object mLock = new Object();

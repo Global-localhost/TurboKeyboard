@@ -20,7 +20,7 @@
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(CharUtilsTest, TestIsAsciiUpper) {
@@ -119,4 +119,4 @@ TEST(CharUtilsTest, TestIsInUnicodeSpace) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

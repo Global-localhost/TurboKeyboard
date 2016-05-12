@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_NGRAM_LISTENER_H
-#define LATINIME_NGRAM_LISTENER_H
+#ifndef TURBOKEYBOARD_NGRAM_LISTENER_H
+#define TURBOKEYBOARD_NGRAM_LISTENER_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 /**
  * Interface to iterate ngram entries.
@@ -38,5 +38,5 @@ class NgramListener {
     DISALLOW_COPY_AND_ASSIGN(NgramListener);
 
 };
-} // namespace latinime
-#endif /* LATINIME_NGRAM_LISTENER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_NGRAM_LISTENER_H */

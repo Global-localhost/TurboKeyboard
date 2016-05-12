@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DICTIONARY_STRUCTURE_WITH_BUFFER_POLICY_FACTORY_H
-#define LATINIME_DICTIONARY_STRUCTURE_WITH_BUFFER_POLICY_FACTORY_H
+#ifndef TURBOKEYBOARD_DICTIONARY_STRUCTURE_WITH_BUFFER_POLICY_FACTORY_H
+#define TURBOKEYBOARD_DICTIONARY_STRUCTURE_WITH_BUFFER_POLICY_FACTORY_H
 
 #include <vector>
 
@@ -25,7 +25,7 @@
 #include "dictionary/utils/format_utils.h"
 #include "dictionary/utils/mmapped_buffer.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DictionaryStructureWithBufferPolicyFactory {
  public:
@@ -60,5 +60,5 @@ class DictionaryStructureWithBufferPolicyFactory {
     static void getHeaderFilePathInDictDir(const char *const dirPath,
             const int outHeaderFileBufSize, char *const outHeaderFilePath);
 };
-} // namespace latinime
-#endif // LATINIME_DICTIONARY_STRUCTURE_WITH_BUFFER_POLICY_FACTORY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DICTIONARY_STRUCTURE_WITH_BUFFER_POLICY_FACTORY_H

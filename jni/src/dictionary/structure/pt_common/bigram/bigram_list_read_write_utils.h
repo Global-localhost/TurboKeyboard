@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_BIGRAM_LIST_READ_WRITE_UTILS_H
-#define LATINIME_BIGRAM_LIST_READ_WRITE_UTILS_H
+#ifndef TURBOKEYBOARD_BIGRAM_LIST_READ_WRITE_UTILS_H
+#define TURBOKEYBOARD_BIGRAM_LIST_READ_WRITE_UTILS_H
 
 #include <cstdint>
 #include <cstdlib>
@@ -23,7 +23,7 @@
 #include "defines.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class BufferWithExtendableBuffer;
 
@@ -64,5 +64,5 @@ private:
    static int getBigramAddressAndAdvancePosition(const ReadOnlyByteArrayView buffer,
            const BigramFlags flags, int *const pos);
 };
-} // namespace latinime
-#endif // LATINIME_BIGRAM_LIST_READ_WRITE_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_BIGRAM_LIST_READ_WRITE_UTILS_H

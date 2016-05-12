@@ -21,12 +21,12 @@
  *   dictionary/structure/v4/content/dict_content.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_DICT_CONTENT_H
-#define LATINIME_BACKWARD_V402_DICT_CONTENT_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_DICT_CONTENT_H
+#define TURBOKEYBOARD_BACKWARD_V402_DICT_CONTENT_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -43,5 +43,5 @@ class DictContent {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif /* LATINIME_BACKWARD_V402_DICT_CONTENT_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BACKWARD_V402_DICT_CONTENT_H */

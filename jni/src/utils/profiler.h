@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PROFILER_H
-#define LATINIME_PROFILER_H
+#ifndef TURBOKEYBOARD_PROFILER_H
+#define TURBOKEYBOARD_PROFILER_H
 
 #ifdef FLAG_DO_PROFILE
 
@@ -24,7 +24,7 @@
 #include <ctime>
 #include <unordered_map>
 
-namespace latinime {
+namespace turbokeyboard {
 
 class Profiler final {
  public:
@@ -69,11 +69,11 @@ class Profiler final {
                 + static_cast<int64_t>(time.tv_nsec) / 1000;
     }
 };
-} // namespace latinime
+} // namespace turbokeyboard
 
-#define PROF_INIT Profiler __LATINIME__PROFILER__(CLOCK_THREAD_CPUTIME_ID)
-#define PROF_TIMER_START(timer_id) __LATINIME__PROFILER__.startTimer(timer_id)
-#define PROF_TIMER_END(timer_id) __LATINIME__PROFILER__.endTimer(timer_id)
+#define PROF_INIT Profiler __TURBOKEYBOARD__PROFILER__(CLOCK_THREAD_CPUTIME_ID)
+#define PROF_TIMER_START(timer_id) __TURBOKEYBOARD__PROFILER__.startTimer(timer_id)
+#define PROF_TIMER_END(timer_id) __TURBOKEYBOARD__PROFILER__.endTimer(timer_id)
 
 #else // FLAG_DO_PROFILE
 
@@ -83,4 +83,4 @@ class Profiler final {
 
 #endif // FLAG_DO_PROFILE
 
-#endif /* LATINIME_PROFILER_H */
+#endif /* TURBOKEYBOARD_PROFILER_H */

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_NODE_STATE_SCORING_H
-#define LATINIME_DIC_NODE_STATE_SCORING_H
+#ifndef TURBOKEYBOARD_DIC_NODE_STATE_SCORING_H
+#define TURBOKEYBOARD_DIC_NODE_STATE_SCORING_H
 
 #include <algorithm>
 #include <cstdint>
@@ -24,7 +24,7 @@
 #include "suggest/core/dictionary/digraph_utils.h"
 #include "suggest/core/dictionary/error_type_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNodeStateScoring {
  public:
@@ -215,5 +215,5 @@ class DicNodeStateScoring {
         }
     }
 };
-} // namespace latinime
-#endif // LATINIME_DIC_NODE_STATE_SCORING_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DIC_NODE_STATE_SCORING_H

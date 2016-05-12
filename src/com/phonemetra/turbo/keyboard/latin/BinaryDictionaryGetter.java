@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
 import com.phonemetra.turbo.keyboard.latin.define.DecoderSpecificConstants;
@@ -93,6 +94,7 @@ final public class BinaryDictionaryGetter {
             final int fallbackResId) {
         AssetFileDescriptor afd = null;
         try {
+        
             afd = context.getResources().openRawResourceFd(fallbackResId);
         } catch (RuntimeException e) {
             Log.e(TAG, "Resource not found: " + fallbackResId);

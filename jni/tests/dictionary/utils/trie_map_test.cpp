@@ -25,7 +25,7 @@
 #include <random>
 #include <unordered_map>
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(TrieMapTest, TestSetAndGet) {
@@ -249,4 +249,4 @@ TEST(TrieMapTest, TestIteration) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

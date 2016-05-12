@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_JNI_DATA_UTILS_H
-#define LATINIME_JNI_DATA_UTILS_H
+#ifndef TURBOKEYBOARD_JNI_DATA_UTILS_H
+#define TURBOKEYBOARD_JNI_DATA_UTILS_H
 
 #include <vector>
 
@@ -27,7 +27,7 @@
 #include "jni.h"
 #include "utils/char_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class JniDataUtils {
  public:
@@ -153,5 +153,5 @@ class JniDataUtils {
     static const int CODE_POINT_REPLACEMENT_CHARACTER;
     static const int CODE_POINT_NULL;
 };
-} // namespace latinime
-#endif // LATINIME_JNI_DATA_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_JNI_DATA_UTILS_H

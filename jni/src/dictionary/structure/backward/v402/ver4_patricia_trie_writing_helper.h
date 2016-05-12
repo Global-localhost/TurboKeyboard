@@ -21,15 +21,15 @@
  *   dictionary/structure/v4/ver4_patricia_trie_writing_helper.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_VER4_PATRICIA_TRIE_WRITING_HELPER_H
-#define LATINIME_BACKWARD_V402_VER4_PATRICIA_TRIE_WRITING_HELPER_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_VER4_PATRICIA_TRIE_WRITING_HELPER_H
+#define TURBOKEYBOARD_BACKWARD_V402_VER4_PATRICIA_TRIE_WRITING_HELPER_H
 
 #include "defines.h"
 #include "dictionary/structure/pt_common/dynamic_pt_gc_event_listeners.h"
 #include "dictionary/structure/backward/v402/content/terminal_position_lookup_table.h"
 #include "dictionary/utils/entry_counters.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -135,6 +135,6 @@ class Ver4PatriciaTrieWritingHelper {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
+} // namespace turbokeyboard
 
-#endif /* LATINIME_BACKWARD_V402_VER4_PATRICIA_TRIE_WRITING_HELPER_H */
+#endif /* TURBOKEYBOARD_BACKWARD_V402_VER4_PATRICIA_TRIE_WRITING_HELPER_H */

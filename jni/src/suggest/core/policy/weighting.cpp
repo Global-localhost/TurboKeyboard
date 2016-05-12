@@ -23,7 +23,7 @@
 #include "suggest/core/dictionary/error_type_utils.h"
 #include "suggest/core/session/dic_traverse_session.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class MultiBigramMap;
 
@@ -203,4 +203,4 @@ static inline void profile(const CorrectionType correctionType, DicNode *const n
             return 0;
     }
 }
-}  // namespace latinime
+}  // namespace turbokeyboard

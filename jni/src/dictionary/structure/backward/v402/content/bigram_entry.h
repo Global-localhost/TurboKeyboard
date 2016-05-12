@@ -21,14 +21,14 @@
  *   dictionary/structure/v4/content/bigram_entry.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_BIGRAM_ENTRY_H
-#define LATINIME_BACKWARD_V402_BIGRAM_ENTRY_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_BIGRAM_ENTRY_H
+#define TURBOKEYBOARD_BACKWARD_V402_BIGRAM_ENTRY_H
 
 #include "defines.h"
 #include "dictionary/property/historical_info.h"
 #include "dictionary/structure/backward/v402/ver4_dict_constants.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -106,5 +106,5 @@ class BigramEntry {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif /* LATINIME_BACKWARD_V402_BIGRAM_ENTRY_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BACKWARD_V402_BIGRAM_ENTRY_H */

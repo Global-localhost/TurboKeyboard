@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_NODE_STATE_INPUT_H
-#define LATINIME_DIC_NODE_STATE_INPUT_H
+#ifndef TURBOKEYBOARD_DIC_NODE_STATE_INPUT_H
+#define TURBOKEYBOARD_DIC_NODE_STATE_INPUT_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // TODO: Have a .cpp for this class
 class DicNodeStateInput {
@@ -90,5 +90,5 @@ class DicNodeStateInput {
     int mPrevCodePoint[MAX_POINTER_COUNT_G];
     float mTerminalDiffCost[MAX_POINTER_COUNT_G];
 };
-} // namespace latinime
-#endif // LATINIME_DIC_NODE_STATE_INPUT_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DIC_NODE_STATE_INPUT_H

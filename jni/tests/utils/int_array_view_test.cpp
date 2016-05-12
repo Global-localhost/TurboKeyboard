@@ -21,7 +21,7 @@
 #include <array>
 #include <vector>
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(IntArrayViewTest, TestAccess) {
@@ -199,4 +199,4 @@ TEST(IntArrayViewTest, TestSplit) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

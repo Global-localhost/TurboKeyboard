@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DEFINES_H
-#define LATINIME_DEFINES_H
+#ifndef TURBOKEYBOARD_DEFINES_H
+#define TURBOKEYBOARD_DEFINES_H
 
 #ifdef __GNUC__
 #define AK_FORCE_INLINE __attribute__((always_inline)) __inline__
@@ -97,7 +97,7 @@ AK_FORCE_INLINE static int intArrayToCharArray(const int *const source, const in
 #include <android/log.h>
 #endif // defined(__ANDROID__)
 #ifndef LOG_TAG
-#define LOG_TAG "LatinIME: "
+#define LOG_TAG "TurboKeyboard: "
 #endif // LOG_TAG
 
 #if defined(HOST_TOOL)
@@ -337,4 +337,4 @@ typedef enum {
     // Create new word with space substitution
     CT_NEW_WORD_SPACE_SUBSTITUTION,
 } CorrectionType;
-#endif // LATINIME_DEFINES_H
+#endif // TURBOKEYBOARD_DEFINES_H

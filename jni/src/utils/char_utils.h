@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_CHAR_UTILS_H
-#define LATINIME_CHAR_UTILS_H
+#ifndef TURBOKEYBOARD_CHAR_UTILS_H
+#define TURBOKEYBOARD_CHAR_UTILS_H
 
 #include <cctype>
 #include <cstring>
@@ -23,7 +23,7 @@
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class CharUtils {
  public:
@@ -137,5 +137,5 @@ class CharUtils {
 
     static int latin_tolower(const int c);
 };
-} // namespace latinime
-#endif // LATINIME_CHAR_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_CHAR_UTILS_H

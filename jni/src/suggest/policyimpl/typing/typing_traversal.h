@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_TYPING_TRAVERSAL_H
-#define LATINIME_TYPING_TRAVERSAL_H
+#ifndef TURBOKEYBOARD_TYPING_TRAVERSAL_H
+#define TURBOKEYBOARD_TYPING_TRAVERSAL_H
 
 #include <cstdint>
 
@@ -30,7 +30,7 @@
 #include "suggest/policyimpl/typing/scoring_params.h"
 #include "utils/char_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 class TypingTraversal : public Traversal {
  public:
     static const TypingTraversal *getInstance() { return &sInstance; }
@@ -202,5 +202,5 @@ class TypingTraversal : public Traversal {
     TypingTraversal() {}
     ~TypingTraversal() {}
 };
-} // namespace latinime
-#endif // LATINIME_TYPING_TRAVERSAL_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_TYPING_TRAVERSAL_H

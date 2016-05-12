@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SHORTCUT_LIST_POLICY_H
-#define LATINIME_SHORTCUT_LIST_POLICY_H
+#ifndef TURBOKEYBOARD_SHORTCUT_LIST_POLICY_H
+#define TURBOKEYBOARD_SHORTCUT_LIST_POLICY_H
 
 #include <cstdint>
 
@@ -24,7 +24,7 @@
 #include "dictionary/structure/pt_common/shortcut/shortcut_list_reading_utils.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class ShortcutListPolicy : public DictionaryShortcutsStructurePolicy {
  public:
@@ -69,5 +69,5 @@ class ShortcutListPolicy : public DictionaryShortcutsStructurePolicy {
 
     const ReadOnlyByteArrayView mBuffer;
 };
-} // namespace latinime
-#endif // LATINIME_SHORTCUT_LIST_POLICY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_SHORTCUT_LIST_POLICY_H

@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_VER4_PATRICIA_TRIE_WRITING_HELPER_H
-#define LATINIME_VER4_PATRICIA_TRIE_WRITING_HELPER_H
+#ifndef TURBOKEYBOARD_VER4_PATRICIA_TRIE_WRITING_HELPER_H
+#define TURBOKEYBOARD_VER4_PATRICIA_TRIE_WRITING_HELPER_H
 
 #include "defines.h"
 #include "dictionary/structure/pt_common/dynamic_pt_gc_event_listeners.h"
 #include "dictionary/structure/v4/content/terminal_position_lookup_table.h"
 #include "dictionary/utils/entry_counters.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class HeaderPolicy;
 class Ver4DictBuffers;
@@ -71,6 +71,6 @@ class Ver4PatriciaTrieWritingHelper {
 
     Ver4DictBuffers *const mBuffers;
 };
-} // namespace latinime
+} // namespace turbokeyboard
 
-#endif /* LATINIME_VER4_PATRICIA_TRIE_WRITING_HELPER_H */
+#endif /* TURBOKEYBOARD_VER4_PATRICIA_TRIE_WRITING_HELPER_H */

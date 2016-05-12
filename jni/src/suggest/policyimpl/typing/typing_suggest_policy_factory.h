@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_TYPING_SUGGEST_POLICY_FACTORY_H
-#define LATINIME_TYPING_SUGGEST_POLICY_FACTORY_H
+#ifndef TURBOKEYBOARD_TYPING_SUGGEST_POLICY_FACTORY_H
+#define TURBOKEYBOARD_TYPING_SUGGEST_POLICY_FACTORY_H
 
 #include "defines.h"
 #include "typing_suggest_policy.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class SuggestPolicy;
 
@@ -33,5 +33,5 @@ class TypingSuggestPolicyFactory {
  private:
     DISALLOW_COPY_AND_ASSIGN(TypingSuggestPolicyFactory);
 };
-} // namespace latinime
-#endif // LATINIME_TYPING_SUGGEST_POLICY_FACTORY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_TYPING_SUGGEST_POLICY_FACTORY_H

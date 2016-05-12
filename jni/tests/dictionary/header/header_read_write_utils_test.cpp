@@ -23,7 +23,7 @@
 
 #include "dictionary/interface/dictionary_header_structure_policy.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(HeaderReadWriteUtilsTest, TestInsertCharactersIntoVector) {
@@ -75,4 +75,4 @@ TEST(HeaderReadWriteUtilsTest, TestAttributeMapCodeForPoints) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DYNAMIC_LANGUAGE_MODEL_PROBABILITY_UTILS_H
-#define LATINIME_DYNAMIC_LANGUAGE_MODEL_PROBABILITY_UTILS_H
+#ifndef TURBOKEYBOARD_DYNAMIC_LANGUAGE_MODEL_PROBABILITY_UTILS_H
+#define TURBOKEYBOARD_DYNAMIC_LANGUAGE_MODEL_PROBABILITY_UTILS_H
 
 #include <algorithm>
 
@@ -24,7 +24,7 @@
 #include "utils/ngram_utils.h"
 #include "utils/time_keeper.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DynamicLanguageModelProbabilityUtils {
  public:
@@ -73,5 +73,5 @@ private:
     static const int DURATION_TO_DISCARD_ENTRY_IN_SECONDS;
 };
 
-} // namespace latinime
-#endif /* LATINIME_DYNAMIC_LANGUAGE_MODEL_PROBABILITY_UTILS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_DYNAMIC_LANGUAGE_MODEL_PROBABILITY_UTILS_H */

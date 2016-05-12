@@ -18,8 +18,6 @@ package com.phonemetra.turbo.keyboard.latin.utils;
 
 import android.util.Log;
 
-import com.phonemetra.turbo.keyboard.latin.define.JniLibName;
-
 public final class JniUtils {
 	
 	private static final String TAG = "JniUtils";
@@ -31,16 +29,15 @@ public final class JniUtils {
 
 	public static void loadNativeLibrary() {
 
-		try {
-			System.loadLibrary(JniLibName.JNI_LIB_NAME2);
-			mHaveGestureLib = true;
-		} catch (UnsatisfiedLinkError ue) {
+		//try {
+		//	System.loadLibrary(JniLibName.JNI_LIB_NAME2);
+		//	mHaveGestureLib = true;
+		//} catch (UnsatisfiedLinkError ue) {
 			try {
-				System.loadLibrary(JniLibName.JNI_LIB_NAME);
+				System.loadLibrary("jni_turbokeyboard");
 			 } catch (UnsatisfiedLinkError e) {
-				Log.e(TAG, "Could not load native library "
-						+ JniLibName.JNI_LIB_NAME, e);
+				Log.e(TAG, "Could not load native library jni_turbokeyboard", e);
 			}
-		}
+		//}
 	}
 }

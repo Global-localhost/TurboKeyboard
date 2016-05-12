@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "LatinIME: jni: BinaryDictionary"
+#define LOG_TAG "TurboKeyboard: jni: BinaryDictionary"
 
 #include "com_phonemetra_turbo_keyboard_latin_BinaryDictionary.h"
 
@@ -38,11 +38,11 @@
 #include "utils/profiler.h"
 #include "utils/time_keeper.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class ProximityInfo;
 
-static jlong latinime_BinaryDictionary_open(JNIEnv *env, jclass clazz, jstring sourceDir,
+static jlong turbokeyboard_BinaryDictionary_open(JNIEnv *env, jclass clazz, jstring sourceDir,
         jlong dictOffset, jlong dictSize, jboolean isUpdatable) {
     PROF_INIT;
     PROF_TIMER_START(66);
@@ -68,7 +68,7 @@ static jlong latinime_BinaryDictionary_open(JNIEnv *env, jclass clazz, jstring s
     return reinterpret_cast<jlong>(dictionary);
 }
 
-static jlong latinime_BinaryDictionary_createOnMemory(JNIEnv *env, jclass clazz,
+static jlong turbokeyboard_BinaryDictionary_createOnMemory(JNIEnv *env, jclass clazz,
         jlong formatVersion, jstring locale, jobjectArray attributeKeyStringArray,
         jobjectArray attributeValueStringArray) {
     const jsize localeUtf8Length = env->GetStringUTFLength(locale);
@@ -96,7 +96,7 @@ static jlong latinime_BinaryDictionary_createOnMemory(JNIEnv *env, jclass clazz,
     return reinterpret_cast<jlong>(dictionary);
 }
 
-static bool latinime_BinaryDictionary_flush(JNIEnv *env, jclass clazz, jlong dict,
+static bool turbokeyboard_BinaryDictionary_flush(JNIEnv *env, jclass clazz, jlong dict,
         jstring filePath) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) return false;
@@ -107,14 +107,14 @@ static bool latinime_BinaryDictionary_flush(JNIEnv *env, jclass clazz, jlong dic
     return dictionary->flush(filePathChars);
 }
 
-static bool latinime_BinaryDictionary_needsToRunGC(JNIEnv *env, jclass clazz,
+static bool turbokeyboard_BinaryDictionary_needsToRunGC(JNIEnv *env, jclass clazz,
         jlong dict, jboolean mindsBlockByGC) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) return false;
     return dictionary->needsToRunGC(mindsBlockByGC == JNI_TRUE);
 }
 
-static bool latinime_BinaryDictionary_flushWithGC(JNIEnv *env, jclass clazz, jlong dict,
+static bool turbokeyboard_BinaryDictionary_flushWithGC(JNIEnv *env, jclass clazz, jlong dict,
         jstring filePath) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) return false;
@@ -125,13 +125,13 @@ static bool latinime_BinaryDictionary_flushWithGC(JNIEnv *env, jclass clazz, jlo
     return dictionary->flushWithGC(filePathChars);
 }
 
-static void latinime_BinaryDictionary_close(JNIEnv *env, jclass clazz, jlong dict) {
+static void turbokeyboard_BinaryDictionary_close(JNIEnv *env, jclass clazz, jlong dict) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) return;
     delete dictionary;
 }
 
-static void latinime_BinaryDictionary_getHeaderInfo(JNIEnv *env, jclass clazz, jlong dict,
+static void turbokeyboard_BinaryDictionary_getHeaderInfo(JNIEnv *env, jclass clazz, jlong dict,
         jintArray outHeaderSize, jintArray outFormatVersion, jobject outAttributeKeys,
         jobject outAttributeValues) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
@@ -167,7 +167,7 @@ static void latinime_BinaryDictionary_getHeaderInfo(JNIEnv *env, jclass clazz, j
     return;
 }
 
-static int latinime_BinaryDictionary_getFormatVersion(JNIEnv *env, jclass clazz, jlong dict) {
+static int turbokeyboard_BinaryDictionary_getFormatVersion(JNIEnv *env, jclass clazz, jlong dict) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) return 0;
     const DictionaryHeaderStructurePolicy *const headerPolicy =
@@ -175,7 +175,7 @@ static int latinime_BinaryDictionary_getFormatVersion(JNIEnv *env, jclass clazz,
     return headerPolicy->getFormatVersionNumber();
 }
 
-static void latinime_BinaryDictionary_getSuggestions(JNIEnv *env, jclass clazz, jlong dict,
+static void turbokeyboard_BinaryDictionary_getSuggestions(JNIEnv *env, jclass clazz, jlong dict,
         jlong proximityInfo, jlong dicTraverseSession, jintArray xCoordinatesArray,
         jintArray yCoordinatesArray, jintArray timesArray, jintArray pointerIdsArray,
         jintArray inputCodePointsArray, jint inputSize, jintArray suggestOptions,
@@ -260,7 +260,7 @@ static void latinime_BinaryDictionary_getSuggestions(JNIEnv *env, jclass clazz, 
             outAutoCommitFirstWordConfidenceArray, inOutWeightOfLangModelVsSpatialModel);
 }
 
-static jint latinime_BinaryDictionary_getProbability(JNIEnv *env, jclass clazz, jlong dict,
+static jint turbokeyboard_BinaryDictionary_getProbability(JNIEnv *env, jclass clazz, jlong dict,
         jintArray word) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) return NOT_A_PROBABILITY;
@@ -270,7 +270,7 @@ static jint latinime_BinaryDictionary_getProbability(JNIEnv *env, jclass clazz, 
     return dictionary->getProbability(CodePointArrayView(codePoints, codePointCount));
 }
 
-static jint latinime_BinaryDictionary_getMaxProbabilityOfExactMatches(
+static jint turbokeyboard_BinaryDictionary_getMaxProbabilityOfExactMatches(
         JNIEnv *env, jclass clazz, jlong dict, jintArray word) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) return NOT_A_PROBABILITY;
@@ -281,7 +281,7 @@ static jint latinime_BinaryDictionary_getMaxProbabilityOfExactMatches(
             CodePointArrayView(codePoints, codePointCount));
 }
 
-static jint latinime_BinaryDictionary_getNgramProbability(JNIEnv *env, jclass clazz,
+static jint turbokeyboard_BinaryDictionary_getNgramProbability(JNIEnv *env, jclass clazz,
         jlong dict, jobjectArray prevWordCodePointArrays, jbooleanArray isBeginningOfSentenceArray,
         jintArray word) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
@@ -299,7 +299,7 @@ static jint latinime_BinaryDictionary_getNgramProbability(JNIEnv *env, jclass cl
 // Method to iterate all words in the dictionary for makedict.
 // If token is 0, this method newly starts iterating the dictionary. This method returns 0 when
 // the dictionary does not have a next word.
-static jint latinime_BinaryDictionary_getNextWord(JNIEnv *env, jclass clazz,
+static jint turbokeyboard_BinaryDictionary_getNextWord(JNIEnv *env, jclass clazz,
         jlong dict, jint token, jintArray outCodePoints, jbooleanArray outIsBeginningOfSentence) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) return 0;
@@ -325,7 +325,7 @@ static jint latinime_BinaryDictionary_getNextWord(JNIEnv *env, jclass clazz,
     return nextToken;
 }
 
-static void latinime_BinaryDictionary_getWordProperty(JNIEnv *env, jclass clazz,
+static void turbokeyboard_BinaryDictionary_getWordProperty(JNIEnv *env, jclass clazz,
         jlong dict, jintArray word, jboolean isBeginningOfSentence, jintArray outCodePoints,
         jbooleanArray outFlags, jintArray outProbabilityInfo, jobject outNgramPrevWordsArray,
         jobject outNgramPrevWordIsBeginningOfSentenceArray, jobject outNgramTargets,
@@ -356,7 +356,7 @@ static void latinime_BinaryDictionary_getWordProperty(JNIEnv *env, jclass clazz,
             outNgramTargets, outNgramProbabilityInfo, outShortcutTargets, outShortcutProbabilities);
 }
 
-static bool latinime_BinaryDictionary_addUnigramEntry(JNIEnv *env, jclass clazz, jlong dict,
+static bool turbokeyboard_BinaryDictionary_addUnigramEntry(JNIEnv *env, jclass clazz, jlong dict,
         jintArray word, jint probability, jintArray shortcutTarget, jint shortcutProbability,
         jboolean isBeginningOfSentence, jboolean isNotAWord, jboolean isPossiblyOffensive,
         jint timestamp) {
@@ -383,7 +383,7 @@ static bool latinime_BinaryDictionary_addUnigramEntry(JNIEnv *env, jclass clazz,
             &unigramProperty);
 }
 
-static bool latinime_BinaryDictionary_removeUnigramEntry(JNIEnv *env, jclass clazz, jlong dict,
+static bool turbokeyboard_BinaryDictionary_removeUnigramEntry(JNIEnv *env, jclass clazz, jlong dict,
         jintArray word) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) {
@@ -395,7 +395,7 @@ static bool latinime_BinaryDictionary_removeUnigramEntry(JNIEnv *env, jclass cla
     return dictionary->removeUnigramEntry(CodePointArrayView(codePoints, codePointCount));
 }
 
-static bool latinime_BinaryDictionary_addNgramEntry(JNIEnv *env, jclass clazz, jlong dict,
+static bool turbokeyboard_BinaryDictionary_addNgramEntry(JNIEnv *env, jclass clazz, jlong dict,
         jobjectArray prevWordCodePointArrays, jbooleanArray isBeginningOfSentenceArray,
         jintArray word, jint probability, jint timestamp) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
@@ -415,7 +415,7 @@ static bool latinime_BinaryDictionary_addNgramEntry(JNIEnv *env, jclass clazz, j
     return dictionary->addNgramEntry(&ngramProperty);
 }
 
-static bool latinime_BinaryDictionary_removeNgramEntry(JNIEnv *env, jclass clazz, jlong dict,
+static bool turbokeyboard_BinaryDictionary_removeNgramEntry(JNIEnv *env, jclass clazz, jlong dict,
         jobjectArray prevWordCodePointArrays, jbooleanArray isBeginningOfSentenceArray,
         jintArray word) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
@@ -432,7 +432,7 @@ static bool latinime_BinaryDictionary_removeNgramEntry(JNIEnv *env, jclass clazz
             CodePointArrayView(wordCodePoints, codePointCount));
 }
 
-static bool latinime_BinaryDictionary_updateEntriesForWordWithNgramContext(JNIEnv *env,
+static bool turbokeyboard_BinaryDictionary_updateEntriesForWordWithNgramContext(JNIEnv *env,
         jclass clazz, jlong dict, jobjectArray prevWordCodePointArrays,
         jbooleanArray isBeginningOfSentenceArray, jintArray word, jboolean isValidWord, jint count,
         jint timestamp) {
@@ -453,7 +453,7 @@ static bool latinime_BinaryDictionary_updateEntriesForWordWithNgramContext(JNIEn
 }
 
 // Returns how many input events are processed.
-static int latinime_BinaryDictionary_updateEntriesForInputEvents(JNIEnv *env, jclass clazz,
+static int turbokeyboard_BinaryDictionary_updateEntriesForInputEvents(JNIEnv *env, jclass clazz,
         jlong dict, jobjectArray inputEvents, jint startIndex) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) {
@@ -508,7 +508,7 @@ static int latinime_BinaryDictionary_updateEntriesForInputEvents(JNIEnv *env, jc
     return inputEventCount;
 }
 
-static jstring latinime_BinaryDictionary_getProperty(JNIEnv *env, jclass clazz, jlong dict,
+static jstring turbokeyboard_BinaryDictionary_getProperty(JNIEnv *env, jclass clazz, jlong dict,
         jstring query) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) {
@@ -525,7 +525,7 @@ static jstring latinime_BinaryDictionary_getProperty(JNIEnv *env, jclass clazz, 
     return env->NewStringUTF(resultChars);
 }
 
-static bool latinime_BinaryDictionary_isCorruptedNative(JNIEnv *env, jclass clazz, jlong dict) {
+static bool turbokeyboard_BinaryDictionary_isCorruptedNative(JNIEnv *env, jclass clazz, jlong dict) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) {
         return false;
@@ -542,7 +542,7 @@ static DictionaryStructureWithBufferPolicy::StructurePolicyPtr runGCAndGetNewStr
             dictFilePath, 0 /* offset */, 0 /* size */, true /* isUpdatable */);
 }
 
-static bool latinime_BinaryDictionary_migrateNative(JNIEnv *env, jclass clazz, jlong dict,
+static bool turbokeyboard_BinaryDictionary_migrateNative(JNIEnv *env, jclass clazz, jlong dict,
         jstring dictFilePath, jlong newFormatVersion) {
     Dictionary *dictionary = reinterpret_cast<Dictionary *>(dict);
     if (!dictionary) {
@@ -620,120 +620,120 @@ static const JNINativeMethod sMethods[] = {
     {
         const_cast<char *>("openNative"),
         const_cast<char *>("(Ljava/lang/String;JJZ)J"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_open)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_open)
     },
     {
         const_cast<char *>("createOnMemoryNative"),
         const_cast<char *>("(JLjava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)J"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_createOnMemory)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_createOnMemory)
     },
     {
         const_cast<char *>("closeNative"),
         const_cast<char *>("(J)V"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_close)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_close)
     },
     {
         const_cast<char *>("getFormatVersionNative"),
         const_cast<char *>("(J)I"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_getFormatVersion)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_getFormatVersion)
     },
     {
         const_cast<char *>("getHeaderInfoNative"),
         const_cast<char *>("(J[I[ILjava/util/ArrayList;Ljava/util/ArrayList;)V"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_getHeaderInfo)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_getHeaderInfo)
     },
     {
         const_cast<char *>("flushNative"),
         const_cast<char *>("(JLjava/lang/String;)Z"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_flush)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_flush)
     },
     {
         const_cast<char *>("needsToRunGCNative"),
         const_cast<char *>("(JZ)Z"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_needsToRunGC)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_needsToRunGC)
     },
     {
         const_cast<char *>("flushWithGCNative"),
         const_cast<char *>("(JLjava/lang/String;)Z"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_flushWithGC)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_flushWithGC)
     },
     {
         const_cast<char *>("getSuggestionsNative"),
         const_cast<char *>("(JJJ[I[I[I[I[II[I[[I[ZI[I[I[I[I[I[I[F)V"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_getSuggestions)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_getSuggestions)
     },
     {
         const_cast<char *>("getProbabilityNative"),
         const_cast<char *>("(J[I)I"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_getProbability)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_getProbability)
     },
     {
         const_cast<char *>("getMaxProbabilityOfExactMatchesNative"),
         const_cast<char *>("(J[I)I"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_getMaxProbabilityOfExactMatches)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_getMaxProbabilityOfExactMatches)
     },
     {
         const_cast<char *>("getNgramProbabilityNative"),
         const_cast<char *>("(J[[I[Z[I)I"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_getNgramProbability)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_getNgramProbability)
     },
     {
         const_cast<char *>("getWordPropertyNative"),
         const_cast<char *>("(J[IZ[I[Z[ILjava/util/ArrayList;Ljava/util/ArrayList;"
                 "Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;"
                 "Ljava/util/ArrayList;)V"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_getWordProperty)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_getWordProperty)
     },
     {
         const_cast<char *>("getNextWordNative"),
         const_cast<char *>("(JI[I[Z)I"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_getNextWord)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_getNextWord)
     },
     {
         const_cast<char *>("addUnigramEntryNative"),
         const_cast<char *>("(J[II[IIZZZI)Z"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_addUnigramEntry)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_addUnigramEntry)
     },
     {
         const_cast<char *>("removeUnigramEntryNative"),
         const_cast<char *>("(J[I)Z"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_removeUnigramEntry)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_removeUnigramEntry)
     },
     {
         const_cast<char *>("addNgramEntryNative"),
         const_cast<char *>("(J[[I[Z[III)Z"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_addNgramEntry)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_addNgramEntry)
     },
     {
         const_cast<char *>("removeNgramEntryNative"),
         const_cast<char *>("(J[[I[Z[I)Z"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_removeNgramEntry)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_removeNgramEntry)
     },
     {
         const_cast<char *>("updateEntriesForWordWithNgramContextNative"),
         const_cast<char *>("(J[[I[Z[IZII)Z"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_updateEntriesForWordWithNgramContext)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_updateEntriesForWordWithNgramContext)
     },
     {
         const_cast<char *>("updateEntriesForInputEventsNative"),
         const_cast<char *>(
                 "(J[Lcom/phonemetra/turbo/keyboard/latin/utils/WordInputEventForPersonalization;I)I"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_updateEntriesForInputEvents)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_updateEntriesForInputEvents)
     },
     {
         const_cast<char *>("getPropertyNative"),
         const_cast<char *>("(JLjava/lang/String;)Ljava/lang/String;"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_getProperty)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_getProperty)
     },
     {
         const_cast<char *>("isCorruptedNative"),
         const_cast<char *>("(J)Z"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_isCorruptedNative)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_isCorruptedNative)
     },
     {
         const_cast<char *>("migrateNative"),
         const_cast<char *>("(JLjava/lang/String;J)Z"),
-        reinterpret_cast<void *>(latinime_BinaryDictionary_migrateNative)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_migrateNative)
     }
 };
 
@@ -741,4 +741,4 @@ int register_BinaryDictionary(JNIEnv *env) {
     const char *const kClassPathName = "com/phonemetra/turbo/keyboard/latin/BinaryDictionary";
     return registerNativeMethods(env, kClassPathName, sMethods, NELEMS(sMethods));
 }
-} // namespace latinime
+} // namespace turbokeyboard

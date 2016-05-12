@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PT_NODE_ARRAY_READER_H
-#define LATINIME_PT_NODE_ARRAY_READER_H
+#ifndef TURBOKEYBOARD_PT_NODE_ARRAY_READER_H
+#define TURBOKEYBOARD_PT_NODE_ARRAY_READER_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // Interface class used to read PtNode array information.
 class PtNodeArrayReader {
@@ -41,5 +41,5 @@ class PtNodeArrayReader {
  private:
     DISALLOW_COPY_AND_ASSIGN(PtNodeArrayReader);
 };
-} // namespace latinime
-#endif /* LATINIME_PT_NODE_READER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_PT_NODE_READER_H */

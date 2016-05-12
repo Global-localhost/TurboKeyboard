@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_NODE_PROFILER_H
-#define LATINIME_DIC_NODE_PROFILER_H
+#ifndef TURBOKEYBOARD_DIC_NODE_PROFILER_H
+#define TURBOKEYBOARD_DIC_NODE_PROFILER_H
 
 #include "defines.h"
 
@@ -55,7 +55,7 @@
 #define PROF_NODE_COPY(src, dest)
 #endif
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNodeProfiler {
  public:
@@ -185,4 +185,4 @@ class DicNodeProfiler {
     // for this class
 };
 }
-#endif // LATINIME_DIC_NODE_PROFILER_H
+#endif // TURBOKEYBOARD_DIC_NODE_PROFILER_H

@@ -22,7 +22,7 @@
 
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(FormatUtilsTest, TestMagicNumber) {
@@ -94,4 +94,4 @@ TEST(FormatUtilsTest, TestDetectFormatVersion) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

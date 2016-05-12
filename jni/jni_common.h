@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_JNI_COMMON_H
-#define LATINIME_JNI_COMMON_H
+#ifndef TURBOKEYBOARD_JNI_COMMON_H
+#define TURBOKEYBOARD_JNI_COMMON_H
 
 #include "jni.h"
 
-namespace latinime {
+namespace turbokeyboard {
 int registerNativeMethods(JNIEnv *env, const char *const className, const JNINativeMethod *methods,
         const int numMethods);
-} // namespace latinime
-#endif // LATINIME_JNI_COMMON_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_JNI_COMMON_H

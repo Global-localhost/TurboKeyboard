@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_NODE_STATE_H
-#define LATINIME_DIC_NODE_STATE_H
+#ifndef TURBOKEYBOARD_DIC_NODE_STATE_H
+#define TURBOKEYBOARD_DIC_NODE_STATE_H
 
 #include "defines.h"
 #include "suggest/core/dicnode/internal/dic_node_state_input.h"
 #include "suggest/core/dicnode/internal/dic_node_state_output.h"
 #include "suggest/core/dicnode/internal/dic_node_state_scoring.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNodeState {
  public:
@@ -76,5 +76,5 @@ class DicNodeState {
                 mergedNodeCodePointCount, mergedNodeCodePoints);
     }
 };
-} // namespace latinime
-#endif // LATINIME_DIC_NODE_STATE_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DIC_NODE_STATE_H

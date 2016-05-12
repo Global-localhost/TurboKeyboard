@@ -29,7 +29,7 @@ import java.util.Collections;
 import java.util.List;
 
 public final class JsonUtils {
-    private static final String TAG = JsonUtils.class.getSimpleName();
+    private static final String TAG = "JsonUtils";
 
     private static final String INTEGER_CLASS_NAME = Integer.class.getSimpleName();
     private static final String STRING_CLASS_NAME = String.class.getSimpleName();

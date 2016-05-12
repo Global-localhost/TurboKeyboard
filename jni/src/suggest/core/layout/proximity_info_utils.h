@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PROXIMITY_INFO_UTILS_H
-#define LATINIME_PROXIMITY_INFO_UTILS_H
+#ifndef TURBOKEYBOARD_PROXIMITY_INFO_UTILS_H
+#define TURBOKEYBOARD_PROXIMITY_INFO_UTILS_H
 
 #include <cmath>
 #include <unordered_map>
@@ -26,7 +26,7 @@
 #include "suggest/core/layout/geometry_utils.h"
 #include "utils/char_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 class ProximityInfoUtils {
  public:
     static AK_FORCE_INLINE int getKeyIndexOf(const int keyCount, const int c,
@@ -233,5 +233,5 @@ class ProximityInfoUtils {
         return dx * dx + dy * dy;
     }
 };
-} // namespace latinime
-#endif // LATINIME_PROXIMITY_INFO_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_PROXIMITY_INFO_UTILS_H

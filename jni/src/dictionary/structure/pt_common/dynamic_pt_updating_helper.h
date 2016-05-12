@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DYNAMIC_PT_UPDATING_HELPER_H
-#define LATINIME_DYNAMIC_PT_UPDATING_HELPER_H
+#ifndef TURBOKEYBOARD_DYNAMIC_PT_UPDATING_HELPER_H
+#define TURBOKEYBOARD_DYNAMIC_PT_UPDATING_HELPER_H
 
 #include "defines.h"
 #include "dictionary/structure/pt_common/pt_node_params.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class NgramProperty;
 class BufferWithExtendableBuffer;
@@ -92,5 +92,5 @@ class DynamicPtUpdatingHelper {
             const bool isPossiblyOffensive, const bool isTerminal, const int parentPos,
             const CodePointArrayView codePoints, const int probability) const;
 };
-} // namespace latinime
-#endif /* LATINIME_DYNAMIC_PATRICIA_TRIE_UPDATING_HELPER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_DYNAMIC_PATRICIA_TRIE_UPDATING_HELPER_H */

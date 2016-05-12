@@ -18,7 +18,7 @@
 
 #include <gtest/gtest.h>
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(TimeKeeperTest, TestTestMode) {
@@ -35,4 +35,4 @@ TEST(TimeKeeperTest, TestTestMode) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

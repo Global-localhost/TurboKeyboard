@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_BYTE_ARRAY_UTILS_H
-#define LATINIME_BYTE_ARRAY_UTILS_H
+#ifndef TURBOKEYBOARD_BYTE_ARRAY_UTILS_H
+#define TURBOKEYBOARD_BYTE_ARRAY_UTILS_H
 
 #include <cstdint>
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 /**
  * Utility methods for reading byte arrays.
@@ -286,5 +286,5 @@ class ByteArrayUtils {
         buffer[(*pos)++] = data & 0xFF;
     }
 };
-} // namespace latinime
-#endif /* LATINIME_BYTE_ARRAY_UTILS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BYTE_ARRAY_UTILS_H */

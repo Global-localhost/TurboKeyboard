@@ -21,8 +21,8 @@
  *   dictionary/structure/v4/ver4_patricia_trie_node_writer.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_VER4_PATRICIA_TRIE_NODE_WRITER_H
-#define LATINIME_BACKWARD_V402_VER4_PATRICIA_TRIE_NODE_WRITER_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_VER4_PATRICIA_TRIE_NODE_WRITER_H
+#define TURBOKEYBOARD_BACKWARD_V402_VER4_PATRICIA_TRIE_NODE_WRITER_H
 
 #include "defines.h"
 #include "dictionary/structure/pt_common/dynamic_pt_reading_helper.h"
@@ -31,7 +31,7 @@
 #include "dictionary/structure/backward/v402/content/probability_entry.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -146,5 +146,5 @@ class Ver4PatriciaTrieNodeWriter : public PtNodeWriter {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif /* LATINIME_BACKWARD_V402_VER4_PATRICIA_TRIE_NODE_WRITER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BACKWARD_V402_VER4_PATRICIA_TRIE_NODE_WRITER_H */

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SUGGEST_POLICY_H
-#define LATINIME_SUGGEST_POLICY_H
+#ifndef TURBOKEYBOARD_SUGGEST_POLICY_H
+#define TURBOKEYBOARD_SUGGEST_POLICY_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class Traversal;
 class Scoring;
@@ -36,5 +36,5 @@ class SuggestPolicy {
  private:
     DISALLOW_COPY_AND_ASSIGN(SuggestPolicy);
 };
-} // namespace latinime
-#endif // LATINIME_SUGGEST_POLICY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_SUGGEST_POLICY_H

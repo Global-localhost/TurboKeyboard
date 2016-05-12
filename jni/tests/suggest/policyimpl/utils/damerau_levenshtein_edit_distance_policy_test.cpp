@@ -23,7 +23,7 @@
 #include "suggest/policyimpl/utils/edit_distance.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(DamerauLevenshteinEditDistancePolicyTest, TestConstructPolicy) {
@@ -62,4 +62,4 @@ TEST(DamerauLevenshteinEditDistancePolicyTest, TestEditDistance) {
     EXPECT_FLOAT_EQ(2.0f, getEditDistance({ 1, 2, 3, 4 }, { 2, 1, 4, 3 }));
 }
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

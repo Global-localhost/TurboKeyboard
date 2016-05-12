@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DYNAMIC_PT_READING_HELPER_H
-#define LATINIME_DYNAMIC_PT_READING_HELPER_H
+#ifndef TURBOKEYBOARD_DYNAMIC_PT_READING_HELPER_H
+#define TURBOKEYBOARD_DYNAMIC_PT_READING_HELPER_H
 
 #include <cstddef>
 #include <vector>
@@ -24,7 +24,7 @@
 #include "dictionary/structure/pt_common/pt_node_params.h"
 #include "dictionary/structure/pt_common/pt_node_reader.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DictionaryShortcutsStructurePolicy;
 class PtNodeArrayReader;
@@ -278,5 +278,5 @@ class DynamicPtReadingHelper {
         }
     }
 };
-} // namespace latinime
-#endif /* LATINIME_DYNAMIC_PT_READING_HELPER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_DYNAMIC_PT_READING_HELPER_H */

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_TRAVERSAL_H
-#define LATINIME_TRAVERSAL_H
+#ifndef TURBOKEYBOARD_TRAVERSAL_H
+#define TURBOKEYBOARD_TRAVERSAL_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicTraverseSession;
 
@@ -58,5 +58,5 @@ class Traversal {
  private:
     DISALLOW_COPY_AND_ASSIGN(Traversal);
 };
-} // namespace latinime
-#endif // LATINIME_TRAVERSAL_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_TRAVERSAL_H

@@ -38,8 +38,8 @@ public final class DictionaryHeader {
     @Nonnull
     public final String mIdString;
 
-    // Note that these are corresponding definitions in native code in latinime::HeaderPolicy
-    // and latinime::HeaderReadWriteUtils.
+    // Note that these are corresponding definitions in native code in turbokeyboard::HeaderPolicy
+    // and turbokeyboard::HeaderReadWriteUtils.
     // TODO: Standardize the key names and bump up the format version, taking care not to
     // break format version 2 dictionaries.
     public static final String DICTIONARY_VERSION_KEY = "version";

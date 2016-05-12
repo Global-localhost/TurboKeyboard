@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SHORTCUT_LIST_READING_UTILS_H
-#define LATINIME_SHORTCUT_LIST_READING_UTILS_H
+#ifndef TURBOKEYBOARD_SHORTCUT_LIST_READING_UTILS_H
+#define TURBOKEYBOARD_SHORTCUT_LIST_READING_UTILS_H
 
 #include <cstdint>
 
 #include "defines.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class ShortcutListReadingUtils {
  public:
@@ -68,5 +68,5 @@ class ShortcutListReadingUtils {
     static const int SHORTCUT_LIST_SIZE_FIELD_SIZE;
     static const int WHITELIST_SHORTCUT_PROBABILITY;
 };
-} // namespace latinime
-#endif // LATINIME_SHORTCUT_LIST_READING_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_SHORTCUT_LIST_READING_UTILS_H

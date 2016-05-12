@@ -22,14 +22,14 @@
  *   suggest/policyimpl/dictionary/structure/v4/bigram/ver4_bigram_list_policy.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_VER4_BIGRAM_LIST_POLICY_H
-#define LATINIME_BACKWARD_V402_VER4_BIGRAM_LIST_POLICY_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_VER4_BIGRAM_LIST_POLICY_H
+#define TURBOKEYBOARD_BACKWARD_V402_VER4_BIGRAM_LIST_POLICY_H
 
 #include "defines.h"
 #include "dictionary/interface/dictionary_bigrams_structure_policy.h"
 #include "dictionary/structure/backward/v402/content/bigram_entry.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -90,5 +90,5 @@ class Ver4BigramListPolicy : public DictionaryBigramsStructurePolicy {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif /* LATINIME_BACKWARD_V402_VER4_BIGRAM_LIST_POLICY_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BACKWARD_V402_VER4_BIGRAM_LIST_POLICY_H */

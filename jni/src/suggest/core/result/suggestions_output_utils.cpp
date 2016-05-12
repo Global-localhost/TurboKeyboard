@@ -28,7 +28,7 @@
 #include "suggest/core/session/dic_traverse_session.h"
 #include "suggest/core/suggest_options.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 const int SuggestionsOutputUtils::MIN_LEN_FOR_MULTI_WORD_AUTOCORRECT = 16;
 
@@ -273,4 +273,4 @@ const int SuggestionsOutputUtils::MIN_LEN_FOR_MULTI_WORD_AUTOCORRECT = 16;
                 NOT_A_FIRST_WORD_CONFIDENCE);
     }
 }
-} // namespace latinime
+} // namespace turbokeyboard

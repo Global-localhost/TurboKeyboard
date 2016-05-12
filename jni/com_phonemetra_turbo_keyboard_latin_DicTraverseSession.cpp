@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "LatinIME: jni: Session"
+#define LOG_TAG "TurboKeyboard: jni: Session"
 
 #include "com_phonemetra_turbo_keyboard_latin_DicTraverseSession.h"
 
@@ -24,15 +24,15 @@
 #include "jni_common.h"
 #include "suggest/core/session/dic_traverse_session.h"
 
-namespace latinime {
+namespace turbokeyboard {
 class Dictionary;
-static jlong latinime_setDicTraverseSession(JNIEnv *env, jclass clazz, jstring localeJStr,
+static jlong turbokeyboard_setDicTraverseSession(JNIEnv *env, jclass clazz, jstring localeJStr,
         jlong dictSize) {
     void *traverseSession = DicTraverseSession::getSessionInstance(env, localeJStr, dictSize);
     return reinterpret_cast<jlong>(traverseSession);
 }
 
-static void latinime_initDicTraverseSession(JNIEnv *env, jclass clazz, jlong traverseSession,
+static void turbokeyboard_initDicTraverseSession(JNIEnv *env, jclass clazz, jlong traverseSession,
         jlong dictionary, jintArray previousWord, jint previousWordLength) {
     DicTraverseSession *ts = reinterpret_cast<DicTraverseSession *>(traverseSession);
     if (!ts) {
@@ -50,7 +50,7 @@ static void latinime_initDicTraverseSession(JNIEnv *env, jclass clazz, jlong tra
     ts->init(dict, &ngramContext, 0 /* suggestOptions */);
 }
 
-static void latinime_releaseDicTraverseSession(JNIEnv *env, jclass clazz, jlong traverseSession) {
+static void turbokeyboard_releaseDicTraverseSession(JNIEnv *env, jclass clazz, jlong traverseSession) {
     DicTraverseSession *ts = reinterpret_cast<DicTraverseSession *>(traverseSession);
     DicTraverseSession::releaseSessionInstance(ts);
 }
@@ -59,17 +59,17 @@ static const JNINativeMethod sMethods[] = {
     {
         const_cast<char *>("setDicTraverseSessionNative"),
         const_cast<char *>("(Ljava/lang/String;J)J"),
-        reinterpret_cast<void *>(latinime_setDicTraverseSession)
+        reinterpret_cast<void *>(turbokeyboard_setDicTraverseSession)
     },
     {
         const_cast<char *>("initDicTraverseSessionNative"),
         const_cast<char *>("(JJ[II)V"),
-        reinterpret_cast<void *>(latinime_initDicTraverseSession)
+        reinterpret_cast<void *>(turbokeyboard_initDicTraverseSession)
     },
     {
         const_cast<char *>("releaseDicTraverseSessionNative"),
         const_cast<char *>("(J)V"),
-        reinterpret_cast<void *>(latinime_releaseDicTraverseSession)
+        reinterpret_cast<void *>(turbokeyboard_releaseDicTraverseSession)
     }
 };
 
@@ -77,4 +77,4 @@ int register_DicTraverseSession(JNIEnv *env) {
     const char *const kClassPathName = "com/phonemetra/turbo/keyboard/latin/DicTraverseSession";
     return registerNativeMethods(env, kClassPathName, sMethods, NELEMS(sMethods));
 }
-} // namespace latinime
+} // namespace turbokeyboard

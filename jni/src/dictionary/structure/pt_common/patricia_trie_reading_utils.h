@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PATRICIA_TRIE_READING_UTILS_H
-#define LATINIME_PATRICIA_TRIE_READING_UTILS_H
+#ifndef TURBOKEYBOARD_PATRICIA_TRIE_READING_UTILS_H
+#define TURBOKEYBOARD_PATRICIA_TRIE_READING_UTILS_H
 
 #include <cstdint>
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DictionaryShortcutsStructurePolicy;
 class DictionaryBigramsStructurePolicy;
@@ -129,5 +129,5 @@ class PatriciaTrieReadingUtils {
     static const NodeFlags FLAG_IS_NOT_A_WORD;
     static const NodeFlags FLAG_IS_POSSIBLY_OFFENSIVE;
 };
-} // namespace latinime
-#endif /* LATINIME_PATRICIA_TRIE_NODE_READING_UTILS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_PATRICIA_TRIE_NODE_READING_UTILS_H */

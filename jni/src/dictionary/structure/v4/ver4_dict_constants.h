@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_VER4_DICT_CONSTANTS_H
-#define LATINIME_VER4_DICT_CONSTANTS_H
+#ifndef TURBOKEYBOARD_VER4_DICT_CONSTANTS_H
+#define TURBOKEYBOARD_VER4_DICT_CONSTANTS_H
 
 #include "defines.h"
 
 #include <cstddef>
 #include <cstdint>
 
-namespace latinime {
+namespace turbokeyboard {
 
 // TODO: Create PtConstants under the pt_common and move some constant values there.
 // Note that there are corresponding definitions in FormatSpec.java.
@@ -71,5 +71,5 @@ class Ver4DictConstants {
     static const size_t NUM_OF_BUFFERS_FOR_SPARSE_TABLE_DICT_CONTENT;
     static const size_t NUM_OF_BUFFERS_FOR_LANGUAGE_MODEL_DICT_CONTENT;
 };
-} // namespace latinime
-#endif /* LATINIME_VER4_DICT_CONSTANTS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_VER4_DICT_CONSTANTS_H */

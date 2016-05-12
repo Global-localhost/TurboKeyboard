@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_NODE_STATE_OUTPUT_H
-#define LATINIME_DIC_NODE_STATE_OUTPUT_H
+#ifndef TURBOKEYBOARD_DIC_NODE_STATE_OUTPUT_H
+#define TURBOKEYBOARD_DIC_NODE_STATE_OUTPUT_H
 
 #include <algorithm>
 #include <cstdint>
@@ -23,7 +23,7 @@
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // Class to have information to be output. This can contain previous words when the suggestion
 // is a multi-word suggestion.
@@ -147,5 +147,5 @@ class DicNodeStateOutput {
     int16_t mPrevWordStart;
     int mSecondWordFirstInputIndex;
 };
-} // namespace latinime
-#endif // LATINIME_DIC_NODE_STATE_OUTPUT_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DIC_NODE_STATE_OUTPUT_H

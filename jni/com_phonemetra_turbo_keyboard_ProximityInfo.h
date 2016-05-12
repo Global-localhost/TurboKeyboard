@@ -19,7 +19,7 @@
 
 #include "jni.h"
 
-namespace latinime {
+namespace turbokeyboard {
 int register_ProximityInfo(JNIEnv *env);
-} // namespace latinime
+} // namespace turbokeyboard
 #endif // _COM_PHONEMETRA_TURBO_KEYBOARD_PROXIMITYINFO_H

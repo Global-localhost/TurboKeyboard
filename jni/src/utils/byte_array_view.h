@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_BYTE_ARRAY_VIEW_H
-#define LATINIME_BYTE_ARRAY_VIEW_H
+#ifndef TURBOKEYBOARD_BYTE_ARRAY_VIEW_H
+#define TURBOKEYBOARD_BYTE_ARRAY_VIEW_H
 
 #include <cstdint>
 #include <cstdlib>
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 /**
  * Helper class used to keep track of read accesses for a given memory region.
@@ -92,5 +92,5 @@ class ReadWriteByteArrayView {
     size_t mSize;
 };
 
-} // namespace latinime
-#endif // LATINIME_BYTE_ARRAY_VIEW_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_BYTE_ARRAY_VIEW_H

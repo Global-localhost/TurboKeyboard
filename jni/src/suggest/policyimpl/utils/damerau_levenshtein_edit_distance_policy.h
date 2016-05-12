@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DAEMARU_LEVENSHTEIN_EDIT_DISTANCE_POLICY_H
-#define LATINIME_DAEMARU_LEVENSHTEIN_EDIT_DISTANCE_POLICY_H
+#ifndef TURBOKEYBOARD_DAEMARU_LEVENSHTEIN_EDIT_DISTANCE_POLICY_H
+#define TURBOKEYBOARD_DAEMARU_LEVENSHTEIN_EDIT_DISTANCE_POLICY_H
 
 #include "suggest/policyimpl/utils/edit_distance_policy.h"
 #include "utils/char_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DamerauLevenshteinEditDistancePolicy : public EditDistancePolicy {
  public:
@@ -74,6 +74,6 @@ class DamerauLevenshteinEditDistancePolicy : public EditDistancePolicy {
     const int *const mString1;
     const int mString1Length;
 };
-} // namespace latinime
+} // namespace turbokeyboard
 
-#endif  // LATINIME_DAEMARU_LEVENSHTEIN_EDIT_DISTANCE_POLICY_H
+#endif  // TURBOKEYBOARD_DAEMARU_LEVENSHTEIN_EDIT_DISTANCE_POLICY_H

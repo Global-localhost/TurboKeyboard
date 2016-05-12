@@ -82,8 +82,6 @@ import com.phonemetra.turbo.keyboard.latin.utils.ImportantNoticeUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.IntentUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.JniUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.LeakGuardHandlerWrapper;
-import com.phonemetra.turbo.keyboard.latin.utils.StatsUtils;
-import com.phonemetra.turbo.keyboard.latin.utils.StatsUtilsManager;
 import com.phonemetra.turbo.keyboard.latin.utils.SubtypeLocaleUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.ViewLayoutUtils;
 
@@ -125,11 +123,10 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
     @UsedForTesting final KeyboardSwitcher mKeyboardSwitcher;
     private final SubtypeState mSubtypeState = new SubtypeState();
     private final EmojiAltPhysicalKeyDetector mEmojiAltPhysicalKeyDetector = new EmojiAltPhysicalKeyDetector(mInputLogic.mConnection);
-    private StatsUtilsManager mStatsUtilsManager;
     private boolean mIsExecutingStartShowingInputView;
 
     
-    private final SystemBroadcastReceiver mSystemBroadcastReceiver = new SystemBroadcastReceiver();
+    //private final SystemBroadcastReceiver mSystemBroadcastReceiver = new SystemBroadcastReceiver();
     
     // Object for reacting to adding/removing a dictionary pack.
     private final BroadcastReceiver mDictionaryPackInstallReceiver = new DictionaryPackInstallBroadcastReceiver(this);
@@ -518,7 +515,6 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         super();
         mSettings = Settings.getInstance();
         mKeyboardSwitcher = KeyboardSwitcher.getInstance();
-        mStatsUtilsManager = StatsUtilsManager.getInstance();
         mIsHardwareAcceleratedDrawingEnabled =
                 InputMethodServiceCompatUtils.enableHardwareAcceleration(this);
     }
@@ -531,7 +527,6 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         KeyboardSwitcher.init(this);
         AudioAndHapticFeedbackManager.init(this);
         AccessibilityUtils.init(this);
-        mStatsUtilsManager.onCreate(this /* context */, mDictionaryFacilitator);
         super.onCreate();
 
         mHandler.onCreate();
@@ -545,11 +540,11 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         registerReceiver(mRingerModeChangeReceiver, filter);
         
        
-        final IntentFilter sysPackageFilter = new IntentFilter();
-        sysPackageFilter.addAction(Intent.ACTION_MY_PACKAGE_REPLACED);
-        sysPackageFilter.addAction(Intent.ACTION_BOOT_COMPLETED);
-        sysPackageFilter.addAction(Intent.ACTION_LOCALE_CHANGED);
-        registerReceiver(mSystemBroadcastReceiver, sysPackageFilter);
+//        final IntentFilter sysPackageFilter = new IntentFilter();
+//        sysPackageFilter.addAction(Intent.ACTION_MY_PACKAGE_REPLACED);
+//        sysPackageFilter.addAction(Intent.ACTION_BOOT_COMPLETED);
+//        sysPackageFilter.addAction(Intent.ACTION_LOCALE_CHANGED);
+//        registerReceiver(mSystemBroadcastReceiver, sysPackageFilter);
 
         // Register to receive installation and removal of a dictionary pack.
         final IntentFilter packageFilter = new IntentFilter();
@@ -565,8 +560,6 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         final IntentFilter dictDumpFilter = new IntentFilter();
         dictDumpFilter.addAction(DictionaryDumpBroadcastReceiver.DICTIONARY_DUMP_INTENT_ACTION);
         registerReceiver(mDictionaryDumpBroadcastReceiver, dictDumpFilter);
-
-        StatsUtils.onCreate(mSettings.getCurrent(), mRichImm);
     }
 
     // Has to be package-visible for unit tests
@@ -587,7 +580,6 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         }
         refreshPersonalizationDictionarySession(currentSettingsValues);
         resetDictionaryFacilitatorIfNecessary();
-        mStatsUtilsManager.onLoadSettings(this /* context */, currentSettingsValues);
     }
 
     private void refreshPersonalizationDictionarySession(
@@ -673,7 +665,6 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         unregisterReceiver(mRingerModeChangeReceiver);
         unregisterReceiver(mDictionaryPackInstallReceiver);
         unregisterReceiver(mDictionaryDumpBroadcastReceiver);
-        mStatsUtilsManager.onDestroy(this /* context */);
         super.onDestroy();
     }
 
@@ -713,7 +704,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
 
     @Override
     public View onCreateInputView() {
-        StatsUtils.onCreateInputView();
+         
         return mKeyboardSwitcher.onCreateInputView(mIsHardwareAcceleratedDrawingEnabled);
     }
 
@@ -731,7 +722,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
 
     @Override
     public void setCandidatesView(final View view) {
-        // To ensure that CandidatesView will never be set.
+        
     }
 
     @Override
@@ -742,14 +733,14 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
     @Override
     public void onStartInputView(final EditorInfo editorInfo, final boolean restarting) {
         mHandler.onStartInputView(editorInfo, restarting);
-        mStatsUtilsManager.onStartInputView();
+        
     }
 
     @Override
     public void onFinishInputView(final boolean finishingInput) {
-        StatsUtils.onFinishInputView();
+        
         mHandler.onFinishInputView(finishingInput);
-        mStatsUtilsManager.onFinishInputView();
+        
         mGestureConsumer = GestureConsumer.NULL_GESTURE_CONSUMER;
     }
 
@@ -763,7 +754,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         // Note that the calling sequence of onCreate() and onCurrentInputMethodSubtypeChanged()
         // is not guaranteed. It may even be called at the same time on a different thread.
         InputMethodSubtype oldSubtype = mRichImm.getCurrentSubtype().getRawSubtype();
-        StatsUtils.onSubtypeChanged(oldSubtype, subtype);
+        
         mRichImm.onSubtypeChanged(subtype);
         mInputLogic.onSubtypeChanged(SubtypeLocaleUtils.getCombiningRulesExtraValue(subtype),
                 mSettings.getCurrent());
@@ -828,9 +819,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         final boolean inputTypeChanged = !currentSettingsValues.isSameInputType(editorInfo);
         final boolean isDifferentTextField = !restarting || inputTypeChanged;
 
-        StatsUtils.onStartInputView(editorInfo.inputType,
-                Settings.getInstance().getCurrent().mDisplayOrientation,
-                !isDifferentTextField);
+         
 
         // The EditorInfo might have a flag that affects fullscreen mode.
         // Note: This call should be done by InputMethodService?

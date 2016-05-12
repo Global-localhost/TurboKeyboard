@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_LANGUAGE_MODEL_DICT_CONTENT_H
-#define LATINIME_LANGUAGE_MODEL_DICT_CONTENT_H
+#ifndef TURBOKEYBOARD_LANGUAGE_MODEL_DICT_CONTENT_H
+#define TURBOKEYBOARD_LANGUAGE_MODEL_DICT_CONTENT_H
 
 #include <cstdio>
 #include <vector>
@@ -31,7 +31,7 @@
 #include "utils/byte_array_view.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class HeaderPolicy;
 
@@ -254,5 +254,5 @@ class LanguageModelDictContent {
             const int bitmapEntryIndex, std::vector<int> *const prevWordIds,
             std::vector<DumppedFullEntryInfo> *const outBummpedFullEntryInfo) const;
 };
-} // namespace latinime
-#endif /* LATINIME_LANGUAGE_MODEL_DICT_CONTENT_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_LANGUAGE_MODEL_DICT_CONTENT_H */

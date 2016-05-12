@@ -20,7 +20,7 @@
 
 #include "dictionary/structure/v4/ver4_dict_constants.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(LanguageModelDictContentGlobalCountersTest, TestUpdateMaxValueOfCounters) {
@@ -57,4 +57,4 @@ TEST(LanguageModelDictContentGlobalCountersTest, TestIncrementTotalCount) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

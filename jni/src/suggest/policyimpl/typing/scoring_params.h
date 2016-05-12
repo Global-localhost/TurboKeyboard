@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SCORING_PARAMS_H
-#define LATINIME_SCORING_PARAMS_H
+#ifndef TURBOKEYBOARD_SCORING_PARAMS_H
+#define TURBOKEYBOARD_SCORING_PARAMS_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class ScoringParams {
  public:
@@ -77,5 +77,5 @@ class ScoringParams {
  private:
     DISALLOW_IMPLICIT_CONSTRUCTORS(ScoringParams);
 };
-} // namespace latinime
-#endif // LATINIME_SCORING_PARAMS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_SCORING_PARAMS_H

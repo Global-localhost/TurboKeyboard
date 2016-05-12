@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DICTIONARY_H
-#define LATINIME_DICTIONARY_H
+#ifndef TURBOKEYBOARD_DICTIONARY_H
+#define TURBOKEYBOARD_DICTIONARY_H
 
 #include <memory>
 
@@ -29,7 +29,7 @@
 #include "suggest/core/suggest_interface.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DictionaryStructureWithBufferPolicy;
 class DicTraverseSession;
@@ -146,5 +146,5 @@ class Dictionary {
 
     void logDictionaryInfo(JNIEnv *const env) const;
 };
-} // namespace latinime
-#endif // LATINIME_DICTIONARY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DICTIONARY_H

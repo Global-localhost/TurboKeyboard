@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_VER4_SHORTCUT_LIST_POLICY_H
-#define LATINIME_VER4_SHORTCUT_LIST_POLICY_H
+#ifndef TURBOKEYBOARD_VER4_SHORTCUT_LIST_POLICY_H
+#define TURBOKEYBOARD_VER4_SHORTCUT_LIST_POLICY_H
 
 #include "defines.h"
 #include "dictionary/interface/dictionary_shortcuts_structure_policy.h"
@@ -23,7 +23,7 @@
 #include "dictionary/structure/v4/content/shortcut_dict_content.h"
 #include "dictionary/structure/v4/content/terminal_position_lookup_table.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class Ver4ShortcutListPolicy : public DictionaryShortcutsStructurePolicy {
  public:
@@ -102,5 +102,5 @@ class Ver4ShortcutListPolicy : public DictionaryShortcutsStructurePolicy {
 
     ShortcutDictContent *const mShortcutDictContent;
 };
-} // namespace latinime
-#endif // LATINIME_VER4_SHORTCUT_LIST_POLICY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_VER4_SHORTCUT_LIST_POLICY_H

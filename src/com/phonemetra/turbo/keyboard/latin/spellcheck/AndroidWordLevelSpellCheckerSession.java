@@ -37,7 +37,6 @@ import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.BinaryDictionaryUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.ScriptUtils;
-import com.phonemetra.turbo.keyboard.latin.utils.StatsUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.SuggestionResults;
 
 import java.util.ArrayList;
@@ -45,7 +44,7 @@ import java.util.List;
 import java.util.Locale;
 
 public abstract class AndroidWordLevelSpellCheckerSession extends Session {
-    private static final String TAG = AndroidWordLevelSpellCheckerSession.class.getSimpleName();
+    private static final String TAG = "AndroidWordLevelSpellCheckerSession";
 
     public final static String[] EMPTY_STRING_ARRAY = new String[0];
 
@@ -145,9 +144,7 @@ public abstract class AndroidWordLevelSpellCheckerSession extends Session {
     private static int getCheckabilityInScript(final String text, final int script) {
         if (TextUtils.isEmpty(text) || text.length() <= 1) return CHECKABILITY_TOO_SHORT;
 
-        // TODO: check if an equivalent processing can't be done more quickly with a
-        // compiled regexp.
-        // Filter by first letter
+        
         final int firstCodePoint = text.codePointAt(0);
         // Filter out words that don't start with a letter or an apostrophe
         if (!ScriptUtils.isLetterPartOfScript(firstCodePoint, script)
@@ -286,13 +283,7 @@ public abstract class AndroidWordLevelSpellCheckerSession extends Session {
             final Result result = getResult(capitalizeType, mLocale, suggestionsLimit,
                     mService.getRecommendedThreshold(), text, suggestionResults);
             
-            // Handle word not in dictionary.
-            // This is called only once per unique word, so entering multiple
-            // instances of the same word does not result in more than one call
-            // to this method.
-            // Also, upon changing the orientation of the device, this is called
-            // again for every unique invalid word in the text box.
-            StatsUtils.onInvalidWordIdentification(text);
+            
 
             final int flags =
                     SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_TYPO

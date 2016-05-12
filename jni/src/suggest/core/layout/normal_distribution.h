@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_NORMAL_DISTRIBUTION_H
-#define LATINIME_NORMAL_DISTRIBUTION_H
+#ifndef TURBOKEYBOARD_NORMAL_DISTRIBUTION_H
+#define TURBOKEYBOARD_NORMAL_DISTRIBUTION_H
 
 #include <cmath>
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // Normal distribution N(u, sigma^2).
 class NormalDistribution {
@@ -45,5 +45,5 @@ class NormalDistribution {
     const float mPreComputedNonExpPart; // = 1 / sqrt(2 * PI * sigma^2)
     const float mPreComputedExponentPart; // = -1 / (2 * sigma^2)
 };
-} // namespace latinime
-#endif // LATINIME_NORMAL_DISTRIBUTION_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_NORMAL_DISTRIBUTION_H

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_TIME_KEEPER_H
-#define LATINIME_TIME_KEEPER_H
+#ifndef TURBOKEYBOARD_TIME_KEEPER_H
+#define TURBOKEYBOARD_TIME_KEEPER_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class TimeKeeper {
  public:
@@ -37,5 +37,5 @@ class TimeKeeper {
     static int sCurrentTime;
     static bool sSetForTesting;
 };
-} // namespace latinime
-#endif /* LATINIME_TIME_KEEPER_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_TIME_KEEPER_H */

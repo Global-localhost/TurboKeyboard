@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_AUTOCORRECTION_THRESHOLD_UTILS_H
-#define LATINIME_AUTOCORRECTION_THRESHOLD_UTILS_H
+#ifndef TURBOKEYBOARD_AUTOCORRECTION_THRESHOLD_UTILS_H
+#define TURBOKEYBOARD_AUTOCORRECTION_THRESHOLD_UTILS_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class AutocorrectionThresholdUtils {
  public:
@@ -35,5 +35,5 @@ class AutocorrectionThresholdUtils {
     static const int TYPED_LETTER_MULTIPLIER;
     static const int FULL_WORD_MULTIPLIER;
 };
-} // namespace latinime
-#endif // LATINIME_AUTOCORRECTION_THRESHOLD_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_AUTOCORRECTION_THRESHOLD_UTILS_H

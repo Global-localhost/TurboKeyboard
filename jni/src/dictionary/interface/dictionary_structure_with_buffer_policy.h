@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DICTIONARY_STRUCTURE_POLICY_H
-#define LATINIME_DICTIONARY_STRUCTURE_POLICY_H
+#ifndef TURBOKEYBOARD_DICTIONARY_STRUCTURE_POLICY_H
+#define TURBOKEYBOARD_DICTIONARY_STRUCTURE_POLICY_H
 
 #include <memory>
 
@@ -26,7 +26,7 @@
 #include "dictionary/utils/binary_dictionary_shortcut_iterator.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DicNode;
 class DicNodeVector;
@@ -120,5 +120,5 @@ class DictionaryStructureWithBufferPolicy {
  private:
     DISALLOW_COPY_AND_ASSIGN(DictionaryStructureWithBufferPolicy);
 };
-} // namespace latinime
-#endif /* LATINIME_DICTIONARY_STRUCTURE_POLICY_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_DICTIONARY_STRUCTURE_POLICY_H */

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DICTIONARY_SHORTCUTS_STRUCTURE_POLICY_H
-#define LATINIME_DICTIONARY_SHORTCUTS_STRUCTURE_POLICY_H
+#ifndef TURBOKEYBOARD_DICTIONARY_SHORTCUTS_STRUCTURE_POLICY_H
+#define TURBOKEYBOARD_DICTIONARY_SHORTCUTS_STRUCTURE_POLICY_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 /*
  * This class abstracts structure of shortcuts.
@@ -42,5 +42,5 @@ class DictionaryShortcutsStructurePolicy {
  private:
     DISALLOW_COPY_AND_ASSIGN(DictionaryShortcutsStructurePolicy);
 };
-} // namespace latinime
-#endif /* LATINIME_DICTIONARY_SHORTCUTS_STRUCTURE_POLICY_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_DICTIONARY_SHORTCUTS_STRUCTURE_POLICY_H */

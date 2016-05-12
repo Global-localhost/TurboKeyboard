@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_NGRAM_UTILS_H
-#define LATINIME_NGRAM_UTILS_H
+#ifndef TURBOKEYBOARD_NGRAM_UTILS_H
+#define TURBOKEYBOARD_NGRAM_UTILS_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 enum class NgramType : int {
     Unigram = 0,
@@ -60,4 +60,4 @@ class NgramUtils final {
 
 };
 }
-#endif /* LATINIME_NGRAM_UTILS_H */
+#endif /* TURBOKEYBOARD_NGRAM_UTILS_H */

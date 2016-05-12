@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "LatinIME: jni: BinaryDictionaryUtils"
+#define LOG_TAG "TurboKeyboard: jni: BinaryDictionaryUtils"
 
 #include "com_phonemetra_turbo_keyboard_latin_BinaryDictionaryUtils.h"
 
@@ -27,9 +27,9 @@
 #include "utils/jni_data_utils.h"
 #include "utils/time_keeper.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
-static jboolean latinime_BinaryDictionaryUtils_createEmptyDictFile(JNIEnv *env, jclass clazz,
+static jboolean turbokeyboard_BinaryDictionaryUtils_createEmptyDictFile(JNIEnv *env, jclass clazz,
         jstring filePath, jlong dictVersion, jstring locale, jobjectArray attributeKeyStringArray,
         jobjectArray attributeValueStringArray) {
     const jsize filePathUtf8Length = env->GetStringUTFLength(filePath);
@@ -56,7 +56,7 @@ static jboolean latinime_BinaryDictionaryUtils_createEmptyDictFile(JNIEnv *env, 
             localeCodePoints, &attributeMap);
 }
 
-static jfloat latinime_BinaryDictionaryUtils_calcNormalizedScore(JNIEnv *env, jclass clazz,
+static jfloat turbokeyboard_BinaryDictionaryUtils_calcNormalizedScore(JNIEnv *env, jclass clazz,
         jintArray before, jintArray after, jint score) {
     jsize beforeLength = env->GetArrayLength(before);
     jsize afterLength = env->GetArrayLength(after);
@@ -68,7 +68,7 @@ static jfloat latinime_BinaryDictionaryUtils_calcNormalizedScore(JNIEnv *env, jc
             afterCodePoints, afterLength, score);
 }
 
-static int latinime_BinaryDictionaryUtils_setCurrentTimeForTest(JNIEnv *env, jclass clazz,
+static int turbokeyboard_BinaryDictionaryUtils_setCurrentTimeForTest(JNIEnv *env, jclass clazz,
         jint currentTime) {
     if (currentTime >= 0) {
         TimeKeeper::startTestModeWithForceCurrentTime(currentTime);
@@ -84,17 +84,17 @@ static const JNINativeMethod sMethods[] = {
         const_cast<char *>("createEmptyDictFileNative"),
         const_cast<char *>(
                 "(Ljava/lang/String;JLjava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)Z"),
-        reinterpret_cast<void *>(latinime_BinaryDictionaryUtils_createEmptyDictFile)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionaryUtils_createEmptyDictFile)
     },
     {
         const_cast<char *>("calcNormalizedScoreNative"),
         const_cast<char *>("([I[II)F"),
-        reinterpret_cast<void *>(latinime_BinaryDictionaryUtils_calcNormalizedScore)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionaryUtils_calcNormalizedScore)
     },
     {
         const_cast<char *>("setCurrentTimeForTestNative"),
         const_cast<char *>("(I)I"),
-        reinterpret_cast<void *>(latinime_BinaryDictionaryUtils_setCurrentTimeForTest)
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionaryUtils_setCurrentTimeForTest)
     }
 };
 
@@ -102,4 +102,4 @@ int register_BinaryDictionaryUtils(JNIEnv *env) {
     const char *const kClassPathName = "com/phonemetra/turbo/keyboard/latin/utils/BinaryDictionaryUtils";
     return registerNativeMethods(env, kClassPathName, sMethods, NELEMS(sMethods));
 }
-} // namespace latinime
+} // namespace turbokeyboard

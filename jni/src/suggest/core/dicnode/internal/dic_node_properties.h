@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DIC_NODE_PROPERTIES_H
-#define LATINIME_DIC_NODE_PROPERTIES_H
+#ifndef TURBOKEYBOARD_DIC_NODE_PROPERTIES_H
+#define TURBOKEYBOARD_DIC_NODE_PROPERTIES_H
 
 #include <cstdint>
 #include <cstdlib>
@@ -23,7 +23,7 @@
 #include "defines.h"
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 /**
  * PtNode information related to the DicNode from the lexicon trie.
@@ -127,5 +127,5 @@ class DicNodeProperties {
     WordIdArray<MAX_PREV_WORD_COUNT_FOR_N_GRAM> mPrevWordIds;
     size_t mPrevWordCount;
 };
-} // namespace latinime
-#endif // LATINIME_DIC_NODE_PROPERTIES_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_DIC_NODE_PROPERTIES_H

@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DICTIONARY_HEADER_STRUCTURE_POLICY_H
-#define LATINIME_DICTIONARY_HEADER_STRUCTURE_POLICY_H
+#ifndef TURBOKEYBOARD_DICTIONARY_HEADER_STRUCTURE_POLICY_H
+#define TURBOKEYBOARD_DICTIONARY_HEADER_STRUCTURE_POLICY_H
 
 #include <map>
 #include <vector>
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 /*
  * This class abstracts structure of dictionaries.
@@ -59,5 +59,5 @@ class DictionaryHeaderStructurePolicy {
  private:
     DISALLOW_COPY_AND_ASSIGN(DictionaryHeaderStructurePolicy);
 };
-} // namespace latinime
-#endif /* LATINIME_DICTIONARY_HEADER_STRUCTURE_POLICY_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_DICTIONARY_HEADER_STRUCTURE_POLICY_H */

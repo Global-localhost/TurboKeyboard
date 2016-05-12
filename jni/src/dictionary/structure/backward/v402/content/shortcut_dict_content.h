@@ -21,15 +21,15 @@
  *   dictionary/structure/v4/content/shortcut_dict_content.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_SHORTCUT_DICT_CONTENT_H
-#define LATINIME_BACKWARD_V402_SHORTCUT_DICT_CONTENT_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_SHORTCUT_DICT_CONTENT_H
+#define TURBOKEYBOARD_BACKWARD_V402_SHORTCUT_DICT_CONTENT_H
 
 #include "defines.h"
 #include "dictionary/structure/backward/v402/content/sparse_table_dict_content.h"
 #include "dictionary/structure/backward/v402/content/terminal_position_lookup_table.h"
 #include "dictionary/structure/backward/v402/ver4_dict_constants.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -97,5 +97,5 @@ class ShortcutDictContent : public SparseTableDictContent {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif /* LATINIME_BACKWARD_V402_SHORTCUT_DICT_CONTENT_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BACKWARD_V402_SHORTCUT_DICT_CONTENT_H */

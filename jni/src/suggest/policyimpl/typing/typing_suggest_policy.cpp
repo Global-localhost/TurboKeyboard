@@ -16,6 +16,6 @@
 
 #include "suggest/policyimpl/typing/typing_suggest_policy.h"
 
-namespace latinime {
+namespace turbokeyboard {
 const TypingSuggestPolicy TypingSuggestPolicy::sInstance;
-} // namespace latinime
+} // namespace turbokeyboard

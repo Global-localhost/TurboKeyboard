@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_INT_ARRAY_VIEW_H
-#define LATINIME_INT_ARRAY_VIEW_H
+#ifndef TURBOKEYBOARD_INT_ARRAY_VIEW_H
+#define TURBOKEYBOARD_INT_ARRAY_VIEW_H
 
 #include <algorithm>
 #include <array>
@@ -25,7 +25,7 @@
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 /**
  * Helper class used to provide a read-only view of a given range of integer array. This class
@@ -169,5 +169,5 @@ using CodePointArrayView = IntArrayView;
 template <size_t size>
 using WordIdArray = std::array<int, size>;
 
-} // namespace latinime
-#endif // LATINIME_MEMORY_VIEW_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_MEMORY_VIEW_H

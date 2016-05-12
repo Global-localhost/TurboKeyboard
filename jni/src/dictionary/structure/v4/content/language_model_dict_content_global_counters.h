@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_LANGUAGE_MODEL_DICT_CONTENT_GLOBAL_COUNTERS_H
-#define LATINIME_LANGUAGE_MODEL_DICT_CONTENT_GLOBAL_COUNTERS_H
+#ifndef TURBOKEYBOARD_LANGUAGE_MODEL_DICT_CONTENT_GLOBAL_COUNTERS_H
+#define TURBOKEYBOARD_LANGUAGE_MODEL_DICT_CONTENT_GLOBAL_COUNTERS_H
 
 #include <cstdio>
 
@@ -24,7 +24,7 @@
 #include "dictionary/utils/dict_file_writing_utils.h"
 #include "utils/byte_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class LanguageModelDictContentGlobalCounters {
  public:
@@ -97,5 +97,5 @@ private:
         return buffer.readUint(COUNTER_SIZE_IN_BYTES, pos);
     }
 };
-} // namespace latinime
-#endif /* LATINIME_LANGUAGE_MODEL_DICT_CONTENT_GLOBAL_COUNTERS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_LANGUAGE_MODEL_DICT_CONTENT_GLOBAL_COUNTERS_H */

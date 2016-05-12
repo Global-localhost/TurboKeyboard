@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_HEADER_READ_WRITE_UTILS_H
-#define LATINIME_HEADER_READ_WRITE_UTILS_H
+#ifndef TURBOKEYBOARD_HEADER_READ_WRITE_UTILS_H
+#define TURBOKEYBOARD_HEADER_READ_WRITE_UTILS_H
 
 #include <cstdint>
 
@@ -23,7 +23,7 @@
 #include "dictionary/interface/dictionary_header_structure_policy.h"
 #include "dictionary/utils/format_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class BufferWithExtendableBuffer;
 
@@ -120,4 +120,4 @@ class HeaderReadWriteUtils {
             const int defaultValue);
 };
 }
-#endif /* LATINIME_HEADER_READ_WRITE_UTILS_H */
+#endif /* TURBOKEYBOARD_HEADER_READ_WRITE_UTILS_H */

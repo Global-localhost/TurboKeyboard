@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_ERROR_TYPE_UTILS_H
-#define LATINIME_ERROR_TYPE_UTILS_H
+#ifndef TURBOKEYBOARD_ERROR_TYPE_UTILS_H
+#define TURBOKEYBOARD_ERROR_TYPE_UTILS_H
 
 #include <cstdint>
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class ErrorTypeUtils {
  public:
@@ -85,5 +85,5 @@ class ErrorTypeUtils {
     static const ErrorType ERRORS_TREATED_AS_A_PERFECT_MATCH;
     static const ErrorType ERRORS_TREATED_AS_AN_EXACT_MATCH_WITH_INTENTIONAL_OMISSION;
 };
-} // namespace latinime
-#endif // LATINIME_ERROR_TYPE_UTILS_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_ERROR_TYPE_UTILS_H

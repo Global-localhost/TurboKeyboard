@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_DYNAMIC_PT_READING_UTILS_H
-#define LATINIME_DYNAMIC_PT_READING_UTILS_H
+#ifndef TURBOKEYBOARD_DYNAMIC_PT_READING_UTILS_H
+#define TURBOKEYBOARD_DYNAMIC_PT_READING_UTILS_H
 
 #include <cstdint>
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class DynamicPtReadingUtils {
  public:
@@ -79,5 +79,5 @@ class DynamicPtReadingUtils {
     static const NodeFlags FLAG_IS_DELETED;
     static const NodeFlags FLAG_WILL_BECOME_NON_TERMINAL;
 };
-} // namespace latinime
-#endif /* LATINIME_DYNAMIC_PT_READING_UTILS_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_DYNAMIC_PT_READING_UTILS_H */

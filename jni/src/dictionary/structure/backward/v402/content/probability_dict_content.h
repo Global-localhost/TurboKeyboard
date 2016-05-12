@@ -21,8 +21,8 @@
  *   dictionary/structure/v4/content/probability_dict_content.h
  */
 
-#ifndef LATINIME_BACKWARD_V402_PROBABILITY_DICT_CONTENT_H
-#define LATINIME_BACKWARD_V402_PROBABILITY_DICT_CONTENT_H
+#ifndef TURBOKEYBOARD_BACKWARD_V402_PROBABILITY_DICT_CONTENT_H
+#define TURBOKEYBOARD_BACKWARD_V402_PROBABILITY_DICT_CONTENT_H
 
 #include "defines.h"
 #include "dictionary/structure/backward/v402/content/single_dict_content.h"
@@ -30,7 +30,7 @@
 #include "dictionary/structure/backward/v402/ver4_dict_constants.h"
 #include "dictionary/utils/buffer_with_extendable_buffer.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace backward {
 namespace v402 {
 
@@ -70,5 +70,5 @@ class ProbabilityDictContent : public SingleDictContent {
 };
 } // namespace v402
 } // namespace backward
-} // namespace latinime
-#endif /* LATINIME_BACKWARD_V402_PROBABILITY_DICT_CONTENT_H */
+} // namespace turbokeyboard
+#endif /* TURBOKEYBOARD_BACKWARD_V402_PROBABILITY_DICT_CONTENT_H */

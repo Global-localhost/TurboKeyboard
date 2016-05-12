@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_SUGGEST_INTERFACE_H
-#define LATINIME_SUGGEST_INTERFACE_H
+#ifndef TURBOKEYBOARD_SUGGEST_INTERFACE_H
+#define TURBOKEYBOARD_SUGGEST_INTERFACE_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class ProximityInfo;
 class SuggestionResults;
@@ -35,5 +35,5 @@ class SuggestInterface {
  private:
     DISALLOW_COPY_AND_ASSIGN(SuggestInterface);
 };
-} // namespace latinime
-#endif // LATINIME_SUGGEST_INTERFACE_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_SUGGEST_INTERFACE_H

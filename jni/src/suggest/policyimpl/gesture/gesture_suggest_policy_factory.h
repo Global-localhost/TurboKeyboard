@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_GESTURE_SUGGEST_POLICY_FACTORY_H
-#define LATINIME_GESTURE_SUGGEST_POLICY_FACTORY_H
+#ifndef TURBOKEYBOARD_GESTURE_SUGGEST_POLICY_FACTORY_H
+#define TURBOKEYBOARD_GESTURE_SUGGEST_POLICY_FACTORY_H
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class SuggestPolicy;
 
@@ -40,5 +40,5 @@ class GestureSuggestPolicyFactory {
     DISALLOW_COPY_AND_ASSIGN(GestureSuggestPolicyFactory);
     static const SuggestPolicy *(*sGestureSuggestFactoryMethod)();
 };
-} // namespace latinime
-#endif // LATINIME_GESTURE_SUGGEST_POLICY_FACTORY_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_GESTURE_SUGGEST_POLICY_FACTORY_H

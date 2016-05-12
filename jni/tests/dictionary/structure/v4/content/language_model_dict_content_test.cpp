@@ -23,7 +23,7 @@
 
 #include "utils/int_array_view.h"
 
-namespace latinime {
+namespace turbokeyboard {
 namespace {
 
 TEST(LanguageModelDictContentTest, TestUnigramProbability) {
@@ -117,4 +117,4 @@ TEST(LanguageModelDictContentTest, TestGetWordProbability) {
 }
 
 }  // namespace
-}  // namespace latinime
+}  // namespace turbokeyboard

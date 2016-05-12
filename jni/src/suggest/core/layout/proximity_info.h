@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PROXIMITY_INFO_H
-#define LATINIME_PROXIMITY_INFO_H
+#ifndef TURBOKEYBOARD_PROXIMITY_INFO_H
+#define TURBOKEYBOARD_PROXIMITY_INFO_H
 
 #include <unordered_map>
 #include <vector>
@@ -24,7 +24,7 @@
 #include "jni.h"
 #include "suggest/core/layout/proximity_info_utils.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 class ProximityInfo {
  public:
@@ -122,5 +122,5 @@ class ProximityInfo {
     int mCenterYsG[MAX_KEY_COUNT_IN_A_KEYBOARD];
     int mKeyKeyDistancesG[MAX_KEY_COUNT_IN_A_KEYBOARD][MAX_KEY_COUNT_IN_A_KEYBOARD];
 };
-} // namespace latinime
-#endif // LATINIME_PROXIMITY_INFO_H
+} // namespace turbokeyboard
+#endif // TURBOKEYBOARD_PROXIMITY_INFO_H

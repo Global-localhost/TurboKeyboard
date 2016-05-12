@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef LATINIME_PROBABILITY_UTILS_H
-#define LATINIME_PROBABILITY_UTILS_H
+#ifndef TURBOKEYBOARD_PROBABILITY_UTILS_H
+#define TURBOKEYBOARD_PROBABILITY_UTILS_H
 
 #include <algorithm>
 #include <cmath>
 
 #include "defines.h"
 
-namespace latinime {
+namespace turbokeyboard {
 
 // TODO: Quit using bigram probability to indicate the delta.
 class ProbabilityUtils {
@@ -66,4 +66,4 @@ class ProbabilityUtils {
     static const float PROBABILITY_ENCODING_SCALER;
 };
 }
-#endif /* LATINIME_PROBABILITY_UTILS_H */
+#endif /* TURBOKEYBOARD_PROBABILITY_UTILS_H */
