@@ -20,10 +20,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
-import com.phonemetra.turbo.keyboard.latin.define.DecoderSpecificConstants;
 import com.phonemetra.turbo.keyboard.latin.makedict.DictionaryHeader;
 import com.phonemetra.turbo.keyboard.latin.makedict.UnsupportedFormatException;
 import com.phonemetra.turbo.keyboard.latin.utils.BinaryDictionaryUtils;
@@ -36,19 +34,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
-/**
- * Helper class to get the address of a mmap'able dictionary file.
- */
+
 final public class BinaryDictionaryGetter {
 
-    /**
-     * Used for Log actions from this class
-     */
-    private static final String TAG = "BinaryDictionaryGetter";
-
-    /**
-     * Used to return empty lists
-     */
     private static final File[] EMPTY_FILE_ARRAY = new File[0];
 
     /**
@@ -56,8 +44,8 @@ final public class BinaryDictionaryGetter {
      */
     private static final String COMMON_PREFERENCES_NAME = "LatinImeDictPrefs";
 
-    private static final boolean SHOULD_USE_DICT_VERSION =
-            DecoderSpecificConstants.SHOULD_USE_DICT_VERSION;
+    private static final boolean SHOULD_USE_DICT_VERSION = true;
+          
 
     // Name of the category for the main dictionary
     public static final String MAIN_DICTIONARY_CATEGORY = "main";
@@ -76,11 +64,7 @@ final public class BinaryDictionaryGetter {
             throws IOException {
         final String safeId = DictionaryInfoUtils.replaceFileNameDangerousCharacters(id);
         final File directory = new File(DictionaryInfoUtils.getWordListTempDirectory(context));
-        if (!directory.exists()) {
-            if (!directory.mkdirs()) {
-                Log.e(TAG, "Could not create the temporary directory");
-            }
-        }
+        
         // If the first argument is less than three chars, createTempFile throws a
         // RuntimeException. We don't really care about what name we get, so just
         // put a three-chars prefix makes us safe.
@@ -94,25 +78,34 @@ final public class BinaryDictionaryGetter {
             final int fallbackResId) {
         AssetFileDescriptor afd = null;
         try {
+        	 if (0 == fallbackResId) return null;
+        	 afd = context.getResources().openRawResourceFd(fallbackResId);
+             if (afd == null) {
+                 Log.e("BinaryDictionaryGetter", "Found the resource but it is compressed. resId=" + fallbackResId);
+                 return null;
+             }
+             final String sourceDir = context.getApplicationInfo().sourceDir;
+             final File packagePath = new File(sourceDir);
+             // TODO: Come up with a way to handle a directory.
+             if (!packagePath.isFile()) {
+                 Log.e("BinaryDictionaryGetter", "sourceDir is not a file: " + sourceDir);
+                 return null;
+             }
         
-            afd = context.getResources().openRawResourceFd(fallbackResId);
-        } catch (RuntimeException e) {
-            Log.e(TAG, "Resource not found: " + fallbackResId);
+             return AssetFileAddress.makeFromFileNameAndOffset(
+            		 sourceDir, afd.getStartOffset(), afd.getLength());
+        } catch (android.content.res.Resources.NotFoundException e) {
+            Log.e("BinaryDictionaryGetter", "Could not find the resource");
             return null;
-        }
-        if (afd == null) {
-            Log.e(TAG, "Resource cannot be opened: " + fallbackResId);
-            return null;
-        }
-        try {
-            return AssetFileAddress.makeFromFileNameAndOffset(
-                    context.getApplicationInfo().sourceDir, afd.getStartOffset(), afd.getLength());
         } finally {
-            try {
-                afd.close();
-            } catch (IOException ignored) {
+            if (null != afd) {
+                try {
+                    afd.close();
+                } catch (java.io.IOException e) {
+                    /* IOException on close ? What am I supposed to do ? */
+                }
             }
-        }
+       }
     }
 
     private static final class DictPackSettings {
@@ -274,7 +267,7 @@ final public class BinaryDictionaryGetter {
                 final AssetFileAddress afa = AssetFileAddress.makeFromFileName(f.getPath());
                 if (null != afa) fileList.add(afa);
             } else {
-                Log.e(TAG, "Found a cached dictionary file for " + locale.toString()
+                Log.e("BinaryDictionaryGetter", "Found a cached dictionary file for " + locale.toString()
                         + " but cannot read or use it");
             }
         }

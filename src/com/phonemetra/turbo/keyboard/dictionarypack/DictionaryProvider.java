@@ -36,6 +36,7 @@ import com.phonemetra.turbo.keyboard.latin.utils.DebugLogUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -312,6 +313,8 @@ public final class DictionaryProvider extends ContentProvider {
                 // deleted.
                 final AssetFileDescriptor afd = getContext().getResources().openRawResourceFd(
                         R.raw.empty);
+                
+                  
                 return afd;
             }
             final String localFilename =
@@ -322,7 +325,10 @@ public final class DictionaryProvider extends ContentProvider {
             return new AssetFileDescriptor(pfd, 0, pfd.getStatSize());
         } catch (FileNotFoundException e) {
             // No file : fall through and return null
-        }
+        } catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return null;
     }
 

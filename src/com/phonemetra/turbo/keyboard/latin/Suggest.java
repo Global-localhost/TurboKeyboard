@@ -255,13 +255,8 @@ public final class Suggest {
         }
 
         final ArrayList<SuggestedWordInfo> suggestionsList;
-        if (DBG && !suggestionsContainer.isEmpty()) {
-            suggestionsList = getSuggestionsInfoListWithDebugInfo(typedWordString,
-                    suggestionsContainer);
-        } else {
-            suggestionsList = suggestionsContainer;
-        }
-
+       suggestionsList = suggestionsContainer;
+       
         final int inputStyle;
         if (resultsArePredictions) {
             inputStyle = suggestionResults.mIsBeginningOfSentence

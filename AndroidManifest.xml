@@ -16,7 +16,7 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.phonemetra.turbo.keyboard"
-        android:versionCode="13"
+        android:versionCode="14"
     	android:versionName="@string/application_version" >
 
     <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23" />
@@ -130,7 +130,6 @@
         <!-- Broadcast receivers -->
         <receiver android:name="com.phonemetra.turbo.keyboard.latin.SystemBroadcastReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_INITIALIZE" />
                 <action android:name="android.intent.action.LOCALE_CHANGED" />

@@ -74,12 +74,12 @@ public final class KeyboardSwitcher implements KeyboardState.SwitchActions {
       
     }
 
-    public static void init(final LatinIME latinIme) {
-        sInstance.initInternal(latinIme);
+    public static void init(final LatinIME latinIME) {
+        sInstance.initInternal(latinIME);
     }
 
-    private void initInternal(final LatinIME latinIme) {
-        mLatinIME = latinIme;
+    private void initInternal(final LatinIME latinIME) {
+        mLatinIME = latinIME;
         mRichImm = RichInputMethodManager.getInstance();
         mState = new KeyboardState(this);
         mIsHardwareAcceleratedDrawingEnabled =

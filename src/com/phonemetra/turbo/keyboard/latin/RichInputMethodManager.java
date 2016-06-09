@@ -48,16 +48,12 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-/**
- * Enrichment class for InputMethodManager to simplify interaction and add functionality.
- */
-// non final for easy mocking.
-public class RichInputMethodManager {
-    private static final String TAG = RichInputMethodManager.class.getSimpleName();
-    private static final boolean DEBUG = false;
 
+public class RichInputMethodManager {
+    private static final String TAG = "RichInputMethodManager";
+     
     private RichInputMethodManager() {
-        // This utility class is not publicly instantiable.
+      
     }
 
     private static final RichInputMethodManager sInstance = new RichInputMethodManager();
@@ -321,9 +317,7 @@ public class RichInputMethodManager {
     public void onSubtypeChanged(@Nonnull final InputMethodSubtype newSubtype) {
         updateCurrentSubtype(newSubtype);
         updateShortcutIme();
-        if (DEBUG) {
-            Log.w(TAG, "onSubtypeChanged: " + mCurrentRichInputMethodSubtype.getNameForLogging());
-        }
+         
     }
 
     private static RichInputMethodSubtype sForcedSubtypeForTesting = null;
@@ -494,13 +488,7 @@ public class RichInputMethodManager {
     }
 
     private void updateShortcutIme() {
-        if (DEBUG) {
-            Log.d(TAG, "Update shortcut IME from : "
-                    + (mShortcutInputMethodInfo == null
-                            ? "<null>" : mShortcutInputMethodInfo.getId()) + ", "
-                    + (mShortcutSubtype == null ? "<null>" : (
-                            mShortcutSubtype.getLocale() + ", " + mShortcutSubtype.getMode())));
-        }
+        
         final RichInputMethodSubtype richSubtype = mCurrentRichInputMethodSubtype;
         final boolean implicitlyEnabledSubtype = checkIfSubtypeBelongsToThisImeAndImplicitlyEnabled(
                 richSubtype.getRawSubtype());
@@ -525,13 +513,7 @@ public class RichInputMethodManager {
             mShortcutSubtype = subtypes.size() > 0 ? subtypes.get(0) : null;
             break;
         }
-        if (DEBUG) {
-            Log.d(TAG, "Update shortcut IME to : "
-                    + (mShortcutInputMethodInfo == null
-                            ? "<null>" : mShortcutInputMethodInfo.getId()) + ", "
-                    + (mShortcutSubtype == null ? "<null>" : (
-                            mShortcutSubtype.getLocale() + ", " + mShortcutSubtype.getMode())));
-        }
+        
     }
 
     public void switchToShortcutIme(final InputMethodService context) {

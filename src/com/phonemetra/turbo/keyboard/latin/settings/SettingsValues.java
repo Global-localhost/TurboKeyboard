@@ -39,13 +39,8 @@ import java.util.Locale;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-/**
- * When you call the constructor of this class, you may want to change the current system locale by
- * using {@link com.phonemetra.turbo.keyboard.latin.utils.RunInLocale}.
- */
-// Non-final for testing via mock library.
 public class SettingsValues {
-    private static final String TAG = SettingsValues.class.getSimpleName();
+    private static final String TAG = "SettingsValues";
     // "floatMaxValue" and "floatNegativeInfinity" are special marker strings for
     // Float.NEGATIVE_INFINITE and Float.MAX_VALUE. Currently used for auto-correction settings.
     private static final String FLOAT_MAX_VALUE_MARKER_STRING = "floatMaxValue";

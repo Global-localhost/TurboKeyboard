@@ -30,8 +30,8 @@ public class DictionaryDumpBroadcastReceiver extends BroadcastReceiver {
 
     final LatinIME mLatinIme;
 
-    public DictionaryDumpBroadcastReceiver(final LatinIME latinIme) {
-        mLatinIme = latinIme;
+    public DictionaryDumpBroadcastReceiver(final LatinIME latinIME) {
+        mLatinIme = latinIME;
     }
 
     @Override

@@ -23,8 +23,6 @@ import android.content.res.Resources;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.inputmethod.InputMethodSubtype;
-import android.widget.Toast;
-
 import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
 import com.phonemetra.turbo.keyboard.dictionarypack.UpdateHandler;
 import com.phonemetra.turbo.keyboard.latin.AssetFileAddress;
@@ -546,35 +544,39 @@ public class DictionaryInfoUtils {
         final AssetManager assets = resources.getAssets();
         for (final String localeString : assets.getLocales()) {
         	
-        	//Toast.makeText(context, "localeString:" + localeString, Toast.LENGTH_LONG).show();
+        	Log.e(TAG, "localeString=" + localeString);
         	
             final Locale locale = LocaleUtils.constructLocaleFromString(localeString);
             
-            //Toast.makeText(context, "locale:" + locale, Toast.LENGTH_LONG).show();
+            Log.e(TAG, "locale=" + locale);
             
             final int resourceId =
-                    DictionaryInfoUtils.getMainDictionaryResourceIdIfAvailableForLocale(
-                            context.getResources(), locale);
-            if (0 == resourceId) {
-                continue;
-            }
+                   DictionaryInfoUtils.getMainDictionaryResourceIdIfAvailableForLocale(
+                           context.getResources(), locale);
+           if (0 == resourceId) {
+           	Log.e(TAG, "resourceId=" + resourceId);
+               continue;
+          }
+          
+         Log.e(TAG, "resourceId=" + resourceId);
+          
+         if (resourceId!=0) {
             
-            
-            
-            final AssetFileAddress fileAddress =
-                    BinaryDictionaryGetter.loadFallbackResource(context, resourceId);
-            
-            
-            final DictionaryInfo dictionaryInfo = createDictionaryInfoFromFileAddress(fileAddress,
-                    locale);
-            // Protect against cases of a less-specific dictionary being found, like an
-            // en dictionary being used for an en_US locale. In this case, the en dictionary
-            // should be used for en_US but discounted for listing purposes.
-            // TODO: Remove dictionaryInfo == null when the static LMs have the headers.
-            if (dictionaryInfo == null || !dictionaryInfo.mLocale.equals(locale)) {
-                continue;
-            }
-            addOrUpdateDictInfo(dictList, dictionaryInfo);
+	            final AssetFileAddress fileAddress = BinaryDictionaryGetter.loadFallbackResource(context, resourceId);
+	            
+	            
+	            final DictionaryInfo dictionaryInfo = createDictionaryInfoFromFileAddress(fileAddress,
+	                    locale);
+	            // Protect against cases of a less-specific dictionary being found, like an
+	            // en dictionary being used for an en_US locale. In this case, the en dictionary
+	            // should be used for en_US but discounted for listing purposes.
+	            // TODO: Remove dictionaryInfo == null when the static LMs have the headers.
+	            if (dictionaryInfo == null || !dictionaryInfo.mLocale.equals(locale)) {
+	                continue;
+	            }
+	            addOrUpdateDictInfo(dictList, dictionaryInfo);
+	            
+            }     
         }
 
         // Generate the dictionary information from  the enabled subtypes. This will not

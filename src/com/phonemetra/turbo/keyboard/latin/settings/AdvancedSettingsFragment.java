@@ -24,7 +24,6 @@ import android.os.Bundle;
 import android.preference.ListPreference;
 import com.phonemetra.turbo.keyboard.latin.AudioAndHapticFeedbackManager;
 import com.phonemetra.turbo.keyboard.R;
-import com.phonemetra.turbo.keyboard.latin.SystemBroadcastReceiver;
 
 /**
  * "Advanced" settings sub screen.

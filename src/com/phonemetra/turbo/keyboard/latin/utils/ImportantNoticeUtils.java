@@ -32,7 +32,7 @@ import com.phonemetra.turbo.keyboard.latin.settings.SettingsValues;
 import java.util.concurrent.TimeUnit;
 
 public final class ImportantNoticeUtils {
-    private static final String TAG = ImportantNoticeUtils.class.getSimpleName();
+    private static final String TAG = "ImportantNoticeUtils";
 
     // {@link SharedPreferences} name to save the last important notice version that has been
     // displayed to users.
@@ -53,7 +53,7 @@ public final class ImportantNoticeUtils {
     private static final int USER_SETUP_IS_NOT_COMPLETE = 0;
 
     private ImportantNoticeUtils() {
-        // This utility class is not publicly instantiable.
+      
     }
 
     @UsedForTesting

@@ -35,7 +35,7 @@ import java.util.List;
  * This is a Keyboard class where you can add keys dynamically shown in a grid layout
  */
 final class DynamicGridKeyboard extends Keyboard {
-    private static final String TAG = DynamicGridKeyboard.class.getSimpleName();
+    private static final String TAG = "DynamicGridKeyboard";
     private static final int TEMPLATE_KEY_CODE_0 = 0x30;
     private static final int TEMPLATE_KEY_CODE_1 = 0x31;
     private final Object mLock = new Object();

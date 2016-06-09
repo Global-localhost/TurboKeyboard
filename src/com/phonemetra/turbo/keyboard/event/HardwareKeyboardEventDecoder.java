@@ -33,7 +33,7 @@ public class HardwareKeyboardEventDecoder implements HardwareEventDecoder {
 
     public HardwareKeyboardEventDecoder(final int deviceId) {
         mDeviceId = deviceId;
-        // TODO: get the layout for this hardware keyboard
+        
     }
 
     @Override

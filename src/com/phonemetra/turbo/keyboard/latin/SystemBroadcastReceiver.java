@@ -16,26 +16,15 @@
 
 package com.phonemetra.turbo.keyboard.latin;
 
-import android.app.DownloadManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.database.Cursor;
 import android.os.Process;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
-import android.view.inputmethod.InputMethodSubtype;
-
 import com.phonemetra.turbo.keyboard.KeyboardLayoutSet;
-import com.phonemetra.turbo.keyboard.dictionarypack.DictionaryPackConstants;
-import com.phonemetra.turbo.keyboard.dictionarypack.DownloadManagerWrapper;
-import com.phonemetra.turbo.keyboard.latin.settings.Settings;
 import com.phonemetra.turbo.keyboard.latin.setup.SetupActivity;
 import com.phonemetra.turbo.keyboard.latin.utils.UncachedInputMethodManagerUtils;
 
@@ -64,43 +53,37 @@ import com.phonemetra.turbo.keyboard.latin.utils.UncachedInputMethodManagerUtils
  * this receiver and the {@link KeyboardLayoutSet}'s cache is cleared.
  */
 public final class SystemBroadcastReceiver extends BroadcastReceiver {
-    private static final String TAG = SystemBroadcastReceiver.class.getSimpleName();
+     
 
     @Override
     public void onReceive(final Context context, final Intent intent) {
         final String intentAction = intent.getAction();
-        if (Intent.ACTION_MY_PACKAGE_REPLACED.equals(intentAction)) {
-            Log.i(TAG, "Package has been replaced: " + context.getPackageName());
-            // Need to restore additional subtypes because system always clears additional
-            // subtypes when the package is replaced.
-            RichInputMethodManager.init(context);
-            final RichInputMethodManager richImm = RichInputMethodManager.getInstance();
-            final InputMethodSubtype[] additionalSubtypes = richImm.getAdditionalSubtypes();
-            richImm.setAdditionalInputMethodSubtypes(additionalSubtypes);
-            
-            context.getPackageManager().setComponentEnabledSetting(
-                    new ComponentName(context, SetupActivity.class), PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
-           
-            // Remove all the previously scheduled downloads. This will also makes sure
-            // that any erroneously stuck downloads will get cleared. (b/21797386)
-            removeOldDownloads(context);
-            // b/21797386
-            // downloadLatestDictionaries(context);
-        } else if (Intent.ACTION_BOOT_COMPLETED.equals(intentAction)) {
-            Log.i(TAG, "Boot has been completed");
+        if (Intent.ACTION_BOOT_COMPLETED.equals(intentAction)) {
+            Log.i("SystemBroadcastReceiver", "Boot has been completed");
             
             context.getPackageManager().setComponentEnabledSetting(
                     new ComponentName(context, SetupActivity.class), PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
-
+        
+        //Sent the first time a user is starting, to allow system apps to perform one time initialization. 
+        //(This will not be seen by third party applications because a newly initialized user does not have any third party applications installed for it.) 
+        //This is sent early in starting the user, around the time the home app is started, before ACTION_BOOT_COMPLETED is sent. 
+        //This is sent as a foreground broadcast, since it is part of a visible user interaction; be as quick as possible when handling it.     
+            
+        } else if (Intent.ACTION_USER_INITIALIZE.equals(intentAction)) {
+            Log.i("SystemBroadcastReceiver", "User initialize");
+            
+            context.getPackageManager().setComponentEnabledSetting(
+                    new ComponentName(context, SetupActivity.class), PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+            
+            
         } else if (Intent.ACTION_LOCALE_CHANGED.equals(intentAction)) {
-            Log.i(TAG, "System locale changed");
+            Log.i("SystemBroadcastReceiver", "System locale changed");
             KeyboardLayoutSet.onSystemLocaleChanged();
         }
 
         // The process that hosts this broadcast receiver is invoked and remains alive even after
-        // 1) the package has been re-installed,
-        // 2) the device has just booted,
-        // 3) a new user has been created.
+        // 1) the device has just booted,
+        // 2) a new user has been created.
         // There is no good reason to keep the process alive if this IME isn't a current IME.
         final InputMethodManager imm = (InputMethodManager)
                 context.getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -111,41 +94,11 @@ public final class SystemBroadcastReceiver extends BroadcastReceiver {
                 && UncachedInputMethodManagerUtils.isThisImeCurrent(context, imm);
         if (!isCurrentImeOfCurrentUser) {
             final int myPid = Process.myPid();
-            Log.i(TAG, "Killing my process: pid=" + myPid);
+            Log.i("SystemBroadcastReceiver", "Killing my process: pid=" + myPid);
             Process.killProcess(myPid);
         }
     }
 
-    private void removeOldDownloads(Context context) {
-        try {
-            Log.i(TAG, "Removing the old downloads in progress of the previous keyboard version.");
-            final DownloadManagerWrapper downloadManagerWrapper = new DownloadManagerWrapper(
-                    context);
-            final DownloadManager.Query q = new DownloadManager.Query();
-            // Query all the download statuses except the succeeded ones.
-            q.setFilterByStatus(DownloadManager.STATUS_FAILED
-                    | DownloadManager.STATUS_PAUSED
-                    | DownloadManager.STATUS_PENDING
-                    | DownloadManager.STATUS_RUNNING);
-            final Cursor c = downloadManagerWrapper.query(q);
-            if (c != null) {
-                for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()) {
-                    final long downloadId = c
-                            .getLong(c.getColumnIndex(DownloadManager.COLUMN_ID));
-                    downloadManagerWrapper.remove(downloadId);
-                    Log.i(TAG, "Removed the download with Id: " + downloadId);
-                }
-                c.close();
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "Exception while removing old downloads.");
-        }
-    }
-
-    private void downloadLatestDictionaries(Context context) {
-        final Intent updateIntent = new Intent(
-                DictionaryPackConstants.INIT_AND_UPDATE_NOW_INTENT_ACTION);
-        context.sendBroadcast(updateIntent);
-    }
+    
 
 }
