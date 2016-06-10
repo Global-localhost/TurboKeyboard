@@ -46,9 +46,6 @@ import java.util.Map;
 
 import javax.annotation.Nonnull;
 
-/**
- * Implements a static, compacted, binary dictionary of standard words.
- */
 public final class BinaryDictionary extends Dictionary {
     private static final String TAG = "BinaryDictionary";
 
@@ -140,7 +137,18 @@ public final class BinaryDictionary extends Dictionary {
     public BinaryDictionary(final String filename, final boolean useFullEditDistance,
             final Locale locale, final String dictType, final long formatVersion,
             final Map<String, String> attributeMap) {
+    	
         super(dictType, locale);
+        
+        Log.i(TAG, "filename:" + filename);
+        Log.i(TAG, "useFullEditDistance:" + useFullEditDistance);
+        Log.i(TAG, "locale:" + locale);
+        Log.i(TAG, "dictType:" + dictType);
+        Log.i(TAG, "formatVersion:" + formatVersion);
+        Log.i(TAG, "attributeMap:" + attributeMap);
+        
+        
+        
         mDictSize = 0;
         mDictFilePath = filename;
         // On memory dictionary is always updatable.

@@ -49,8 +49,7 @@ import javax.annotation.Nullable;
 
 public final class RichInputConnection implements PrivateCommandPerformer {
 	private static final String TAG = "RichInputConnection";
-	private static final boolean DBG = false;
-	// private static final boolean DEBUG_BATCH_NESTING = false;
+	
 	private static final int NUM_CHARS_TO_GET_BEFORE_CURSOR = 40;
 	private static final int NUM_CHARS_TO_GET_AFTER_CURSOR = 40;
 	private static final int INVALID_CURSOR_POSITION = -1;
@@ -60,7 +59,7 @@ public final class RichInputConnection implements PrivateCommandPerformer {
 	 * keyboard to enter the {@link #hasSlowInputConnection} state.
 	 */
 	// private static final long SLOW_INPUT_CONNECTION_ON_FULL_RELOAD_MS = 1000;
-	private static final long SLOW_INPUT_CONNECTION_ON_FULL_RELOAD_MS = 500;
+	private static final long SLOW_INPUT_CONNECTION_ON_FULL_RELOAD_MS = 250;
 	/**
 	 * The amount of time a {@link #getTextBeforeCursor} or
 	 * {@link #getTextAfterCursor} call needs to take for the keyboard to enter
@@ -68,7 +67,7 @@ public final class RichInputConnection implements PrivateCommandPerformer {
 	 */
 	// private static final long SLOW_INPUT_CONNECTION_ON_PARTIAL_RELOAD_MS =
 	// 200;
-	private static final long SLOW_INPUT_CONNECTION_ON_PARTIAL_RELOAD_MS = 100;
+	private static final long SLOW_INPUT_CONNECTION_ON_PARTIAL_RELOAD_MS = 25;
 
 	private static final int OPERATION_GET_TEXT_BEFORE_CURSOR = 0;
 	private static final int OPERATION_GET_TEXT_AFTER_CURSOR = 1;
@@ -160,19 +159,11 @@ public final class RichInputConnection implements PrivateCommandPerformer {
 			if (isConnected()) {
 				mIC.beginBatchEdit();
 			}
-		} else {
-			if (DBG) {
-				throw new RuntimeException("Nest level too deep");
-			}
-			Log.e(TAG, "Nest level too deep : " + mNestLevel);
-		}
+		}  
 
 	}
 
-	public void endBatchEdit() {
-		if (mNestLevel <= 0)
-			Log.e(TAG, "Batch edit not in progress!"); // TODO: exception
-														// instead
+	public void endBatchEdit() {									 
 		if (--mNestLevel == 0 && isConnected()) {
 			mIC.endBatchEdit();
 		}
@@ -210,7 +201,6 @@ public final class RichInputConnection implements PrivateCommandPerformer {
 		mComposingText.setLength(0);
 		final boolean didReloadTextSuccessfully = reloadTextCache();
 		if (!didReloadTextSuccessfully) {
-			Log.d(TAG, "Will try to retrieve text later.");
 			return false;
 		}
 		if (isConnected() && shouldFinishComposition) {

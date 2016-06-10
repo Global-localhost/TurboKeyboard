@@ -603,9 +603,10 @@ public class LatinIME extends InputMethodService implements
 		Log.i("LatinIME", "Locale:" + locale);
 
 		EditorInfo editorInfo = getCurrentInputEditorInfo();
+		Log.i("LatinIME", "editorInfo:" + editorInfo);
 		if (editorInfo == null) {
-			Log.d("LatinIME", "editorInfo is null!");
 			editorInfo = new EditorInfo();
+			Log.i("LatinIME", "editorInfo:" + editorInfo);
 		}
 
 		if (editorInfo != null) {

@@ -703,9 +703,7 @@ public final class MainKeyboardView extends KeyboardView implements DrawingProxy
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+  
     @Override
     public boolean onHoverEvent(final MotionEvent event) {
         final MainKeyboardAccessibilityDelegate accessibilityDelegate = mAccessibilityDelegate;

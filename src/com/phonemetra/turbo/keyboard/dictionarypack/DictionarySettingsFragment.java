@@ -69,7 +69,7 @@ public final class DictionarySettingsFragment extends PreferenceFragment
     private boolean mChangedSettings;
     private DictionaryListInterfaceState mDictionaryListInterfaceState =
             new DictionaryListInterfaceState();
-    // never null
+    
     private TreeMap<String, WordListPreference> mCurrentPreferenceMap = new TreeMap<>();
 
     private final BroadcastReceiver mConnectivityChangedReceiver = new BroadcastReceiver() {

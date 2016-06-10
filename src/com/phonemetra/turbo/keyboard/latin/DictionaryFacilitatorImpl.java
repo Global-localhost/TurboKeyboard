@@ -611,7 +611,7 @@ public class DictionaryFacilitatorImpl implements DictionaryFacilitator {
         putWordIntoValidSpellingWordCache("unlearnFromUserHistory", word.toLowerCase());
     }
 
-    // TODO: Revise the way to fusion suggestion results.
+  
     @Override
     @Nonnull public SuggestionResults getSuggestionResults(ComposedData composedData,
             NgramContext ngramContext, @Nonnull final Keyboard keyboard,
@@ -729,8 +729,4 @@ public class DictionaryFacilitatorImpl implements DictionaryFacilitator {
         return statsOfEnabledSubDicts;
     }
 
-    @Override
-    public String dump(final Context context) {
-        return "";
-    }
 }

@@ -168,8 +168,6 @@ public interface DictionaryFacilitator {
 
     boolean clearUserHistoryDictionary(final Context context);
 
-    String dump(final Context context);
-
     void dumpDictionaryForDebug(final String dictName);
 
     @Nonnull List<DictionaryStats> getDictionaryStats(final Context context);

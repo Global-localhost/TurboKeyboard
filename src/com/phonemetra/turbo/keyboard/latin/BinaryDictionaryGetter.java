@@ -110,25 +110,18 @@ final public class BinaryDictionaryGetter {
 
     private static final class DictPackSettings {
         final SharedPreferences mDictPreferences;
+        
         public DictPackSettings(final Context context) {
-            mDictPreferences = null == context ? null
-                    : context.getSharedPreferences(COMMON_PREFERENCES_NAME,
+            mDictPreferences = context.getSharedPreferences(COMMON_PREFERENCES_NAME,
                             Context.MODE_MULTI_PROCESS);
         }
         public boolean isWordListActive(final String dictId) {
-            if (null == mDictPreferences) {
-                // If we don't have preferences it basically means we can't find the dictionary
-                // pack - either it's not installed, or it's disabled, or there is some strange
-                // bug. Either way, a word list with no settings should be on by default: default
-                // dictionaries in LatinIME are on if there is no settings at all, and if for some
-                // reason some dictionaries have been installed BUT the dictionary pack can't be
-                // found anymore it's safer to actually supply installed dictionaries.
-                return true;
-            }
-            // The default is true here for the same reasons as above. We got the dictionary
-            // pack but if we don't have any settings for it it means the user has never been
-            // to the settings yet. So by default, the main dictionaries should be on.
-            return mDictPreferences.getBoolean(dictId, true);
+            
+        	if (mDictPreferences!=null) {
+        		return mDictPreferences.getBoolean(dictId, true);
+        	} else {
+        		return false;
+        	}
         }
     }
 

@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public final class KeyboardTheme implements Comparable<KeyboardTheme> {
-    private static final String TAG = KeyboardTheme.class.getSimpleName();
+    private static final String TAG = "KeyboardTheme";
 
     static final String KLP_KEYBOARD_THEME_KEY = "pref_keyboard_layout_20110916";
     static final String LXX_KEYBOARD_THEME_KEY = "pref_keyboard_theme_20140509";

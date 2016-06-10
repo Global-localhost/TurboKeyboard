@@ -50,9 +50,7 @@ import javax.annotation.Nullable;
  * Class for describing the position and characteristics of a single key in the keyboard.
  */
 public class Key implements Comparable<Key> {
-    /**
-     * The key code (unicode or custom code) that this key generates.
-     */
+     
     private final int mCode;
 
     /** Label to display */

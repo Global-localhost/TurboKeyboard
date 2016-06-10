@@ -21,7 +21,6 @@ import static com.phonemetra.turbo.keyboard.latin.common.Constants.ImeOption.NO_
 import static com.phonemetra.turbo.keyboard.latin.common.Constants.ImeOption.NO_MICROPHONE_COMPAT;
 
 import android.text.InputType;
-import android.util.Log;
 import android.view.inputmethod.EditorInfo;
 
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
@@ -34,270 +33,257 @@ import java.util.Arrays;
  * Class to hold attributes of the input field.
  */
 public final class InputAttributes {
-    private final String TAG = InputAttributes.class.getSimpleName();
 
-    final public String mTargetApplicationPackageName;
-    final public boolean mInputTypeNoAutoCorrect;
-    final public boolean mIsPasswordField;
-    final public boolean mShouldShowSuggestions;
-    final public boolean mApplicationSpecifiedCompletionOn;
-    final public boolean mShouldInsertSpacesAutomatically;
-    final public boolean mShouldShowVoiceInputKey;
-    /**
-     * Whether the floating gesture preview should be disabled. If true, this should override the
-     * corresponding keyboard settings preference, always suppressing the floating preview text.
-     * {@link com.phonemetra.turbo.keyboard.latin.settings.SettingsValues#mGestureFloatingPreviewTextEnabled}
-     */
-    final public boolean mDisableGestureFloatingPreviewText;
-    final public boolean mIsGeneralTextInput;
-    final private int mInputType;
-    final private EditorInfo mEditorInfo;
-    final private String mPackageNameForPrivateImeOptions;
+	final public String mTargetApplicationPackageName;
+	final public boolean mInputTypeNoAutoCorrect;
+	final public boolean mIsPasswordField;
+	final public boolean mShouldShowSuggestions;
+	final public boolean mApplicationSpecifiedCompletionOn;
+	final public boolean mShouldInsertSpacesAutomatically;
+	final public boolean mShouldShowVoiceInputKey;
+	/**
+	 * Whether the floating gesture preview should be disabled. If true, this
+	 * should override the corresponding keyboard settings preference, always
+	 * suppressing the floating preview text.
+	 * {@link com.phonemetra.turbo.keyboard.latin.settings.SettingsValues#mGestureFloatingPreviewTextEnabled}
+	 */
+	final public boolean mDisableGestureFloatingPreviewText;
+	final public boolean mIsGeneralTextInput;
+	final private int mInputType;
+	final private EditorInfo mEditorInfo;
+	final private String mPackageNameForPrivateImeOptions;
+	final private int mInputClass;
 
-    public InputAttributes(final EditorInfo editorInfo, final boolean isFullscreenMode,
-            final String packageNameForPrivateImeOptions) {
-        mEditorInfo = editorInfo;
-        mPackageNameForPrivateImeOptions = packageNameForPrivateImeOptions;
-        mTargetApplicationPackageName = null != editorInfo ? editorInfo.packageName : null;
-        final int inputType = null != editorInfo ? editorInfo.inputType : 0;
-        final int inputClass = inputType & InputType.TYPE_MASK_CLASS;
-        mInputType = inputType;
-        mIsPasswordField = InputTypeUtils.isPasswordInputType(inputType)
-                || InputTypeUtils.isVisiblePasswordInputType(inputType);
-        if (inputClass != InputType.TYPE_CLASS_TEXT) {
-            // If we are not looking at a TYPE_CLASS_TEXT field, the following strange
-            // cases may arise, so we do a couple sanity checks for them. If it's a
-            // TYPE_CLASS_TEXT field, these special cases cannot happen, by construction
-            // of the flags.
-            if (null == editorInfo) {
-                Log.w(TAG, "No editor info for this field. Bug?");
-            } else if (InputType.TYPE_NULL == inputType) {
-                // TODO: We should honor TYPE_NULL specification.
-                Log.i(TAG, "InputType.TYPE_NULL is specified");
-            } else if (inputClass == 0) {
-                // TODO: is this check still necessary?
-                Log.w(TAG, String.format("Unexpected input class: inputType=0x%08x"
-                        + " imeOptions=0x%08x", inputType, editorInfo.imeOptions));
-            }
-            mShouldShowSuggestions = false;
-            mInputTypeNoAutoCorrect = false;
-            mApplicationSpecifiedCompletionOn = false;
-            mShouldInsertSpacesAutomatically = false;
-            mShouldShowVoiceInputKey = false;
-            mDisableGestureFloatingPreviewText = false;
-            mIsGeneralTextInput = false;
-            return;
-        }
-        // inputClass == InputType.TYPE_CLASS_TEXT
-        final int variation = inputType & InputType.TYPE_MASK_VARIATION;
-        final boolean flagNoSuggestions =
-                0 != (inputType & InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
-        final boolean flagMultiLine =
-                0 != (inputType & InputType.TYPE_TEXT_FLAG_MULTI_LINE);
-        final boolean flagAutoCorrect =
-                0 != (inputType & InputType.TYPE_TEXT_FLAG_AUTO_CORRECT);
-        final boolean flagAutoComplete =
-                0 != (inputType & InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
+	public InputAttributes(final EditorInfo editorInfo,
+			final boolean isFullscreenMode,
+			final String packageNameForPrivateImeOptions) {
+		mEditorInfo = editorInfo;
+		mPackageNameForPrivateImeOptions = packageNameForPrivateImeOptions;
 
-        // TODO: Have a helper method in InputTypeUtils
-        // Make sure that passwords are not displayed in {@link SuggestionStripView}.
-        final boolean shouldSuppressSuggestions = mIsPasswordField
-                || InputTypeUtils.isEmailVariation(variation)
-                || InputType.TYPE_TEXT_VARIATION_URI == variation
-                || InputType.TYPE_TEXT_VARIATION_FILTER == variation
-                || flagNoSuggestions
-                || flagAutoComplete;
-        mShouldShowSuggestions = !shouldSuppressSuggestions;
+		if (mEditorInfo != null) {
+			mTargetApplicationPackageName = mEditorInfo.packageName;
+			mInputType = mEditorInfo.inputType;
+		} else {
+			mTargetApplicationPackageName = null;
+			mInputType = InputType.TYPE_NULL;
+		}
 
-        mShouldInsertSpacesAutomatically = InputTypeUtils.isAutoSpaceFriendlyType(inputType);
+		mInputClass = mInputType & InputType.TYPE_MASK_CLASS;
 
-        final boolean noMicrophone = mIsPasswordField
-                || InputTypeUtils.isEmailVariation(variation)
-                || InputType.TYPE_TEXT_VARIATION_URI == variation
-                || hasNoMicrophoneKeyOption();
-        mShouldShowVoiceInputKey = !noMicrophone;
+		mIsPasswordField = InputTypeUtils.isPasswordInputType(mInputType)
+				|| InputTypeUtils.isVisiblePasswordInputType(mInputType);
 
-        mDisableGestureFloatingPreviewText = InputAttributes.inPrivateImeOptions(
-                mPackageNameForPrivateImeOptions, NO_FLOATING_GESTURE_PREVIEW, editorInfo);
+		if (mInputClass != InputType.TYPE_CLASS_TEXT) {
+			mShouldShowSuggestions = false;
+			mInputTypeNoAutoCorrect = false;
+			mApplicationSpecifiedCompletionOn = false;
+			mShouldInsertSpacesAutomatically = false;
+			mShouldShowVoiceInputKey = false;
+			mDisableGestureFloatingPreviewText = false;
+			mIsGeneralTextInput = false;
+			return;
+		}
 
-        // If it's a browser edit field and auto correct is not ON explicitly, then
-        // disable auto correction, but keep suggestions on.
-        // If NO_SUGGESTIONS is set, don't do prediction.
-        // If it's not multiline and the autoCorrect flag is not set, then don't correct
-        mInputTypeNoAutoCorrect =
-                (variation == InputType.TYPE_TEXT_VARIATION_WEB_EDIT_TEXT && !flagAutoCorrect)
-                || flagNoSuggestions
-                || (!flagAutoCorrect && !flagMultiLine);
+		// inputClass == InputType.TYPE_CLASS_TEXT
+		final int variation = mInputType & InputType.TYPE_MASK_VARIATION;
+		final boolean flagNoSuggestions = 0 != (mInputType & InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+		final boolean flagMultiLine = 0 != (mInputType & InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+		final boolean flagAutoCorrect = 0 != (mInputType & InputType.TYPE_TEXT_FLAG_AUTO_CORRECT);
+		final boolean flagAutoComplete = 0 != (mInputType & InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
 
-        mApplicationSpecifiedCompletionOn = flagAutoComplete && isFullscreenMode;
+		// TODO: Have a helper method in InputTypeUtils
+		// Make sure that passwords are not displayed in {@link
+		// SuggestionStripView}.
+		final boolean shouldSuppressSuggestions = mIsPasswordField
+				|| InputTypeUtils.isEmailVariation(variation)
+				|| InputType.TYPE_TEXT_VARIATION_URI == variation
+				|| InputType.TYPE_TEXT_VARIATION_FILTER == variation
+				|| flagNoSuggestions || flagAutoComplete;
+		mShouldShowSuggestions = !shouldSuppressSuggestions;
 
-        // If we come here, inputClass is always TYPE_CLASS_TEXT
-        mIsGeneralTextInput = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS != variation
-                && InputType.TYPE_TEXT_VARIATION_PASSWORD != variation
-                && InputType.TYPE_TEXT_VARIATION_PHONETIC != variation
-                && InputType.TYPE_TEXT_VARIATION_URI != variation
-                && InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD != variation
-                && InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS != variation
-                && InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD != variation;
-    }
+		mShouldInsertSpacesAutomatically = InputTypeUtils
+				.isAutoSpaceFriendlyType(mInputType);
 
-    public boolean isTypeNull() {
-        return InputType.TYPE_NULL == mInputType;
-    }
+		final boolean noMicrophone = mIsPasswordField
+				|| InputTypeUtils.isEmailVariation(variation)
+				|| InputType.TYPE_TEXT_VARIATION_URI == variation
+				|| hasNoMicrophoneKeyOption();
+		mShouldShowVoiceInputKey = !noMicrophone;
 
-    public boolean isSameInputType(final EditorInfo editorInfo) {
-        return editorInfo.inputType == mInputType;
-    }
+		mDisableGestureFloatingPreviewText = InputAttributes
+				.inPrivateImeOptions(mPackageNameForPrivateImeOptions,
+						NO_FLOATING_GESTURE_PREVIEW, editorInfo);
 
-    private boolean hasNoMicrophoneKeyOption() {
-        @SuppressWarnings("deprecation")
-        final boolean deprecatedNoMicrophone = InputAttributes.inPrivateImeOptions(
-                null, NO_MICROPHONE_COMPAT, mEditorInfo);
-        final boolean noMicrophone = InputAttributes.inPrivateImeOptions(
-                mPackageNameForPrivateImeOptions, NO_MICROPHONE, mEditorInfo);
-        return noMicrophone || deprecatedNoMicrophone;
-    }
+		// If it's a browser edit field and auto correct is not ON explicitly,
+		// then
+		// disable auto correction, but keep suggestions on.
+		// If NO_SUGGESTIONS is set, don't do prediction.
+		// If it's not multiline and the autoCorrect flag is not set, then don't
+		// correct
+		mInputTypeNoAutoCorrect = (variation == InputType.TYPE_TEXT_VARIATION_WEB_EDIT_TEXT && !flagAutoCorrect)
+				|| flagNoSuggestions || (!flagAutoCorrect && !flagMultiLine);
 
-    @SuppressWarnings("unused")
-    private void dumpFlags(final int inputType) {
-        final int inputClass = inputType & InputType.TYPE_MASK_CLASS;
-        final String inputClassString = toInputClassString(inputClass);
-        final String variationString = toVariationString(
-                inputClass, inputType & InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
-        final String flagsString = toFlagsString(inputType & InputType.TYPE_MASK_FLAGS);
-        Log.i(TAG, "Input class: " + inputClassString);
-        Log.i(TAG, "Variation: " + variationString);
-        Log.i(TAG, "Flags: " + flagsString);
-    }
+		mApplicationSpecifiedCompletionOn = flagAutoComplete
+				&& isFullscreenMode;
 
-    private static String toInputClassString(final int inputClass) {
-        switch (inputClass) {
-        case InputType.TYPE_CLASS_TEXT:
-            return "TYPE_CLASS_TEXT";
-        case InputType.TYPE_CLASS_PHONE:
-            return "TYPE_CLASS_PHONE";
-        case InputType.TYPE_CLASS_NUMBER:
-            return "TYPE_CLASS_NUMBER";
-        case InputType.TYPE_CLASS_DATETIME:
-            return "TYPE_CLASS_DATETIME";
-        default:
-            return String.format("unknownInputClass<0x%08x>", inputClass);
-        }
-    }
+		// If we come here, inputClass is always TYPE_CLASS_TEXT
+		mIsGeneralTextInput = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS != variation
+				&& InputType.TYPE_TEXT_VARIATION_PASSWORD != variation
+				&& InputType.TYPE_TEXT_VARIATION_PHONETIC != variation
+				&& InputType.TYPE_TEXT_VARIATION_URI != variation
+				&& InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD != variation
+				&& InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS != variation
+				&& InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD != variation;
+	}
 
-    private static String toVariationString(final int inputClass, final int variation) {
-        switch (inputClass) {
-        case InputType.TYPE_CLASS_TEXT:
-            return toTextVariationString(variation);
-        case InputType.TYPE_CLASS_NUMBER:
-            return toNumberVariationString(variation);
-        case InputType.TYPE_CLASS_DATETIME:
-            return toDatetimeVariationString(variation);
-        default:
-            return "";
-        }
-    }
+	public boolean isTypeNull() {
+		return InputType.TYPE_NULL == mInputType;
+	}
 
-    private static String toTextVariationString(final int variation) {
-        switch (variation) {
-        case InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS:
-            return " TYPE_TEXT_VARIATION_EMAIL_ADDRESS";
-        case InputType.TYPE_TEXT_VARIATION_EMAIL_SUBJECT:
-            return "TYPE_TEXT_VARIATION_EMAIL_SUBJECT";
-        case InputType.TYPE_TEXT_VARIATION_FILTER:
-            return "TYPE_TEXT_VARIATION_FILTER";
-        case InputType.TYPE_TEXT_VARIATION_LONG_MESSAGE:
-            return "TYPE_TEXT_VARIATION_LONG_MESSAGE";
-        case InputType.TYPE_TEXT_VARIATION_NORMAL:
-            return "TYPE_TEXT_VARIATION_NORMAL";
-        case InputType.TYPE_TEXT_VARIATION_PASSWORD:
-            return "TYPE_TEXT_VARIATION_PASSWORD";
-        case InputType.TYPE_TEXT_VARIATION_PERSON_NAME:
-            return "TYPE_TEXT_VARIATION_PERSON_NAME";
-        case InputType.TYPE_TEXT_VARIATION_PHONETIC:
-            return "TYPE_TEXT_VARIATION_PHONETIC";
-        case InputType.TYPE_TEXT_VARIATION_POSTAL_ADDRESS:
-            return "TYPE_TEXT_VARIATION_POSTAL_ADDRESS";
-        case InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE:
-            return "TYPE_TEXT_VARIATION_SHORT_MESSAGE";
-        case InputType.TYPE_TEXT_VARIATION_URI:
-            return "TYPE_TEXT_VARIATION_URI";
-        case InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD:
-            return "TYPE_TEXT_VARIATION_VISIBLE_PASSWORD";
-        case InputType.TYPE_TEXT_VARIATION_WEB_EDIT_TEXT:
-            return "TYPE_TEXT_VARIATION_WEB_EDIT_TEXT";
-        case InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS:
-            return "TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS";
-        case InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD:
-            return "TYPE_TEXT_VARIATION_WEB_PASSWORD";
-        default:
-            return String.format("unknownVariation<0x%08x>", variation);
-        }
-    }
+	public boolean isSameInputType(final EditorInfo editorInfo) {
+		return editorInfo.inputType == mInputType;
+	}
 
-    private static String toNumberVariationString(final int variation) {
-        switch (variation) {
-        case InputType.TYPE_NUMBER_VARIATION_NORMAL:
-            return "TYPE_NUMBER_VARIATION_NORMAL";
-        case InputType.TYPE_NUMBER_VARIATION_PASSWORD:
-            return "TYPE_NUMBER_VARIATION_PASSWORD";
-        default:
-            return String.format("unknownVariation<0x%08x>", variation);
-        }
-    }
+	private boolean hasNoMicrophoneKeyOption() {
+		final boolean deprecatedNoMicrophone = InputAttributes
+				.inPrivateImeOptions(null, NO_MICROPHONE_COMPAT, mEditorInfo);
+		final boolean noMicrophone = InputAttributes.inPrivateImeOptions(
+				mPackageNameForPrivateImeOptions, NO_MICROPHONE, mEditorInfo);
+		return noMicrophone || deprecatedNoMicrophone;
+	}
 
-    private static String toDatetimeVariationString(final int variation) {
-        switch (variation) {
-        case InputType.TYPE_DATETIME_VARIATION_NORMAL:
-            return "TYPE_DATETIME_VARIATION_NORMAL";
-        case InputType.TYPE_DATETIME_VARIATION_DATE:
-            return "TYPE_DATETIME_VARIATION_DATE";
-        case InputType.TYPE_DATETIME_VARIATION_TIME:
-            return "TYPE_DATETIME_VARIATION_TIME";
-        default:
-            return String.format("unknownVariation<0x%08x>", variation);
-        }
-    }
+	private static String toInputClassString(final int inputClass) {
+		switch (inputClass) {
+		case InputType.TYPE_CLASS_TEXT:
+			return "TYPE_CLASS_TEXT";
+		case InputType.TYPE_CLASS_PHONE:
+			return "TYPE_CLASS_PHONE";
+		case InputType.TYPE_CLASS_NUMBER:
+			return "TYPE_CLASS_NUMBER";
+		case InputType.TYPE_CLASS_DATETIME:
+			return "TYPE_CLASS_DATETIME";
+		default:
+			return String.format("unknownInputClass<0x%08x>", inputClass);
+		}
+	}
 
-    private static String toFlagsString(final int flags) {
-        final ArrayList<String> flagsArray = new ArrayList<>();
-        if (0 != (flags & InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS))
-            flagsArray.add("TYPE_TEXT_FLAG_NO_SUGGESTIONS");
-        if (0 != (flags & InputType.TYPE_TEXT_FLAG_MULTI_LINE))
-            flagsArray.add("TYPE_TEXT_FLAG_MULTI_LINE");
-        if (0 != (flags & InputType.TYPE_TEXT_FLAG_IME_MULTI_LINE))
-            flagsArray.add("TYPE_TEXT_FLAG_IME_MULTI_LINE");
-        if (0 != (flags & InputType.TYPE_TEXT_FLAG_CAP_WORDS))
-            flagsArray.add("TYPE_TEXT_FLAG_CAP_WORDS");
-        if (0 != (flags & InputType.TYPE_TEXT_FLAG_CAP_SENTENCES))
-            flagsArray.add("TYPE_TEXT_FLAG_CAP_SENTENCES");
-        if (0 != (flags & InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS))
-            flagsArray.add("TYPE_TEXT_FLAG_CAP_CHARACTERS");
-        if (0 != (flags & InputType.TYPE_TEXT_FLAG_AUTO_CORRECT))
-            flagsArray.add("TYPE_TEXT_FLAG_AUTO_CORRECT");
-        if (0 != (flags & InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE))
-            flagsArray.add("TYPE_TEXT_FLAG_AUTO_COMPLETE");
-        return flagsArray.isEmpty() ? "" : Arrays.toString(flagsArray.toArray());
-    }
+	private static String toVariationString(final int inputClass,
+			final int variation) {
+		switch (inputClass) {
+		case InputType.TYPE_CLASS_TEXT:
+			return toTextVariationString(variation);
+		case InputType.TYPE_CLASS_NUMBER:
+			return toNumberVariationString(variation);
+		case InputType.TYPE_CLASS_DATETIME:
+			return toDatetimeVariationString(variation);
+		default:
+			return "";
+		}
+	}
 
-    // Pretty print
-    @Override
-    public String toString() {
-        return String.format(
-                "%s: inputType=0x%08x%s%s%s%s%s targetApp=%s\n", getClass().getSimpleName(),
-                mInputType,
-                (mInputTypeNoAutoCorrect ? " noAutoCorrect" : ""),
-                (mIsPasswordField ? " password" : ""),
-                (mShouldShowSuggestions ? " shouldShowSuggestions" : ""),
-                (mApplicationSpecifiedCompletionOn ? " appSpecified" : ""),
-                (mShouldInsertSpacesAutomatically ? " insertSpaces" : ""),
-                mTargetApplicationPackageName);
-    }
+	private static String toTextVariationString(final int variation) {
+		switch (variation) {
+		case InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS:
+			return " TYPE_TEXT_VARIATION_EMAIL_ADDRESS";
+		case InputType.TYPE_TEXT_VARIATION_EMAIL_SUBJECT:
+			return "TYPE_TEXT_VARIATION_EMAIL_SUBJECT";
+		case InputType.TYPE_TEXT_VARIATION_FILTER:
+			return "TYPE_TEXT_VARIATION_FILTER";
+		case InputType.TYPE_TEXT_VARIATION_LONG_MESSAGE:
+			return "TYPE_TEXT_VARIATION_LONG_MESSAGE";
+		case InputType.TYPE_TEXT_VARIATION_NORMAL:
+			return "TYPE_TEXT_VARIATION_NORMAL";
+		case InputType.TYPE_TEXT_VARIATION_PASSWORD:
+			return "TYPE_TEXT_VARIATION_PASSWORD";
+		case InputType.TYPE_TEXT_VARIATION_PERSON_NAME:
+			return "TYPE_TEXT_VARIATION_PERSON_NAME";
+		case InputType.TYPE_TEXT_VARIATION_PHONETIC:
+			return "TYPE_TEXT_VARIATION_PHONETIC";
+		case InputType.TYPE_TEXT_VARIATION_POSTAL_ADDRESS:
+			return "TYPE_TEXT_VARIATION_POSTAL_ADDRESS";
+		case InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE:
+			return "TYPE_TEXT_VARIATION_SHORT_MESSAGE";
+		case InputType.TYPE_TEXT_VARIATION_URI:
+			return "TYPE_TEXT_VARIATION_URI";
+		case InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD:
+			return "TYPE_TEXT_VARIATION_VISIBLE_PASSWORD";
+		case InputType.TYPE_TEXT_VARIATION_WEB_EDIT_TEXT:
+			return "TYPE_TEXT_VARIATION_WEB_EDIT_TEXT";
+		case InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS:
+			return "TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS";
+		case InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD:
+			return "TYPE_TEXT_VARIATION_WEB_PASSWORD";
+		default:
+			return String.format("unknownVariation<0x%08x>", variation);
+		}
+	}
 
-    public static boolean inPrivateImeOptions(final String packageName, final String key,
-            final EditorInfo editorInfo) {
-        if (editorInfo == null) return false;
-        final String findingKey = (packageName != null) ? packageName + "." + key : key;
-        return StringUtils.containsInCommaSplittableText(findingKey, editorInfo.privateImeOptions);
-    }
+	private static String toNumberVariationString(final int variation) {
+		switch (variation) {
+		case InputType.TYPE_NUMBER_VARIATION_NORMAL:
+			return "TYPE_NUMBER_VARIATION_NORMAL";
+		case InputType.TYPE_NUMBER_VARIATION_PASSWORD:
+			return "TYPE_NUMBER_VARIATION_PASSWORD";
+		default:
+			return String.format("unknownVariation<0x%08x>", variation);
+		}
+	}
+
+	private static String toDatetimeVariationString(final int variation) {
+		switch (variation) {
+		case InputType.TYPE_DATETIME_VARIATION_NORMAL:
+			return "TYPE_DATETIME_VARIATION_NORMAL";
+		case InputType.TYPE_DATETIME_VARIATION_DATE:
+			return "TYPE_DATETIME_VARIATION_DATE";
+		case InputType.TYPE_DATETIME_VARIATION_TIME:
+			return "TYPE_DATETIME_VARIATION_TIME";
+		default:
+			return String.format("unknownVariation<0x%08x>", variation);
+		}
+	}
+
+	private static String toFlagsString(final int flags) {
+		final ArrayList<String> flagsArray = new ArrayList<>();
+		if (0 != (flags & InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS))
+			flagsArray.add("TYPE_TEXT_FLAG_NO_SUGGESTIONS");
+		if (0 != (flags & InputType.TYPE_TEXT_FLAG_MULTI_LINE))
+			flagsArray.add("TYPE_TEXT_FLAG_MULTI_LINE");
+		if (0 != (flags & InputType.TYPE_TEXT_FLAG_IME_MULTI_LINE))
+			flagsArray.add("TYPE_TEXT_FLAG_IME_MULTI_LINE");
+		if (0 != (flags & InputType.TYPE_TEXT_FLAG_CAP_WORDS))
+			flagsArray.add("TYPE_TEXT_FLAG_CAP_WORDS");
+		if (0 != (flags & InputType.TYPE_TEXT_FLAG_CAP_SENTENCES))
+			flagsArray.add("TYPE_TEXT_FLAG_CAP_SENTENCES");
+		if (0 != (flags & InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS))
+			flagsArray.add("TYPE_TEXT_FLAG_CAP_CHARACTERS");
+		if (0 != (flags & InputType.TYPE_TEXT_FLAG_AUTO_CORRECT))
+			flagsArray.add("TYPE_TEXT_FLAG_AUTO_CORRECT");
+		if (0 != (flags & InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE))
+			flagsArray.add("TYPE_TEXT_FLAG_AUTO_COMPLETE");
+		return flagsArray.isEmpty() ? "" : Arrays
+				.toString(flagsArray.toArray());
+	}
+
+	// Pretty print
+	@Override
+	public String toString() {
+		return String.format("%s: inputType=0x%08x%s%s%s%s%s targetApp=%s\n",
+				getClass().getSimpleName(), mInputType,
+				(mInputTypeNoAutoCorrect ? " noAutoCorrect" : ""),
+				(mIsPasswordField ? " password" : ""),
+				(mShouldShowSuggestions ? " shouldShowSuggestions" : ""),
+				(mApplicationSpecifiedCompletionOn ? " appSpecified" : ""),
+				(mShouldInsertSpacesAutomatically ? " insertSpaces" : ""),
+				mTargetApplicationPackageName);
+	}
+
+	public static boolean inPrivateImeOptions(final String packageName,
+			final String key, final EditorInfo editorInfo) {
+		if (editorInfo == null)
+			return false;
+		final String findingKey = (packageName != null) ? packageName + "."
+				+ key : key;
+		return StringUtils.containsInCommaSplittableText(findingKey,
+				editorInfo.privateImeOptions);
+	}
 }

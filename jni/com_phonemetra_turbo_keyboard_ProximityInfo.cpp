@@ -38,10 +38,17 @@ static jlong turbokeyboard_Keyboard_setProximityInfo(JNIEnv *env, jclass clazz,
     return reinterpret_cast<jlong>(proximityInfo);
 }
 
-static void turbokeyboard_Keyboard_release(JNIEnv *env, jclass clazz, jlong proximityInfo) {
+static long turbokeyboard_Keyboard_initProximityInfo(JNIEnv *env, jclass clazz, jlong proximityInfo) {
+	ProximityInfo *pi = reinterpret_cast<ProximityInfo *>(proximityInfo);
+	return pi;
+}
+
+static void turbokeyboard_Keyboard_releaseProximityInfo(JNIEnv *env, jclass clazz, jlong proximityInfo) {
     ProximityInfo *pi = reinterpret_cast<ProximityInfo *>(proximityInfo);
     delete pi;
 }
+
+
 
 static const JNINativeMethod sMethods[] = {
     {
@@ -49,10 +56,15 @@ static const JNINativeMethod sMethods[] = {
         const_cast<char *>("(IIIIII[II[I[I[I[I[I[F[F[F)J"),
         reinterpret_cast<void *>(turbokeyboard_Keyboard_setProximityInfo)
     },
+	{
+	    const_cast<char *>("initProximityInfoNative"),
+	    const_cast<char *>("(JJ[II)V"),
+	    reinterpret_cast<void *>(turbokeyboard_initProximityInfo)
+	},
     {
         const_cast<char *>("releaseProximityInfoNative"),
         const_cast<char *>("(J)V"),
-        reinterpret_cast<void *>(turbokeyboard_Keyboard_release)
+        reinterpret_cast<void *>(turbokeyboard_Keyboard_releaseProximityInfo)
     }
 };
 
