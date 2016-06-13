@@ -55,7 +55,7 @@ import javax.annotation.Nonnull;
  *     to access, and mark the current state as such.
  */
 public final class DictionaryService extends Service {
-    private static final String TAG = DictionaryService.class.getSimpleName();
+    private static final String TAG = "DictionaryService";
 
     /**
      * The package name, to use in the intent actions.
@@ -161,16 +161,16 @@ public final class DictionaryService extends Service {
     public synchronized int onStartCommand(final Intent intent, final int flags,
             final int startId) {
         final DictionaryService self = this;
-        if (SHOW_DOWNLOAD_TOAST_INTENT_ACTION.equals(intent.getAction())) {
-            final String localeString = intent.getStringExtra(LOCALE_INTENT_ARGUMENT);
-            if (localeString == null) {
-                Log.e(TAG, "Received " + intent.getAction() + " without locale; skipped");
-            } else {
+        //if (SHOW_DOWNLOAD_TOAST_INTENT_ACTION.equals(intent.getAction())) {
+        //    final String localeString = intent.getStringExtra(LOCALE_INTENT_ARGUMENT);
+            //if (localeString == null) {
+            //    Log.e(TAG, "Received " + intent.getAction() + " without locale; skipped");
+            //} //else {
                 // This is a UI action, it can't be run in another thread
-                showStartDownloadingToast(
-                        this, LocaleUtils.constructLocaleFromString(localeString));
-            }
-        } else {
+                //showStartDownloadingToast(
+                //        this, LocaleUtils.constructLocaleFromString(localeString));
+            //}
+        //} else {
             // If it's a command that does not require UI, arrange for the work to be done on a
             // separate thread, so that we can return right away. The executor will spawn a thread
             // if necessary, or reuse a thread that has become idle as appropriate.
@@ -187,7 +187,7 @@ public final class DictionaryService extends Service {
                     stopSelfResult(startId);
                 }
             });
-        }
+        //}
         return Service.START_REDELIVER_INTENT;
     }
 
@@ -264,11 +264,11 @@ public final class DictionaryService extends Service {
     /**
      * Shows a toast informing the user that an automatic dictionary download is starting.
      */
-    private static void showStartDownloadingToast(final Context context,
-            @Nonnull final Locale locale) {
-        final String toastText = String.format(
-                context.getString(R.string.toast_downloading_suggestions),
-                locale.getDisplayName());
-        Toast.makeText(context, toastText, Toast.LENGTH_LONG).show();
-    }
+    //private static void showStartDownloadingToast(final Context context,
+    //        @Nonnull final Locale locale) {
+    //    final String toastText = String.format(
+    //            context.getString(R.string.toast_downloading_suggestions),
+    //            locale.getDisplayName());
+    //    Toast.makeText(context, toastText, Toast.LENGTH_LONG).show();
+    //}
 }
