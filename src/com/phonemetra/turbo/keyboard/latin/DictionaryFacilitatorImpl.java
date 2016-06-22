@@ -417,37 +417,7 @@ public class DictionaryFacilitatorImpl implements DictionaryFacilitator {
         latchForWaitingLoadingMainDictionary.countDown();
     }
 
-    @UsedForTesting
-    public void resetDictionariesForTesting(final Context context, final Locale locale,
-            final ArrayList<String> dictionaryTypes, final HashMap<String, File> dictionaryFiles,
-            final Map<String, Map<String, String>> additionalDictAttributes,
-            @Nullable final String account) {
-        Dictionary mainDictionary = null;
-        final Map<String, ExpandableBinaryDictionary> subDicts = new HashMap<>();
-
-        for (final String dictType : dictionaryTypes) {
-            if (dictType.equals(Dictionary.TYPE_MAIN)) {
-                mainDictionary = DictionaryFactory.createMainDictionaryFromManager(context,
-                        locale);
-            } else {
-                final File dictFile = dictionaryFiles.get(dictType);
-                final ExpandableBinaryDictionary dict = getSubDict(
-                        dictType, context, locale, dictFile, "" /* dictNamePrefix */, account);
-                if (additionalDictAttributes.containsKey(dictType)) {
-                    dict.clearAndFlushDictionaryWithAdditionalAttributes(
-                            additionalDictAttributes.get(dictType));
-                }
-                if (dict == null) {
-                    throw new RuntimeException("Unknown dictionary type: " + dictType);
-                }
-                dict.reloadDictionaryIfRequired();
-                dict.waitAllTasksForTests();
-                subDicts.put(dictType, dict);
-            }
-        }
-        mDictionaryGroup = new DictionaryGroup(locale, mainDictionary, account, subDicts);
-    }
-
+    
     public void closeDictionaries() {
         final DictionaryGroup dictionaryGroupToClose;
         synchronized (mLock) {
@@ -458,11 +428,7 @@ public class DictionaryFacilitatorImpl implements DictionaryFacilitator {
             dictionaryGroupToClose.closeDict(dictType);
         }
     }
-
-    @UsedForTesting
-    public ExpandableBinaryDictionary getSubDictForTesting(final String dictName) {
-        return mDictionaryGroup.getSubDict(dictName);
-    }
+  
 
     // The main dictionaries are loaded asynchronously.  Don't cache the return value
     // of these methods.

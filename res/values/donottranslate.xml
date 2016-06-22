@@ -49,6 +49,7 @@
     <string-array name="predefined_layouts">
         <item>qwerty</item>
         <item>qwertz</item>
+        <item>arabic</item>
         <item>azerty</item>
         <item>dvorak</item>
         <item>colemak</item>
@@ -58,6 +59,7 @@
     <string-array name="predefined_layout_display_names">
         <item>QWERTY</item>
         <item>QWERTZ</item>
+        <item>ARABIC</item>
         <item>AZERTY</item>
         <item>Dvorak</item>
         <item>Colemak</item>
@@ -68,7 +70,7 @@
          The string resource with "No language" also must be added to strings.xml and the resource
          name must be "subtype_no_language_<layout name>" -->
     <string name="subtype_generic_qwerty">%s (QWERTY)</string>
-    <string name="subtype_generic_qwertz">%s (QWERTZ)</string>
+    <string name="subtype_generic_qwertz">%s (QWERTZ)</string>  
     <string name="subtype_generic_azerty">%s (AZERTY)</string>
     <string name="subtype_generic_dvorak">%s (Dvorak)</string>
     <string name="subtype_generic_colemak">%s (Colemak)</string>
@@ -84,6 +86,8 @@
         <item>en_GB:TrySuppressingImeSwitcher,AsciiCapable,SupportTouchPositionCorrection,EmojiCapable</item>
         <item>qwerty</item>
         <item>ar:SupportTouchPositionCorrection,EmojiCapable</item>
+        <item>arabic</item>
+        <item>ar_QA:SupportTouchPositionCorrection,EmojiCapable</item>
         <item>arabic</item>
         <item>cs:AsciiCapable,SupportTouchPositionCorrection,EmojiCapable</item>
         <item>qwertz</item>

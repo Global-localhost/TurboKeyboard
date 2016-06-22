@@ -34,7 +34,7 @@ import com.phonemetra.turbo.keyboard.R;
  * Factory for dictionary instances.
  */
 public final class DictionaryFactory {
-    private static final String TAG = DictionaryFactory.class.getSimpleName();
+    private static final String TAG = "DictionaryFactory";
 
     /**
      * Initializes a main dictionary collection from a dictionary pack, with explicit flags.

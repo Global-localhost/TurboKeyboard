@@ -79,7 +79,6 @@ public class SettingsValues {
     
    
     public final boolean mCloudSyncEnabled;
-    public final boolean mEnableMetricsLogging;
     public final boolean mShouldShowLxxSuggestionUi;
     // Use split layout for keyboard.
     public final boolean mIsSplitKeyboardEnabled;
@@ -152,7 +151,7 @@ public class SettingsValues {
         mBigramPredictionEnabled = readBigramPredictionEnabled(prefs, res);
         mDoubleSpacePeriodTimeout = res.getInteger(R.integer.config_double_space_period_timeout);
         mHasHardwareKeyboard = Settings.readHasHardwareKeyboard(res.getConfiguration());
-        mEnableMetricsLogging = prefs.getBoolean(Settings.PREF_ENABLE_METRICS_LOGGING, true);
+       
         mIsSplitKeyboardEnabled = prefs.getBoolean(Settings.PREF_ENABLE_SPLIT_KEYBOARD, false);
         mScreenMetrics = Settings.readScreenMetrics(res);
 
@@ -218,9 +217,7 @@ public class SettingsValues {
         }
     }
 
-    public boolean isMetricsLoggingEnabled() {
-        return mEnableMetricsLogging;
-    }
+     
 
     public boolean isApplicationSpecifiedCompletionsOn() {
         return mInputAttributes.mApplicationSpecifiedCompletionOn;

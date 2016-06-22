@@ -21,7 +21,7 @@
     
     <string name="application_name" translatable="false">Turbo Keyboard™</string>
 	<string name="application_copyright" translatable="false">Copyright \u00A9 2016 Phonemetra</string>
-	<string name="application_version" translatable="false">0.0.15</string>
+	<string name="application_version" translatable="false">0.0.16</string>
 	<string name="spell_checker_service_name">Spell Checker</string>
     <string name="app_settings">Turbo Keyboard™ Settings</string>
     <string name="spell_checker_settings">Spell Checker Settings</string>
@@ -215,7 +215,8 @@
     <string name="account_select_sign_out">Sign out</string>
     <!-- Title of the account picker dialog for selecting an account [CHAR LIMIT=40] -->
     <string name="account_select_title">Select an account to use</string>
-
+    
+    <string name="subtype_ar_QA">Arabic (Qatar)</string>
     <!-- Description for English (UK) keyboard subtype [CHAR LIMIT=25]
          (UK) should be an abbreviation of United Kingdom to fit in the CHAR LIMIT. -->
     <string name="subtype_en_GB">English (UK)</string>

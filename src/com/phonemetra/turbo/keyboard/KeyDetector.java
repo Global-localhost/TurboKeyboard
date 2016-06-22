@@ -28,7 +28,7 @@ public class KeyDetector {
     private int mCorrectionY;
 
     public KeyDetector() {
-        this(0.0f /* keyHysteresisDistance */, 0.0f /* keyHysteresisDistanceForSlidingModifier */);
+        this(0.0f, 0.0f);
     }
 
     /**
@@ -65,7 +65,6 @@ public class KeyDetector {
         return x + mCorrectionX;
     }
 
-    // TODO: Remove vertical correction.
     public int getTouchY(final int y) {
         return y + mCorrectionY;
     }

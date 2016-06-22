@@ -120,19 +120,6 @@ public final class AccountsSettingsFragment extends SubScreenFragment {
         mSyncNowPreference = findPreference(PREF_SYNC_NOW);
         mClearSyncDataPreference = findPreference(PREF_CLEAR_SYNC_DATA);
 
-        if (ProductionFlags.IS_METRICS_LOGGING_SUPPORTED) {
-            final Preference enableMetricsLogging =
-                    findPreference(Settings.PREF_ENABLE_METRICS_LOGGING);
-            final Resources res = getResources();
-            if (enableMetricsLogging != null) {
-                final String enableMetricsLoggingTitle = res.getString(
-                        R.string.enable_metrics_logging, getApplicationName());
-                enableMetricsLogging.setTitle(enableMetricsLoggingTitle);
-            }
-        } else {
-            removePreference(Settings.PREF_ENABLE_METRICS_LOGGING);
-        }
-
         if (!ProductionFlags.ENABLE_USER_HISTORY_DICTIONARY_SYNC) {
             removeSyncPreferences();
         } else {

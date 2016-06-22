@@ -25,23 +25,14 @@ import com.phonemetra.turbo.keyboard.latin.common.ComposedData;
 import com.phonemetra.turbo.keyboard.latin.settings.SettingsValuesForSuggestion;
 import com.phonemetra.turbo.keyboard.latin.utils.SuggestionResults;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-/**
- * Interface that facilitates interaction with different kinds of dictionaries. Provides APIs to
- * instantiate and select the correct dictionaries (based on language or account), update entries
- * and fetch suggestions. Currently AndroidSpellCheckerService and LatinIME both use
- * DictionaryFacilitator as a client for interacting with dictionaries.
- */
+
 public interface DictionaryFacilitator {
 
     public static final String[] ALL_DICTIONARY_TYPES = new String[] {
@@ -121,19 +112,8 @@ public interface DictionaryFacilitator {
             final String dictNamePrefix,
             @Nullable final DictionaryInitializationListener listener);
 
-    @UsedForTesting
-    void resetDictionariesForTesting(
-            final Context context,
-            final Locale locale,
-            final ArrayList<String> dictionaryTypes,
-            final HashMap<String, File> dictionaryFiles,
-            final Map<String, Map<String, String>> additionalDictAttributes,
-            @Nullable final String account);
 
     void closeDictionaries();
-
-    @UsedForTesting
-    ExpandableBinaryDictionary getSubDictForTesting(final String dictName);
 
     // The main dictionaries are loaded asynchronously. Don't cache the return value
     // of these methods.

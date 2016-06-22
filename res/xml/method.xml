@@ -23,7 +23,8 @@
 <!-- Supported subtypes
     keyboard_locale: script_name/keyboard_layout_set
     af: Afrikaans/qwerty
-    ar: Arabic/arabic
+    ar: Arabic/arabi
+    ar_QA: Arabic (Qatar)
     az_AZ: Azerbaijani (Azerbaijan)/qwerty
     be_BY: Belarusian (Belarus)/east_slavic
     bg: Bulgarian/bulgarian
@@ -148,6 +149,17 @@
             android:imeSubtypeExtraValue="SupportTouchPositionCorrection,EmojiCapable"
             android:isAsciiCapable="false"
     />
+    
+    <subtype android:icon="@drawable/ic_ime_switcher_dark"
+            android:label="@string/subtype_ar_QA"
+            android:subtypeId="0x590dde41"
+            android:imeSubtypeLocale="ar-QA"
+            android:imeSubtypeMode="keyboard"
+            android:imeSubtypeExtraValue="SupportTouchPositionCorrection,EmojiCapable"
+            android:isAsciiCapable="false"
+    />
+    
+    
     <subtype android:icon="@drawable/ic_ime_switcher_dark"
             android:label="@string/subtype_generic"
             android:subtypeId="0x70b0f974"

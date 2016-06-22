@@ -36,12 +36,8 @@ import java.util.Locale;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-/**
- * A helper class to deal with subtype locales.
-  */
-// TODO: consolidate this into RichInputMethodSubtype
 public final class SubtypeLocaleUtils {
-    static final String TAG = SubtypeLocaleUtils.class.getSimpleName();
+    static final String TAG = "SubtypeLocaleUtils";
 
     // This reference class {@link R} must be located in the same package as LatinIME.java.
     private static final String RESOURCE_PACKAGE_NAME = R.class.getPackage().getName();
@@ -83,7 +79,7 @@ public final class SubtypeLocaleUtils {
             new HashMap<>();
 
     private SubtypeLocaleUtils() {
-        // Intentional empty constructor for utility class.
+       
     }
 
     // Note that this initialization method can be called multiple times.

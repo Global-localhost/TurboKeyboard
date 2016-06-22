@@ -45,7 +45,7 @@ import com.phonemetra.turbo.keyboard.latin.utils.ResourceUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.ScriptUtils;
 
 public final class KeyboardSwitcher implements KeyboardState.SwitchActions {
-    private static final String TAG = KeyboardSwitcher.class.getSimpleName();
+    private static final String TAG = "KeyboardSwitcher";
 
     private InputView mCurrentInputView;
     private View mMainKeyboardFrame;
