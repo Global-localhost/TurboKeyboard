@@ -33,7 +33,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public final class KeyStylesSet {
-    private static final String TAG = KeyStylesSet.class.getSimpleName();
+    private static final String TAG = "KeyStylesSet";
     private static final boolean DEBUG = false;
 
     @Nonnull

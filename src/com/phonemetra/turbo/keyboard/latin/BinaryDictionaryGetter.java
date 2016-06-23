@@ -36,6 +36,8 @@ import java.util.Locale;
 
 
 final public class BinaryDictionaryGetter {
+	
+	
 
     private static final File[] EMPTY_FILE_ARRAY = new File[0];
 
@@ -71,42 +73,42 @@ final public class BinaryDictionaryGetter {
         return File.createTempFile("xxx" + safeId, null, directory).getAbsolutePath();
     }
 
-    /**
-     * Returns a file address from a resource, or null if it cannot be opened.
-     */
-    public static AssetFileAddress loadFallbackResource(final Context context,
-            final int fallbackResId) {
-        AssetFileDescriptor afd = null;
-        try {
-        	 if (0 == fallbackResId) return null;
-        	 afd = context.getResources().openRawResourceFd(fallbackResId);
-             if (afd == null) {
-                 Log.e("BinaryDictionaryGetter", "Found the resource but it is compressed. resId=" + fallbackResId);
-                 return null;
-             }
-             final String sourceDir = context.getApplicationInfo().sourceDir;
-             final File packagePath = new File(sourceDir);
-             // TODO: Come up with a way to handle a directory.
-             if (!packagePath.isFile()) {
-                 Log.e("BinaryDictionaryGetter", "sourceDir is not a file: " + sourceDir);
-                 return null;
-             }
-        
-             return AssetFileAddress.makeFromFileNameAndOffset(
-            		 sourceDir, afd.getStartOffset(), afd.getLength());
-        } catch (android.content.res.Resources.NotFoundException e) {
-            Log.e("BinaryDictionaryGetter", "Could not find the resource");
-            return null;
-        } finally {
-            if (null != afd) {
-                try {
-                    afd.close();
-                } catch (java.io.IOException e) {
-                    /* IOException on close ? What am I supposed to do ? */
-                }
-            }
-       }
-    }
+//    /**
+//     * Returns a file address from a resource, or null if it cannot be opened.
+//     */
+//    public static AssetFileAddress loadFallbackResource(final Context context,
+//            final int fallbackResId) {
+//        AssetFileDescriptor afd = null;
+//        try {
+//        	 if (0 == fallbackResId) return null;
+//        	 afd = context.getResources().openRawResourceFd(fallbackResId);
+//             if (afd == null) {
+//                 Log.e("BinaryDictionaryGetter", "Found the resource but it is compressed. resId=" + fallbackResId);
+//                 return null;
+//             }
+//             final String sourceDir = context.getApplicationInfo().sourceDir;
+//             final File packagePath = new File(sourceDir);
+//             // TODO: Come up with a way to handle a directory.
+//             if (!packagePath.isFile()) {
+//                 Log.e("BinaryDictionaryGetter", "sourceDir is not a file: " + sourceDir);
+//                 return null;
+//             }
+//        
+//             return AssetFileAddress.makeFromFileNameAndOffset(
+//            		 sourceDir, afd.getStartOffset(), afd.getLength());
+//        } catch (android.content.res.Resources.NotFoundException e) {
+//            Log.e("BinaryDictionaryGetter", "Could not find the resource");
+//            return null;
+//        } finally {
+//            if (null != afd) {
+//                try {
+//                    afd.close();
+//                } catch (java.io.IOException e) {
+//                    /* IOException on close ? What am I supposed to do ? */
+//                }
+//            }
+//       }
+//    }
 
     private static final class DictPackSettings {
         final SharedPreferences mDictPreferences;
@@ -114,6 +116,8 @@ final public class BinaryDictionaryGetter {
         public DictPackSettings(final Context context) {
             mDictPreferences = context.getSharedPreferences(COMMON_PREFERENCES_NAME,
                             Context.MODE_MULTI_PROCESS);
+            Log.i("DictPackSettings", "mDictPreferences: " + mDictPreferences);
+            
         }
         public boolean isWordListActive(final String dictId) {
             
@@ -265,14 +269,14 @@ final public class BinaryDictionaryGetter {
             }
         }
 
-        if (!foundMainDict && dictPackSettings.isWordListActive(mainDictId)) {
-            final int fallbackResId =
-                    DictionaryInfoUtils.getMainDictionaryResourceId(context.getResources(), locale);
-            final AssetFileAddress fallbackAsset = loadFallbackResource(context, fallbackResId);
-            if (null != fallbackAsset) {
-                fileList.add(fallbackAsset);
-            }
-        }
+        //if (!foundMainDict && dictPackSettings.isWordListActive(mainDictId)) {
+        //    final int fallbackResId =
+        //            DictionaryInfoUtils.getMainDictionaryResourceId(context.getResources(), locale);
+        //    final AssetFileAddress fallbackAsset = loadFallbackResource(context, fallbackResId);
+        //    if (null != fallbackAsset) {
+        //        fileList.add(fallbackAsset);
+        //    }
+        //}
 
         return fileList;
     }

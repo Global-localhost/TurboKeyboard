@@ -23,7 +23,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class NotificationCompatUtils {
-    // Note that TextInfo.getCharSequence() is supposed to be available in API level 21 and later.
+   
     private static final Method METHOD_setColor =
             CompatUtils.getMethod(Notification.Builder.class, "setColor", int.class);
     private static final Method METHOD_setVisibility =
@@ -51,7 +51,7 @@ public class NotificationCompatUtils {
                     FIELD_PRIORITY_LOW);
 
     private NotificationCompatUtils() {
-        // This class is non-instantiable.
+       
     }
 
     // Sets the accent color

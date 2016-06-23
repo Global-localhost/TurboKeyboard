@@ -18,7 +18,6 @@ package com.phonemetra.turbo.keyboard.latin.utils;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.text.TextUtils;
 import android.util.Log;
@@ -47,10 +46,7 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-/**
- * This class encapsulates the logic for the Latin-IME side of dictionary
- * information management.
- */
+
 public class DictionaryInfoUtils {
 	private static final String TAG = "DictionaryInfoUtils";
 	public static final String RESOURCE_PACKAGE_NAME = "com.phonemetra.turbo.keyboard";
@@ -615,57 +611,57 @@ public class DictionaryInfoUtils {
 			}
 		}
 
-		// Retrieve files from assets
-		final Resources resources = context.getResources();
-		final AssetManager assets = resources.getAssets();
-		for (final String localeString : assets.getLocales()) {
-
-			Log.i(TAG, "localeString=" + localeString);
-
-			final Locale locale = LocaleUtils
-					.constructLocaleFromString(localeString);
-
-			Log.i(TAG, "locale=" + locale);
-
-			final int resourceId = DictionaryInfoUtils
-					.getMainDictionaryResourceIdIfAvailableForLocale(
-							resources, locale);
-		 
-			Log.i(TAG, "resourceId=" + resourceId);
-
-			if (resourceId != 0) {
-
-				AssetFileAddress fileAddress;
-
-				fileAddress = BinaryDictionaryGetter.loadFallbackResource(
-						context, resourceId);
-
-				if (fileAddress != null) {
-
-					final DictionaryInfo dictionaryInfo = createDictionaryInfoFromFileAddress(
-							fileAddress, locale);
-					// Protect against cases of a less-specific dictionary being
-					// found, like an
-					// en dictionary being used for an en_US locale. In this
-					// case, the en dictionary
-					// should be used for en_US but discounted for listing
-					// purposes.
-					// TODO: Remove dictionaryInfo == null when the static LMs
-					// have the headers.
-					if (dictionaryInfo == null
-							|| !dictionaryInfo.mLocale.equals(locale)) {
-						continue;
-					}
-					addOrUpdateDictInfo(dictList, dictionaryInfo);
-
-				}
-
-			} else {
-				Log.i(TAG, "resourceId=" + resourceId);
-				continue;
-			}
-
-		}
+//		// Retrieve files from assets
+//		final Resources resources = context.getResources();
+//		final AssetManager assets = resources.getAssets();
+//		for (final String localeString : assets.getLocales()) {
+//
+//			Log.i(TAG, "localeString=" + localeString);
+//
+//			final Locale locale = LocaleUtils
+//					.constructLocaleFromString(localeString);
+//
+//			Log.i(TAG, "locale=" + locale);
+//
+//			final int resourceId = DictionaryInfoUtils
+//					.getMainDictionaryResourceIdIfAvailableForLocale(
+//							resources, locale);
+//		 
+//			Log.i(TAG, "resourceId=" + resourceId);
+//
+//			if (resourceId != 0) {
+//
+//				AssetFileAddress fileAddress;
+//
+//				fileAddress = BinaryDictionaryGetter.loadFallbackResource(
+//						context, resourceId);
+//
+//				if (fileAddress != null) {
+//
+//					final DictionaryInfo dictionaryInfo = createDictionaryInfoFromFileAddress(
+//							fileAddress, locale);
+//					// Protect against cases of a less-specific dictionary being
+//					// found, like an
+//					// en dictionary being used for an en_US locale. In this
+//					// case, the en dictionary
+//					// should be used for en_US but discounted for listing
+//					// purposes.
+//					// TODO: Remove dictionaryInfo == null when the static LMs
+//					// have the headers.
+//					if (dictionaryInfo == null
+//							|| !dictionaryInfo.mLocale.equals(locale)) {
+//						continue;
+//					}
+//					addOrUpdateDictInfo(dictList, dictionaryInfo);
+//
+//				}
+//
+//			} else {
+//				Log.i(TAG, "resourceId=" + resourceId);
+//				continue;
+//			}
+//
+//		}
 
 		// Generate the dictionary information from the enabled subtypes. This
 		// will not

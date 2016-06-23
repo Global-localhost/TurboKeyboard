@@ -62,7 +62,6 @@ public final class KeyboardTheme implements Comparable<KeyboardTheme> {
     };
 
     static {
-        // Sort {@link #KEYBOARD_THEME} by descending order of {@link #mMinApiVersion}.
         Arrays.sort(KEYBOARD_THEMES);
     }
 

@@ -25,7 +25,7 @@ public final class SettingsSecureCompatUtils {
             android.provider.Settings.Secure.class, "ACCESSIBILITY_SPEAK_PASSWORD");
 
     private SettingsSecureCompatUtils() {
-        // This class is non-instantiable.
+       
     }
 
     /**

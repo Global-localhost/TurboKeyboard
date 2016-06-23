@@ -149,17 +149,22 @@
             android:imeSubtypeExtraValue="SupportTouchPositionCorrection,EmojiCapable"
             android:isAsciiCapable="false"
     />
-    
+    <subtype android:icon="@drawable/ic_ime_switcher_dark"
+            android:label="@string/subtype_ar_AE"
+            android:subtypeId="0x590dde41"
+            android:imeSubtypeLocale="ar-AE"
+            android:imeSubtypeMode="keyboard"
+            android:imeSubtypeExtraValue="SupportTouchPositionCorrection,EmojiCapable"
+            android:isAsciiCapable="false"
+    />
     <subtype android:icon="@drawable/ic_ime_switcher_dark"
             android:label="@string/subtype_ar_QA"
-            android:subtypeId="0x590dde41"
+            android:subtypeId="0x590dde42"
             android:imeSubtypeLocale="ar-QA"
             android:imeSubtypeMode="keyboard"
             android:imeSubtypeExtraValue="SupportTouchPositionCorrection,EmojiCapable"
             android:isAsciiCapable="false"
     />
-    
-    
     <subtype android:icon="@drawable/ic_ime_switcher_dark"
             android:label="@string/subtype_generic"
             android:subtypeId="0x70b0f974"

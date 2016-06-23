@@ -32,15 +32,8 @@ import javax.annotation.Nullable;
  */
 public final class LocaleUtils {
     private LocaleUtils() {
-        // Intentional empty constructor for utility class.
+        
     }
-
-    // Locale match level constants.
-    // A higher level of match is guaranteed to have a higher numerical value.
-    // Some room is left within constants to add match cases that may arise necessary
-    // in the future, for example differentiating between the case where the countries
-    // are both present and different, and the case where one of the locales does not
-    // specify the countries. This difference is not needed now.
 
     // Nothing matches.
     public static final int LOCALE_NO_MATCH = 0;
@@ -194,6 +187,8 @@ public final class LocaleUtils {
     static {
         // List of known Right-To-Left language codes.
         sRtlLanguageCodes.add("ar"); // Arabic
+        sRtlLanguageCodes.add("ar-AE"); // Arabic (UAE)
+        sRtlLanguageCodes.add("ar-QA"); // Arabic (Qatar)
         sRtlLanguageCodes.add("fa"); // Persian
         sRtlLanguageCodes.add("iw"); // Hebrew
         sRtlLanguageCodes.add("ku"); // Kurdish

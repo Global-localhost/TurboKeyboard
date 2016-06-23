@@ -20,7 +20,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -92,18 +91,13 @@ import java.util.List;
         }
         return sb.toString();
     }
-    /**
-     * {@inheritDoc}
-     */
+    
     @Override
     public void setInputMethodSettingsCategoryTitle(int resId) {
         mInputMethodSettingsCategoryTitleRes = resId;
         updateSubtypeEnabler();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void setInputMethodSettingsCategoryTitle(CharSequence title) {
         mInputMethodSettingsCategoryTitleRes = 0;
@@ -111,18 +105,12 @@ import java.util.List;
         updateSubtypeEnabler();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void setSubtypeEnablerTitle(int resId) {
         mSubtypeEnablerTitleRes = resId;
         updateSubtypeEnabler();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void setSubtypeEnablerTitle(CharSequence title) {
         mSubtypeEnablerTitleRes = 0;
@@ -130,18 +118,12 @@ import java.util.List;
         updateSubtypeEnabler();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void setSubtypeEnablerIcon(int resId) {
         mSubtypeEnablerIconRes = resId;
         updateSubtypeEnabler();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void setSubtypeEnablerIcon(Drawable drawable) {
         mSubtypeEnablerIconRes = 0;

@@ -163,7 +163,7 @@ public final class BinaryDictionary extends Dictionary {
             valueArray[index] = attributeMap.get(key);
             index++;
         }
-        mNativeDict = createOnMemoryNative(formatVersion, locale.toString(), keyArray, valueArray);
+        mNativeDict = createNative(formatVersion, locale.toString(), keyArray, valueArray);
     }
 
 
@@ -173,8 +173,7 @@ public final class BinaryDictionary extends Dictionary {
 
     private static native long openNative(String sourceDir, long dictOffset, long dictSize,
             boolean isUpdatable);
-    private static native long createOnMemoryNative(long formatVersion,
-            String locale, String[] attributeKeyStringArray, String[] attributeValueStringArray);
+    private static native long createNative(long formatVersion, String locale, String[] attributeKeyStringArray, String[] attributeValueStringArray);
     private static native void getHeaderInfoNative(long dict, int[] outHeaderSize,
             int[] outFormatVersion, ArrayList<int[]> outAttributeKeys,
             ArrayList<int[]> outAttributeValues);

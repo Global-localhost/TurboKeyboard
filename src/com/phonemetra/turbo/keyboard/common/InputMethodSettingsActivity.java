@@ -20,14 +20,10 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
-/**
- * This is a helper class for an IME's settings preference activity. It's recommended for every
- * IME to have its own settings preference activity which inherits this class.
- */
+
 public abstract class InputMethodSettingsActivity extends PreferenceActivity
         implements InputMethodSettingsInterface {
     private final InputMethodSettingsImpl mSettings = new InputMethodSettingsImpl();
-    @SuppressWarnings("deprecation")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,57 +31,42 @@ public abstract class InputMethodSettingsActivity extends PreferenceActivity
         mSettings.init(this, getPreferenceScreen());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+   
     @Override
     public void setInputMethodSettingsCategoryTitle(int resId) {
         mSettings.setInputMethodSettingsCategoryTitle(resId);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void setInputMethodSettingsCategoryTitle(CharSequence title) {
         mSettings.setInputMethodSettingsCategoryTitle(title);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    
     @Override
     public void setSubtypeEnablerTitle(int resId) {
         mSettings.setSubtypeEnablerTitle(resId);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+  
     @Override
     public void setSubtypeEnablerTitle(CharSequence title) {
         mSettings.setSubtypeEnablerTitle(title);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    
     @Override
     public void setSubtypeEnablerIcon(int resId) {
         mSettings.setSubtypeEnablerIcon(resId);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    
     @Override
     public void setSubtypeEnablerIcon(Drawable drawable) {
         mSettings.setSubtypeEnablerIcon(drawable);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    
     @Override
     public void onResume() {
         super.onResume();

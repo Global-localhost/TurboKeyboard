@@ -56,9 +56,7 @@ public final class KeyboardSwitcher implements KeyboardState.SwitchActions {
     private boolean mIsHardwareAcceleratedDrawingEnabled;
 
     private KeyboardState mState;
-
     private KeyboardLayoutSet mKeyboardLayoutSet;
-    // TODO: The following {@link KeyboardTextsSet} should be in {@link KeyboardLayoutSet}.
     private final KeyboardTextsSet mKeyboardTextsSet = new KeyboardTextsSet();
 
     private KeyboardTheme mKeyboardTheme;

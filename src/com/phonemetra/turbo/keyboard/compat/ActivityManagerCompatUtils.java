@@ -28,7 +28,7 @@ public class ActivityManagerCompatUtils {
             ActivityManager.class, "isLowRamDevice");
 
     private ActivityManagerCompatUtils() {
-        // Do not instantiate this class.
+       
     }
 
     public static boolean isLowRamDevice(Context context) {

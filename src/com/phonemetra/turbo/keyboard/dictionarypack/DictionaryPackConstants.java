@@ -16,13 +16,7 @@
 
 package com.phonemetra.turbo.keyboard.dictionarypack;
 
-/**
- * A class to group constants for dictionary pack usage.
- *
- * This class only defines constants. It should not make any references to outside code as far as
- * possible, as it's used to separate cleanly the keyboard code from the dictionary pack code; this
- * is needed in particular to cleanly compile regression tests.
- */
+
 public class DictionaryPackConstants {
     /**
      * The root domain for the dictionary pack, upon which authorities and actions will append

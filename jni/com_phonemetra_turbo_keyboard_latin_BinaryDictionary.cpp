@@ -68,9 +68,10 @@ static jlong turbokeyboard_BinaryDictionary_open(JNIEnv *env, jclass clazz, jstr
     return reinterpret_cast<jlong>(dictionary);
 }
 
-static jlong turbokeyboard_BinaryDictionary_createOnMemory(JNIEnv *env, jclass clazz,
+static jlong turbokeyboard_BinaryDictionary_create(JNIEnv *env, jclass clazz,
         jlong formatVersion, jstring locale, jobjectArray attributeKeyStringArray,
         jobjectArray attributeValueStringArray) {
+
     const jsize localeUtf8Length = env->GetStringUTFLength(locale);
     char localeChars[localeUtf8Length + 1];
     env->GetStringUTFRegion(locale, 0, env->GetStringLength(locale), localeChars);
@@ -623,9 +624,9 @@ static const JNINativeMethod sMethods[] = {
         reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_open)
     },
     {
-        const_cast<char *>("createOnMemoryNative"),
-        const_cast<char *>("(JLjava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)J"),
-        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_createOnMemory)
+        const_cast<char *>("createNative"),
+		const_cast<char *>("(JLjava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;)J"),
+        reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_create)
     },
     {
         const_cast<char *>("closeNative"),

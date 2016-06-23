@@ -87,6 +87,8 @@
         <item>qwerty</item>
         <item>ar:SupportTouchPositionCorrection,EmojiCapable</item>
         <item>arabic</item>
+        <item>ar_AE:SupportTouchPositionCorrection,EmojiCapable</item>
+        <item>arabic</item>
         <item>ar_QA:SupportTouchPositionCorrection,EmojiCapable</item>
         <item>arabic</item>
         <item>cs:AsciiCapable,SupportTouchPositionCorrection,EmojiCapable</item>

@@ -28,7 +28,7 @@ import android.view.ViewOutlineProvider;
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 class ViewOutlineProviderCompatUtilsLXX {
     private ViewOutlineProviderCompatUtilsLXX() {
-        // This utility class is not publicly instantiable.
+      
     }
 
     static InsetsUpdater setInsetsOutlineProvider(final View view) {

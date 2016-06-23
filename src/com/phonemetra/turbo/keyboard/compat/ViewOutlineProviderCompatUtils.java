@@ -22,7 +22,7 @@ import android.view.View;
 
 public class ViewOutlineProviderCompatUtils {
     private ViewOutlineProviderCompatUtils() {
-        // This utility class is not publicly instantiable.
+     
     }
 
     public interface InsetsUpdater {

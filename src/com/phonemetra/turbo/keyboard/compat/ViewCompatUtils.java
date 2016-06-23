@@ -20,23 +20,19 @@ import android.view.View;
 
 import java.lang.reflect.Method;
 
-// TODO: Use {@link android.support.v4.view.ViewCompat} instead of this utility class.
-// Currently {@link #getPaddingEnd(View)} and {@link #setPaddingRelative(View,int,int,int,int)}
-// are missing from android-support-v4 static library in KitKat SDK.
 public final class ViewCompatUtils {
-    // Note that View.getPaddingEnd(), View.setPaddingRelative(int,int,int,int) have been
-    // introduced in API level 17 (Build.VERSION_CODE.JELLY_BEAN_MR1).
+   
     private static final Method METHOD_getPaddingEnd = CompatUtils.getMethod(
             View.class, "getPaddingEnd");
     private static final Method METHOD_setPaddingRelative = CompatUtils.getMethod(
             View.class, "setPaddingRelative",
             int.class, int.class, int.class, int.class);
-    // Note that View.setTextAlignment(int) has been introduced in API level 17.
+
     private static final Method METHOD_setTextAlignment = CompatUtils.getMethod(
             View.class, "setTextAlignment", int.class);
 
     private ViewCompatUtils() {
-        // This utility class is not publicly instantiable.
+        
     }
 
     public static int getPaddingEnd(final View view) {

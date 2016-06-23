@@ -49,11 +49,6 @@ public final class PointerTracker implements PointerTrackerQueue.Element,
 		BatchInputArbiterListener {
 	private static final String TAG = "PointerTracker";
 
-	// private static final boolean DEBUG_EVENT = false;
-	// private static final boolean DEBUG_MOVE_EVENT = false;
-	// private static final boolean DEBUG_LISTENER = false;
-	// private static boolean DEBUG_MODE = false;
-
 	static final class PointerTrackerParams {
 		public final boolean mKeySelectionByDraggingFinger;
 		public final int mTouchNoiseThresholdTime;

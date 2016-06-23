@@ -46,7 +46,7 @@ public final class AudioAndHapticFeedbackManager {
     }
 
     private AudioAndHapticFeedbackManager() {
-        // Intentional empty constructor for singleton.
+       
     }
 
     public static void init(final Context context) {
