@@ -68,16 +68,6 @@ static jfloat turbokeyboard_BinaryDictionaryUtils_calcNormalizedScore(JNIEnv *en
             afterCodePoints, afterLength, score);
 }
 
-static int turbokeyboard_BinaryDictionaryUtils_setCurrentTimeForTest(JNIEnv *env, jclass clazz,
-        jint currentTime) {
-    if (currentTime >= 0) {
-        TimeKeeper::startTestModeWithForceCurrentTime(currentTime);
-    } else {
-        TimeKeeper::stopTestMode();
-    }
-    TimeKeeper::setCurrentTime();
-    return TimeKeeper::peekCurrentTime();
-}
 
 static const JNINativeMethod sMethods[] = {
     {
@@ -90,11 +80,6 @@ static const JNINativeMethod sMethods[] = {
         const_cast<char *>("calcNormalizedScoreNative"),
         const_cast<char *>("([I[II)F"),
         reinterpret_cast<void *>(turbokeyboard_BinaryDictionaryUtils_calcNormalizedScore)
-    },
-    {
-        const_cast<char *>("setCurrentTimeForTestNative"),
-        const_cast<char *>("(I)I"),
-        reinterpret_cast<void *>(turbokeyboard_BinaryDictionaryUtils_setCurrentTimeForTest)
     }
 };
 

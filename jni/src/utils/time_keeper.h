@@ -27,15 +27,13 @@ class TimeKeeper {
 
     static void startTestModeWithForceCurrentTime(const int currentTime);
 
-    static void stopTestMode();
-
     static int peekCurrentTime() { return sCurrentTime; };
 
  private:
     DISALLOW_IMPLICIT_CONSTRUCTORS(TimeKeeper);
 
     static int sCurrentTime;
-    static bool sSetForTesting;
+
 };
 } // namespace turbokeyboard
 #endif /* TURBOKEYBOARD_TIME_KEEPER_H */

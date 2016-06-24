@@ -172,6 +172,7 @@ public class LatinIME extends InputMethodService implements
 		}
 
 		public void onCreate() {
+			
 			final LatinIME latinIME = getOwnerInstance();
 			if (latinIME == null) {
 				return;
@@ -185,6 +186,7 @@ public class LatinIME extends InputMethodService implements
 
 		@Override
 		public void handleMessage(final Message msg) {
+			
 			final LatinIME latinIME = getOwnerInstance();
 			if (latinIME == null) {
 				return;
@@ -551,7 +553,9 @@ public class LatinIME extends InputMethodService implements
 
 	@Override
 	public void onCreate() {
+		Log.i("LatinIME", "onCreate");
 		Settings.init(this);
+		Log.i("LatinIME", "Passa settings.init");
 		RichInputMethodManager.init(this);
 		mRichImm = RichInputMethodManager.getInstance();
 		KeyboardSwitcher.init(this);
@@ -598,6 +602,8 @@ public class LatinIME extends InputMethodService implements
 	}
 
 	void loadSettings() {
+		
+		Log.i("LatinIME", "loadSettings");
 
 		final Locale locale = mRichImm.getCurrentSubtypeLocale();
 		Log.i("LatinIME", "Locale:" + locale);
@@ -1423,7 +1429,6 @@ public class LatinIME extends InputMethodService implements
 		return codePoint;
 	}
 
-	// Implementation of {@link KeyboardActionListener}.
 	@Override
 	public void onCodeInput(final int codePoint, final int x, final int y,
 			final boolean isKeyRepeat) {
@@ -1486,7 +1491,6 @@ public class LatinIME extends InputMethodService implements
 				keyY, isKeyRepeat);
 	}
 
-	// Called from PointerTracker through the KeyboardActionListener interface
 	@Override
 	public void onTextInput(final String rawText) {
 		// TODO: have the keyboard pass the correct key code when we need it.
@@ -1623,7 +1627,6 @@ public class LatinIME extends InputMethodService implements
 		}
 	}
 
-	// TODO[IL]: Move this out of LatinIME.
 	public void getSuggestedWords(final int inputStyle,
 			final int sequenceNumber, final OnGetSuggestedWordsCallback callback) {
 		final Keyboard keyboard = mKeyboardSwitcher.getKeyboard();

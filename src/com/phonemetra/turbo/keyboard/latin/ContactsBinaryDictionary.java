@@ -38,11 +38,8 @@ import javax.annotation.Nullable;
 
 public class ContactsBinaryDictionary extends ExpandableBinaryDictionary
         implements ContactsChangedListener {
-    private static final String TAG = ContactsBinaryDictionary.class.getSimpleName();
+    private static final String TAG = "ContactsBinaryDictionary";
     private static final String NAME = "contacts";
-
-    private static final boolean DEBUG = false;
-    private static final boolean DEBUG_DUMP = false;
 
     private final boolean mUseFirstLastBigrams;
     private final ContactsManager mContactsManager;
@@ -57,7 +54,6 @@ public class ContactsBinaryDictionary extends ExpandableBinaryDictionary
         reloadDictionaryIfRequired();
     }
 
-    // Note: This method is called by {@link DictionaryFacilitator} using Java reflection.
     @ExternallyReferenced
     public static ContactsBinaryDictionary getDictionary(final Context context, final Locale locale,
             final File dictFile, final String dictNamePrefix, @Nullable final String account) {
@@ -93,9 +89,7 @@ public class ContactsBinaryDictionary extends ExpandableBinaryDictionary
             return;
         }
         for (String word : accountVocabulary) {
-            if (DEBUG) {
-                Log.d(TAG, "loadAccountVocabulary: " + word);
-            }
+             
             runGCIfRequiredLocked(true /* mindsBlockByGC */);
             addUnigramLocked(word, ContactsDictionaryConstants.FREQUENCY_FOR_CONTACTS,
                     false /* isNotAWord */, false /* isPossiblyOffensive */,
@@ -123,30 +117,19 @@ public class ContactsBinaryDictionary extends ExpandableBinaryDictionary
         }
     }
 
-    /**
-     * Adds the words in a name (e.g., firstname/lastname) to the binary dictionary along with their
-     * bigrams depending on locale.
-     */
     private void addNameLocked(final String name) {
         int len = StringUtils.codePointCount(name);
         NgramContext ngramContext = NgramContext.getEmptyPrevWordsContext(
                 BinaryDictionary.MAX_PREV_WORD_COUNT_FOR_N_GRAM);
-        // TODO: Better tokenization for non-Latin writing systems
         for (int i = 0; i < len; i++) {
             if (Character.isLetter(name.codePointAt(i))) {
                 int end = ContactsDictionaryUtils.getWordEndPosition(name, len, i);
                 String word = name.substring(i, end);
-                if (DEBUG_DUMP) {
-                    Log.d(TAG, "addName word = " + word);
-                }
                 i = end - 1;
                 // Don't add single letter words, possibly confuses
                 // capitalization of i.
                 final int wordLen = StringUtils.codePointCount(word);
                 if (wordLen <= MAX_WORD_LENGTH && wordLen > 1) {
-                    if (DEBUG) {
-                        Log.d(TAG, "addName " + name + ", " + word + ", "  + ngramContext);
-                    }
                     runGCIfRequiredLocked(true /* mindsBlockByGC */);
                     addUnigramLocked(word,
                             ContactsDictionaryConstants.FREQUENCY_FOR_CONTACTS, false /* isNotAWord */,

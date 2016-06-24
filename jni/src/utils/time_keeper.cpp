@@ -21,21 +21,15 @@
 namespace turbokeyboard {
 
 int TimeKeeper::sCurrentTime;
-bool TimeKeeper::sSetForTesting;
 
-/* static  */ void TimeKeeper::setCurrentTime() {
-    if (!sSetForTesting) {
-        sCurrentTime = time(0);
-    }
+/* static  */void TimeKeeper::setCurrentTime() {
+	sCurrentTime = time(0);
 }
 
-/* static */ void TimeKeeper::startTestModeWithForceCurrentTime(const int currentTime) {
-    sCurrentTime = currentTime;
-    sSetForTesting = true;
-}
+/* static */void TimeKeeper::startTestModeWithForceCurrentTime(
+		const int currentTime) {
+	sCurrentTime = currentTime;
 
-/* static */ void TimeKeeper::stopTestMode() {
-    sSetForTesting = false;
 }
 
 } // namespace turbokeyboard

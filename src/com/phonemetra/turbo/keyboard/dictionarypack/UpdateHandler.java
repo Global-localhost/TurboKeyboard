@@ -29,14 +29,12 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.phonemetra.turbo.keyboard.compat.ConnectivityManagerCompatUtils;
 import com.phonemetra.turbo.keyboard.compat.NotificationCompatUtils;
 import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
@@ -70,8 +68,7 @@ import javax.annotation.Nullable;
  */
 public final class UpdateHandler {
     static final String TAG = "DictionaryProvider:" + UpdateHandler.class.getSimpleName();
-    private static final boolean DEBUG = DictionaryProvider.DEBUG;
-
+    
     // Used to prevent trying to read the id of the downloaded file before it is written
     static final Object sSharedIdProtector = new Object();
 
@@ -425,13 +422,9 @@ public final class UpdateHandler {
 
         final ArrayList<DownloadRecord> recordList =
                 getDownloadRecordsForCompletedDownloadInfo(context, downloadInfo);
+        
         if (null == recordList) return; // It was someone else's download.
-        DebugLogUtils.l("Received result for download ", fileId);
-
-        // TODO: handle gracefully a null pointer here. This is practically impossible because
-        // we come here only when DownloadManager explicitly called us when it ended a
-        // download, so we are pretty sure it's alive. It's theoretically possible that it's
-        // disabled right inbetween the firing of the intent and the control reaching here.
+        Log.i(TAG,"downloadFinished() : recordList " + recordList);
 
         for (final DownloadRecord record : recordList) {
             // downloadSuccessful is not final because we may still have exceptions from now on
@@ -517,20 +510,24 @@ public final class UpdateHandler {
     private static boolean handleDownloadedFile(final Context context,
             final DownloadRecord downloadRecord, final DownloadManagerWrapper manager,
             final long fileId) {
+    	
+    	    Log.i(TAG, "handleDownloadedFile downloadRecord" + downloadRecord.mClientId);
+    	
         try {
-            // {@link handleWordList(Context,InputStream,ContentValues)}.
-            // Handle the downloaded file according to its type
+      
             if (downloadRecord.isMetadata()) {
-                DebugLogUtils.l("Data D/L'd is metadata for", downloadRecord.mClientId);
+            	 Log.i(TAG, "handleDownloadedFile is metadata");
                 // #handleMetadata() closes its InputStream argument
                 handleMetadata(context, new ParcelFileDescriptor.AutoCloseInputStream(
                         manager.openDownloadedFile(fileId)), downloadRecord.mClientId);
             } else {
-                DebugLogUtils.l("Data D/L'd is a word list");
+            	Log.i(TAG, "handleDownloadedFile is wordlist");
                 final int wordListStatus = downloadRecord.mAttributes.getAsInteger(
                         MetadataDbHelper.STATUS_COLUMN);
+                Log.i(TAG, "handleDownloadedFile wordListStatus:" + wordListStatus);
+                
                 if (MetadataDbHelper.STATUS_DOWNLOADING == wordListStatus) {
-                    // #handleWordList() closes its InputStream argument
+                   
                     handleWordList(context, new ParcelFileDescriptor.AutoCloseInputStream(
                             manager.openDownloadedFile(fileId)), downloadRecord);
                 } else {
@@ -819,11 +816,7 @@ public final class UpdateHandler {
                         // can delete it the next time it starts up.
                         actions.add(new ActionBatch.ForgetAction(clientId, currentInfo, true));
                     }
-                } else if (DEBUG) {
-                    Log.i(TAG, "Not updating word list " + id
-                            + " : current list timestamp is " + currentInfo.mLastUpdate
-                                    + " ; new list timestamp is " + newInfo.mLastUpdate);
-                }
+                }  
             }
         }
         return actions;
@@ -1114,9 +1107,7 @@ public final class UpdateHandler {
                 MetadataDbHelper.getDb(context, clientId), wordlistId, version);
 
         if (isRetryPossible) {
-            if (DEBUG) {
-                Log.d(TAG, "Attempting to download & install the wordlist again.");
-            }
+             
             final WordListMetadata wordListMetaData = MetadataHandler.getCurrentMetadataForWordList(
                     context, clientId, wordlistId, version);
             if (wordListMetaData == null) {
@@ -1127,9 +1118,7 @@ public final class UpdateHandler {
             actions.add(new ActionBatch.StartDownloadAction(clientId, wordListMetaData));
             actions.execute(context, new LogProblemReporter(TAG));
         } else {
-            if (DEBUG) {
-                Log.d(TAG, "Retries for wordlist exhausted, deleting the wordlist from table.");
-            }
+             
             MetadataDbHelper.deleteEntry(MetadataDbHelper.getDb(context, clientId),
                     wordlistId, version);
         }

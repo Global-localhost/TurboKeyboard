@@ -18,7 +18,6 @@ package com.phonemetra.turbo.keyboard.latin;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.AssetFileDescriptor;
 import android.util.Log;
 
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
@@ -37,18 +36,10 @@ import java.util.Locale;
 
 final public class BinaryDictionaryGetter {
 	
-	
-
     private static final File[] EMPTY_FILE_ARRAY = new File[0];
-
-    /**
-     * Name of the common preferences name to know which word list are on and which are off.
-     */
     private static final String COMMON_PREFERENCES_NAME = "LatinImeDictPrefs";
-
     private static final boolean SHOULD_USE_DICT_VERSION = true;
-          
-
+         
     // Name of the category for the main dictionary
     public static final String MAIN_DICTIONARY_CATEGORY = "main";
     public static final String ID_CATEGORY_SEPARATOR = ":";
@@ -233,17 +224,15 @@ final public class BinaryDictionaryGetter {
      */
     public static ArrayList<AssetFileAddress> getDictionaryFiles(final Locale locale,
             final Context context, boolean notifyDictionaryPackForUpdates) {
+    	
+    	
         if (notifyDictionaryPackForUpdates) {
             final boolean hasDefaultWordList = DictionaryInfoUtils.isDictionaryAvailable(
                     context, locale);
-            // It makes sure that the first time keyboard comes up and the dictionaries are reset,
-            // the DB is populated with the appropriate values for each locale. Helps in downloading
-            // the dictionaries when the user enables and switches new languages before the
-            // DictionaryService runs.
+           
             BinaryDictionaryFileDumper.downloadDictIfNeverRequested(
                     locale, context, hasDefaultWordList);
 
-            // Move a staging files to the cache ddirectories if any.
             DictionaryInfoUtils.moveStagingFilesIfExists(context);
         }
         final File[] cachedWordLists = getCachedWordLists(locale.toString(), context);

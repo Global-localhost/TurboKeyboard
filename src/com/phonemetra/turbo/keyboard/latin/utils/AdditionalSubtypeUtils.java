@@ -37,12 +37,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public final class AdditionalSubtypeUtils {
-    private static final String TAG = AdditionalSubtypeUtils.class.getSimpleName();
+    private static final String TAG = "AdditionalSubtypeUtils";
 
     private static final InputMethodSubtype[] EMPTY_SUBTYPE_ARRAY = new InputMethodSubtype[0];
 
     private AdditionalSubtypeUtils() {
-        // This utility class is not publicly instantiable.
+       
     }
 
     @UsedForTesting

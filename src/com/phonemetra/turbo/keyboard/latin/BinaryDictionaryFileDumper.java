@@ -59,14 +59,10 @@ import com.phonemetra.turbo.keyboard.R;
  * file from the dictionary provider
  */
 public final class BinaryDictionaryFileDumper {
-    private static final String TAG = BinaryDictionaryFileDumper.class.getSimpleName();
-    private static final boolean DEBUG = false;
-
-    /**
-     * The size of the temporary buffer to copy files.
-     */
+    private static final String TAG = "BinaryDictionaryFileDumper";
+   
     private static final int FILE_READ_BUFFER_SIZE = 8192;
-    // TODO: make the following data common with the native code
+    
     private static final byte[] MAGIC_NUMBER_VERSION_1 =
             new byte[] { (byte)0x78, (byte)0xB1, (byte)0x00, (byte)0x00 };
     private static final byte[] MAGIC_NUMBER_VERSION_2 =
@@ -99,7 +95,7 @@ public final class BinaryDictionaryFileDumper {
     private static final String INSERT_METADATA_METADATA_URI_COLUMN = "uri";
     private static final String INSERT_METADATA_METADATA_ADDITIONAL_ID_COLUMN = "additionalid";
 
-    // Prevents this class to be accidentally instantiated.
+     
     private BinaryDictionaryFileDumper() {
     }
 
@@ -340,9 +336,7 @@ public final class BinaryDictionaryFileDumper {
                 // Success! Close files (through the finally{} clause) and return.
                 return;
             } catch (Exception e) {
-                if (DEBUG) {
-                    Log.e(TAG, "Can't open word list in mode " + mode, e);
-                }
+                
                 if (null != outputFile) {
                     // This may or may not fail. The file may not have been created if the
                     // exception was thrown before it could be. Hence, both failure and

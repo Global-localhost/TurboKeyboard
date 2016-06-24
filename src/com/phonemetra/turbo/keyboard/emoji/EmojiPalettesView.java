@@ -51,17 +51,6 @@ import com.phonemetra.turbo.keyboard.latin.RichInputMethodSubtype;
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
 import com.phonemetra.turbo.keyboard.latin.utils.ResourceUtils;
 
-/**
- * View class to implement Emoji palettes.
- * The Emoji keyboard consists of group of views layout/emoji_palettes_view.
- * <ol>
- * <li> Emoji category tabs.
- * <li> Delete button.
- * <li> Emoji keyboard pages that can be scrolled by swiping horizontally or by selecting a tab.
- * <li> Back to main keyboard button and enter button.
- * </ol>
- * Because of the above reasons, this class doesn't extend {@link KeyboardView}.
- */
 public final class EmojiPalettesView extends LinearLayout implements OnTabChangeListener,
         ViewPager.OnPageChangeListener, View.OnClickListener, View.OnTouchListener,
         EmojiPageKeyboardView.OnKeyEventListener {
@@ -80,7 +69,6 @@ public final class EmojiPalettesView extends LinearLayout implements OnTabChange
     private TextView mAlphabetKeyLeft;
     private TextView mAlphabetKeyRight;
     private View mSpacebar;
-    // TODO: Remove this workaround.
     private View mSpacebarIcon;
     private TabHost mTabHost;
     private ViewPager mEmojiPager;
@@ -233,9 +221,6 @@ public final class EmojiPalettesView extends LinearLayout implements OnTabChange
 
     @Override
     public boolean dispatchTouchEvent(final MotionEvent ev) {
-        // Add here to the stack trace to nail down the {@link IllegalArgumentException} exception
-        // in MotionEvent that sporadically happens.
-        // TODO: Remove this override method once the issue has been addressed.
         return super.dispatchTouchEvent(ev);
     }
 
@@ -260,7 +245,7 @@ public final class EmojiPalettesView extends LinearLayout implements OnTabChange
 
     @Override
     public void onPageScrollStateChanged(final int state) {
-        // Ignore this message. Only want the actual page selected.
+    
     }
 
     @Override
@@ -286,13 +271,7 @@ public final class EmojiPalettesView extends LinearLayout implements OnTabChange
         }
     }
 
-    /**
-     * Called from {@link EmojiPageKeyboardView} through {@link android.view.View.OnTouchListener}
-     * interface to handle touch events from View-based elements such as the space bar.
-     * Note that this method is used only for observing {@link MotionEvent#ACTION_DOWN} to trigger
-     * {@link KeyboardActionListener#onPressKey}. {@link KeyboardActionListener#onReleaseKey} will
-     * be covered by {@link #onClick} as long as the event is not canceled.
-     */
+    
     @Override
     public boolean onTouch(final View v, final MotionEvent event) {
         if (event.getActionMasked() != MotionEvent.ACTION_DOWN) {
@@ -358,9 +337,11 @@ public final class EmojiPalettesView extends LinearLayout implements OnTabChange
     }
 
     public void setHardwareAcceleratedDrawingEnabled(final boolean enabled) {
-        if (!enabled) return;
-        // TODO: Should use LAYER_TYPE_SOFTWARE when hardware acceleration is off?
-        setLayerType(LAYER_TYPE_HARDWARE, null);
+        if (enabled) {
+        	setLayerType(LAYER_TYPE_HARDWARE, null);      	
+        } else {
+        	setLayerType(LAYER_TYPE_SOFTWARE,null);
+        }
     }
 
     private static void setupAlphabetKey(final TextView alphabetKey, final String label,

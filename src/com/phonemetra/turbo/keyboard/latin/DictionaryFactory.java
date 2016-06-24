@@ -30,21 +30,9 @@ import java.util.Locale;
 
 import com.phonemetra.turbo.keyboard.R;
 
-/**
- * Factory for dictionary instances.
- */
 public final class DictionaryFactory {
     private static final String TAG = "DictionaryFactory";
 
-    /**
-     * Initializes a main dictionary collection from a dictionary pack, with explicit flags.
-     *
-     * This searches for a content provider providing a dictionary pack for the specified
-     * locale. If none is found, it falls back to the built-in dictionary - if any.
-     * @param context application context for reading resources
-     * @param locale the locale for which to create the dictionary
-     * @return an initialized instance of DictionaryCollection
-     */
     public static DictionaryCollection createMainDictionaryFromManager(final Context context,
             final Locale locale) {
         if (null == locale) {

@@ -27,7 +27,6 @@ import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.permissions.PermissionsManager;
 import com.phonemetra.turbo.keyboard.latin.permissions.PermissionsUtil;
 import com.phonemetra.turbo.keyboard.latin.settings.SubScreenFragment;
-import com.phonemetra.turbo.keyboard.latin.settings.TwoStatePreferenceHelper;
 import com.phonemetra.turbo.keyboard.latin.utils.ApplicationUtils;
 
 import static com.phonemetra.turbo.keyboard.latin.permissions.PermissionsManager.get;
@@ -48,8 +47,6 @@ public final class SpellCheckerSettingsFragment extends SubScreenFragment
         final PreferenceScreen preferenceScreen = getPreferenceScreen();
         preferenceScreen.setTitle(ApplicationUtils.getActivityTitleResId(
                 getActivity(), SpellCheckerSettingsActivity.class));
-        TwoStatePreferenceHelper.replaceCheckBoxPreferencesBySwitchPreferences(preferenceScreen);
-
         mLookupContactsPreference = (SwitchPreference) findPreference(
                 AndroidSpellCheckerService.PREF_USE_CONTACTS_KEY);
         turnOffLookupContactsIfNoPermission();
@@ -62,7 +59,6 @@ public final class SpellCheckerSettingsFragment extends SubScreenFragment
         }
 
         if (!sharedPreferences.getBoolean(key, false)) {
-            // don't care if the preference is turned off.
             return;
         }
 

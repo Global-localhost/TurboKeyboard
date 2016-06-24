@@ -29,7 +29,7 @@ import java.util.Locale;
 
 public final class CapsModeUtils {
     private CapsModeUtils() {
-        // This utility class is not publicly instantiable.
+       
     }
 
     /**

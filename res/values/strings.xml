@@ -21,7 +21,7 @@
     
     <string name="application_name" translatable="false">Turbo Keyboard™</string>
 	<string name="application_copyright" translatable="false">Copyright \u00A9 2016 Phonemetra</string>
-	<string name="application_version" translatable="false">0.0.17</string>
+	<string name="application_version" translatable="false">0.0.18</string>
 	<string name="spell_checker_service_name">Spell Checker</string>
     <string name="app_settings">Turbo Keyboard™ Settings</string>
     <string name="spell_checker_settings">Spell Checker Settings</string>

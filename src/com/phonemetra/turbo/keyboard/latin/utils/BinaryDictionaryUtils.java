@@ -30,10 +30,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class BinaryDictionaryUtils {
-    private static final String TAG = BinaryDictionaryUtils.class.getSimpleName();
+    private static final String TAG = "BinaryDictionaryUtils";
 
     private BinaryDictionaryUtils() {
-        // This utility class is not publicly instantiable.
+       
     }
 
     static {
@@ -44,8 +44,7 @@ public final class BinaryDictionaryUtils {
     private static native boolean createEmptyDictFileNative(String filePath, long dictVersion,
             String locale, String[] attributeKeyStringArray, String[] attributeValueStringArray);
     private static native float calcNormalizedScoreNative(int[] before, int[] after, int score);
-    private static native int setCurrentTimeForTestNative(int currentTime);
-
+  
     public static DictionaryHeader getHeader(final File dictFile)
             throws IOException, UnsupportedFormatException {
         return getHeaderWithOffsetAndLength(dictFile, 0 /* offset */, dictFile.length());
@@ -112,17 +111,4 @@ public final class BinaryDictionaryUtils {
                 StringUtils.toCodePointArray(after), score);
     }
 
-    /**
-     * Control the current time to be used in the native code. If currentTime >= 0, this method sets
-     * the current time and gets into test mode.
-     * In test mode, set timestamp is used as the current time in the native code.
-     * If currentTime < 0, quit the test mode and returns to using time() to get the current time.
-     *
-     * @param currentTime seconds since the unix epoch
-     * @return current time got in the native code.
-     */
-    @UsedForTesting
-    public static int setCurrentTimeForTest(final int currentTime) {
-        return setCurrentTimeForTestNative(currentTime);
-    }
 }
