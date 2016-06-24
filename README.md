@@ -4,3 +4,8 @@
 <p align="center"><img src="https://github.com/Phonemetra/TurboKeyboard/blob/master/res/drawable-xxxhdpi/ic_launcher_keyboard.png" width="192" height="192"></p>
 <p align="center">An open-source input method application for Turbo OS™ and Android™.</p>
 <p align="center"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.phonemetra.turbo.keyboard"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="124" width="420"></a></p>
+
+
+### Main Features
+# Languages:
+English (US), English (India), English (UK), Afrikaans, Alphabet (QWERTY), Arabic, Arabic (Qatar), Arabic (UAE), Armenian (Armenia), Azerbaijani (Azerbaijan), Basque (Spain), Belarusian (Belarus), Bengali (Bangladesh), Bengali (India), Bulgarian, Bulgarian (BDS), Catalan, Croatian, Czech, Danish, Dutch, Dutch (Belgium), Esperanto, Estonian (Estonia), Finnish, French, French (Canada), French (QWERTZ), French (Switzerland), Galician (Spain), Georgian (Georgia), German, German (QWERTY), German (Switzerland), Greek, Hebrew, Hindi, Hindi (Compact), Hungarian, Icelandic, Indonesian, Italian (Italy), Italian (Switzerland), Kannada (India), Kazakh, Khmer (Cambodia), Kyrgyz, Lao (Laos), Latvian, Lithuanian, Macedonian, Malay (Malaysia), Malayalam (India), Marathi (India), Mongolian (Mongolia), Nepali (Nepal), Nepali (Nepal) (Traditional), Norwegian, Persian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Serbian, Serbian (Latin), Slovak, Slovenian, Spanish, Spanish (Latin America), Swahili, Swedish, Tagalog, Tamil (India), Tamil (Singapore), Telugu (India), Thai, Turkish, Ukrainian, Uzbek, Vietnamese, Zulu. 
