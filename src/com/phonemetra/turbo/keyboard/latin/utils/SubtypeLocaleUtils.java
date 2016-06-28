@@ -288,13 +288,6 @@ public final class SubtypeLocaleUtils {
                 try {
                     return res.getString(nameResId, replacementString);
                 } catch (Resources.NotFoundException e) {
-                    // TODO: Remove this catch when InputMethodManager.getCurrentInputMethodSubtype
-                    // is fixed.
-                    Log.w(TAG, "Unknown subtype: mode=" + subtype.getMode()
-                            + " nameResId=" + subtype.getNameResId()
-                            + " locale=" + subtype.getLocale()
-                            + " extra=" + subtype.getExtraValue()
-                            + "\n" + DebugLogUtils.getStackTrace());
                     return "";
                 }
             }
@@ -334,7 +327,7 @@ public final class SubtypeLocaleUtils {
         // TODO: Remove this null check when InputMethodManager.getCurrentInputMethodSubtype is
         // fixed.
         if (keyboardLayoutSet == null) {
-            android.util.Log.w(TAG, "KeyboardLayoutSet not found, use QWERTY: " +
+            Log.w(TAG, "KeyboardLayoutSet not found, use QWERTY: " +
                     "locale=" + subtype.getLocale() + " extraValue=" + subtype.getExtraValue());
             return QWERTY;
         }

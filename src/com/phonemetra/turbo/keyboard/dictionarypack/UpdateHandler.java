@@ -40,7 +40,6 @@ import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
 import com.phonemetra.turbo.keyboard.latin.makedict.FormatSpec;
 import com.phonemetra.turbo.keyboard.latin.utils.ApplicationUtils;
-import com.phonemetra.turbo.keyboard.latin.utils.DebugLogUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -67,7 +66,7 @@ import javax.annotation.Nullable;
  * stored in the dictionary pack.
  */
 public final class UpdateHandler {
-    static final String TAG = "DictionaryProvider:" + UpdateHandler.class.getSimpleName();
+    static final String TAG = "UpdateHandler";
     
     // Used to prevent trying to read the id of the downloaded file before it is written
     static final Object sSharedIdProtector = new Object();
@@ -97,11 +96,7 @@ public final class UpdateHandler {
     // The id for the "dictionary available" notification.
     static final int DICT_AVAILABLE_NOTIFICATION_ID = 1;
 
-    /**
-     * An interface for UIs or services that want to know when something happened.
-     *
-     * This is chiefly used by the dictionary manager UI.
-     */
+    
     public interface UpdateEventListener {
         void downloadedMetadata(boolean succeeded);
         void wordListDownloadFinished(String wordListId, boolean succeeded);
@@ -173,13 +168,9 @@ public final class UpdateHandler {
         return setting;
     }
 
-    /**
-     * Download latest metadata from the server through DownloadManager for all known clients
-     * @param context The context for retrieving resources
-     * @return true if an update successfully started, false otherwise.
-     */
+     
     public static boolean tryUpdate(final Context context) {
-        // TODO: loop through all clients instead of only doing the default one.
+        
         final TreeSet<String> uris = new TreeSet<>();
         final Cursor cursor = MetadataDbHelper.queryClientIds(context);
         if (null == cursor) return false;
@@ -189,8 +180,7 @@ public final class UpdateHandler {
                 final String clientId = cursor.getString(0);
                 final String metadataUri =
                         MetadataDbHelper.getMetadataUriAsString(context, clientId);
-                PrivateLog.log("Update for clientId " + DebugLogUtils.s(clientId));
-                DebugLogUtils.l("Update for clientId", clientId, " which uses URI ", metadataUri);
+                 
                 uris.add(metadataUri);
             } while (cursor.moveToNext());
         } finally {
@@ -226,7 +216,7 @@ public final class UpdateHandler {
         final String disambiguator = "#" + System.currentTimeMillis()
                 + ApplicationUtils.getVersionName(context) + ".json";
         final Request metadataRequest = new Request(Uri.parse(metadataUri + disambiguator));
-        DebugLogUtils.l("Request =", metadataRequest);
+       // DebugLogUtils.l("Request =", metadataRequest);
 
         final Resources res = context.getResources();
         metadataRequest.setAllowedNetworkTypes(Request.NETWORK_WIFI | Request.NETWORK_MOBILE);
@@ -245,7 +235,7 @@ public final class UpdateHandler {
         final long downloadId;
         synchronized (sSharedIdProtector) {
             downloadId = manager.enqueue(metadataRequest);
-            DebugLogUtils.l("Metadata download requested with id", downloadId);
+         //   DebugLogUtils.l("Metadata download requested with id", downloadId);
             // If there is still a download in progress, it's been there for a while and
             // there is probably something wrong with download manager. It's best to just
             // overwrite the id and request it again. If the old one happens to finish
@@ -411,7 +401,7 @@ public final class UpdateHandler {
      * @param context The context for this action.
      * @param intent The intent from the DownloadManager containing details about the download.
      */
-    /* package */ static void downloadFinished(final Context context, final Intent intent) {
+    public static void downloadFinished(final Context context, final Intent intent) {
         // Get and check the ID of the file that was downloaded
         final long fileId = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, NOT_AN_ID);
         Log.i(TAG, "downloadFinished() : DownloadId = " + fileId);
@@ -499,8 +489,8 @@ public final class UpdateHandler {
 
     private static void publishUpdateCycleCompletedEvent(final Context context) {
         // Even if this is not successful, we have to publish the new state.
-        PrivateLog.log("Publishing update cycle completed event");
-        DebugLogUtils.l("Publishing update cycle completed event");
+        //PrivateLog.log("Publishing update cycle completed event");
+        //DebugLogUtils.l("Publishing update cycle completed event");
         for (UpdateEventListener listener : linkedCopyOfList(sUpdateEventListeners)) {
             listener.updateCycleCompleted();
         }
@@ -517,7 +507,6 @@ public final class UpdateHandler {
       
             if (downloadRecord.isMetadata()) {
             	 Log.i(TAG, "handleDownloadedFile is metadata");
-                // #handleMetadata() closes its InputStream argument
                 handleMetadata(context, new ParcelFileDescriptor.AutoCloseInputStream(
                         manager.openDownloadedFile(fileId)), downloadRecord.mClientId);
             } else {
@@ -585,7 +574,7 @@ public final class UpdateHandler {
      */
     public static void handleMetadata(final Context context, final InputStream stream,
             final String clientId) throws IOException, BadFormatException {
-        DebugLogUtils.l("Entering handleMetadata");
+        //DebugLogUtils.l("Entering handleMetadata");
         final List<WordListMetadata> newMetadata;
         final InputStreamReader reader = new InputStreamReader(stream);
         try {
@@ -595,8 +584,8 @@ public final class UpdateHandler {
             reader.close();
         }
 
-        DebugLogUtils.l("Downloaded metadata :", newMetadata);
-        PrivateLog.log("Downloaded metadata\n" + newMetadata);
+        //DebugLogUtils.l("Downloaded metadata :", newMetadata);
+        //PrivateLog.log("Downloaded metadata\n" + newMetadata);
 
         final ActionBatch actions = computeUpgradeTo(context, clientId, newMetadata);
         // TODO: Check with UX how we should report to the user
@@ -617,54 +606,60 @@ public final class UpdateHandler {
             final InputStream inputStream, final DownloadRecord downloadRecord)
             throws IOException, BadFormatException {
 
-        // DownloadManager does not have the ability to put the file directly where we want
-        // it, so we had it download to a temporary place. Now we move it. It will be deleted
-        // automatically by DownloadManager.
-        DebugLogUtils.l("Downloaded a new word list :", downloadRecord.mAttributes.getAsString(
-                MetadataDbHelper.DESCRIPTION_COLUMN), "for", downloadRecord.mClientId);
-        PrivateLog.log("Downloaded a new word list with description : "
-                + downloadRecord.mAttributes.getAsString(MetadataDbHelper.DESCRIPTION_COLUMN)
-                + " for " + downloadRecord.mClientId);
+    	Log.i(TAG, "Downloaded a new word list :" + downloadRecord.mAttributes.getAsString(
+    	               MetadataDbHelper.DESCRIPTION_COLUMN));
 
         final String locale =
                 downloadRecord.mAttributes.getAsString(MetadataDbHelper.LOCALE_COLUMN);
-        final String destinationFile = getTempFileName(context, locale);
-        downloadRecord.mAttributes.put(MetadataDbHelper.LOCAL_FILENAME_COLUMN, destinationFile);
+        
+        Log.i(TAG, "locale:" + downloadRecord.mAttributes.getAsString(MetadataDbHelper.LOCALE_COLUMN));
 
-        FileOutputStream outputStream = null;
-        try {
-            outputStream = context.openFileOutput(destinationFile, Context.MODE_PRIVATE);
-            copyFile(inputStream, outputStream);
-        } finally {
-            inputStream.close();
-            if (outputStream != null) {
-                outputStream.close();
-            }
-        }
-
-        // TODO: Consolidate this MD5 calculation with file copying above.
-        // We need to reopen the file because the inputstream bytes have been consumed, and there
-        // is nothing in InputStream to reopen or rewind the stream
-        FileInputStream copiedFile = null;
-        final String md5sum;
-        try {
-            copiedFile = context.openFileInput(destinationFile);
-            md5sum = MD5Calculator.checksum(copiedFile);
-        } finally {
-            if (copiedFile != null) {
-                copiedFile.close();
-            }
-        }
-        if (TextUtils.isEmpty(md5sum)) {
-            return; // We can't compute the checksum anyway, so return and hope for the best
-        }
-        if (!md5sum.equals(downloadRecord.mAttributes.getAsString(
-                MetadataDbHelper.CHECKSUM_COLUMN))) {
-            context.deleteFile(destinationFile);
-            throw new BadFormatException("MD5 checksum check failed : \"" + md5sum + "\" <> \""
-                    + downloadRecord.mAttributes.getAsString(MetadataDbHelper.CHECKSUM_COLUMN)
-                    + "\"");
-        }
+        if (locale!=null) {
+        	
+	        	final String destinationFile = getTempFileName(context, locale);
+	        	Log.i(TAG, "destinationFile:" + destinationFile);
+	        	
+		        downloadRecord.mAttributes.put(MetadataDbHelper.LOCAL_FILENAME_COLUMN, destinationFile);
+		
+		        FileOutputStream outputStream = null;
+		        final String md5sum;
+		        try {
+		            outputStream = context.openFileOutput(destinationFile, Context.MODE_PRIVATE);
+		            md5sum = MD5Calculator.checksum(inputStream);
+		            Log.i(TAG, "md5sum:" + md5sum);
+		            copyFile(inputStream, outputStream);
+		        } finally {
+		            inputStream.close();
+		            if (outputStream != null) {
+		                outputStream.close();
+		            }
+		        }
+	             
+	
+//	        // TODO: Consolidate this MD5 calculation with file copying above.
+//	        // We need to reopen the file because the inputstream bytes have been consumed, and there
+//	        // is nothing in InputStream to reopen or rewind the stream
+//	        FileInputStream copiedFile = null;
+//	        final String md5sum;
+//	        try {
+//	            copiedFile = context.openFileInput(destinationFile);
+//	            md5sum = MD5Calculator.checksum(copiedFile);
+//	        } finally {
+//	            if (copiedFile != null) {
+//	                copiedFile.close();
+//	            }
+//	        }
+//	        if (TextUtils.isEmpty(md5sum)) {
+//	            return; // We can't compute the checksum anyway, so return and hope for the best
+//	        }
+//	        if (!md5sum.equals(downloadRecord.mAttributes.getAsString(
+//	                MetadataDbHelper.CHECKSUM_COLUMN))) {
+//	            context.deleteFile(destinationFile);
+//	            throw new BadFormatException("MD5 checksum check failed : \"" + md5sum + "\" <> \""
+//	                    + downloadRecord.mAttributes.getAsString(MetadataDbHelper.CHECKSUM_COLUMN)
+//	                    + "\"");
+//	        }
+        }  
     }
 
     /**
@@ -679,9 +674,9 @@ public final class UpdateHandler {
      */
     private static void copyFile(final InputStream in, final OutputStream out)
             throws IOException {
-        DebugLogUtils.l("Copying files");
+       // DebugLogUtils.l("Copying files");
         if (!(in instanceof FileInputStream) || !(out instanceof FileOutputStream)) {
-            DebugLogUtils.l("Not the right types");
+       //     DebugLogUtils.l("Not the right types");
             copyFileFallback(in, out);
         } else {
             try {
@@ -690,7 +685,7 @@ public final class UpdateHandler {
                 sourceChannel.transferTo(0, Integer.MAX_VALUE, destinationChannel);
             } catch (IOException e) {
                 // Can't work with channels, or something went wrong. Copy by hand.
-                DebugLogUtils.l("Won't work");
+         //       DebugLogUtils.l("Won't work");
                 copyFileFallback(in, out);
             }
         }
@@ -705,7 +700,7 @@ public final class UpdateHandler {
      */
     private static void copyFileFallback(final InputStream in, final OutputStream out)
             throws IOException {
-        DebugLogUtils.l("Falling back to slow copy");
+    //    DebugLogUtils.l("Falling back to slow copy");
         final byte[] buffer = new byte[FILE_COPY_BUFFER_SIZE];
         for (int readBytes = in.read(buffer); readBytes >= 0; readBytes = in.read(buffer))
             out.write(buffer, 0, readBytes);
@@ -718,14 +713,17 @@ public final class UpdateHandler {
      * @return the file name, or throw an exception.
      * @throws IOException if the file cannot be created.
      */
-    private static String getTempFileName(final Context context, final String locale)
+    public static String getTempFileName(final Context context, final String locale)
             throws IOException {
-        DebugLogUtils.l("Entering openTempFileOutput");
-        final File dir = context.getFilesDir();
-        final File f = File.createTempFile(locale + TEMP_DICT_FILE_SUB, DICT_FILE_SUFFIX, dir);
-        DebugLogUtils.l("File name is", f.getName());
-        return f.getName();
+     
+    	final File dir = context.getFilesDir();
+    	Log.i(TAG, "dir:"+ dir);
+        final File file = File.createTempFile(MAIN_DICTIONARY_CATEGORY + "_" +  locale + "_",  DICT_FILE_SUFFIX, dir);
+        Log.i(TAG, "file:"+ file);
+        return file.getName();
     }
+    
+    
 
     /**
      * Compare metadata (collections of word lists).
@@ -745,7 +743,7 @@ public final class UpdateHandler {
             @Nullable final List<WordListMetadata> to) {
         final ActionBatch actions = new ActionBatch();
         // Upgrade existing word lists
-        DebugLogUtils.l("Comparing dictionaries");
+     //   DebugLogUtils.l("Comparing dictionaries");
         final Set<String> wordListIds = new TreeSet<>();
         // TODO: Can these be null?
         final List<WordListMetadata> fromList = (from == null) ? new ArrayList<WordListMetadata>()
@@ -762,7 +760,7 @@ public final class UpdateHandler {
             final WordListMetadata newInfo = null == metadataInfo
                     || metadataInfo.mFormatVersion > MAXIMUM_SUPPORTED_FORMAT_VERSION
                             ? null : metadataInfo;
-            DebugLogUtils.l("Considering updating ", id, "currentInfo =", currentInfo);
+          //  DebugLogUtils.l("Considering updating ", id, "currentInfo =", currentInfo);
 
             if (null == currentInfo && null == newInfo) {
                 // This may happen if a new word list appeared that we can't handle.

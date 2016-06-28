@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.security.MessageDigest;
 
 public final class MD5Calculator {
-    private MD5Calculator() {} // This helper class is not instantiable
+    private MD5Calculator() {} 
 
     public static String checksum(final InputStream in) throws IOException {
         // This code from the Android documentation for MessageDigest. Nearly verbatim.

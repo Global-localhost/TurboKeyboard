@@ -247,9 +247,13 @@ public final class BinaryDictionaryFileDumper {
         }
         final String finalFileName =
                 DictionaryInfoUtils.getStagingFileName(wordlistId, locale, context);
+   
+        Log.i(TAG, "finalFileName:" + finalFileName);
+        
         String tempFileName;
         try {
             tempFileName = BinaryDictionaryGetter.getTempFileName(wordlistId, context);
+            //tempFileName = UpdateHandler.getTempFileName(context, locale);
         } catch (IOException e) {
             Log.e(TAG, "Can't open the temporary file", e);
             return;

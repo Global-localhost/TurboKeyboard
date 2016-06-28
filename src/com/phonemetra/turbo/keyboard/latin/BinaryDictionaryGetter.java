@@ -55,7 +55,9 @@ final public class BinaryDictionaryGetter {
      */
     public static String getTempFileName(final String id, final Context context)
             throws IOException {
+    	
         final String safeId = DictionaryInfoUtils.replaceFileNameDangerousCharacters(id);
+        
         final File directory = new File(DictionaryInfoUtils.getWordListTempDirectory(context));
         
         // If the first argument is less than three chars, createTempFile throws a

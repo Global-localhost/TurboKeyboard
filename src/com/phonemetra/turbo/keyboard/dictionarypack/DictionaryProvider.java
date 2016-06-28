@@ -32,7 +32,6 @@ import android.util.Log;
 
 import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
-import com.phonemetra.turbo.keyboard.latin.utils.DebugLogUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -196,7 +195,7 @@ public final class DictionaryProvider extends ContentProvider {
      */
     @Override
     public String getType(final Uri uri) {
-        PrivateLog.log("Asked for type of : " + uri);
+       // PrivateLog.log("Asked for type of : " + uri);
         final int match = matchUri(uri);
         switch (match) {
             case NO_MATCH: return null;
@@ -226,16 +225,16 @@ public final class DictionaryProvider extends ContentProvider {
     @Override
     public Cursor query(final Uri uri, final String[] projection, final String selection,
             final String[] selectionArgs, final String sortOrder) {
-        DebugLogUtils.l("Uri =", uri);
-        PrivateLog.log("Query : " + uri);
+       // DebugLogUtils.l("Uri =", uri);
+     //   PrivateLog.log("Query : " + uri);
         final String clientId = getClientId(uri);
         final int match = matchUri(uri);
         switch (match) {
             case DICTIONARY_V1_WHOLE_LIST:
             case DICTIONARY_V2_WHOLE_LIST:
                 final Cursor c = MetadataDbHelper.queryDictionaries(getContext(), clientId);
-                DebugLogUtils.l("List of dictionaries with count", c.getCount());
-                PrivateLog.log("Returned a list of " + c.getCount() + " items");
+         //       DebugLogUtils.l("List of dictionaries with count", c.getCount());
+         //       PrivateLog.log("Returned a list of " + c.getCount() + " items");
                 return c;
             case DICTIONARY_V2_DICT_INFO:
                 // In protocol version 2, we return null if the client is unknown. Otherwise
@@ -249,10 +248,10 @@ public final class DictionaryProvider extends ContentProvider {
                 // TODO: pass clientId to the following function
                 DictionaryService.updateNowIfNotUpdatedInAVeryLongTime(getContext());
                 if (null != dictFiles && dictFiles.size() > 0) {
-                    PrivateLog.log("Returned " + dictFiles.size() + " files");
+                //    PrivateLog.log("Returned " + dictFiles.size() + " files");
                     return new ResourcePathCursor(dictFiles);
                 }
-                PrivateLog.log("No dictionary files for this URL");
+             //   PrivateLog.log("No dictionary files for this URL");
                 return new ResourcePathCursor(Collections.<WordListInfo>emptyList());
             // V2_METADATA and V2_DATAFILE are not supported for query()
             default:
@@ -497,7 +496,7 @@ public final class DictionaryProvider extends ContentProvider {
     public Uri insert(final Uri uri, final ContentValues values)
             throws UnsupportedOperationException {
         if (null == uri || null == values) return null; // Should never happen but let's be safe
-        PrivateLog.log("Insert, uri = " + uri.toString());
+   //     PrivateLog.log("Insert, uri = " + uri.toString());
         final String clientId = getClientId(uri);
         switch (matchUri(uri)) {
             case DICTIONARY_V2_METADATA:
@@ -526,7 +525,7 @@ public final class DictionaryProvider extends ContentProvider {
                 break;
             case DICTIONARY_V1_WHOLE_LIST:
             case DICTIONARY_V1_DICT_INFO:
-                PrivateLog.log("Attempt to insert : " + uri);
+              //  PrivateLog.log("Attempt to insert : " + uri);
                 throw new UnsupportedOperationException(
                         "Insertion in the dictionary is not supported in this version");
         }
@@ -541,7 +540,7 @@ public final class DictionaryProvider extends ContentProvider {
     @Override
     public int update(final Uri uri, final ContentValues values, final String selection,
             final String[] selectionArgs) throws UnsupportedOperationException {
-        PrivateLog.log("Attempt to update : " + uri);
+      //  PrivateLog.log("Attempt to update : " + uri);
         throw new UnsupportedOperationException("Updating dictionary words is not supported");
     }
 }
