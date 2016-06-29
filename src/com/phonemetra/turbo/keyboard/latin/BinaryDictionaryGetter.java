@@ -27,7 +27,6 @@ import com.phonemetra.turbo.keyboard.latin.utils.BinaryDictionaryUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.DictionaryInfoUtils;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.BufferUnderflowException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,59 +48,6 @@ final public class BinaryDictionaryGetter {
 
     // Prevents this from being instantiated
     private BinaryDictionaryGetter() {}
-
-    /**
-     * Generates a unique temporary file name in the app cache directory.
-     */
-    public static String getTempFileName(final String id, final Context context)
-            throws IOException {
-    	
-        final String safeId = DictionaryInfoUtils.replaceFileNameDangerousCharacters(id);
-        
-        final File directory = new File(DictionaryInfoUtils.getWordListTempDirectory(context));
-        
-        // If the first argument is less than three chars, createTempFile throws a
-        // RuntimeException. We don't really care about what name we get, so just
-        // put a three-chars prefix makes us safe.
-        return File.createTempFile("xxx" + safeId, null, directory).getAbsolutePath();
-    }
-
-//    /**
-//     * Returns a file address from a resource, or null if it cannot be opened.
-//     */
-//    public static AssetFileAddress loadFallbackResource(final Context context,
-//            final int fallbackResId) {
-//        AssetFileDescriptor afd = null;
-//        try {
-//        	 if (0 == fallbackResId) return null;
-//        	 afd = context.getResources().openRawResourceFd(fallbackResId);
-//             if (afd == null) {
-//                 Log.e("BinaryDictionaryGetter", "Found the resource but it is compressed. resId=" + fallbackResId);
-//                 return null;
-//             }
-//             final String sourceDir = context.getApplicationInfo().sourceDir;
-//             final File packagePath = new File(sourceDir);
-//             // TODO: Come up with a way to handle a directory.
-//             if (!packagePath.isFile()) {
-//                 Log.e("BinaryDictionaryGetter", "sourceDir is not a file: " + sourceDir);
-//                 return null;
-//             }
-//        
-//             return AssetFileAddress.makeFromFileNameAndOffset(
-//            		 sourceDir, afd.getStartOffset(), afd.getLength());
-//        } catch (android.content.res.Resources.NotFoundException e) {
-//            Log.e("BinaryDictionaryGetter", "Could not find the resource");
-//            return null;
-//        } finally {
-//            if (null != afd) {
-//                try {
-//                    afd.close();
-//                } catch (java.io.IOException e) {
-//                    /* IOException on close ? What am I supposed to do ? */
-//                }
-//            }
-//       }
-//    }
 
     private static final class DictPackSettings {
         final SharedPreferences mDictPreferences;

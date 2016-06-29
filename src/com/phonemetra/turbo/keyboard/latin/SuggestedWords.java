@@ -43,7 +43,6 @@ public class SuggestedWords {
     public static final int INPUT_STYLE_PREDICTION = 6;
     public static final int INPUT_STYLE_BEGINNING_OF_SENTENCE_PREDICTION = 7;
 
-    // The maximum number of suggestions available.
     public static final int MAX_SUGGESTIONS = 18;
 
     private static final ArrayList<SuggestedWordInfo> EMPTY_WORD_INFO_LIST = new ArrayList<>(0);
@@ -56,13 +55,8 @@ public class SuggestedWords {
     @Nullable
     public final SuggestedWordInfo mTypedWordInfo;
     public final boolean mTypedWordValid;
-    // Note: this INCLUDES cases where the word will auto-correct to itself. A good definition
-    // of what this flag means would be "the top suggestion is strong enough to auto-correct",
-    // whether this exactly matches the user entry or not.
     public final boolean mWillAutoCorrect;
     public final boolean mIsObsoleteSuggestions;
-    // How the input for these suggested words was done by the user. Must be one of the
-    // INPUT_STYLE_* constants above.
     public final int mInputStyle;
     public final int mSequenceNumber; // Sequence number for auto-commit.
     @Nonnull

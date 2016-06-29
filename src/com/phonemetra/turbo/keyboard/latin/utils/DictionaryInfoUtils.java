@@ -312,6 +312,22 @@ public class DictionaryInfoUtils {
 				+ TEMP_DICT_FILE_SUB + id);
 		return stagingDirectory + File.separator + fileName;
 	}
+	
+	public static String getTempFileName(String id, String locale,
+			Context context) {
+		final String tmpDirectory = getWordListTempDirectory(context);
+		// create the directory if it does not exist.
+		final File directory = new File(tmpDirectory);
+		if (!directory.exists()) {
+			if (!directory.mkdirs()) {
+				Log.e(TAG, "Could not create the tmp directory.");
+			}
+		}
+		// e.g. id="main:en_in", locale ="en_IN"
+		final String fileName = replaceFileNameDangerousCharacters(locale
+				+ TEMP_DICT_FILE_SUB + id);
+		return tmpDirectory + File.separator + fileName;
+	}
 
 	public static void moveStagingFilesIfExists(Context context) {
 		final File[] stagingFiles = DictionaryInfoUtils
