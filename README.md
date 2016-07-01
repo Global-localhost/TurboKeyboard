@@ -10,7 +10,7 @@
 ## Languages:
 English (US), English (India), English (UK), Afrikaans, Alphabet (QWERTY), Arabic, Arabic (Qatar), Arabic (UAE), Armenian (Armenia), Azerbaijani (Azerbaijan), Basque (Spain), Belarusian (Belarus), Bengali (Bangladesh), Bengali (India), Bulgarian, Bulgarian (BDS), Catalan, Croatian, Czech, Danish, Dutch, Dutch (Belgium), Esperanto, Estonian (Estonia), Finnish, French, French (Canada), French (QWERTZ), French (Switzerland), Galician (Spain), Georgian (Georgia), German, German (QWERTY), German (Switzerland), Greek, Hebrew, Hindi, Hindi (Compact), Hungarian, Icelandic, Indonesian, Italian (Italy), Italian (Switzerland), Kannada (India), Kazakh, Khmer (Cambodia), Kyrgyz, Lao (Laos), Latvian, Lithuanian, Macedonian, Malay (Malaysia), Malayalam (India), Marathi (India), Mongolian (Mongolia), Nepali (Nepal), Nepali (Nepal) (Traditional), Norwegian, Persian, Polish, Portuguese (Brazil), Portuguese (Portugal), Romanian, Russian, Serbian, Serbian (Latin), Slovak, Slovenian, Spanish, Spanish (Latin America), Swahili, Swedish, Tagalog, Tamil (India), Tamil (Singapore), Telugu (India), Thai, Turkish, Ukrainian, Uzbek, Vietnamese, Zulu. 
 ## Layouts: 
-QWERTY, AZERTY, QWERTZ, DVORAK, Colemak and PC.
+QWERTY, QWERTZ, ARABIC, AZERTY, DVORAK, Colemak and PC.
 
 ## License
 
