@@ -63,7 +63,6 @@ public class MoreKeysKeyboardView extends KeyboardView implements MoreKeysPanel 
                 R.styleable.MoreKeysKeyboardView, defStyle, R.style.MoreKeysKeyboardView);
         mDivider = moreKeysKeyboardViewAttr.getDrawable(R.styleable.MoreKeysKeyboardView_divider);
         if (mDivider != null) {
-            // TODO: Drawable itself should have an alpha value.
             mDivider.setAlpha(128);
         }
         moreKeysKeyboardViewAttr.recycle();

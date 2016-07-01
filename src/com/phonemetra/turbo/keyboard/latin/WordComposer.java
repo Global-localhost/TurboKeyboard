@@ -210,7 +210,6 @@ public final class WordComposer {
 
     public void setCursorPositionWithinWord(final int posWithinWord) {
         mCursorPositionWithinWord = posWithinWord;
-        // TODO: compute where that puts us inside the events
     }
 
     public boolean isCursorFrontOrMiddleOfComposingWord() {

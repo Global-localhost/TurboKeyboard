@@ -48,7 +48,7 @@ import java.util.HashMap;
  */
 public final class DictionaryProvider extends ContentProvider {
     private static final String TAG = "DictionaryProvider";
-    public static final boolean DEBUG = false;
+    //public static final boolean DEBUG = false;
 
     public static final Uri CONTENT_URI =
             Uri.parse(ContentResolver.SCHEME_CONTENT + "://" + DictionaryPackConstants.AUTHORITY);
@@ -469,10 +469,7 @@ public final class DictionaryProvider extends ContentProvider {
         if (MetadataDbHelper.STATUS_INSTALLED == status) {
             final String result = uri.getQueryParameter(QUERY_PARAMETER_DELETE_RESULT);
             if (QUERY_PARAMETER_FAILURE.equals(result)) {
-                if (DEBUG) {
-                    Log.d(TAG,
-                            "Dictionary is broken, attempting to retry download & installation.");
-                }
+                 Log.d(TAG, "Dictionary is broken, attempting to retry download & installation.");
                 UpdateHandler.markAsBrokenOrRetrying(getContext(), clientId, wordlistId, version);
             }
             final String localFilename =

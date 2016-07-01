@@ -17,7 +17,6 @@
 package com.phonemetra.turbo.keyboard.accessibility;
 
 import android.graphics.Rect;
-import android.util.Log;
 import android.view.MotionEvent;
 
 import com.phonemetra.turbo.keyboard.Key;
@@ -31,8 +30,7 @@ import com.phonemetra.turbo.keyboard.PointerTracker;
  */
 public class MoreKeysKeyboardAccessibilityDelegate
         extends KeyboardAccessibilityDelegate<MoreKeysKeyboardView> {
-    private static final String TAG = MoreKeysKeyboardAccessibilityDelegate.class.getSimpleName();
-
+    
     private final Rect mMoreKeysKeyboardValidBounds = new Rect();
     private static final int CLOSING_INSET_IN_PIXEL = 1;
     private int mOpenAnnounceResId;
@@ -61,9 +59,7 @@ public class MoreKeysKeyboardAccessibilityDelegate
 
     @Override
     protected void onHoverEnter(final MotionEvent event) {
-        if (DEBUG_HOVER) {
-            Log.d(TAG, "onHoverEnter: key=" + getHoverKeyOf(event));
-        }
+        
         super.onHoverEnter(event);
         final int actionIndex = event.getActionIndex();
         final int x = (int)event.getX(actionIndex);
@@ -87,9 +83,7 @@ public class MoreKeysKeyboardAccessibilityDelegate
     @Override
     protected void onHoverExit(final MotionEvent event) {
         final Key lastKey = getLastHoverKey();
-        if (DEBUG_HOVER) {
-            Log.d(TAG, "onHoverExit: key=" + getHoverKeyOf(event) + " last=" + lastKey);
-        }
+        
         if (lastKey != null) {
             super.onHoverExitFrom(lastKey);
         }

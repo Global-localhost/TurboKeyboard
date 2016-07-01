@@ -43,17 +43,17 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
     // Settings screens
     public static final String SCREEN_ACCOUNTS = "screen_accounts";
     public static final String SCREEN_THEME = "screen_theme";
-    public static final String SCREEN_DEBUG = "screen_debug";
+    
     // In the same order as xml/prefs.xml
     public static final String PREF_AUTO_CAP = "auto_cap";
     public static final String PREF_VIBRATE_ON = "vibrate_on";
     public static final String PREF_SOUND_ON = "sound_on";
     public static final String PREF_POPUP_ON = "popup_on";
-    // PREF_VOICE_MODE_OBSOLETE is obsolete. Use PREF_VOICE_INPUT_KEY instead.
-    public static final String PREF_VOICE_MODE_OBSOLETE = "voice_mode";
+    
     public static final String PREF_VOICE_INPUT_KEY = "pref_voice_input_key";
     public static final String PREF_EDIT_PERSONAL_DICTIONARY = "edit_personal_dictionary";
     public static final String PREF_CONFIGURE_DICTIONARIES_KEY = "configure_dictionaries_key";
+    
     // PREF_AUTO_CORRECTION_THRESHOLD_OBSOLETE is obsolete. Use PREF_AUTO_CORRECTION instead.
     public static final String PREF_AUTO_CORRECTION_THRESHOLD_OBSOLETE =
             "auto_correction_threshold";
@@ -182,10 +182,6 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
 
     public SettingsValues getCurrent() {
         return mSettingsValues;
-    }
-
-    public boolean isInternal() {
-        return mSettingsValues.mIsInternal;
     }
 
     public static int readScreenMetrics(final Resources res) {
@@ -357,9 +353,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
                 && conf.hardKeyboardHidden != Configuration.HARDKEYBOARDHIDDEN_YES;
     }
 
-    public static boolean isInternal(final SharedPreferences prefs) {
-        return prefs.getBoolean(PREF_KEY_IS_INTERNAL, false);
-    }
+    
 
     public void writeLastUsedPersonalizationToken(byte[] token) {
         if (token == null) {

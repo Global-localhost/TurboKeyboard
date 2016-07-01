@@ -138,10 +138,12 @@ public class KeyboardView extends View {
                 Color.red(color), Color.green(color), Color.blue(color));
     }
 
-    public void setHardwareAcceleratedDrawingEnabled(final boolean enabled) {
-        if (!enabled) return;
-        // TODO: Should use LAYER_TYPE_SOFTWARE when hardware acceleration is off?
-        setLayerType(LAYER_TYPE_HARDWARE, null);
+    public void setHardwareAcceleratedDrawingEnabled(final boolean enabled) {     
+    	if (enabled) {
+    		setLayerType(LAYER_TYPE_HARDWARE, null);
+    	} else {
+    		setLayerType(LAYER_TYPE_SOFTWARE, null);
+    	}   
     }
 
     /**

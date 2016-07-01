@@ -35,7 +35,6 @@ import com.phonemetra.turbo.keyboard.R;
  * This is an extended {@link KeyboardView} class that hosts an emoji page keyboard.
  * Multi-touch unsupported. No gesture support.
  */
-// TODO: Implement key popup preview.
 final class EmojiPageKeyboardView extends KeyboardView implements
         GestureDetector.OnGestureListener {
     private static final long KEY_PRESS_DELAY_TIME = 250;  // msec

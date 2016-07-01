@@ -210,10 +210,7 @@ public final class MainKeyboardAccessibilityDelegate
     public void performClickOn(final Key key) {
         final int x = key.getHitBox().centerX();
         final int y = key.getHitBox().centerY();
-        if (DEBUG_HOVER) {
-            Log.d(TAG, "performClickOn: key=" + key
-                    + " inIgnoreBounds=" + mBoundsToIgnoreHoverEvent.contains(x, y));
-        }
+        
         if (mBoundsToIgnoreHoverEvent.contains(x, y)) {
             // This hover exit event points to the key that should be ignored.
             // Clear the ignoring region to handle further hover events.
@@ -227,10 +224,7 @@ public final class MainKeyboardAccessibilityDelegate
     protected void onHoverEnterTo(final Key key) {
         final int x = key.getHitBox().centerX();
         final int y = key.getHitBox().centerY();
-        if (DEBUG_HOVER) {
-            Log.d(TAG, "onHoverEnterTo: key=" + key
-                    + " inIgnoreBounds=" + mBoundsToIgnoreHoverEvent.contains(x, y));
-        }
+        
         mAccessibilityLongPressTimer.cancelLongPress();
         if (mBoundsToIgnoreHoverEvent.contains(x, y)) {
             return;
@@ -248,19 +242,14 @@ public final class MainKeyboardAccessibilityDelegate
     protected void onHoverExitFrom(final Key key) {
         final int x = key.getHitBox().centerX();
         final int y = key.getHitBox().centerY();
-        if (DEBUG_HOVER) {
-            Log.d(TAG, "onHoverExitFrom: key=" + key
-                    + " inIgnoreBounds=" + mBoundsToIgnoreHoverEvent.contains(x, y));
-        }
+        
         mAccessibilityLongPressTimer.cancelLongPress();
         super.onHoverExitFrom(key);
     }
 
     @Override
     public void performLongClickOn(final Key key) {
-        if (DEBUG_HOVER) {
-            Log.d(TAG, "performLongClickOn: key=" + key);
-        }
+        
         final PointerTracker tracker = PointerTracker.getPointerTracker(HOVER_EVENT_POINTER_ID);
         final long eventTime = SystemClock.uptimeMillis();
         final int x = key.getHitBox().centerX();

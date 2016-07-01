@@ -21,20 +21,9 @@ import android.view.ViewGroup;
 
 public interface MoreKeysPanel {
     public interface Controller {
-        /**
-         * Add the {@link MoreKeysPanel} to the target view.
-         * @param panel the panel to be shown.
-         */
-        public void onShowMoreKeysPanel(final MoreKeysPanel panel);
-
-        /**
-         * Remove the current {@link MoreKeysPanel} from the target view.
-         */
+        
+        public void onShowMoreKeysPanel(final MoreKeysPanel panel); 
         public void onDismissMoreKeysPanel();
-
-        /**
-         * Instructs the parent to cancel the panel (e.g., when entering a different input mode).
-         */
         public void onCancelMoreKeysPanel();
     }
 

@@ -25,7 +25,7 @@ public final class CharacterCompat {
             Character.class, "isAlphabetic", int.class);
 
     private CharacterCompat() {
-        // This utility class is not publicly instantiable.
+  
     }
 
     public static boolean isAlphabetic(final int code) {

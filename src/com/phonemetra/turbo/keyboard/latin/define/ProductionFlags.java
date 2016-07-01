@@ -18,7 +18,7 @@ package com.phonemetra.turbo.keyboard.latin.define;
 
 public final class ProductionFlags {
     private ProductionFlags() {
-        // This class is not publicly instantiable.
+    
     }
 
     public static final boolean IS_HARDWARE_KEYBOARD_SUPPORTED = false;
@@ -48,11 +48,11 @@ public final class ProductionFlags {
      * When {@code true}, user history dictionary sync feature is ready to be enabled.
      */
     public static final boolean ENABLE_USER_HISTORY_DICTIONARY_SYNC =
-            ENABLE_ACCOUNT_SIGN_IN && false;
+            ENABLE_ACCOUNT_SIGN_IN;
 
     /**
      * When {@code true}, the IME maintains per account {@link UserHistoryDictionary}.
      */
     public static final boolean ENABLE_PER_ACCOUNT_USER_HISTORY_DICTIONARY =
-            ENABLE_ACCOUNT_SIGN_IN && false;
+            ENABLE_ACCOUNT_SIGN_IN;
 }

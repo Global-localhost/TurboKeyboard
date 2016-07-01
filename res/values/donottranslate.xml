@@ -27,6 +27,8 @@
          explicit keyboard layout. The string resource name must be "subtype_<locale>" or
          "subtype_with_layout_<locale>. Please refer to strings.xml for these resources. -->
     <string-array name="subtype_locale_exception_keys">
+        <item>ar_AE</item>
+        <item>ar_QA</item>
         <item>en_US</item>
         <item>en_GB</item>
         <item>es_US</item>
@@ -71,6 +73,7 @@
          name must be "subtype_no_language_<layout name>" -->
     <string name="subtype_generic_qwerty">%s (QWERTY)</string>
     <string name="subtype_generic_qwertz">%s (QWERTZ)</string>  
+    <string name="subtype_generic_arabic">%s (ARABIC)</string>
     <string name="subtype_generic_azerty">%s (AZERTY)</string>
     <string name="subtype_generic_dvorak">%s (Dvorak)</string>
     <string name="subtype_generic_colemak">%s (Colemak)</string>

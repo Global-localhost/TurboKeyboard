@@ -25,10 +25,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public final class CompatUtils {
-    private static final String TAG = CompatUtils.class.getSimpleName();
+    private static final String TAG = "CompatUtils";
 
     private CompatUtils() {
-        // This utility class is not publicly instantiable.
+       
     }
 
     public static Class<?> getClass(final String className) {

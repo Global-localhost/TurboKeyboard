@@ -32,21 +32,9 @@ import com.phonemetra.turbo.keyboard.KeyDetector;
 import com.phonemetra.turbo.keyboard.Keyboard;
 import com.phonemetra.turbo.keyboard.KeyboardView;
 
-/**
- * This class represents a delegate that can be registered in a class that extends
- * {@link KeyboardView} to enhance accessibility support via composition rather via inheritance.
- *
- * To implement accessibility mode, the target keyboard view has to:<p>
- * - Call {@link #setKeyboard(Keyboard)} when a new keyboard is set to the keyboard view.
- * - Dispatch a hover event by calling {@link #onHoverEnter(MotionEvent)}.
- *
- * @param <KV> The keyboard view class type.
- */
 public class KeyboardAccessibilityDelegate<KV extends KeyboardView>
         extends AccessibilityDelegateCompat {
-    private static final String TAG = KeyboardAccessibilityDelegate.class.getSimpleName();
-    protected static final boolean DEBUG_HOVER = false;
-
+    
     protected final KV mKeyboardView;
     protected final KeyDetector mKeyDetector;
     private Keyboard mKeyboard;
@@ -195,9 +183,6 @@ public class KeyboardAccessibilityDelegate<KV extends KeyboardView>
      */
     protected void onHoverEnter(final MotionEvent event) {
         final Key key = getHoverKeyOf(event);
-        if (DEBUG_HOVER) {
-            Log.d(TAG, "onHoverEnter: key=" + key);
-        }
         if (key != null) {
             onHoverEnterTo(key);
         }
@@ -233,9 +218,7 @@ public class KeyboardAccessibilityDelegate<KV extends KeyboardView>
      */
     protected void onHoverExit(final MotionEvent event) {
         final Key lastKey = getLastHoverKey();
-        if (DEBUG_HOVER) {
-            Log.d(TAG, "onHoverExit: key=" + getHoverKeyOf(event) + " last=" + lastKey);
-        }
+        
         if (lastKey != null) {
             onHoverExitFrom(lastKey);
         }
@@ -255,9 +238,7 @@ public class KeyboardAccessibilityDelegate<KV extends KeyboardView>
      * @param key A key to be registered.
      */
     public void performClickOn(final Key key) {
-        if (DEBUG_HOVER) {
-            Log.d(TAG, "performClickOn: key=" + key);
-        }
+        
         simulateTouchEvent(MotionEvent.ACTION_DOWN, key);
         simulateTouchEvent(MotionEvent.ACTION_UP, key);
     }
@@ -284,9 +265,7 @@ public class KeyboardAccessibilityDelegate<KV extends KeyboardView>
      * @param key The currently hovered key.
      */
     protected void onHoverEnterTo(final Key key) {
-        if (DEBUG_HOVER) {
-            Log.d(TAG, "onHoverEnterTo: key=" + key);
-        }
+        
         key.onPressed();
         mKeyboardView.invalidateKey(key);
         final KeyboardAccessibilityNodeProvider<KV> provider = getAccessibilityNodeProvider();
@@ -307,9 +286,7 @@ public class KeyboardAccessibilityDelegate<KV extends KeyboardView>
      * @param key The currently hovered key.
      */
     protected void onHoverExitFrom(final Key key) {
-        if (DEBUG_HOVER) {
-            Log.d(TAG, "onHoverExitFrom: key=" + key);
-        }
+        
         key.onReleased();
         mKeyboardView.invalidateKey(key);
         final KeyboardAccessibilityNodeProvider<KV> provider = getAccessibilityNodeProvider();
@@ -322,6 +299,6 @@ public class KeyboardAccessibilityDelegate<KV extends KeyboardView>
      * @param key A key to be long pressed on.
      */
     public void performLongClickOn(final Key key) {
-        // A extended class should override this method to implement long press.
+        
     }
 }

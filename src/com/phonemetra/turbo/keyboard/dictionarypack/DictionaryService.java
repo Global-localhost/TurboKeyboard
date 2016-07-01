@@ -22,20 +22,12 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
-import android.util.Log;
-import android.widget.Toast;
-
 import com.phonemetra.turbo.keyboard.latin.BinaryDictionaryFileDumper;
 import com.phonemetra.turbo.keyboard.R;
-import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
-
-import java.util.Locale;
 import java.util.Random;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-
-import javax.annotation.Nonnull;
 
 /**
  * Service that handles background tasks for the dictionary provider.

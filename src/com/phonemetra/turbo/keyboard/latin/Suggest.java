@@ -49,7 +49,6 @@ public final class Suggest {
     // Close to -2**31
     private static final int SUPPRESS_SUGGEST_THRESHOLD = -2000000000;
 
-    private static final boolean DBG = false;
     private final DictionaryFacilitator mDictionaryFacilitator;
 
     private static final int MAXIMUM_AUTO_CORRECT_LENGTH_FOR_GERMAN = 12;
@@ -336,32 +335,7 @@ public final class Suggest {
                 inputStyle, sequenceNumber));
     }
 
-    private static ArrayList<SuggestedWordInfo> getSuggestionsInfoListWithDebugInfo(
-            final String typedWord, final ArrayList<SuggestedWordInfo> suggestions) {
-        final SuggestedWordInfo typedWordInfo = suggestions.get(0);
-        typedWordInfo.setDebugString("+");
-        final int suggestionsSize = suggestions.size();
-        final ArrayList<SuggestedWordInfo> suggestionsList = new ArrayList<>(suggestionsSize);
-        suggestionsList.add(typedWordInfo);
-        // Note: i here is the index in mScores[], but the index in mSuggestions is one more
-        // than i because we added the typed word to mSuggestions without touching mScores.
-        for (int i = 0; i < suggestionsSize - 1; ++i) {
-            final SuggestedWordInfo cur = suggestions.get(i + 1);
-            final float normalizedScore = BinaryDictionaryUtils.calcNormalizedScore(
-                    typedWord, cur.toString(), cur.mScore);
-            final String scoreInfoString;
-            if (normalizedScore > 0) {
-                scoreInfoString = String.format(
-                        Locale.ROOT, "%d (%4.2f), %s", cur.mScore, normalizedScore,
-                        cur.mSourceDict.mDictType);
-            } else {
-                scoreInfoString = Integer.toString(cur.mScore);
-            }
-            cur.setDebugString(scoreInfoString);
-            suggestionsList.add(cur);
-        }
-        return suggestionsList;
-    }
+     
 
     /**
      * Computes whether this suggestion should be blocked or not in this language

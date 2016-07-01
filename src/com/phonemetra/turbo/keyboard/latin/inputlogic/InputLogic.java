@@ -1483,15 +1483,10 @@ public final class InputLogic {
      */
     public void restartSuggestionsOnWordTouchedByCursor(final SettingsValues settingsValues,
             final boolean forStartInput,
-            // TODO: remove this argument, put it into settingsValues
+           
             final int currentKeyboardScriptId) {
-        // HACK: We may want to special-case some apps that exhibit bad behavior in case of
-        // recorrection. This is a temporary, stopgap measure that will be removed later.
-        // TODO: remove this.
-        if (settingsValues.isBrokenByRecorrection()
-        // Recorrection is not supported in languages without spaces because we don't know
-        // how to segment them yet.
-                || !settingsValues.mSpacingAndPunctuations.mCurrentLanguageHasSpaces
+        
+        if (!settingsValues.mSpacingAndPunctuations.mCurrentLanguageHasSpaces
         // If no suggestions are requested, don't try restarting suggestions.
                 || !settingsValues.needsToLookupSuggestions()
         // If we are currently in a batch input, we must not resume suggestions, or the result

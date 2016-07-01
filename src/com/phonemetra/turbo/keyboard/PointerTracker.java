@@ -87,8 +87,6 @@ public final class PointerTracker implements PointerTrackerQueue.Element,
 	private static GestureStrokeRecognitionParams sGestureStrokeRecognitionParams;
 	private static GestureStrokeDrawingParams sGestureStrokeDrawingParams;
 	private static boolean sNeedsPhantomSuddenMoveEventHack;
-	// Move this threshold to resource.
-	// TODO: Device specific parameter would be better for device specific hack?
 	private static final float PHANTOM_SUDDEN_MOVE_THRESHOLD = 0.25f; // in
 																		// keyWidth
 
@@ -1224,13 +1222,4 @@ public final class PointerTracker implements PointerTrackerQueue.Element,
 		sTimerProxy.startKeyRepeatTimerOf(this, repeatCount, delay);
 	}
 
-	private void printTouchEvent(final String title, final int x, final int y,
-			final long eventTime) {
-		final Key key = mKeyDetector.detectHitKey(x, y);
-		final String code = (key == null ? "none" : Constants.printableCode(key
-				.getCode()));
-		Log.d(TAG, String.format("[%d]%s%s %4d %4d %5d %s", mPointerId,
-				(mIsTrackingForActionDisabled ? "-" : " "), title, x, y,
-				eventTime, code));
-	}
 }
