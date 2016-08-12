@@ -24,7 +24,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 /**
  * Utilities to manage executors.
@@ -63,10 +63,10 @@ public class ExecutorUtils {
         }
     }
 
-    @UsedForTesting
+   
     private static ScheduledExecutorService sExecutorServiceForTests;
 
-    @UsedForTesting
+   
     public static void setExecutorServiceForTests(
             final ScheduledExecutorService executorServiceForTests) {
         sExecutorServiceForTests = executorServiceForTests;
@@ -118,12 +118,12 @@ public class ExecutorUtils {
         }
     }
 
-    @UsedForTesting
+   
     public static Runnable chain(final Runnable... runnables) {
         return new RunnableChain(runnables);
     }
 
-    @UsedForTesting
+   
     public static class RunnableChain implements Runnable {
         private final Runnable[] mRunnables;
 
@@ -134,7 +134,7 @@ public class ExecutorUtils {
             mRunnables = runnables;
         }
 
-        @UsedForTesting
+       
         public Runnable[] getRunnables() {
             return mRunnables;
         }

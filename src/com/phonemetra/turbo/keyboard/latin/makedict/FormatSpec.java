@@ -16,7 +16,7 @@
 
 package com.phonemetra.turbo.keyboard.latin.makedict;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.define.DecoderSpecificConstants;
 
 import java.util.Date;
@@ -251,7 +251,7 @@ public final class FormatSpec {
         public final int mVersion;
         public final boolean mHasTimestamp;
 
-        @UsedForTesting
+       
         public FormatOptions(final int version) {
             this(version, false /* hasTimestamp */);
         }

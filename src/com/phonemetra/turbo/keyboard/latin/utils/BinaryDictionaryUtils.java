@@ -16,7 +16,7 @@
 
 package com.phonemetra.turbo.keyboard.latin.utils;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.BinaryDictionary;
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
 import com.phonemetra.turbo.keyboard.latin.makedict.DictionaryHeader;
@@ -40,7 +40,7 @@ public final class BinaryDictionaryUtils {
         JniUtils.loadNativeLibrary();
     }
 
-    @UsedForTesting
+   
     private static native boolean createEmptyDictFileNative(String filePath, long dictVersion,
             String locale, String[] attributeKeyStringArray, String[] attributeValueStringArray);
     private static native float calcNormalizedScoreNative(int[] before, int[] after, int score);
@@ -90,7 +90,7 @@ public final class BinaryDictionaryUtils {
         return false;
     }
 
-    @UsedForTesting
+   
     public static boolean createEmptyDictFile(final String filePath, final long dictVersion,
             final Locale locale, final Map<String, String> attributeMap) {
         final String[] keyArray = new String[attributeMap.size()];

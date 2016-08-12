@@ -16,7 +16,7 @@
 
 package com.phonemetra.turbo.keyboard.latin.makedict;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.BinaryDictionary;
 import com.phonemetra.turbo.keyboard.latin.Dictionary;
 import com.phonemetra.turbo.keyboard.latin.NgramContext;
@@ -47,7 +47,7 @@ public final class WordProperty implements Comparable<WordProperty> {
     private int mHashCode = 0;
 
     // TODO: Support n-gram.
-    @UsedForTesting
+   
     public WordProperty(final String word, final ProbabilityInfo probabilityInfo,
             @Nullable final ArrayList<WeightedString> bigrams,
             final boolean isNotAWord, final boolean isPossiblyOffensive) {
@@ -115,7 +115,7 @@ public final class WordProperty implements Comparable<WordProperty> {
     }
 
     // TODO: Remove
-    @UsedForTesting
+   
     public ArrayList<WeightedString> getBigrams() {
         if (null == mNgrams) {
             return null;
@@ -189,7 +189,7 @@ public final class WordProperty implements Comparable<WordProperty> {
         return mHashCode;
     }
 
-    @UsedForTesting
+   
     public boolean isValid() {
         return getProbability() != Dictionary.NOT_A_PROBABILITY;
     }

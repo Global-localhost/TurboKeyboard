@@ -14,42 +14,42 @@
      limitations under the License.
 -->
 
-<!-- Note: This emoji code point list is valid on JB-MR2 (API == 18).
-     There is another emoji code point list for KLP and later under res/xml/values-v19. -->
+<!-- Note: This emoji code point list is valid on KLP and later (API >= 19).
+     There is another emoji code point list for JB-MR2 under res/xml/values and values-v18.-->
 <resources>
     <array
         name="emoji_nature"
         format="string"
     >
-        <!-- <item>1f415</item> -->
+        <item>1f415</item>
         <item>1f436</item>
         <item>1f429</item>
-        <!-- <item>1f408</item> -->
+        <item>1f408</item>
         <item>1f431</item>
-        <!-- <item>1f400</item> -->
-        <!-- <item>1f401</item> -->
+        <item>1f400</item>
+        <item>1f401</item>
         <item>1f42d</item>
         <item>1f439</item>
         <item>1f422</item>
-        <!-- <item>1f407</item> -->
+        <item>1f407</item>
         <item>1f430</item>
-        <!-- <item>1f413</item> -->
+        <item>1f413</item>
         <item>1f414</item>
         <item>1f423</item>
         <item>1f424</item>
         <item>1f425</item>
         <item>1f426</item>
-        <!-- <item>1f40f</item> -->
+        <item>1f40f</item>
         <item>1f411</item>
-        <!-- <item>1f410</item> -->
+        <item>1f410</item>
         <item>1f43a</item>
-        <!-- <item>1f403</item> -->
-        <!-- <item>1f402</item> -->
-        <!-- <item>1f404</item> -->
+        <item>1f403</item>
+        <item>1f402</item>
+        <item>1f404</item>
         <item>1f42e</item>
         <item>1f434</item>
         <item>1f417</item>
-        <!-- <item>1f416</item> -->
+        <item>1f416</item>
         <item>1f437</item>
         <item>1f43d</item>
         <item>1f438</item>
@@ -60,14 +60,14 @@
         <item>1f428</item>
         <item>1f412</item>
         <item>1f435</item>
-        <!-- <item>1f406</item> -->
+        <item>1f406</item>
         <item>1f42f</item>
         <item>1f43b</item>
         <item>1f42b</item>
-        <!-- <item>1f42a</item> -->
-        <!-- <item>1f40a</item> -->
+        <item>1f42a</item>
+        <item>1f40a</item>
         <item>1f433</item>
-        <!-- <item>1f40b</item> -->
+        <item>1f40b</item>
         <item>1f41f</item>
         <item>1f420</item>
         <item>1f421</item>
@@ -80,7 +80,7 @@
         <item>1f41d</item>
         <item>1f41e</item>
         <item>1f432</item>
-        <!-- <item>1f409</item> -->
+        <item>1f409</item>
         <item>1f43e</item>
         <item>1f378</item>
         <item>1f37a</item>
@@ -88,9 +88,9 @@
         <item>1f377</item>
         <item>1f379</item>
         <item>1f376</item>
-        <!-- <item>2615</item> -->
+        <item>2615</item>
         <item>1f375</item>
-        <!-- <item>1f37c</item> -->
+        <item>1f37c</item>
         <item>1f374</item>
         <item>1f368</item>
         <item>1f367</item>
@@ -128,22 +128,22 @@
         <item>1f34e</item>
         <item>1f34f</item>
         <item>1f34a</item>
-        <!-- <item>1f34b</item> -->
+        <item>1f34b</item>
         <item>1f344</item>
         <item>1f345</item>
         <item>1f346</item>
         <item>1f347</item>
         <item>1f348</item>
         <item>1f349</item>
-        <!-- <item>1f350</item> -->
+        <item>1f350</item>
         <item>1f351</item>
         <item>1f352</item>
         <item>1f353</item>
         <item>1f34d</item>
         <item>1f330</item>
         <item>1f331</item>
-        <!-- <item>1f332</item> -->
-        <!-- <item>1f333</item> -->
+        <item>1f332</item>
+        <item>1f333</item>
         <item>1f334</item>
         <item>1f335</item>
         <item>1f337</item>
@@ -165,26 +165,26 @@
         <item>2601</item>
         <item>1f301</item>
         <item>1f302</item>
-        <!-- <item>2614</item> -->
+        <item>2614</item>
         <item>1f4a7</item>
         <item>26a1</item>
         <item>1f300</item>
         <item>2744</item>
         <item>26c4</item>
         <item>1f319</item>
-        <!-- <item>1f31e</item> -->
-        <!-- <item>1f31d</item> -->
-        <!-- <item>1f31a</item> -->
+        <item>1f31e</item>
+        <item>1f31d</item>
+        <item>1f31a</item>
         <item>1f31b</item>
-        <!-- <item>1f31c</item> -->
+        <item>1f31c</item>
         <item>1f311</item>
-        <!-- <item>1f312</item> -->
+        <item>1f312</item>
         <item>1f313</item>
         <item>1f314</item>
         <item>1f315</item>
-        <!-- <item>1f316</item> -->
-        <!-- <item>1f317</item> -->
-        <!-- <item>1f318</item> -->
+        <item>1f316</item>
+        <item>1f317</item>
+        <item>1f318</item>
         <item>1f391</item>
         <item>1f304</item>
         <item>1f305</item>
@@ -195,27 +195,27 @@
         <item>1f309</item>
         <item>1f30a</item>
         <item>1f30b</item>
-        <!-- <item>1f30e</item> -->
+        <item>1f30e</item>
         <item>1f30f</item>
-        <!-- <item>1f30d</item> -->
-        <!-- <item>1f310</item> -->
+        <item>1f30d</item>
+        <item>1f310</item>
     </array>
     <array
         name="emoji_symbols"
         format="string"
     >
-        <!-- <item>fe82e|0031,20e3</item> -->
-        <!-- <item>fe82f|0032,20e3</item> -->
-        <!-- <item>fe830|0033,20e3</item> -->
-        <!-- <item>fe831|0034,20e3</item> -->
-        <!-- <item>fe832|0035,20e3</item> -->
-        <!-- <item>fe833|0036,20e3</item> -->
-        <!-- <item>fe834|0037,20e3</item> -->
-        <!-- <item>fe835|0038,20e3</item> -->
-        <!-- <item>fe836|0039,20e3</item> -->
-        <!-- <item>fe837|0030,20e3</item> -->
-        <!-- <item>1f51f</item> -->
-        <!-- <item>fe82c|0023,20e3</item> -->
+        <item>fe82e|0031,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe82f|0032,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe830|0033,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe831|0034,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe832|0035,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe833|0036,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe834|0037,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe835|0038,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe836|0039,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe837|0030,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>1f51f||99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe82c|0023,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
         <item>1f51d</item>
         <item>1f519</item>
         <item>1f51b</item>
@@ -240,10 +240,10 @@
         <item>1f531</item>
         <item>1f52f</item>
         <item>1f6bb</item>
-        <!-- <item>1f6ae</item> -->
-        <!-- <item>1f6af</item> -->
-        <!-- <item>1f6b0</item> -->
-        <!-- <item>1f6b1</item> -->
+        <item>1f6ae</item>
+        <item>1f6af</item>
+        <item>1f6b0</item>
+        <item>1f6b1</item>
         <item>1f170</item>
         <item>1f171</item>
         <item>1f18e</item>
@@ -259,7 +259,7 @@
         <item>1f4f6</item>
         <item>1f4f3</item>
         <item>1f4f4</item>
-        <!-- <item>1f4f5</item> -->
+        <item>1f4f5</item>
         <item>1f6b9</item>
         <item>1f6ba</item>
         <item>1f6bc</item>
@@ -322,29 +322,29 @@
         <item>1f4a6</item>
         <item>1f4ab</item>
         <item>1f55b</item>
-        <!-- <item>1f567</item> -->
+        <item>1f567</item>
         <item>1f550</item>
-        <!-- <item>1f55c</item> -->
+        <item>1f55c</item>
         <item>1f551</item>
-        <!-- <item>1f55d</item> -->
+        <item>1f55d</item>
         <item>1f552</item>
-        <!-- <item>1f55e</item> -->
+        <item>1f55e</item>
         <item>1f553</item>
-        <!-- <item>1f55f</item> -->
+        <item>1f55f</item>
         <item>1f554</item>
-        <!-- <item>1f560</item> -->
+        <item>1f560</item>
         <item>1f555</item>
-        <!-- <item>1f561</item> -->
+        <item>1f561</item>
         <item>1f556</item>
-        <!-- <item>1f562</item> -->
+        <item>1f562</item>
         <item>1f557</item>
-        <!-- <item>1f563</item> -->
+        <item>1f563</item>
         <item>1f558</item>
-        <!-- <item>1f564</item> -->
+        <item>1f564</item>
         <item>1f559</item>
-        <!-- <item>1f565</item> -->
+        <item>1f565</item>
         <item>1f55a</item>
-        <!-- <item>1f566</item> -->
+        <item>1f566</item>
         <item>2195</item>
         <item>2b06</item>
         <item>2197</item>
@@ -411,22 +411,22 @@
         <item>1f513</item>
         <item>21aa</item>
         <item>1f510</item>
-        <!-- <item>2611</item> -->
+        <item>2611</item>
         <item>1f518</item>
         <item>1f50e</item>
         <item>1f516</item>
         <item>1f50f</item>
         <item>1f503</item>
-        <!-- <item>1f500</item> -->
-        <!-- <item>1f501</item> -->
-        <!-- <item>1f502</item> -->
-        <!-- <item>1f504</item> -->
+        <item>1f500</item>
+        <item>1f501</item>
+        <item>1f502</item>
+        <item>1f504</item>
         <item>1f4e7</item>
-        <!-- <item>1f505</item> -->
-        <!-- <item>1f506</item> -->
-        <!-- <item>1f507</item> -->
-        <!-- <item>1f508</item> -->
-        <!-- <item>1f509</item> -->
+        <item>1f505</item>
+        <item>1f506</item>
+        <item>1f507</item>
+        <item>1f508</item>
+        <item>1f509</item>
         <item>1f50a</item>
     </array>
     <array
@@ -435,53 +435,62 @@
     >
         <item>263a</item>
         <item>1f60a</item>
-        <!-- <item>1f600</item> -->
+        <item>1f600</item>
         <item>1f601</item>
-        <item>1f602</item>
+        <item>1f602</item> <!-- FACE WITH TEARS OF JOY -->
+        <item>1f923</item> <!-- ROLLING ON THE FLOOR LAUGHING -->
         <item>1f603</item>
         <item>1f604</item>
         <item>1f605</item>
         <item>1f606</item>
-        <!-- <item>1f607</item> -->
-        <!-- <item>1f608</item> -->
+        <item>1f607</item>   <!-- SMILING FACE WITH HALO  -->
+        <item>1f920</item>   <!-- FACE WITH COWBOY HAT -->
+        <item>1f921</item>   <!-- CLOWN FACE -->
+        <item>1f925</item>   <!-- LYING FACE -->
+        <item>1f608</item>
         <item>1f609</item>
-        <!-- <item>1f62f</item> -->
-        <!-- <item>1f610</item> -->
-        <!-- <item>1f611</item> -->
-        <!-- <item>1f615</item> -->
+        <item>1f62f</item>
+        <item>1f610</item>
+        <item>1f611</item>
+        <item>1f615</item>
         <item>1f620</item>
-        <!-- <item>1f62c</item> -->
+        <item>1f62c</item>
         <item>1f621</item>
         <item>1f622</item>
-        <!-- <item>1f634</item> -->
-        <!-- <item>1f62e</item> -->
+        <item>1f634</item>
+        <item>1f62e</item>
         <item>1f623</item>
         <item>1f624</item>
         <item>1f625</item>
-        <!-- <item>1f626</item> -->
-        <!-- <item>1f627</item> -->
+        <item>1f626</item>
+        <item>1f627</item>
         <item>1f628</item>
         <item>1f629</item>
         <item>1f630</item>
-        <!-- <item>1f61f</item> -->
+        <item>1f61f</item>
         <item>1f631</item>
         <item>1f632</item>
         <item>1f633</item>
         <item>1f635</item>
-        <!-- <item>1f636</item> -->
-        <item>1f637</item>
+        <item>1f636</item>
+        <item>1f637</item> <!-- FACE WITH MEDICAL MASK -->
+        <item>1f912</item> <!-- FACE WITH THERMOMETER -->
+        <item>1f915</item> <!-- FACE WITH HEAD-BANDAGE -->
+        <item>1f922</item> <!-- NAUSEATED FACE -->
+        <item>1f927</item> <!-- SNEEZING FACE -->
         <item>1f61e</item>
         <item>1f612</item>
         <item>1f60d</item>
-        <!-- <item>1f61b</item> -->
+        <item>1f61b</item>
         <item>1f61c</item>
         <item>1f61d</item>
+        <item>1f924</item> <!-- DROOLING FACE -->
         <item>1f60b</item>
-        <!-- <item>1f617</item> -->
-        <!-- <item>1f619</item> -->
+        <item>1f617</item>
+        <item>1f619</item>
         <item>1f618</item>
         <item>1f61a</item>
-        <!-- <item>1f60e</item> -->
+        <item>1f60e</item>
         <item>1f62d</item>
         <item>1f60c</item>
         <item>1f616</item>
@@ -522,10 +531,10 @@
         <item>1f491</item>
         <item>1f46a</item>
         <item>1f46b</item>
-        <!-- <item>1f46c</item> -->
-        <!-- <item>1f46d</item> -->
+        <item>1f46c</item>
+        <item>1f46d</item>
         <item>1f464</item>
-        <!-- <item>1f465</item> -->
+        <item>1f465</item>
         <item>1f46e</item>
         <item>1f477</item>
         <item>1f481</item>
@@ -533,12 +542,11 @@
         <item>1f46f</item>
         <item>1f470</item>
         <item>1f478</item>
-        <item>1f934</item> <!-- PRINCE -->
         <item>1f385</item>
         <item>1f47c</item>
-        <!-- <item>1f471</item> -->
-        <!-- <item>1f472</item> -->
-        <!-- <item>1f473</item> -->
+        <item>1f471</item>
+        <item>1f472</item>
+        <item>1f473</item>
         <item>1f483</item>
         <item>1f486</item>
         <item>1f487</item>
@@ -579,14 +587,14 @@
         <item>270c</item>
         <item>270b</item>
         <item>1f44a</item>
-        <!-- <item>261d</item> -->
+        <item>261d</item>
         <item>1f446</item>
         <item>1f447</item>
         <item>1f448</item>
         <item>1f449</item>
         <item>1f44b</item>
         <item>1f44f</item>
-        <!-- <item>1f450</item> -->
+        <item>1f450</item>
     </array>
     <array
         name="emoji_objects"
@@ -622,8 +630,8 @@
         <item>1f4b2</item>
         <item>1f4b5</item>
         <item>1f4b4</item>
-        <!-- <item>1f4b6</item> -->
-        <!-- <item>1f4b7</item> -->
+        <item>1f4b6</item>
+        <item>1f4b7</item>
         <item>1f4b8</item>
         <item>1f4b1</item>
         <item>1f4b9</item>
@@ -634,10 +642,10 @@
         <item>1f48a</item>
         <item>1f6ac</item>
         <item>1f514</item>
-        <!-- <item>1f515</item> -->
+        <item>1f515</item>
         <item>1f6aa</item>
-        <!-- <item>1f52c</item> -->
-        <!-- <item>1f52d</item> -->
+        <item>1f52c</item>
+        <item>1f52d</item>
         <item>1f52e</item>
         <item>1f526</item>
         <item>1f50b</item>
@@ -683,17 +691,17 @@
         <item>1f4e9</item>
         <item>1f4ea</item>
         <item>1f4eb</item>
-        <!-- <item>1f4ed</item> -->
-        <!-- <item>1f4ec</item> -->
+        <item>1f4ed</item>
+        <item>1f4ec</item>
         <item>1f4ee</item>
         <item>1f4e4</item>
         <item>1f4e5</item>
-        <!-- <item>1f4ef</item> -->
+        <item>1f4ef</item>
         <item>1f4e2</item>
         <item>1f4e3</item>
         <item>1f4e1</item>
         <item>1f4ac</item>
-        <!-- <item>1f4ad</item> -->
+        <item>1f4ad</item>
         <item>2712</item>
         <item>270f</item>
         <item>1f4dd</item>
@@ -763,7 +771,7 @@
         <item>1f3e1</item>
         <item>1f3e2</item>
         <item>1f3e3</item>
-        <!-- <item>1f3e4</item> -->
+        <item>1f3e4</item>
         <item>1f3e5</item>
         <item>1f3e6</item>
         <item>1f3e7</item>
@@ -788,8 +796,8 @@
         <item>1f527</item>
         <item>1f528</item>
         <item>1f529</item>
-        <!-- <item>1f6bf</item> -->
-        <!-- <item>1f6c1</item> -->
+        <item>1f6bf</item>
+        <item>1f6c1</item>
         <item>1f6c0</item>
         <item>1f6bd</item>
         <item>1f6be</item>
@@ -808,58 +816,58 @@
         <item>1f3c3</item>
         <item>1f3c4</item>
         <item>1f3c6</item>
-        <!-- <item>1f3c7</item> -->
+        <item>1f3c7</item>
         <item>1f40e</item>
         <item>1f3c8</item>
-        <!-- <item>1f3c9</item> -->
+        <item>1f3c9</item>
         <item>1f3ca</item>
-        <!-- <item>1f682</item> -->
+        <item>1f682</item>
         <item>1f683</item>
         <item>1f684</item>
         <item>1f685</item>
-        <!-- <item>1f686</item> -->
+        <item>1f686</item>
         <item>1f687</item>
         <item>24c2</item>
-        <!-- <item>1f688</item> -->
-        <!-- <item>1f68a</item> -->
-        <!-- <item>1f68b</item> -->
+        <item>1f688</item>
+        <item>1f68a</item>
+        <item>1f68b</item>
         <item>1f68c</item>
-        <!-- <item>1f68d</item> -->
-        <!-- <item>1f68e</item> -->
+        <item>1f68d</item>
+        <item>1f68e</item>
         <item>1f68f</item>
-        <!-- <item>1f690</item> -->
+        <item>1f690</item>
         <item>1f691</item>
         <item>1f692</item>
         <item>1f693</item>
-        <!-- <item>1f694</item> -->
+        <item>1f694</item>
         <item>1f695</item>
-        <!-- <item>1f696</item> -->
+        <item>1f696</item>
         <item>1f697</item>
-        <!-- <item>1f698</item> -->
+        <item>1f698</item>
         <item>1f699</item>
-        <!-- <item>1f69a</item> -->
-        <!-- <item>1f69b</item> -->
-        <!-- <item>1f69c</item> -->
-        <!-- <item>1f69d</item> -->
-        <!-- <item>1f69e</item> -->
-        <!-- <item>1f69f</item> -->
-        <!-- <item>1f6a0</item> -->
-        <!-- <item>1f6a1</item> -->
+        <item>1f69a</item>
+        <item>1f69b</item>
+        <item>1f69c</item>
+        <item>1f69d</item>
+        <item>1f69e</item>
+        <item>1f69f</item>
+        <item>1f6a0</item>
+        <item>1f6a1</item>
         <item>1f6a2</item>
-        <!-- <item>1f6a3</item> -->
-        <!-- <item>1f681</item> -->
+        <item>1f6a3</item>
+        <item>1f681</item>
         <item>2708</item>
-        <!-- <item>1f6c2</item> -->
-        <!-- <item>1f6c3</item> -->
-        <!-- <item>1f6c4</item> -->
-        <!-- <item>1f6c5</item> -->
+        <item>1f6c2</item>
+        <item>1f6c3</item>
+        <item>1f6c4</item>
+        <item>1f6c5</item>
         <item>26f5</item>
         <item>1f6b2</item>
-        <!-- <item>1f6b3</item> -->
-        <!-- <item>1f6b4</item> -->
-        <!-- <item>1f6b5</item> -->
-        <!-- <item>1f6b7</item> -->
-        <!-- <item>1f6b8</item> -->
+        <item>1f6b3</item>
+        <item>1f6b4</item>
+        <item>1f6b5</item>
+        <item>1f6b7</item>
+        <item>1f6b8</item>
         <item>1f689</item>
         <item>1f680</item>
         <item>1f6a4</item>
@@ -867,7 +875,7 @@
         <item>26fd</item>
         <item>1f17f</item>
         <item>1f6a5</item>
-        <!-- <item>1f6a6</item> -->
+        <item>1f6a6</item>
         <item>1f6a7</item>
         <item>1f6a8</item>
         <item>2668</item>
@@ -876,16 +884,16 @@
         <item>1f48e</item>
         <item>1f490</item>
         <item>1f492</item>
-        <item>fe4e5|1f1ef,1f1f5</item>
-        <item>fe4e6|1f1fa,1f1f8</item>
-        <item>fe4e7|1f1eb,1f1f7</item>
-        <item>fe4e8|1f1e9,1f1ea</item>
-        <item>fe4e9|1f1ee,1f1f9</item>
-        <item>fe4ea|1f1ec,1f1e7</item>
-        <item>fe4eb|1f1ea,1f1f8</item>
-        <item>fe4ec|1f1f7,1f1fa</item>
-        <item>fe4ed|1f1e8,1f1f3</item>
-        <item>fe4ee|1f1f0,1f1f7</item>
+        <item>fe4e5|1f1ef,1f1f5|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe4e6|1f1fa,1f1f8|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe4e7|1f1eb,1f1f7|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe4e8|1f1e9,1f1ea|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe4e9|1f1ee,1f1f9|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe4ea|1f1ec,1f1e7|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe4eb|1f1ea,1f1f8|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe4ec|1f1f7,1f1fa|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe4ed|1f1e8,1f1f3|99</item> <!-- TODO: fix support min sdk version (99) -->
+        <item>fe4ee|1f1f0,1f1f7|99</item> <!-- TODO: fix support min sdk version (99) -->
     </array>
     <array
         name="emoji_emoticons"

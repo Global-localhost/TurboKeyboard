@@ -24,7 +24,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.settings.SettingsValues;
 
@@ -121,7 +121,7 @@ public final class ResourceUtils {
      * condition matches.
      * @see com.phonemetra.turbo.keyboard.latin.utils.ResourceUtilsTests#testFindConstantForKeyValuePairsRegexp()
      */
-    @UsedForTesting
+   
     static String findConstantForKeyValuePairs(final HashMap<String, String> keyValuePairs,
             final String[] conditionConstantArray) {
         if (conditionConstantArray == null || keyValuePairs == null) {

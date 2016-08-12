@@ -625,7 +625,7 @@ static const JNINativeMethod sMethods[] = {
     },
     {
         const_cast<char *>("createNative"),
-		const_cast<char *>("(JLjava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;)J"),
+		const_cast<char *>("(Ljava/lang/String;[Ljava/util/ArrayList;Ljava/util/ArrayList;)J"),
         reinterpret_cast<void *>(turbokeyboard_BinaryDictionary_create)
     },
     {

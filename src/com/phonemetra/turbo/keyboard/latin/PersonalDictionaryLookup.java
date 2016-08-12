@@ -25,7 +25,7 @@ import android.provider.UserDictionary;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.common.CollectionUtils;
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
 import com.phonemetra.turbo.keyboard.latin.utils.ExecutorUtils;
@@ -86,10 +86,10 @@ public class PersonalDictionaryLookup implements Closeable {
      *   4. The user taps space.  The red underline should NOT reappear.  If this value is very
      *      high and the user performs the space tap fast enough, the red underline may reappear.
      */
-    @UsedForTesting
+   
     static final int RELOAD_DELAY_MS = 200;
 
-    @UsedForTesting
+   
     static final Locale ANY_LOCALE = new Locale("");
 
     private final String mTag;
@@ -116,7 +116,7 @@ public class PersonalDictionaryLookup implements Closeable {
     /**
      * Broadcast the update to all the Locale-specific language models.
      */
-    @UsedForTesting
+   
     void notifyListeners() {
         for (PersonalDictionaryListener listener : mListeners) {
             listener.onUpdate();

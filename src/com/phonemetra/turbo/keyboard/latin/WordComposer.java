@@ -16,7 +16,7 @@
 
 package com.phonemetra.turbo.keyboard.latin;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.event.CombinerChain;
 import com.phonemetra.turbo.keyboard.event.Event;
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords.SuggestedWordInfo;
@@ -467,12 +467,12 @@ public final class WordComposer {
         return mRejectedBatchModeSuggestion;
     }
 
-    @UsedForTesting
+   
     void addInputPointerForTest(int index, int keyX, int keyY) {
         mInputPointers.addPointerAt(index, keyX, keyY, 0, 0);
     }
 
-    @UsedForTesting
+   
     void setTypedWordCacheForTests(String typedWordCacheForTests) {
         mTypedWordCache = typedWordCacheForTests;
     }

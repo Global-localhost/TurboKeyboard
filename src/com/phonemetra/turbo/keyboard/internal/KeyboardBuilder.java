@@ -31,7 +31,7 @@ import com.phonemetra.turbo.keyboard.Key;
 import com.phonemetra.turbo.keyboard.Keyboard;
 import com.phonemetra.turbo.keyboard.KeyboardId;
 import com.phonemetra.turbo.keyboard.KeyboardTheme;
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
@@ -50,75 +50,9 @@ import javax.annotation.Nonnull;
 
 /**
  * Keyboard Building helper.
- *
  * This class parses Keyboard XML file and eventually build a Keyboard.
- * The Keyboard XML file looks like:
- * <pre>
- *   &lt;!-- xml/keyboard.xml --&gt;
- *   &lt;Keyboard keyboard_attributes*&gt;
- *     &lt;!-- Keyboard Content --&gt;
- *     &lt;Row row_attributes*&gt;
- *       &lt;!-- Row Content --&gt;
- *       &lt;Key key_attributes* /&gt;
- *       &lt;Spacer horizontalGap="32.0dp" /&gt;
- *       &lt;include keyboardLayout="@xml/other_keys"&gt;
- *       ...
- *     &lt;/Row&gt;
- *     &lt;include keyboardLayout="@xml/other_rows"&gt;
- *     ...
- *   &lt;/Keyboard&gt;
- * </pre>
- * The XML file which is included in other file must have &lt;merge&gt; as root element,
- * such as:
- * <pre>
- *   &lt;!-- xml/other_keys.xml --&gt;
- *   &lt;merge&gt;
- *     &lt;Key key_attributes* /&gt;
- *     ...
- *   &lt;/merge&gt;
- * </pre>
- * and
- * <pre>
- *   &lt;!-- xml/other_rows.xml --&gt;
- *   &lt;merge&gt;
- *     &lt;Row row_attributes*&gt;
- *       &lt;Key key_attributes* /&gt;
- *     &lt;/Row&gt;
- *     ...
- *   &lt;/merge&gt;
- * </pre>
- * You can also use switch-case-default tags to select Rows and Keys.
- * <pre>
- *   &lt;switch&gt;
- *     &lt;case case_attribute*&gt;
- *       &lt;!-- Any valid tags at switch position --&gt;
- *     &lt;/case&gt;
- *     ...
- *     &lt;default&gt;
- *       &lt;!-- Any valid tags at switch position --&gt;
- *     &lt;/default&gt;
- *   &lt;/switch&gt;
- * </pre>
- * You can declare Key style and specify styles within Key tags.
- * <pre>
- *     &lt;switch&gt;
- *       &lt;case mode="email"&gt;
- *         &lt;key-style styleName="f1-key" parentStyle="modifier-key"
- *           keyLabel=".com"
- *         /&gt;
- *       &lt;/case&gt;
- *       &lt;case mode="url"&gt;
- *         &lt;key-style styleName="f1-key" parentStyle="modifier-key"
- *           keyLabel="http://"
- *         /&gt;
- *       &lt;/case&gt;
- *     &lt;/switch&gt;
- *     ...
- *     &lt;Key keyStyle="shift-key" ... /&gt;
- * </pre>
  */
 
-// TODO: Write unit tests for this class.
 public class KeyboardBuilder<KP extends KeyboardParams> {
     private static final String BUILDER_TAG = "Keyboard.Builder";
     private static final boolean DEBUG = false;
@@ -182,7 +116,7 @@ public class KeyboardBuilder<KP extends KeyboardParams> {
         return this;
     }
 
-    @UsedForTesting
+   
     public void disableTouchPositionCorrectionDataForTest() {
         mParams.mTouchPositionCorrection.setEnabled(false);
     }
@@ -686,45 +620,7 @@ public class KeyboardBuilder<KP extends KeyboardParams> {
                     && localeCodeMatched && languageCodeMatched && countryCodeMatched
                     && splitLayoutMatched;
 
-            if (DEBUG) {
-                startTag("<%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s>%s", TAG_CASE,
-                        textAttr(caseAttr.getString(
-                                R.styleable.Keyboard_Case_keyboardLayoutSet), "keyboardLayoutSet"),
-                        textAttr(caseAttr.getString(
-                                R.styleable.Keyboard_Case_keyboardLayoutSetElement),
-                                "keyboardLayoutSetElement"),
-                        textAttr(caseAttr.getString(
-                                R.styleable.Keyboard_Case_keyboardTheme), "keyboardTheme"),
-                        textAttr(caseAttr.getString(R.styleable.Keyboard_Case_mode), "mode"),
-                        textAttr(caseAttr.getString(R.styleable.Keyboard_Case_imeAction),
-                                "imeAction"),
-                        booleanAttr(caseAttr, R.styleable.Keyboard_Case_navigateNext,
-                                "navigateNext"),
-                        booleanAttr(caseAttr, R.styleable.Keyboard_Case_navigatePrevious,
-                                "navigatePrevious"),
-                        booleanAttr(caseAttr, R.styleable.Keyboard_Case_clobberSettingsKey,
-                                "clobberSettingsKey"),
-                        booleanAttr(caseAttr, R.styleable.Keyboard_Case_passwordInput,
-                                "passwordInput"),
-                        booleanAttr(caseAttr, R.styleable.Keyboard_Case_hasShortcutKey,
-                                "hasShortcutKey"),
-                        booleanAttr(caseAttr, R.styleable.Keyboard_Case_languageSwitchKeyEnabled,
-                                "languageSwitchKeyEnabled"),
-                        booleanAttr(caseAttr, R.styleable.Keyboard_Case_isMultiLine,
-                                "isMultiLine"),
-                        booleanAttr(caseAttr, R.styleable.Keyboard_Case_isSplitLayout,
-                                "splitLayout"),
-                        textAttr(caseAttr.getString(R.styleable.Keyboard_Case_isIconDefined),
-                                "isIconDefined"),
-                        textAttr(caseAttr.getString(R.styleable.Keyboard_Case_localeCode),
-                                "localeCode"),
-                        textAttr(caseAttr.getString(R.styleable.Keyboard_Case_languageCode),
-                                "languageCode"),
-                        textAttr(caseAttr.getString(R.styleable.Keyboard_Case_countryCode),
-                                "countryCode"),
-                        selected ? "" : " skipped");
-            }
-
+            
             return selected;
         } finally {
             caseAttr.recycle();

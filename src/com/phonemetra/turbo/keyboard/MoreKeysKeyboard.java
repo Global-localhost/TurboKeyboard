@@ -19,7 +19,6 @@ package com.phonemetra.turbo.keyboard;
 import android.content.Context;
 import android.graphics.Paint;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
 import com.phonemetra.turbo.keyboard.internal.KeyboardBuilder;
 import com.phonemetra.turbo.keyboard.internal.KeyboardParams;
 import com.phonemetra.turbo.keyboard.internal.MoreKeySpec;
@@ -41,7 +40,6 @@ public final class MoreKeysKeyboard extends Keyboard {
         return mDefaultKeyCoordX;
     }
 
-    @UsedForTesting
     static class MoreKeysKeyboardParams extends KeyboardParams {
         public boolean mIsMoreKeysFixedOrder;
         /* package */int mTopRowAdjustment;

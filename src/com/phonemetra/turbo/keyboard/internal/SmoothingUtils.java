@@ -16,7 +16,7 @@
 
 package com.phonemetra.turbo.keyboard.internal;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.internal.MatrixUtils.MatrixOperationFailedException;
 
 import android.util.Log;
@@ -27,20 +27,20 @@ import java.util.Arrays;
  * Utilities to smooth coordinates. Currently, we calculate 3d least squares formula by using
  * Lagrangian smoothing
  */
-@UsedForTesting
+
 public class SmoothingUtils {
-    private static final String TAG = SmoothingUtils.class.getSimpleName();
+    private static final String TAG = "SmoothingUtils";
     private static final boolean DEBUG = false;
 
     private SmoothingUtils() {
-        // not allowed to instantiate publicly
+       
     }
 
     /**
      * Find a most likely 3d least squares formula for specified coordinates.
      * "retval" should be a 1x4 size matrix.
      */
-    @UsedForTesting
+   
     public static void get3DParameters(final float[] xs, final float[] ys,
             final float[][] retval) throws MatrixOperationFailedException {
         final int COEFF_COUNT = 4; // Coefficient count for 3d smoothing

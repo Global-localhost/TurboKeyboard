@@ -285,17 +285,7 @@ public class SettingsValues {
     }
 
     
-    private static final String SUGGESTIONS_VISIBILITY_HIDE_VALUE_OBSOLETE = "2";
-
-    private static boolean readSuggestionsEnabled(final SharedPreferences prefs) {
-        if (prefs.contains(Settings.PREF_SHOW_SUGGESTIONS_SETTING_OBSOLETE)) {
-            final boolean alwaysHide = SUGGESTIONS_VISIBILITY_HIDE_VALUE_OBSOLETE.equals(
-                    prefs.getString(Settings.PREF_SHOW_SUGGESTIONS_SETTING_OBSOLETE, null));
-            prefs.edit()
-                    .remove(Settings.PREF_SHOW_SUGGESTIONS_SETTING_OBSOLETE)
-                    .putBoolean(Settings.PREF_SHOW_SUGGESTIONS, !alwaysHide)
-                    .apply();
-        }
+    private static boolean readSuggestionsEnabled(final SharedPreferences prefs) {  
         return prefs.getBoolean(Settings.PREF_SHOW_SUGGESTIONS, true);
     }
 

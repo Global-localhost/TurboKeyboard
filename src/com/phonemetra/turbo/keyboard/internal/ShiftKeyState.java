@@ -16,8 +16,6 @@
 
 package com.phonemetra.turbo.keyboard.internal;
 
-import android.util.Log;
-
 /* package */ final class ShiftKeyState extends ModifierKeyState {
     private static final int PRESSING_ON_SHIFTED = 3; // both temporary shifted & shift locked
     private static final int IGNORING = 4;
@@ -34,15 +32,12 @@ import android.util.Log;
         } else if (oldState == PRESSING_ON_SHIFTED) {
             mState = IGNORING;
         }
-        if (DEBUG)
-            Log.d(TAG, mName + ".onOtherKeyPressed: " + toString(oldState) + " > " + this);
+        
     }
 
     public void onPressOnShifted() {
-        int oldState = mState;
         mState = PRESSING_ON_SHIFTED;
-        if (DEBUG)
-            Log.d(TAG, mName + ".onPressOnShifted: " + toString(oldState) + " > " + this);
+        
     }
 
     public boolean isPressingOnShifted() {

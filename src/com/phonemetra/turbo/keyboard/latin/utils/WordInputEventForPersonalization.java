@@ -18,7 +18,7 @@ package com.phonemetra.turbo.keyboard.latin.utils;
 
 import android.util.Log;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.NgramContext;
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
 import com.phonemetra.turbo.keyboard.latin.define.DecoderSpecificConstants;
@@ -43,7 +43,7 @@ public final class WordInputEventForPersonalization {
     // Time stamp in seconds.
     public final int mTimestamp;
 
-    @UsedForTesting
+   
     public WordInputEventForPersonalization(final CharSequence targetWord,
             final NgramContext ngramContext, final int timestamp) {
         mTargetWord = StringUtils.toCodePointArray(targetWord);

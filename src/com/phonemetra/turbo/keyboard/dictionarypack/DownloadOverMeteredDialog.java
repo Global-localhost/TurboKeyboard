@@ -24,7 +24,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.phonemetra.turbo.keyboard.annotations.ExternallyReferenced;
+
 import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
 
@@ -67,7 +67,7 @@ public final class DownloadOverMeteredDialog extends Activity {
 
     // This method is externally referenced from layout/download_over_metered.xml using onClick
     // attribute of Button.
-    @ExternallyReferenced
+    
     public void onClickDeny(final View v) {
         UpdateHandler.setDownloadOverMeteredSetting(this, false);
         finish();
@@ -75,7 +75,7 @@ public final class DownloadOverMeteredDialog extends Activity {
 
     // This method is externally referenced from layout/download_over_metered.xml using onClick
     // attribute of Button.
-    @ExternallyReferenced
+    
     public void onClickAllow(final View v) {
         UpdateHandler.setDownloadOverMeteredSetting(this, true);
         UpdateHandler.installIfNeverRequested(this, mClientId, mWordListToDownload);

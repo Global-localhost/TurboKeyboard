@@ -19,7 +19,7 @@ package com.phonemetra.turbo.keyboard.latin;
 import android.content.Context;
 import android.util.Log;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords.SuggestedWordInfo;
 import com.phonemetra.turbo.keyboard.latin.common.ComposedData;
 import com.phonemetra.turbo.keyboard.latin.common.FileUtils;
@@ -389,7 +389,7 @@ abstract public class ExpandableBinaryDictionary extends Dictionary {
      * Used by Sketch.
      * {@see https://cs.corp.google.com/#android/vendor/unbundled_google/packages/LatinIMEGoogle/tools/sketch/ime-simulator/src/com/android/inputmethod/sketch/imesimulator/ImeSimulator.java&q=updateEntriesForInputEventsCallback&l=286}
      */
-    @UsedForTesting
+   
     public interface UpdateEntriesForInputEventsCallback {
         public void onFinished();
     }
@@ -400,7 +400,7 @@ abstract public class ExpandableBinaryDictionary extends Dictionary {
      * Used by Sketch.
      * {@see https://cs.corp.google.com/#android/vendor/unbundled_google/packages/LatinIMEGoogle/tools/sketch/ime-simulator/src/com/android/inputmethod/sketch/imesimulator/ImeSimulator.java&q=updateEntriesForInputEventsCallback&l=286}
      */
-    @UsedForTesting
+   
     public void updateEntriesForInputEvents(
             @Nonnull final ArrayList<WordInputEventForPersonalization> inputEvents,
             final UpdateEntriesForInputEventsCallback callback) {
@@ -661,7 +661,7 @@ abstract public class ExpandableBinaryDictionary extends Dictionary {
         return result.get(null /* defaultValue */, TIMEOUT_FOR_READ_OPS_IN_MILLISECONDS);
     }
 
-    @UsedForTesting
+   
     public void waitAllTasksForTests() {
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         asyncExecuteTaskWithWriteLock(new Runnable() {
@@ -677,7 +677,7 @@ abstract public class ExpandableBinaryDictionary extends Dictionary {
         }
     }
 
-    @UsedForTesting
+   
     public void clearAndFlushDictionaryWithAdditionalAttributes(
             final Map<String, String> attributeMap) {
         mAdditionalAttributeMap = attributeMap;

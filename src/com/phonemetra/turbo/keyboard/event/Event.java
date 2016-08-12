@@ -16,7 +16,7 @@
 
 package com.phonemetra.turbo.keyboard.event;
 
-import com.phonemetra.turbo.keyboard.annotations.ExternallyReferenced;
+
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords.SuggestedWordInfo;
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
@@ -154,7 +154,7 @@ public class Event {
     }
 
     // This creates an input event for a dead character. @see {@link #FLAG_DEAD}
-    @ExternallyReferenced
+    
     @Nonnull
     public static Event createDeadEvent(final int codePoint, final int keyCode, final Event next) {
         // TODO: add an argument or something if we ever create a software layout with dead keys.

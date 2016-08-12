@@ -36,7 +36,7 @@ import android.text.method.LinkMovementMethod;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.accounts.AccountStateChangedListener;
 import com.phonemetra.turbo.keyboard.latin.accounts.LoginAccountUtils;
@@ -332,7 +332,7 @@ public final class AccountsSettingsFragment extends SubScreenFragment {
      * @param positiveButtonClickListener listener that gets called when positive button is
      * clicked
      */
-    @UsedForTesting
+   
     AlertDialog createAccountPicker(final String[] accounts,
             final String selectedAccount,
             final DialogInterface.OnClickListener positiveButtonClickListener) {

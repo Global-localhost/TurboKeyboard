@@ -20,14 +20,13 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.text.TextUtils;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
 import com.phonemetra.turbo.keyboard.latin.utils.RunInLocale;
 import com.phonemetra.turbo.keyboard.latin.utils.SubtypeLocaleUtils;
 
 import java.util.Locale;
 
-// TODO: Make this an immutable class.
 public final class KeyboardTextsSet {
     public static final String PREFIX_TEXT = "!text/";
     private static final String PREFIX_RESOURCE = "!string/";
@@ -49,7 +48,7 @@ public final class KeyboardTextsSet {
         setLocale(locale, res, resourcePackageName);
     }
 
-    @UsedForTesting
+   
     public void setLocale(final Locale locale, final Resources res,
             final String resourcePackageName) {
         mResources = res;

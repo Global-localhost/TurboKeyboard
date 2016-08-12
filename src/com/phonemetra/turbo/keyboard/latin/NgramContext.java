@@ -18,7 +18,7 @@ package com.phonemetra.turbo.keyboard.latin;
 
 import android.text.TextUtils;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
 import com.phonemetra.turbo.keyboard.latin.define.DecoderSpecificConstants;
 
@@ -197,7 +197,7 @@ public class NgramContext {
     }
 
     // n is 1-indexed.
-    @UsedForTesting
+   
     public boolean isNthPrevWordBeginningOfSentence(final int n) {
         if (n <= 0 || n > mPrevWordsCount) {
             return false;

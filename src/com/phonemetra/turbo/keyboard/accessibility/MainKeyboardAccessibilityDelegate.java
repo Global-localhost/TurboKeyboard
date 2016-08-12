@@ -19,7 +19,6 @@ package com.phonemetra.turbo.keyboard.accessibility;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.SystemClock;
-import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.MotionEvent;
 
@@ -39,8 +38,7 @@ import com.phonemetra.turbo.keyboard.latin.utils.SubtypeLocaleUtils;
 public final class MainKeyboardAccessibilityDelegate
         extends KeyboardAccessibilityDelegate<MainKeyboardView>
         implements AccessibilityLongPressTimer.LongPressTimerCallback {
-    private static final String TAG = MainKeyboardAccessibilityDelegate.class.getSimpleName();
-
+    
     /** Map of keyboard modes to resource IDs. */
     private static final SparseIntArray KEYBOARD_MODE_RES_IDS = new SparseIntArray();
 

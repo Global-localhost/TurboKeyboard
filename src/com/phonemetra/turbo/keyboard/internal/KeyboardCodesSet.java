@@ -26,7 +26,7 @@ public final class KeyboardCodesSet {
     private static final HashMap<String, Integer> sNameToIdMap = new HashMap<>();
 
     private KeyboardCodesSet() {
-        // This utility class is not publicly instantiable.
+        
     }
 
     public static int getCode(final String name) {

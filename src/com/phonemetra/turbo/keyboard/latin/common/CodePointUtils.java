@@ -20,11 +20,11 @@ import java.util.Random;
 
 import javax.annotation.Nonnull;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 // Utility methods related with code points used for tests.
 // TODO: Figure out where this class should be.
-@UsedForTesting
+
 public class CodePointUtils {
     private CodePointUtils() {
         // This utility class is not publicly instantiable.
@@ -66,7 +66,7 @@ public class CodePointUtils {
         0x00FF /* LATIN SMALL LETTER Y WITH DIAERESIS */
     };
 
-    @UsedForTesting
+   
     @Nonnull
     public static int[] generateCodePointSet(final int codePointSetSize,
             @Nonnull final Random random) {
@@ -93,7 +93,7 @@ public class CodePointUtils {
     /**
      * Generates a random word.
      */
-    @UsedForTesting
+   
     @Nonnull
     public static String generateWord(@Nonnull final Random random,
             @Nonnull final int[] codePointSet) {

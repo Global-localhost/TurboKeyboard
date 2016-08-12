@@ -26,9 +26,9 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
 
-@UsedForTesting
+
+
 public final class LocaleSpanCompatUtils {
     private static final String TAG = LocaleSpanCompatUtils.class.getSimpleName();
 
@@ -50,17 +50,17 @@ public final class LocaleSpanCompatUtils {
         LOCALE_SPAN_GET_LOCALE = CompatUtils.getMethod(LOCALE_SPAN_TYPE, "getLocale");
     }
 
-    @UsedForTesting
+   
     public static boolean isLocaleSpanAvailable() {
         return (LOCALE_SPAN_CONSTRUCTOR != null && LOCALE_SPAN_GET_LOCALE != null);
     }
 
-    @UsedForTesting
+   
     public static Object newLocaleSpan(final Locale locale) {
         return CompatUtils.newInstance(LOCALE_SPAN_CONSTRUCTOR, locale);
     }
 
-    @UsedForTesting
+   
     public static Locale getLocaleFromLocaleSpan(final Object localeSpan) {
         return (Locale) CompatUtils.invoke(localeSpan, null, LOCALE_SPAN_GET_LOCALE);
     }
@@ -74,7 +74,7 @@ public final class LocaleSpanCompatUtils {
      * @param end the end index to which {@link LocaleSpan} is attached (exclusive).
      * @param locale the locale to be attached to the specified range.
      */
-    @UsedForTesting
+   
     public static void updateLocaleSpan(final Spannable spannable, final int start,
             final int end, final Locale locale) {
         if (end < start) {

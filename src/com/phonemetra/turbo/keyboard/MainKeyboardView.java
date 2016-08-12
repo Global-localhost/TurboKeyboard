@@ -29,7 +29,6 @@ import android.graphics.Paint.Align;
 import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -37,7 +36,6 @@ import android.view.ViewGroup;
 
 import com.phonemetra.turbo.keyboard.accessibility.AccessibilityUtils;
 import com.phonemetra.turbo.keyboard.accessibility.MainKeyboardAccessibilityDelegate;
-import com.phonemetra.turbo.keyboard.annotations.ExternallyReferenced;
 import com.phonemetra.turbo.keyboard.internal.DrawingPreviewPlacerView;
 import com.phonemetra.turbo.keyboard.internal.DrawingProxy;
 import com.phonemetra.turbo.keyboard.internal.GestureFloatingTextDrawingPreview;
@@ -68,8 +66,7 @@ import javax.annotation.Nullable;
  */
 public final class MainKeyboardView extends KeyboardView implements DrawingProxy,
         MoreKeysPanel.Controller {
-    private static final String TAG = "MainKeyboardView";
-
+    
     private KeyboardActionListener mKeyboardActionListener;
 
     /* Space key and its icon and background. */
@@ -286,23 +283,23 @@ public final class MainKeyboardView extends KeyboardView implements DrawingProxy
         }
     }
 
-    @ExternallyReferenced
+    
     public int getLanguageOnSpacebarAnimAlpha() {
         return mLanguageOnSpacebarAnimAlpha;
     }
 
-    @ExternallyReferenced
+    
     public void setLanguageOnSpacebarAnimAlpha(final int alpha) {
         mLanguageOnSpacebarAnimAlpha = alpha;
         invalidateKey(mSpaceKey);
     }
 
-    @ExternallyReferenced
+    
     public int getAltCodeKeyWhileTypingAnimAlpha() {
         return mAltCodeKeyWhileTypingAnimAlpha;
     }
 
-    @ExternallyReferenced
+    
     public void setAltCodeKeyWhileTypingAnimAlpha(final int alpha) {
         if (mAltCodeKeyWhileTypingAnimAlpha == alpha) {
             return;
@@ -404,14 +401,12 @@ public final class MainKeyboardView extends KeyboardView implements DrawingProxy
 
     private void installPreviewPlacerView() {
         final View rootView = getRootView();
-        if (rootView == null) {
-            Log.w(TAG, "Cannot find root view");
+        if (rootView == null) {   
             return;
         }
         final ViewGroup windowContentView = (ViewGroup)rootView.findViewById(android.R.id.content);
         // Note: It'd be very weird if we get null by android.R.id.content.
         if (windowContentView == null) {
-            Log.w(TAG, "Cannot find android.R.id.content view to add DrawingPreviewPlacerView");
             return;
         }
         windowContentView.addView(mDrawingPreviewPlacerView);

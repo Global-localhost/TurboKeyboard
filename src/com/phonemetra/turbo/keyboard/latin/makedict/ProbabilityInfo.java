@@ -16,7 +16,7 @@
 
 package com.phonemetra.turbo.keyboard.latin.makedict;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.BinaryDictionary;
 import com.phonemetra.turbo.keyboard.latin.utils.CombinedFormatUtils;
 
@@ -31,7 +31,7 @@ public final class ProbabilityInfo {
     public final int mLevel;
     public final int mCount;
 
-    @UsedForTesting
+   
     public static ProbabilityInfo max(final ProbabilityInfo probabilityInfo1,
             final ProbabilityInfo probabilityInfo2) {
         if (probabilityInfo1 == null) {

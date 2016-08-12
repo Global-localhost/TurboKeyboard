@@ -23,7 +23,7 @@ import android.provider.ContactsContract;
 import android.provider.ContactsContract.Contacts;
 import android.util.Log;
 
-import com.phonemetra.turbo.keyboard.annotations.ExternallyReferenced;
+
 import com.phonemetra.turbo.keyboard.latin.ContactsManager.ContactsChangedListener;
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
 import com.phonemetra.turbo.keyboard.latin.permissions.PermissionsUtil;
@@ -54,7 +54,7 @@ public class ContactsBinaryDictionary extends ExpandableBinaryDictionary
         reloadDictionaryIfRequired();
     }
 
-    @ExternallyReferenced
+    
     public static ContactsBinaryDictionary getDictionary(final Context context, final Locale locale,
             final File dictFile, final String dictNamePrefix, @Nullable final String account) {
         return new ContactsBinaryDictionary(context, locale, dictFile, dictNamePrefix + NAME);

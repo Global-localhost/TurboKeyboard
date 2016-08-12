@@ -30,7 +30,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public final class KeyboardIconsSet {
-    private static final String TAG = KeyboardIconsSet.class.getSimpleName();
+    private static final String TAG = "KeyboardIconsSet";
 
     public static final String PREFIX_ICON = "!icon/";
     public static final int ICON_UNDEFINED = 0;

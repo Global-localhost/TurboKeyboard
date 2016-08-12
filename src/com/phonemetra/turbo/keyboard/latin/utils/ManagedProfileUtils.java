@@ -16,7 +16,7 @@
 
 package com.phonemetra.turbo.keyboard.latin.utils;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 import android.content.Context;
 
@@ -28,7 +28,7 @@ public class ManagedProfileUtils {
         // This utility class is not publicly instantiable.
     }
 
-    @UsedForTesting
+   
     public static void setTestInstance(final ManagedProfileUtils testInstance) {
         sTestInstance = testInstance;
     }

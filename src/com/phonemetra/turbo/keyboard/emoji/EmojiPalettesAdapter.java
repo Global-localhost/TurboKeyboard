@@ -17,7 +17,6 @@
 package com.phonemetra.turbo.keyboard.emoji;
 
 import android.support.v4.view.PagerAdapter;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,9 +28,7 @@ import com.phonemetra.turbo.keyboard.KeyboardView;
 import com.phonemetra.turbo.keyboard.R;
 
 final class EmojiPalettesAdapter extends PagerAdapter {
-    private static final String TAG = EmojiPalettesAdapter.class.getSimpleName();
-    private static final boolean DEBUG_PAGER = false;
-
+   
     private final EmojiPageKeyboardView.OnKeyEventListener mListener;
     private final DynamicGridKeyboard mRecentsKeyboard;
     private final SparseArray<EmojiPageKeyboardView> mActiveKeyboardViews = new SparseArray<>();
@@ -103,9 +100,7 @@ final class EmojiPalettesAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(final ViewGroup container, final int position) {
-        if (DEBUG_PAGER) {
-            Log.d(TAG, "instantiate item: " + position);
-        }
+        
         final EmojiPageKeyboardView oldKeyboardView = mActiveKeyboardViews.get(position);
         if (oldKeyboardView != null) {
             oldKeyboardView.deallocateMemory();
@@ -132,9 +127,7 @@ final class EmojiPalettesAdapter extends PagerAdapter {
     @Override
     public void destroyItem(final ViewGroup container, final int position,
             final Object object) {
-        if (DEBUG_PAGER) {
-            Log.d(TAG, "destroy item: " + position + ", " + object.getClass().getSimpleName());
-        }
+        
         final EmojiPageKeyboardView keyboardView = mActiveKeyboardViews.get(position);
         if (keyboardView != null) {
             keyboardView.deallocateMemory();
@@ -142,8 +135,6 @@ final class EmojiPalettesAdapter extends PagerAdapter {
         }
         if (object instanceof View) {
             container.removeView((View)object);
-        } else {
-            Log.w(TAG, "Warning!!! Emoji palette may be leaking. " + object);
-        }
+        } 
     }
 }

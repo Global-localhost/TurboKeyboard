@@ -24,7 +24,7 @@ import android.provider.Settings.SettingNotFoundException;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.permissions.PermissionsUtil;
 import com.phonemetra.turbo.keyboard.latin.settings.SettingsValues;
@@ -40,10 +40,10 @@ public final class ImportantNoticeUtils {
 
     private static final String KEY_SUGGEST_CONTACTS_NOTICE = "important_notice_suggest_contacts";
 
-    @UsedForTesting
+   
     static final String KEY_TIMESTAMP_OF_CONTACTS_NOTICE = "timestamp_of_suggest_contacts_notice";
 
-    @UsedForTesting
+   
     static final long TIMEOUT_OF_IMPORTANT_NOTICE = TimeUnit.HOURS.toMillis(23);
 
     // Copy of the hidden {@link Settings.Secure#USER_SETUP_COMPLETE} settings key.
@@ -56,7 +56,7 @@ public final class ImportantNoticeUtils {
       
     }
 
-    @UsedForTesting
+   
     static boolean isInSystemSetupWizard(final Context context) {
         try {
             final int userSetupComplete = Settings.Secure.getInt(
@@ -69,12 +69,12 @@ public final class ImportantNoticeUtils {
         }
     }
 
-    @UsedForTesting
+   
     static SharedPreferences getImportantNoticePreferences(final Context context) {
         return context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
     }
 
-    @UsedForTesting
+   
     static boolean hasContactsNoticeShown(final Context context) {
         return getImportantNoticePreferences(context).getBoolean(
                 KEY_SUGGEST_CONTACTS_NOTICE, false);
@@ -115,7 +115,7 @@ public final class ImportantNoticeUtils {
         return context.getResources().getString(R.string.important_notice_suggest_contact_names);
     }
 
-    @UsedForTesting
+   
     static boolean hasContactsNoticeTimeoutPassed(
             final Context context, final long currentTimeInMillis) {
         final SharedPreferences prefs = getImportantNoticePreferences(context);

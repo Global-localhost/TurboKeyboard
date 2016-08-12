@@ -40,7 +40,7 @@ public final class SlidingKeyInputDrawingPreview extends AbstractDrawingPreview 
     private final int[] mPreviewFrom = CoordinateUtils.newInstance();
     private final int[] mPreviewTo = CoordinateUtils.newInstance();
 
-    // TODO: Finalize the rubber band preview implementation.
+    
     private final RoundedLine mRoundedLine = new RoundedLine();
     private final Paint mPaint = new Paint();
 

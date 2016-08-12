@@ -37,7 +37,7 @@ import com.phonemetra.turbo.keyboard.latin.utils.RecapitalizeStatus;
  * The actions are {@link SwitchActions}'s methods.
  */
 public final class KeyboardState {
-    private static final String TAG = KeyboardState.class.getSimpleName();
+    private static final String TAG = "KeyboardState";
     private static final boolean DEBUG_EVENT = false;
     private static final boolean DEBUG_INTERNAL_ACTION = false;
 

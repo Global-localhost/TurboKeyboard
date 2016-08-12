@@ -23,7 +23,7 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.SuggestionSpan;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords;
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords.SuggestedWordInfo;
 import com.phonemetra.turbo.keyboard.latin.common.LocaleUtils;
@@ -47,7 +47,7 @@ public final class SuggestionSpanUtils {
        
     }
 
-    @UsedForTesting
+   
     public static CharSequence getTextWithAutoCorrectionIndicatorUnderline(
             final Context context, final String text, @Nonnull final Locale locale) {
         if (TextUtils.isEmpty(text) || OBJ_FLAG_AUTO_CORRECTION == null) {
@@ -61,7 +61,7 @@ public final class SuggestionSpanUtils {
         return spannable;
     }
 
-    @UsedForTesting
+   
     public static CharSequence getTextWithSuggestionSpan(final Context context,
             final String pickedWord, final SuggestedWords suggestedWords, final Locale locale) {
         if (TextUtils.isEmpty(pickedWord) || suggestedWords.isEmpty()
@@ -96,7 +96,7 @@ public final class SuggestionSpanUtils {
      * @return the first {@link Locale} found in {@code suggestionSpans}. {@code null} when not
      * found.
      */
-    @UsedForTesting
+   
     @Nullable
     public static Locale findFirstLocaleFromSuggestionSpans(
             final SuggestionSpan[] suggestionSpans) {

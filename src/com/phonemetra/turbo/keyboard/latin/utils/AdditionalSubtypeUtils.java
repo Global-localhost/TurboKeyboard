@@ -28,7 +28,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.inputmethod.InputMethodSubtype;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.compat.InputMethodSubtypeCompatUtils;
 import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
@@ -45,7 +45,7 @@ public final class AdditionalSubtypeUtils {
        
     }
 
-    @UsedForTesting
+   
     public static boolean isAdditionalSubtype(final InputMethodSubtype subtype) {
         return subtype.containsExtraValueKey(IS_ADDITIONAL_SUBTYPE);
     }

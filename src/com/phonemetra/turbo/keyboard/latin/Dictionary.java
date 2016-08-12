@@ -16,7 +16,7 @@
 
 package com.phonemetra.turbo.keyboard.latin;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords.SuggestedWordInfo;
 import com.phonemetra.turbo.keyboard.latin.common.ComposedData;
 import com.phonemetra.turbo.keyboard.latin.settings.SettingsValuesForSuggestion;
@@ -191,9 +191,9 @@ public abstract class Dictionary {
      * Not a true dictionary. A placeholder used to indicate suggestions that don't come from any
      * real dictionary.
      */
-    @UsedForTesting
+   
     static class PhonyDictionary extends Dictionary {
-        @UsedForTesting
+       
         PhonyDictionary(final String type) {
             super(type, null);
         }

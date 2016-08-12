@@ -19,7 +19,7 @@ package com.phonemetra.turbo.keyboard.latin;
 import android.text.TextUtils;
 import android.view.inputmethod.CompletionInfo;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.common.StringUtils;
 
 import java.util.ArrayList;
@@ -428,7 +428,7 @@ public class SuggestedWords {
      * typed by the user. Otherwise returns {@code null}. Note that gesture input is not
      * considered to be a typed word.
      */
-    @UsedForTesting
+   
     public SuggestedWordInfo getTypedWordInfoOrNull() {
         if (SuggestedWords.INDEX_OF_TYPED_WORD >= size()) {
             return null;

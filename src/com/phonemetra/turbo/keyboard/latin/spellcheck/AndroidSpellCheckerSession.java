@@ -21,7 +21,6 @@ import android.content.res.Resources;
 import android.os.Binder;
 import android.os.Build;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SuggestionsInfo;
 import android.view.textservice.TextInfo;
@@ -34,8 +33,8 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public final class AndroidSpellCheckerSession extends AndroidWordLevelSpellCheckerSession {
-    private static final String TAG = AndroidSpellCheckerSession.class.getSimpleName();
-    private static final boolean DBG = false;
+   
+    
     private final Resources mResources;
     private SentenceLevelAdapter mSentenceLevelAdapter;
 
@@ -92,10 +91,7 @@ public final class AndroidSpellCheckerSession extends AndroidWordLevelSpellCheck
                 final int newFlags = 0;
                 final SuggestionsInfo newSi = new SuggestionsInfo(newFlags, EMPTY_STRING_ARRAY);
                 newSi.setCookieAndSequence(si.getCookie(), si.getSequence());
-                if (DBG) {
-                    Log.d(TAG, "Override and remove old span over: " + splitText + ", "
-                            + offset + "," + newLength);
-                }
+     
                 additionalOffsets.add(offset);
                 additionalLengths.add(newLength);
                 additionalSuggestionsInfos.add(newSi);

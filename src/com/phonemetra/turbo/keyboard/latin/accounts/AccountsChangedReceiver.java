@@ -25,7 +25,7 @@ import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.settings.LocalSettingsConstants;
 
 /**
@@ -54,7 +54,7 @@ public class AccountsChangedReceiver extends BroadcastReceiver {
     /**
      * Helper method to help test this receiver.
      */
-    @UsedForTesting
+   
     protected String[] getAccountsForLogin(Context context) {
         return LoginAccountUtils.getAccountsForLogin(context);
     }

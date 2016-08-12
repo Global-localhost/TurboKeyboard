@@ -18,7 +18,7 @@ package com.phonemetra.turbo.keyboard.latin.makedict;
 
 import java.util.Arrays;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 /**
  * A string with a probability.
@@ -38,7 +38,7 @@ public final class WeightedString {
         mProbabilityInfo = probabilityInfo;
     }
 
-    @UsedForTesting
+   
     public int getProbability() {
         return mProbabilityInfo.mProbability;
     }

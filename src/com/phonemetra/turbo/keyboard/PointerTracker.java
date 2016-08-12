@@ -19,7 +19,6 @@ package com.phonemetra.turbo.keyboard;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.MotionEvent;
 
 import com.phonemetra.turbo.keyboard.internal.BatchInputArbiter;
@@ -47,7 +46,7 @@ import javax.annotation.Nullable;
 
 public final class PointerTracker implements PointerTrackerQueue.Element,
 		BatchInputArbiterListener {
-	private static final String TAG = "PointerTracker";
+	 
 
 	static final class PointerTrackerParams {
 		public final boolean mKeySelectionByDraggingFinger;

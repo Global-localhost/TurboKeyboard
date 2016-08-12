@@ -20,22 +20,21 @@ import android.util.Log;
 
 import java.util.Arrays;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 /**
  * Utilities for matrix operations. Don't instantiate objects inside this class to prevent
  * unexpected performance regressions.
  */
-@UsedForTesting
-public class MatrixUtils {
-    static final String TAG = MatrixUtils.class.getSimpleName();
 
+public class MatrixUtils {
+   
     public static class MatrixOperationFailedException extends Exception {
         private static final long serialVersionUID = 4384485606788583829L;
 
         public MatrixOperationFailedException(String msg) {
             super(msg);
-            Log.d(TAG, msg);
+          
         }
     }
 
@@ -97,7 +96,7 @@ public class MatrixUtils {
      * The inverse matrix of squareMatrix will be output to inverseMatrix. Please notice that
      * the value of squareMatrix is modified in this function and can't be resuable.
      */
-    @UsedForTesting
+   
     public static void inverse(final float[][] squareMatrix,
             final float[][] inverseMatrix) throws MatrixOperationFailedException {
         final int size = squareMatrix.length;
@@ -119,7 +118,7 @@ public class MatrixUtils {
     /**
      * A matrix operation to multiply m0 and m1.
      */
-    @UsedForTesting
+   
     public static void multiply(final float[][] m0, final float[][] m1,
             final float[][] retval) throws MatrixOperationFailedException {
         if (m0[0].length != m1.length) {
@@ -147,20 +146,18 @@ public class MatrixUtils {
     /**
      * A utility function to dump the specified matrix in a readable way
      */
-    @UsedForTesting
     public static void dump(final String title, final float[][] a) {
         final int column = a[0].length;
         final int row = a.length;
-        Log.d(TAG, "Dump matrix: " + title);
-        Log.d(TAG, "/*---------------------");
+       
         final StringBuilder sb = new StringBuilder();
         for (int i = 0; i < row; ++i) {
             sb.setLength(0);
             for (int j = 0; j < column; ++j) {
                 sb.append(String.format("%4f", a[i][j])).append(' ');
             }
-            Log.d(TAG, sb.toString());
+            
         }
-        Log.d(TAG, "---------------------*/");
+       
     }
 }

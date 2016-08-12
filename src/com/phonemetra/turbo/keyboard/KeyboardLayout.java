@@ -21,7 +21,7 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 /**
  * KeyboardLayout maintains the keyboard layout information.
@@ -65,7 +65,6 @@ public class KeyboardLayout {
         }
     }
 
-    @UsedForTesting
     public int[] getKeyCodes() {
         return mKeyCodes;
     }

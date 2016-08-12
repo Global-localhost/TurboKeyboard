@@ -44,7 +44,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.phonemetra.turbo.keyboard.accessibility.AccessibilityUtils;
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.PunctuationSuggestions;
 import com.phonemetra.turbo.keyboard.R;
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords;
@@ -242,7 +242,7 @@ final class SuggestionStripLayoutHelper {
                 mCenterPositionInStrip, mTypedWordPositionWhenAutocorrect);
     }
 
-    @UsedForTesting
+   
     static boolean shouldOmitTypedWord(final int inputStyle,
             final boolean gestureFloatingPreviewTextEnabled,
             final boolean shouldShowUiToAcceptTypedWord) {
@@ -253,7 +253,7 @@ final class SuggestionStripLayoutHelper {
         return shouldShowUiToAcceptTypedWord && omitTypedWord;
     }
 
-    @UsedForTesting
+   
     static int getPositionInSuggestionStrip(final int indexInSuggestedWords,
             final boolean willAutoCorrect, final boolean omitTypedWord,
             final int centerPositionInStrip, final int typedWordPositionWhenAutoCorrect) {

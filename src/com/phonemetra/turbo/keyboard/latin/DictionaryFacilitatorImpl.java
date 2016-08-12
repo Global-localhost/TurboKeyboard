@@ -23,7 +23,7 @@ import android.util.Log;
 import android.util.LruCache;
 
 import com.phonemetra.turbo.keyboard.Keyboard;
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.NgramContext.WordInfo;
 import com.phonemetra.turbo.keyboard.latin.SuggestedWords.SuggestedWordInfo;
 import com.phonemetra.turbo.keyboard.latin.common.ComposedData;
@@ -453,7 +453,7 @@ public class DictionaryFacilitatorImpl implements DictionaryFacilitator {
         mLatchForWaitingLoadingMainDictionaries.await(timeout, unit);
     }
 
-    @UsedForTesting
+   
     public void waitForLoadingDictionariesForTesting(final long timeout, final TimeUnit unit)
             throws InterruptedException {
         waitForLoadingMainDictionaries(timeout, unit);

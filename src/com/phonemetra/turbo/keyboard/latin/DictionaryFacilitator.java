@@ -20,7 +20,7 @@ import android.content.Context;
 import android.util.LruCache;
 
 import com.phonemetra.turbo.keyboard.Keyboard;
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.common.ComposedData;
 import com.phonemetra.turbo.keyboard.latin.settings.SettingsValuesForSuggestion;
 import com.phonemetra.turbo.keyboard.latin.utils.SuggestionResults;
@@ -124,7 +124,7 @@ public interface DictionaryFacilitator {
     void waitForLoadingMainDictionaries(final long timeout, final TimeUnit unit)
             throws InterruptedException;
 
-    @UsedForTesting
+   
     void waitForLoadingDictionariesForTesting(final long timeout, final TimeUnit unit)
             throws InterruptedException;
 

@@ -22,7 +22,7 @@ import android.content.res.Resources;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.inputmethod.InputMethodSubtype;
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.dictionarypack.UpdateHandler;
 import com.phonemetra.turbo.keyboard.latin.AssetFileAddress;
 import com.phonemetra.turbo.keyboard.latin.BinaryDictionaryGetter;
@@ -696,7 +696,7 @@ public class DictionaryInfoUtils {
 
 	}
 
-	@UsedForTesting
+	
 	public static boolean looksValidForDictionaryInsertion(
 			final CharSequence text,
 			final SpacingAndPunctuations spacingAndPunctuations) {

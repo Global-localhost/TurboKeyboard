@@ -30,7 +30,7 @@ import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.view.inputmethod.InputMethodSubtype;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.compat.InputMethodManagerCompatWrapper;
 import com.phonemetra.turbo.keyboard.latin.settings.Settings;
 import com.phonemetra.turbo.keyboard.latin.utils.AdditionalSubtypeUtils;
@@ -322,7 +322,7 @@ public class RichInputMethodManager {
 
     private static RichInputMethodSubtype sForcedSubtypeForTesting = null;
 
-    @UsedForTesting
+   
     static void forceSubtype(@Nonnull final InputMethodSubtype subtype) {
         sForcedSubtypeForTesting = RichInputMethodSubtype.getRichInputMethodSubtype(subtype);
     }

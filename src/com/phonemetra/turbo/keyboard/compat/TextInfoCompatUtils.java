@@ -21,9 +21,7 @@ import android.view.textservice.TextInfo;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
 
-@UsedForTesting
 public final class TextInfoCompatUtils {
     // Note that TextInfo.getCharSequence() is supposed to be available in API level 21 and later.
     private static final Method TEXT_INFO_GET_CHAR_SEQUENCE =
@@ -32,13 +30,13 @@ public final class TextInfoCompatUtils {
             CompatUtils.getConstructor(TextInfo.class, CharSequence.class, int.class, int.class,
                     int.class, int.class);
 
-    @UsedForTesting
+   
     public static boolean isCharSequenceSupported() {
         return TEXT_INFO_GET_CHAR_SEQUENCE != null &&
                 TEXT_INFO_CONSTRUCTOR_FOR_CHAR_SEQUENCE != null;
     }
 
-    @UsedForTesting
+   
     public static TextInfo newInstance(CharSequence charSequence, int start, int end, int cookie,
             int sequenceNumber) {
         if (TEXT_INFO_CONSTRUCTOR_FOR_CHAR_SEQUENCE != null) {
@@ -58,7 +56,7 @@ public final class TextInfoCompatUtils {
      * the result of {@link TextInfo#getText()} as fall back. If {@code textInfo} is {@code null},
      * returns {@code null}.
      */
-    @UsedForTesting
+   
     public static CharSequence getCharSequenceOrString(final TextInfo textInfo) {
         final CharSequence defaultValue = (textInfo == null ? null : textInfo.getText());
         return (CharSequence) CompatUtils.invoke(textInfo, defaultValue,

@@ -90,7 +90,6 @@ public final class KeyboardRow {
     }
 
     private final int mCurrentY;
-    // Will be updated by {@link Key}'s constructor.
     private float mCurrentX;
 
     public KeyboardRow(final Resources res, final KeyboardParams params,

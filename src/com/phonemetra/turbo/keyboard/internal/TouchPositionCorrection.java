@@ -16,7 +16,7 @@
 
 package com.phonemetra.turbo.keyboard.internal;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 public final class TouchPositionCorrection {
     private static final int TOUCH_POSITION_CORRECTION_RECORD_SIZE = 3;
@@ -59,7 +59,7 @@ public final class TouchPositionCorrection {
         }
     }
 
-    @UsedForTesting
+   
     public void setEnabled(final boolean enabled) {
         mEnabled = enabled;
     }

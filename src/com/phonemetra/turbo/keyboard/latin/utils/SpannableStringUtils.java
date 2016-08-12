@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 public final class SpannableStringUtils {
     /**
@@ -146,7 +146,7 @@ public final class SpannableStringUtils {
      * @return the array which contains the result. All the spans in the <code>charSequence</code>
      * is preserved.
      */
-    @UsedForTesting
+   
     public static CharSequence[] split(final CharSequence charSequence, final String regex,
             final boolean preserveTrailingEmptySegments) {
         // A short-cut for non-spanned strings.

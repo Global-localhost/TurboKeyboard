@@ -19,7 +19,7 @@ package com.phonemetra.turbo.keyboard.compat;
 import android.os.Build;
 import android.view.inputmethod.InputMethodSubtype;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.latin.RichInputMethodSubtype;
 import com.phonemetra.turbo.keyboard.latin.common.Constants;
 
@@ -78,7 +78,7 @@ public final class InputMethodSubtypeCompatUtils {
                 || subtype.containsExtraValueKey(Constants.Subtype.ExtraValue.ASCII_CAPABLE);
     }
 
-    @UsedForTesting
+   
     public static boolean isAsciiCapableWithAPI(final InputMethodSubtype subtype) {
         return (Boolean)CompatUtils.invoke(subtype, false, METHOD_isAsciiCapable);
     }

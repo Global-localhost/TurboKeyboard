@@ -18,7 +18,7 @@ package com.phonemetra.turbo.keyboard.latin.settings;
 
 import android.content.res.Resources;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.internal.MoreKeySpec;
 import com.phonemetra.turbo.keyboard.latin.PunctuationSuggestions;
 import com.phonemetra.turbo.keyboard.R;
@@ -74,7 +74,7 @@ public final class SpacingAndPunctuations {
         mSuggestPuncList = PunctuationSuggestions.newPunctuationSuggestions(suggestPuncsSpec);
     }
 
-    @UsedForTesting
+   
     public SpacingAndPunctuations(final SpacingAndPunctuations model,
             final int[] overrideSortedWordSeparators) {
         mSortedSymbolsPrecededBySpace = model.mSortedSymbolsPrecededBySpace;

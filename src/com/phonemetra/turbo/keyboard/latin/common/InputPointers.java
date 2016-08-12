@@ -18,7 +18,7 @@ package com.phonemetra.turbo.keyboard.latin.common;
 
 import javax.annotation.Nonnull;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 // TODO: This class is not thread-safe.
 public final class InputPointers {
@@ -64,7 +64,7 @@ public final class InputPointers {
         mTimes.addAt(index, time);
     }
 
-    @UsedForTesting
+   
     public void addPointer(final int x, final int y, final int pointerId, final int time) {
         mXCoordinates.add(x);
         mYCoordinates.add(y);
@@ -112,7 +112,7 @@ public final class InputPointers {
      * Shift to the left by elementCount, discarding elementCount pointers at the start.
      * @param elementCount how many elements to shift.
      */
-    @UsedForTesting
+   
     public void shift(final int elementCount) {
         mXCoordinates.shift(elementCount);
         mYCoordinates.shift(elementCount);

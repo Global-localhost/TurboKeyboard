@@ -26,7 +26,7 @@ import android.provider.UserDictionary.Words;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.phonemetra.turbo.keyboard.annotations.ExternallyReferenced;
+
 import com.phonemetra.turbo.keyboard.latin.utils.SubtypeLocaleUtils;
 
 import java.io.File;
@@ -40,7 +40,7 @@ import javax.annotation.Nullable;
  * dictionary file to use it from native code.
  */
 public class UserBinaryDictionary extends ExpandableBinaryDictionary {
-    private static final String TAG = ExpandableBinaryDictionary.class.getSimpleName();
+    private static final String TAG = "ExpandableBinaryDictionary";
 
     // The user dictionary provider uses an empty string to mean "all languages".
     private static final String USER_DICTIONARY_ALL_LANGUAGES = "";
@@ -91,7 +91,7 @@ public class UserBinaryDictionary extends ExpandableBinaryDictionary {
     }
 
     // Note: This method is called by {@link DictionaryFacilitator} using Java reflection.
-    @ExternallyReferenced
+    
     public static UserBinaryDictionary getDictionary(
             final Context context, final Locale locale, final File dictFile,
             final String dictNamePrefix, @Nullable final String account) {

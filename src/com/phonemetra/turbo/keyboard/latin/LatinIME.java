@@ -48,7 +48,7 @@ import com.phonemetra.turbo.keyboard.KeyboardId;
 import com.phonemetra.turbo.keyboard.KeyboardSwitcher;
 import com.phonemetra.turbo.keyboard.MainKeyboardView;
 import com.phonemetra.turbo.keyboard.accessibility.AccessibilityUtils;
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 import com.phonemetra.turbo.keyboard.compat.InputMethodServiceCompatUtils;
 import com.phonemetra.turbo.keyboard.compat.ViewOutlineProviderCompatUtils;
 import com.phonemetra.turbo.keyboard.compat.ViewOutlineProviderCompatUtils.InsetsUpdater;
@@ -740,7 +740,7 @@ public class LatinIME extends InputMethodService implements
 		super.onDestroy();
 	}
 
-	@UsedForTesting
+	
 	public void recycle() {
 		unregisterReceiver(mDictionaryPackInstallReceiver);
 		unregisterReceiver(mDictionaryDumpBroadcastReceiver);
@@ -1681,7 +1681,7 @@ public class LatinIME extends InputMethodService implements
 	}
 
 	// Outside LatinIME, only used by the {@link InputTestsBase} test suite.
-	@UsedForTesting
+	
 	void loadKeyboard() {
 		// Since we are switching languages, the most urgent thing is to let the
 		// keyboard graphics
@@ -1940,14 +1940,14 @@ public class LatinIME extends InputMethodService implements
 		dialog.show();
 	}
 
-	@UsedForTesting
+	
 	SuggestedWords getSuggestedWordsForTest() {
 		return mInputLogic.mSuggestedWords;
 	}
 
 	// DO NOT USE THIS for any other purpose than testing. This is information
 	// private to LatinIME.
-	@UsedForTesting
+	
 	void waitForLoadingDictionaries(final long timeout, final TimeUnit unit)
 			throws InterruptedException {
 		mDictionaryFacilitator.waitForLoadingDictionariesForTesting(timeout,
@@ -1956,7 +1956,7 @@ public class LatinIME extends InputMethodService implements
 
 	// DO NOT USE THIS for any other purpose than testing. This can break the
 	// keyboard badly.
-	@UsedForTesting
+	
 	void replaceDictionariesForTest(final Locale locale) {
 		final SettingsValues settingsValues = mSettings.getCurrent();
 		mDictionaryFacilitator.resetDictionaries(this, locale,
@@ -1968,12 +1968,12 @@ public class LatinIME extends InputMethodService implements
 	}
 
 	// DO NOT USE THIS for any other purpose than testing.
-	@UsedForTesting
+	
 	void clearPersonalizedDictionariesForTest() {
 		mDictionaryFacilitator.clearUserHistoryDictionary(this);
 	}
 
-	@UsedForTesting
+	
 	List<InputMethodSubtype> getEnabledSubtypesForTest() {
 		return (mRichImm != null) ? mRichImm
 				.getMyEnabledInputMethodSubtypeList(true /* allowsImplicitlySelectedSubtypes */)

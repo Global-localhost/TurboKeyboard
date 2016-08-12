@@ -18,8 +18,8 @@ package com.phonemetra.turbo.keyboard.latin.personalization;
 
 import android.content.Context;
 
-import com.phonemetra.turbo.keyboard.annotations.ExternallyReferenced;
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
+
 import com.phonemetra.turbo.keyboard.latin.BinaryDictionary;
 import com.phonemetra.turbo.keyboard.latin.Dictionary;
 import com.phonemetra.turbo.keyboard.latin.ExpandableBinaryDictionary;
@@ -54,7 +54,7 @@ public class UserHistoryDictionary extends ExpandableBinaryDictionary {
     /**
      * @returns the name of the {@link UserHistoryDictionary}.
      */
-    @UsedForTesting
+   
     static String getUserHistoryDictName(final String name, final Locale locale,
             @Nullable final File dictFile, @Nullable final String account) {
         if (!ProductionFlags.ENABLE_PER_ACCOUNT_USER_HISTORY_DICTIONARY) {
@@ -80,7 +80,7 @@ public class UserHistoryDictionary extends ExpandableBinaryDictionary {
 
     // Note: This method is called by {@link DictionaryFacilitator} using Java reflection.
     @SuppressWarnings("unused")
-    @ExternallyReferenced
+    
     public static UserHistoryDictionary getDictionary(final Context context, final Locale locale,
             final File dictFile, final String dictNamePrefix, @Nullable final String account) {
         return PersonalizationHelper.getUserHistoryDictionary(context, locale, account);

@@ -25,14 +25,14 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 /**
  * Builder for {@link HttpURLConnection}s.
  *
- * TODO: Remove @UsedForTesting after this is actually used.
+ * TODO: Remove after this is actually used.
  */
-@UsedForTesting
+
 public class HttpUrlConnectionBuilder {
     private static final int DEFAULT_TIMEOUT_MILLIS = 5 * 1000;
 
@@ -53,21 +53,21 @@ public class HttpUrlConnectionBuilder {
 
     /**
      * Indicates that the request is unidirectional - upload-only.
-     * TODO: Remove @UsedForTesting after this is actually used.
+     * TODO: Remove after this is actually used.
      */
-    @UsedForTesting
+   
     public static final int MODE_UPLOAD_ONLY = 1;
     /**
      * Indicates that the request is unidirectional - download only.
-     * TODO: Remove @UsedForTesting after this is actually used.
+     * TODO: Remove after this is actually used.
      */
-    @UsedForTesting
+   
     public static final int MODE_DOWNLOAD_ONLY = 2;
     /**
      * Indicates that the request is bi-directional.
-     * TODO: Remove @UsedForTesting after this is actually used.
+     * TODO: Remove after this is actually used.
      */
-    @UsedForTesting
+   
     public static final int MODE_BI_DIRECTIONAL = 3;
 
     private final HashMap<String, String> mHeaderMap = new HashMap<>();
@@ -83,9 +83,9 @@ public class HttpUrlConnectionBuilder {
      * Sets the URL that'll be used for the request.
      * This *must* be set before calling {@link #build()}
      *
-     * TODO: Remove @UsedForTesting after this method is actually used.
+     * TODO: Remove after this method is actually used.
      */
-    @UsedForTesting
+   
     public HttpUrlConnectionBuilder setUrl(String url) throws MalformedURLException {
         if (TextUtils.isEmpty(url)) {
             throw new IllegalArgumentException("URL must not be empty");
@@ -97,9 +97,9 @@ public class HttpUrlConnectionBuilder {
     /**
      * Sets the connect timeout. Defaults to {@value #DEFAULT_TIMEOUT_MILLIS} milliseconds.
      *
-     * TODO: Remove @UsedForTesting after this method is actually used.
+     * TODO: Remove after this method is actually used.
      */
-    @UsedForTesting
+   
     public HttpUrlConnectionBuilder setConnectTimeout(int timeoutMillis) {
         if (timeoutMillis < 0) {
             throw new IllegalArgumentException("connect-timeout must be >= 0, but was "
@@ -112,9 +112,9 @@ public class HttpUrlConnectionBuilder {
     /**
      * Sets the read timeout. Defaults to {@value #DEFAULT_TIMEOUT_MILLIS} milliseconds.
      *
-     * TODO: Remove @UsedForTesting after this method is actually used.
+     * TODO: Remove after this method is actually used.
      */
-    @UsedForTesting
+   
     public HttpUrlConnectionBuilder setReadTimeout(int timeoutMillis) {
         if (timeoutMillis < 0) {
             throw new IllegalArgumentException("read-timeout must be >= 0, but was "
@@ -127,9 +127,9 @@ public class HttpUrlConnectionBuilder {
     /**
      * Adds an entry to the request header.
      *
-     * TODO: Remove @UsedForTesting after this method is actually used.
+     * TODO: Remove after this method is actually used.
      */
-    @UsedForTesting
+   
     public HttpUrlConnectionBuilder addHeader(String key, String value) {
         mHeaderMap.put(key, value);
         return this;
@@ -138,9 +138,9 @@ public class HttpUrlConnectionBuilder {
     /**
      * Sets an authentication token.
      *
-     * TODO: Remove @UsedForTesting after this method is actually used.
+     * TODO: Remove after this method is actually used.
      */
-    @UsedForTesting
+   
     public HttpUrlConnectionBuilder setAuthToken(String value) {
         mHeaderMap.put(HTTP_HEADER_AUTHORIZATION, value);
         return this;
@@ -150,9 +150,9 @@ public class HttpUrlConnectionBuilder {
      * Sets the request to be executed such that the input is not buffered.
      * This may be set when the request size is known beforehand.
      *
-     * TODO: Remove @UsedForTesting after this method is actually used.
+     * TODO: Remove after this method is actually used.
      */
-    @UsedForTesting
+   
     public HttpUrlConnectionBuilder setFixedLengthForStreaming(int length) {
         mContentLength = length;
         return this;
@@ -161,9 +161,9 @@ public class HttpUrlConnectionBuilder {
     /**
      * Indicates if the request can use cached responses or not.
      *
-     * TODO: Remove @UsedForTesting after this method is actually used.
+     * TODO: Remove after this method is actually used.
      */
-    @UsedForTesting
+   
     public HttpUrlConnectionBuilder setUseCache(boolean useCache) {
         mUseCache = useCache;
         return this;
@@ -177,9 +177,9 @@ public class HttpUrlConnectionBuilder {
      * @see #MODE_DOWNLOAD_ONLY
      * @see #MODE_BI_DIRECTIONAL
      *
-     * TODO: Remove @UsedForTesting after this method is actually used
+     * TODO: Remove after this method is actually used
      */
-    @UsedForTesting
+   
     public HttpUrlConnectionBuilder setMode(int mode) {
         if (mode != MODE_UPLOAD_ONLY
                 && mode != MODE_DOWNLOAD_ONLY
@@ -193,9 +193,9 @@ public class HttpUrlConnectionBuilder {
     /**
      * Builds the {@link HttpURLConnection} instance that can be used to execute the request.
      *
-     * TODO: Remove @UsedForTesting after this method is actually used.
+     * TODO: Remove after this method is actually used.
      */
-    @UsedForTesting
+   
     public HttpURLConnection build() throws IOException {
         if (mUrl == null) {
             throw new IllegalArgumentException("A URL must be specified!");

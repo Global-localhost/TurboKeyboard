@@ -23,7 +23,7 @@ import java.util.Locale;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 public final class StringUtils {
     public static final int CAPITALIZE_NONE = 0;  // No caps, or mixed case
@@ -550,7 +550,7 @@ public final class StringUtils {
         return true;
     }
 
-    @UsedForTesting
+   
     @Nonnull
     public static String byteArrayToHexString(@Nullable final byte[] bytes) {
         if (bytes == null || bytes.length == 0) {
@@ -566,7 +566,7 @@ public final class StringUtils {
     /**
      * Convert hex string to byte array. The string length must be an even number.
      */
-    @UsedForTesting
+   
     @Nullable
     public static byte[] hexStringToByteArray(@Nullable final String hexString) {
         if (isEmpty(hexString)) {
@@ -625,12 +625,12 @@ public final class StringUtils {
         return lastIndex - i;
     }
 
-    @UsedForTesting
+   
     public static class Stringizer<E> {
         @Nonnull
         private static final String[] EMPTY_STRING_ARRAY = new String[0];
 
-        @UsedForTesting
+       
         @Nonnull
         public String stringize(@Nullable final E element) {
             if (element == null) {
@@ -639,13 +639,13 @@ public final class StringUtils {
             return element.toString();
         }
 
-        @UsedForTesting
+       
         @Nonnull
         public final String join(@Nullable final E[] array) {
             return joinStringArray(toStringArray(array), null /* delimiter */);
         }
 
-        @UsedForTesting
+       
         public final String join(@Nullable final E[] array, @Nullable final String delimiter) {
             return joinStringArray(toStringArray(array), delimiter);
         }

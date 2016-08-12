@@ -20,7 +20,7 @@ import java.util.Arrays;
 
 import javax.annotation.Nonnull;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 // TODO: This class is not thread-safe.
 public final class ResizableIntArray {
@@ -142,7 +142,7 @@ public final class ResizableIntArray {
      * Shift to the left by elementCount, discarding elementCount pointers at the start.
      * @param elementCount how many elements to shift.
      */
-    @UsedForTesting
+   
     public void shift(final int elementCount) {
         System.arraycopy(mArray, elementCount, mArray, 0, mLength - elementCount);
         mLength -= elementCount;

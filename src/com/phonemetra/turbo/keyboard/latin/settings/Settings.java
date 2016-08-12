@@ -54,12 +54,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
     public static final String PREF_EDIT_PERSONAL_DICTIONARY = "edit_personal_dictionary";
     public static final String PREF_CONFIGURE_DICTIONARIES_KEY = "configure_dictionaries_key";
     
-    // PREF_AUTO_CORRECTION_THRESHOLD_OBSOLETE is obsolete. Use PREF_AUTO_CORRECTION instead.
-    public static final String PREF_AUTO_CORRECTION_THRESHOLD_OBSOLETE =
-            "auto_correction_threshold";
     public static final String PREF_AUTO_CORRECTION = "pref_key_auto_correction";
-    // PREF_SHOW_SUGGESTIONS_SETTING_OBSOLETE is obsolete. Use PREF_SHOW_SUGGESTIONS instead.
-    public static final String PREF_SHOW_SUGGESTIONS_SETTING_OBSOLETE = "show_suggestions_setting";
     public static final String PREF_SHOW_SUGGESTIONS = "show_suggestions";
     public static final String PREF_KEY_USE_CONTACTS_DICT = "pref_key_use_contacts_dict";
     public static final String PREF_KEY_USE_PERSONALIZED_DICTS = "pref_key_use_personalized_dicts";
@@ -140,7 +135,6 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
         mRes = context.getResources();
         mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         mPrefs.registerOnSharedPreferenceChangeListener(this);
-        upgradeAutocorrectionSettings(mPrefs, mRes);
     }
 
     public void onDestroy() {
@@ -416,20 +410,5 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
         return prefs.getInt(PREF_LAST_SHOWN_EMOJI_CATEGORY_ID, defValue);
     }
 
-    private void upgradeAutocorrectionSettings(final SharedPreferences prefs, final Resources res) {
-        final String thresholdSetting =
-                prefs.getString(PREF_AUTO_CORRECTION_THRESHOLD_OBSOLETE, null);
-        if (thresholdSetting != null) {
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.remove(PREF_AUTO_CORRECTION_THRESHOLD_OBSOLETE);
-            final String autoCorrectionOff =
-                    res.getString(R.string.auto_correction_threshold_mode_index_off);
-            if (thresholdSetting.equals(autoCorrectionOff)) {
-                editor.putBoolean(PREF_AUTO_CORRECTION, false);
-            } else {
-                editor.putBoolean(PREF_AUTO_CORRECTION, true);
-            }
-            editor.commit();
-        }
-    }
+    
 }

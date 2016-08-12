@@ -16,7 +16,7 @@
 
 package com.phonemetra.turbo.keyboard.latin.network;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 /**
  * The HttpException exception represents a XML/HTTP fault with a HTTP status code.
@@ -39,7 +39,7 @@ public class HttpException extends Exception {
     /**
      * @return the HTTP status code related to this exception.
      */
-    @UsedForTesting
+   
     public int getHttpStatusCode() {
         return mStatusCode;
     }

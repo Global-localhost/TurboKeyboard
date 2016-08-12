@@ -18,7 +18,7 @@ package com.phonemetra.turbo.keyboard.latin.common;
 
 import javax.annotation.Nonnull;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 public final class Constants {
 
@@ -326,13 +326,13 @@ public final class Constants {
 	public static final int SCREEN_METRICS_LARGE_TABLET = 2;
 	public static final int SCREEN_METRICS_SMALL_TABLET = 3;
 
-	@UsedForTesting
+	
 	public static boolean isPhone(final int screenMetrics) {
 		return screenMetrics == SCREEN_METRICS_SMALL_PHONE
 				|| screenMetrics == SCREEN_METRICS_LARGE_PHONE;
 	}
 
-	@UsedForTesting
+	
 	public static boolean isTablet(final int screenMetrics) {
 		return screenMetrics == SCREEN_METRICS_SMALL_TABLET
 				|| screenMetrics == SCREEN_METRICS_LARGE_TABLET;

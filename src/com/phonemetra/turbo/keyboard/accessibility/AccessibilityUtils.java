@@ -23,7 +23,6 @@ import android.os.SystemClock;
 import android.provider.Settings;
 import android.support.v4.view.accessibility.AccessibilityEventCompat;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +37,7 @@ import com.phonemetra.turbo.keyboard.latin.SuggestedWords;
 import com.phonemetra.turbo.keyboard.latin.utils.InputTypeUtils;
 
 public final class AccessibilityUtils {
-    private static final String TAG = AccessibilityUtils.class.getSimpleName();
+    
     private static final String CLASS = AccessibilityUtils.class.getClass().getName();
     private static final String PACKAGE =
             AccessibilityUtils.class.getClass().getPackage().getName();
@@ -204,7 +203,6 @@ public final class AccessibilityUtils {
      */
     public void announceForAccessibility(final View view, final CharSequence text) {
         if (!mAccessibilityManager.isEnabled()) {
-            Log.e(TAG, "Attempted to speak when accessibility was disabled!");
             return;
         }
 
@@ -229,7 +227,6 @@ public final class AccessibilityUtils {
 
         final ViewParent viewParent = view.getParent();
         if ((viewParent == null) || !(viewParent instanceof ViewGroup)) {
-            Log.e(TAG, "Failed to obtain ViewParent in announceForAccessibility");
             return;
         }
 
@@ -252,12 +249,6 @@ public final class AccessibilityUtils {
         }
     }
 
-    /**
-     * Sends the specified {@link AccessibilityEvent} if accessibility is
-     * enabled. No operation if accessibility is disabled.
-     *
-     * @param event The event to send.
-     */
     public void requestSendAccessibilityEvent(final AccessibilityEvent event) {
         if (mAccessibilityManager.isEnabled()) {
             mAccessibilityManager.sendAccessibilityEvent(event);

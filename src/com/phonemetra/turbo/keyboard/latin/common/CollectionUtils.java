@@ -23,7 +23,7 @@ import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.phonemetra.turbo.keyboard.annotations.UsedForTesting;
+
 
 /**
  * Utility methods for working with collections.
@@ -60,7 +60,7 @@ public final class CollectionUtils {
      * @param c Collection to test.
      * @return Whether c contains no elements.
      */
-    @UsedForTesting
+   
     public static boolean isNullOrEmpty(@Nullable final Collection c) {
         return c == null || c.isEmpty();
     }
@@ -70,7 +70,7 @@ public final class CollectionUtils {
      * @param map Map to test.
      * @return Whether map contains no elements.
      */
-    @UsedForTesting
+   
     public static boolean isNullOrEmpty(@Nullable final Map map) {
         return map == null || map.isEmpty();
     }
