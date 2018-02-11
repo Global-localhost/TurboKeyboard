@@ -1,7 +1,7 @@
 <h1 align="center">Turbo Keyboard™</h1>
 
 
-<p align="center"><img src="https://github.com/Phonemetra/TurboKeyboard/blob/master/res/drawable-xxxhdpi/ic_launcher_keyboard.png" width="192" height="192"></p>
+<p align="center"><img src="https://phonemetra.com/wp-content/uploads/2018/02/Turbo_keyboard.png" width="192" height="192"></p>
 <p align="center">An open-source input method application for Turbo OS™ and Android™.</p>
 <p align="center"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.phonemetra.turbo.keyboard"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="50%" width="50%"></a></p>
 
@@ -14,7 +14,7 @@ QWERTY, QWERTZ, ARABIC, AZERTY, DVORAK, Colemak and PC.
 
 ## License
 
-    Copyright 2016 PHONEMETRA INC
+    Copyright 2016 - 2018 PHONEMETRA INC
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
