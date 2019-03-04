@@ -9,6 +9,8 @@ English (US), English (India), English (UK), Afrikaans, Alphabet (QWERTY), Arabi
 ## Layouts: 
 QWERTY, QWERTZ, ARABIC, AZERTY, DVORAK, Colemak and PC.
 
+[![Build Status](https://travis-ci.org/Phonemetra/TurboKeyboard.svg?branch=master)](https://travis-ci.org/Phonemetra/TurboKeyboard)
+[![License](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/Phonemetra/TurboKeyboard/blog/master/LICENSE)
 ## License
 
     Copyright 2016 - 2019 PHONEMETRA INC
